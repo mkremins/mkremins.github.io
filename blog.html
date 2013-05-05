@@ -1,0 +1,13 @@
+---
+title: I'm a writer.
+layout: default
+---
+
+<p>Here's what I've written lately.</p>
+
+<dl>
+	{% for post in site.posts %}
+	<dt><a href="{{ post.url }}"><h3>{{ post.title }}</h3></a></dt>
+	<dd>{{ post.tagline }}</dd>
+	{% endfor %}
+</dl>
