@@ -1,0 +1,185 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,700);
+
+body {
+	color:#777;
+	font:16px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:300;
+	margin:0 auto;
+	padding:75px 50px;
+	width:860px;
+}
+
+h1 {
+	color:#222;
+	font-size:28px;
+	font-weight:700;
+}
+
+h2 {
+	color:#393939;
+}
+
+h1, h2 {
+	margin:0 0 20px;
+}
+
+h3, h4, h5, h6 {
+	color:#494949;
+}
+
+h1, h2, h3 {
+	line-height:1.1;
+}
+
+p, ul, ol, table, pre {
+	margin:0 0 20px;
+}
+
+a {
+	color:#39c;
+	font-weight:400;
+	text-decoration:none;
+}
+
+blockquote {
+	border-left:4px solid #e5e5e5;
+	font-style:italic;
+	margin:0;
+	padding:0 0 0 10px;
+}
+
+code, pre {
+	color:#333;
+	font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+	font-size:12px;
+}
+
+pre {
+	background:#f8f8f8;
+	border:1px solid #e5e5e5;
+	border-radius:5px;
+	overflow-x:auto;
+	padding:8px 15px;
+}
+
+/* section class specific styling */
+
+section {
+	float:right;
+	padding-bottom:50px;
+	width:500px;
+}
+
+/* header specific styling */
+
+header {
+	float:left;
+	position:fixed;
+	width:270px;
+}
+
+header h1 {
+	color:#666;
+}
+
+header p {
+	color:#aaa;
+}
+
+/* nav specific styling */
+
+nav ul {
+	float:left;
+	list-style:none;
+	padding:0;
+}
+
+nav li {
+	border-left:4px solid #e5e5e5;
+	clear:left;
+	display:block;
+	float:left;
+	padding-left:8px;
+}
+
+/* footer specific styling */
+
+footer {
+	bottom:75px;
+	color:#aaa;
+	font-size:11px;
+	float:left;
+	line-height:140%;
+	position:fixed;
+	width:270px;
+}
+
+footer p {
+	border-left:2px solid #e5e5e5;
+	padding-left:6px;
+}
+
+/* smaller browser window styling changes */
+
+@media all and (max-width: 960px) {
+	body {
+		margin:0;
+		width:auto;
+	}
+
+	header, section, footer {
+		clear:both;
+		float:none;
+		position:static;
+		width:100%;
+	}
+
+	nav ul {
+		border-bottom:1px solid #d2d2d2;
+		border-top:1px solid #d2d2d2;
+		padding:8px 0;
+		width:100%;
+	}
+
+	nav li {
+		border:none;
+		clear:none;
+		padding:0 12px;
+	}
+
+	nav a {
+		display:inline-block;
+	}
+
+	footer {
+		/* TODO this is temporary */
+		display:none;
+	}
+}
+
+@media all and (max-width: 720px) {
+	body {
+		word-wrap:break-word;
+	}
+}
+
+@media all and (max-width: 480px) {
+	body {
+		padding:15px;
+	}
+}
+
+@media all and (max-height:600px) {
+	footer {
+		/* TODO this is temporary */
+		display:none;
+	}
+}
+
+@media print {
+	body {
+		color:#444;
+		font-size:12pt;
+		padding:0.4in;
+	}
+}

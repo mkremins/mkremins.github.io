@@ -8,6 +8,6 @@ layout: default
 <dl>
 	{% for post in site.posts %}
 	<dt><a href="{{ post.url }}"><h3>{{ post.title }}</h3></a></dt>
-	<dd>{{ post.tagline }}</dd>
+	<dd>{{ post.summary }}</dd>
 	{% endfor %}
 </dl>
