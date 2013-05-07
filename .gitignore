@@ -1,2 +1,9 @@
+# build
 /_site
+
+# IDE
+*.sublime-project
+*.sublime-workspace
+
+# OS
 .DS_Store
