@@ -110,23 +110,6 @@ nav li {
 	padding-left:8px;
 }
 
-/* footer specific styling */
-
-footer {
-	bottom:75px;
-	color:#aaa;
-	font-size:11px;
-	float:left;
-	line-height:140%;
-	position:fixed;
-	width:270px;
-}
-
-footer p {
-	border-left:2px solid #e5e5e5;
-	padding-left:6px;
-}
-
 /* smaller browser window styling changes */
 
 @media all and (max-width: 960px) {
@@ -135,7 +118,7 @@ footer p {
 		width:auto;
 	}
 
-	header, section, footer {
+	header, section {
 		clear:both;
 		float:none;
 		position:static;
@@ -158,11 +141,6 @@ footer p {
 	nav a {
 		display:inline-block;
 	}
-
-	footer {
-		/* TODO this is temporary */
-		display:none;
-	}
 }
 
 @media all and (max-width: 720px) {
@@ -174,13 +152,6 @@ footer p {
 @media all and (max-width: 480px) {
 	body {
 		padding:15px;
-	}
-}
-
-@media all and (max-height:600px) {
-	footer {
-		/* TODO this is temporary */
-		display:none;
 	}
 }
 
