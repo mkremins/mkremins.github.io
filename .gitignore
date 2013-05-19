@@ -1,5 +1,6 @@
 # build
 /_site
+/.sass-cache
 
 # IDE
 *.sublime-project
