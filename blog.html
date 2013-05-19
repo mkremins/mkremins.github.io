@@ -6,7 +6,7 @@ layout: default
 <p>Here you'll find my thoughts, ramblings, and assorted longpostery. Skim the excerpts for an idea of which each post is about, and click a post's title to read the full post if something catches your eye.</p>
 <hr>
 <dl>
-	{% for post in site.posts %}
+	{% for post in site.categories.blog %}
 	<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
 	<blockquote>{{ post.excerpt }}</blockquote>
 	{% endfor %}
