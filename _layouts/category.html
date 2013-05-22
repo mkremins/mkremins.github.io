@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<p>{{ page.content }}</p>
+<hr>
+{% for post in site.posts %}
+  {% if post.category == page.category %}
+    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    <blockquote>{{ post.excerpt }}</blockquote>
+  {% endif %}
+{% endfor %}

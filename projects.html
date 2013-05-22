@@ -1,11 +1,7 @@
 ---
 title: I make stuff.
-layout: default
+layout: category
+category: projects
 ---
 
-<p>I'm constantly tinkering with one thing or another. This page is a list of some of the stuff I've made; each project has a brief description, and each project name links to a page with more project-specific information.</p>
-<hr>
-{% for post in site.categories.projects %}
-<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-<blockquote>{{ post.excerpt }}</blockquote>
-{% endfor %}
+I'm constantly tinkering with one thing or another. This page is a list of some of the stuff I've made; each project has a brief description, and each project name links to a page with more project-specific information.
