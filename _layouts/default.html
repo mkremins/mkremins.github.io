@@ -12,7 +12,7 @@
 
   <body>
 
-  	<header class="side">
+  	<header id="site-header">
   		<a href="/"><h1>/usr/share</h1></a>
       <p>code, design, words, etc by Max Kreminski aka mkremins</p>
       <ul>
@@ -20,15 +20,18 @@
         <li><a href="/blog.html">blog</a></li>
         <li><a href="/projects.html">projects</a></li>
         <li><a href="/thanks.html">thanks</a></li>
-        <li><a href="http://github.com/mkremins">github</a></li>
-        <li><a href="http://twitter.com/maxkreminski">twitter</a></li>
       </ul>
   	</header>
 
-  	<section class="main">
+  	<section class="content">
   		<a href="{{ page.url }}"><h1>{{ page.title }}</h1></a>
   		{{ content }}
   	</section>
+
+    <footer id="site-footer">
+      <a href="http://github.com/mkremins"><span class="icon-github"></span></a>
+      <a href="http://twitter.com/maxkreminski"><span class="icon-twitter"></span></a>
+    </footer>
 
     <script src="js/scale.fix.js"></script>
 

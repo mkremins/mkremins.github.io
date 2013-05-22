@@ -1,43 +1,89 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:700);
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400);
-.main {
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400);
+@font-face {
+  font-family: "Social Icons";
+  src: url("/fonts/entypo-social.eot");
+  src: url("/fonts/entypo-social.eot?") format("eot"), url("/fonts/entypo-social.woff") format("woff"), url("/fonts/entypo-social.ttf") format("truetype"), url("/fonts/entypo-social.svg#svgentypo-social") format("svg"); }
+
+[class^="icon"]:before {
+  color: rgba(101, 123, 131, 0.5);
+  font-family: "Social Icons";
+  font-size: 50px;
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility; }
+
+.icon-github:before {
+  content: "\F300"; }
+
+.icon-twitter:before {
+  content: "\F309"; }
+
+.content {
   color: #839496;
-  float: right; }
-  .main h1, .main h2 {
+  float: right;
+  padding-bottom: 50px;
+  width: 500px; }
+  @media only screen and (max-width: 960px) {
+    .content {
+      clear: both;
+      float: none;
+      position: static;
+      width: 100%; } }
+  .content h1, .content h2 {
     color: #cb4b16; }
-  .main h3, .main h4, .main h5, .main h6 {
+  .content h3, .content h4, .content h5, .content h6 {
     color: #b58900; }
-  .main a {
+  .content a {
     color: #2aa198; }
 
-header {
-  color: #839496; }
-  header h1, header h2 {
+#site-header {
+  color: #839496;
+  position: fixed;
+  width: 225px; }
+  @media only screen and (max-width: 960px) {
+    #site-header {
+      clear: both;
+      float: none;
+      position: static;
+      width: 100%; } }
+  #site-header h1, #site-header h2 {
     color: #657b83; }
-  header a {
+  #site-header a {
     color: #657b83; }
-  header ul {
+  #site-header ul {
     list-style: none;
     padding-left: 0; }
-    header ul li {
-      border-left: 4px solid #073642;
-      padding-left: 8px; }
-      @media only screen and (max-width: 960px) {
-        header ul li {
-          border: none;
-          clear: none;
-          display: inline;
-          padding: 0 12px; } }
     @media only screen and (max-width: 960px) {
-      header ul {
+      #site-header ul {
         border-bottom: 1px solid #073642;
         border-top: 1px solid #073642;
         padding: 8px 0;
         text-align: center; } }
+    #site-header ul li {
+      border-left: 4px solid #073642;
+      padding-left: 8px; }
+      @media only screen and (max-width: 960px) {
+        #site-header ul li {
+          border: none;
+          clear: none;
+          display: inline;
+          padding: 0 12px; } }
+
+#site-footer {
+  bottom: 50px;
+  float: left;
+  position: fixed; }
+  @media only screen and (max-width: 480px) {
+    #site-footer {
+      display: none; } }
 
 body {
   background: #002b36;
   font: 15px/1.5 "Droid Serif", serif;
+  height: 100%;
   margin: 0 auto;
   padding: 75px 50px;
   width: 860px; }
@@ -91,23 +137,3 @@ pre {
   font: 12px/1.5 Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
   padding: 8px 15px;
   overflow-x: visible; }
-
-header {
-  position: fixed;
-  width: 225px; }
-  @media only screen and (max-width: 960px) {
-    header {
-      clear: both;
-      float: none;
-      position: static;
-      width: 100%; } }
-
-section {
-  padding-bottom: 50px;
-  width: 500px; }
-  @media only screen and (max-width: 960px) {
-    section {
-      clear: both;
-      float: none;
-      position: static;
-      width: 100%; } }

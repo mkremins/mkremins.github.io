@@ -1,0 +1,27 @@
+@font-face {
+	font-family: "Social Icons";
+	src: url("/fonts/entypo-social.eot"); // IE9 compat
+	src: url("/fonts/entypo-social.eot?") format("eot"), // IE6-IE8 
+	url("/fonts/entypo-social.woff") format("woff"), // modern browsers
+	url("/fonts/entypo-social.ttf")  format("truetype"), // Safari, Android, iOS
+	url("/fonts/entypo-social.svg#svgentypo-social") format("svg"); // legacy iOS
+}
+
+[class^="icon"]:before {
+	color: fade-out($header-color-side, .5);
+	font-family: "Social Icons";
+	font-size: 50px;
+	font-style: normal;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+.icon-github:before {
+	content: "\F300";
+}
+
+.icon-twitter:before {
+	content: "\F309";
+}

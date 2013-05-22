@@ -1,11 +1,20 @@
-@import "colors";
-@import "typography";
 @import "codeblock";
+@import "colors";
 @import "responsive";
+@import "social-icons";
+@import "typography";
 
-.main {
+.content {
 	color: $text-color;
 	float: right;
+	padding-bottom: 50px;
+	width: 500px;
+	@include respond-to(medium-screens) {
+		clear: both;
+		float: none;
+		position: static;
+		width: 100%;
+	}
 	h1, h2 {
 		color: $header-color;
 	}
@@ -17,8 +26,16 @@
 	}
 }
 
-header {
+#site-header {
 	color: $text-color-side;
+	position: fixed;
+	width: 225px;
+	@include respond-to(medium-screens) {
+		clear: both;
+		float: none;
+		position: static;
+		width: 100%;
+	}
 	h1, h2 {
 		color: $header-color-side;
 	}
@@ -28,6 +45,12 @@ header {
 	ul {
 		list-style: none;
 		padding-left: 0;
+		@include respond-to(medium-screens) {
+			border-bottom: 1px solid $detail-color;
+			border-top: 1px solid $detail-color;
+			padding: 8px 0;
+			text-align: center;
+		}
 		li {
 			border-left: 4px solid $detail-color;
 			padding-left: 8px;
@@ -38,18 +61,22 @@ header {
 				padding: 0 12px;
 			}
 		}
-		@include respond-to(medium-screens) {
-			border-bottom: 1px solid $detail-color;
-			border-top: 1px solid $detail-color;
-			padding: 8px 0;
-			text-align: center;
-		}
+	}
+}
+
+#site-footer {
+	bottom: 50px;
+	float: left;
+	position: fixed;
+	@include respond-to(handhelds) {
+		display: none;
 	}
 }
 
 body {
 	background: $bg-color;
 	font: $body-font;
+	height: 100%;
 	margin: 0 auto;
 	padding: 75px 50px;
 	width: 860px;
@@ -104,26 +131,4 @@ code {
 pre {
 	@include codeblock(8px, 15px);
 	overflow-x: visible;
-}
-
-header {
-	position: fixed;
-	width: 225px;
-	@include respond-to(medium-screens) {
-		clear: both;
-		float: none;
-		position: static;
-		width: 100%;
-	}
-}
-
-section {
-	padding-bottom: 50px;
-	width: 500px;
-	@include respond-to(medium-screens) {
-		clear: both;
-		float: none;
-		position: static;
-		width: 100%;
-	}
 }
