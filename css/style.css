@@ -10,27 +10,26 @@
   .main a {
     color: #2aa198; }
 
-.side {
-  color: #839496;
-  float: left; }
-  .side h1, .side h2 {
+header {
+  color: #839496; }
+  header h1, header h2 {
     color: #657b83; }
-  .side a {
+  header a {
     color: #657b83; }
-  .side ul {
+  header ul {
     list-style: none;
     padding-left: 0; }
-    .side ul li {
+    header ul li {
       border-left: 4px solid #073642;
       padding-left: 8px; }
       @media only screen and (max-width: 960px) {
-        .side ul li {
+        header ul li {
           border: none;
           clear: none;
           display: inline;
           padding: 0 12px; } }
     @media only screen and (max-width: 960px) {
-      .side ul {
+      header ul {
         border-bottom: 1px solid #073642;
         border-top: 1px solid #073642;
         padding: 8px 0;
