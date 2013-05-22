@@ -1,180 +1,130 @@
-@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:700);
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400);
-@import "solarized";
-@import "colors-dark";
+@import "colors";
+@import "typography";
+@import "codeblock";
+@import "responsive";
 
 .main {
-	color: $color-main-text;
+	color: $text-color;
 	float: right;
 	h1, h2 {
-		color: $color-main-header;
+		color: $header-color;
 	}
 	h3, h4, h5, h6 {
-		color: $color-main-subheader;
+		color: $subheader-color;
 	}
 	a {
-		color: $color-main-linktext;
+		color: $link-color;
 	}
 }
 
 .side {
-	color: $color-side-text;
+	color: $text-color-side;
 	float: left;
 	h1, h2 {
-		color: $color-side-header;
-	}
-	h3, h4, h5, h6 {
-		color: $color-side-subheader;
+		color: $header-color-side;
 	}
 	a {
-		color: $color-side-linktext;
+		color: $link-color-side;
 	}
-	ul, ol {
+	ul {
 		list-style: none;
+		padding-left: 0;
+		li {
+			border-left: 4px solid $detail-color;
+			padding-left: 8px;
+			@include respond-to(medium-screens) {
+				border: none;
+				clear: none;
+				display: inline;
+				padding: 0 12px;
+			}
+		}
+		@include respond-to(medium-screens) {
+			border-bottom: 1px solid $detail-color;
+			border-top: 1px solid $detail-color;
+			padding: 8px 0;
+			text-align: center;
+		}
 	}
 }
 
 body {
-	background: $color-page-background;
-	font:15px/1.5 "Droid Serif", serif;
-	font-weight:400;
-	margin:0 auto;
-	padding:75px 50px;
-	width:860px;
+	background: $bg-color;
+	font: $body-font;
+	margin: 0 auto;
+	padding: 75px 50px;
+	width: 860px;
+	@include respond-to(medium-screens) {
+		margin: 0;
+		width: auto;
+	}
+	@include respond-to(tablets) {
+		word-wrap: break-word;
+	}
+	@include respond-to(handhelds) {
+		padding: 15px;
+	}
+}
+
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, table, pre, hr {
+	margin: 0 0 20px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font:16px/1.5 "Merriweather Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight:700;
+	font: $header-font;
 }
 
 h1, h2 {
-	font-size:28px;
-	margin: 0 0 20px;
-}
-
-h3, h4, h5, h6 {
-	margin: 0 0 20px;
-}
-
-h1, h2, h3 {
-	line-height:1.1;
-}
-
-p, ul, ol, table, pre {
-	margin: 0 0 20px;
+	font-size: 28px;
+	line-height: 1.1;
 }
 
 hr {
 	border: 0;
-	background-color: $color-page-subtle;
-	color: $color-page-subtle;
+	background-color: $detail-color;
+	color: $detail-color;
 	height: 2px;
-	margin-bottom: 20px;
-}
-
-dd {
-	margin:0 0 20px 20px;
 }
 
 a {
-	font-weight:400;
-	text-decoration:none;
+	text-decoration: none;
 }
 
 blockquote {
-	border-left:4px solid $color-page-subtle;
-	font-style:italic;
-	margin:20px 0;
-	padding:0 0 0 10px;
-}
-
-code, pre {
-	background: $color-page-subtle;
-	border-radius: 2px;
-	color: $base00;
-	font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
-	font-size:12px;
+	border-left: 4px solid $detail-color;
+	font-style: italic;
+	margin: 20px 0;
+	padding: 0 0 0 10px;
 }
 
 code {
-	padding:2px;
+	@include codeblock(2px, 4px);
 }
 
 pre {
+	@include codeblock(8px, 15px);
 	overflow-x: visible;
-	padding:8px 15px;
-}
-
-section {
-	padding-bottom:50px;
-	width:500px;
 }
 
 header {
-	position:fixed;
-	width:225px;
-}
-
-nav ul {
-	padding:0;
-}
-
-nav li {
-	border-left:4px solid $color-page-subtle;
-	clear:left;
-	display:block;
-	padding-left:8px;
-}
-
-/* smaller browser window styling changes */
-
-@media all and (max-width: 960px) {
-	body {
-		margin:0;
-		width:auto;
-	}
-
-	header, section {
-		clear:both;
-		float:none;
-		position:static;
-		width:100%;
-	}
-
-	nav ul {
-		border-bottom:1px solid $color-page-subtle;
-		border-top:1px solid $color-page-subtle;
-		padding:8px 0;
-		width:100%;
-	}
-
-	nav li {
-		border:none;
-		clear:none;
-		padding:0 12px;
-	}
-
-	nav a {
-		display:inline-block;
+	position: fixed;
+	width: 225px;
+	@include respond-to(medium-screens) {
+		clear: both;
+		float: none;
+		position: static;
+		width: 100%;
 	}
 }
 
-@media all and (max-width: 720px) {
-	body {
-		word-wrap:break-word;
-	}
-}
-
-@media all and (max-width: 480px) {
-	body {
-		padding:15px;
-	}
-}
-
-@media print {
-	body {
-		font-size:12pt;
-		padding:0.4in;
+section {
+	padding-bottom: 50px;
+	width: 500px;
+	@include respond-to(medium-screens) {
+		clear: both;
+		float: none;
+		position: static;
+		width: 100%;
 	}
 }

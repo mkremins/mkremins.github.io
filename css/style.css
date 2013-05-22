@@ -1,12 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:700);
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400);
-/**
- * Taken from:
- * http://github.com/frebro/sass-solarized
- *
- * Adapted from the outstanding work by Ethan Schoonover:
- * http://ethanschoonover.com/solarized
- */
 .main {
   color: #839496;
   float: right; }
@@ -22,50 +15,61 @@
   float: left; }
   .side h1, .side h2 {
     color: #657b83; }
-  .side h3, .side h4, .side h5, .side h6 {
-    color: #586e75; }
   .side a {
     color: #657b83; }
-  .side ul, .side ol {
-    list-style: none; }
+  .side ul {
+    list-style: none;
+    padding-left: 0; }
+    .side ul li {
+      border-left: 4px solid #073642;
+      padding-left: 8px; }
+      @media only screen and (max-width: 960px) {
+        .side ul li {
+          border: none;
+          clear: none;
+          display: inline;
+          padding: 0 12px; } }
+    @media only screen and (max-width: 960px) {
+      .side ul {
+        border-bottom: 1px solid #073642;
+        border-top: 1px solid #073642;
+        padding: 8px 0;
+        text-align: center; } }
 
 body {
   background: #002b36;
   font: 15px/1.5 "Droid Serif", serif;
-  font-weight: 400;
   margin: 0 auto;
   padding: 75px 50px;
   width: 860px; }
+  @media only screen and (max-width: 960px) {
+    body {
+      margin: 0;
+      width: auto; } }
+  @media only screen and (max-width: 768px) {
+    body {
+      word-wrap: break-word; } }
+  @media only screen and (max-width: 480px) {
+    body {
+      padding: 15px; } }
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, table, pre, hr {
+  margin: 0 0 20px; }
 
 h1, h2, h3, h4, h5, h6 {
-  font: 16px/1.5 "Merriweather Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700; }
+  font: 16px/1.5 "Merriweather Sans", sans-serif; }
 
 h1, h2 {
   font-size: 28px;
-  margin: 0 0 20px; }
-
-h3, h4, h5, h6 {
-  margin: 0 0 20px; }
-
-h1, h2, h3 {
   line-height: 1.1; }
-
-p, ul, ol, table, pre {
-  margin: 0 0 20px; }
 
 hr {
   border: 0;
   background-color: #073642;
   color: #073642;
-  height: 2px;
-  margin-bottom: 20px; }
-
-dd {
-  margin: 0 0 20px 20px; }
+  height: 2px; }
 
 a {
-  font-weight: 400;
   text-decoration: none; }
 
 blockquote {
@@ -74,69 +78,37 @@ blockquote {
   margin: 20px 0;
   padding: 0 0 0 10px; }
 
-code, pre {
-  background: #073642;
-  border-radius: 2px;
-  color: #657b83;
-  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
-  font-size: 12px; }
-
 code {
-  padding: 2px; }
+  background: #073642;
+  border-radius: 4px;
+  color: #657b83;
+  font: 12px/1.5 Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+  padding: 2px 4px; }
 
 pre {
-  overflow-x: visible;
-  padding: 8px 15px; }
-
-section {
-  padding-bottom: 50px;
-  width: 500px; }
+  background: #073642;
+  border-radius: 4px;
+  color: #657b83;
+  font: 12px/1.5 Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+  padding: 8px 15px;
+  overflow-x: visible; }
 
 header {
   position: fixed;
   width: 225px; }
+  @media only screen and (max-width: 960px) {
+    header {
+      clear: both;
+      float: none;
+      position: static;
+      width: 100%; } }
 
-nav ul {
-  padding: 0; }
-
-nav li {
-  border-left: 4px solid #073642;
-  clear: left;
-  display: block;
-  padding-left: 8px; }
-
-/* smaller browser window styling changes */
-@media all and (max-width: 960px) {
-  body {
-    margin: 0;
-    width: auto; }
-
-  header, section {
-    clear: both;
-    float: none;
-    position: static;
-    width: 100%; }
-
-  nav ul {
-    border-bottom: 1px solid #073642;
-    border-top: 1px solid #073642;
-    padding: 8px 0;
-    width: 100%; }
-
-  nav li {
-    border: none;
-    clear: none;
-    padding: 0 12px; }
-
-  nav a {
-    display: inline-block; } }
-@media all and (max-width: 720px) {
-  body {
-    word-wrap: break-word; } }
-@media all and (max-width: 480px) {
-  body {
-    padding: 15px; } }
-@media print {
-  body {
-    font-size: 12pt;
-    padding: 0.4in; } }
+section {
+  padding-bottom: 50px;
+  width: 500px; }
+  @media only screen and (max-width: 960px) {
+    section {
+      clear: both;
+      float: none;
+      position: static;
+      width: 100%; } }
