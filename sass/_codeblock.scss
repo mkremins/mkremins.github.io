@@ -1,8 +1,4 @@
-@mixin codeblock($padding) {
-	@include codeblock($padding, $padding);
-}
-
-@mixin codeblock($padding-vert, $padding-horiz) {
+@mixin codeblock($padding-vert, $padding-horiz: $padding-vert) {
 	background: $detail-color;
 	border-radius: 4px;
 	color: $base00;
