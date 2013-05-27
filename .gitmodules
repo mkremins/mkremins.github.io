@@ -1,0 +1,3 @@
+[submodule "extensions/Sassist"]
+	path = extensions/Sassist
+	url = http://github.com/mkremins/sassist.git

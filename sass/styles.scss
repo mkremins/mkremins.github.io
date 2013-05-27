@@ -1,0 +1,61 @@
+@import "base";
+
+.content {
+	color: $text-color;
+	float: right;
+	padding-bottom: 50px;
+	width: 500px;
+	@include profile($medium-screens) {
+		clear: both;
+		float: none;
+		position: static;
+		width: 100%;
+	}
+	h1, h2 {
+		color: $header-color;
+	}
+	h3, h4, h5, h6 {
+		color: $subheader-color;
+	}
+	a {
+		color: $link-color;
+	}
+}
+
+#site-header {
+	color: $text-color-side;
+	position: fixed;
+	width: 225px;
+	@include profile($medium-screens) {
+		clear: both;
+		float: none;
+		position: static;
+		width: 100%;
+	}
+	h1, h2 {
+		color: $header-color-side;
+	}
+	a {
+		color: $link-color-side;
+	}
+	ul {
+		list-style: none;
+		padding-left: 0;
+		@include profile($medium-screens) {
+			border-bottom: 1px solid $detail-color;
+			border-top: 1px solid $detail-color;
+			padding: 8px 0;
+			text-align: center;
+		}
+		li {
+			border-left: 4px solid $detail-color;
+			padding-left: 8px;
+			@include profile($medium-screens) {
+				border: none;
+				clear: none;
+				display: inline;
+				padding: 0 12px;
+			}
+		}
+	}
+}

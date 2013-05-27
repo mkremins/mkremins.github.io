@@ -1,0 +1,16 @@
+@import "responsive";
+
+$handhelds: (
+	max-width 480px,
+	min-width 0px
+);
+
+$tablets: (
+	max-width 768px,
+	min-width 0px
+);
+
+$medium-screens: (
+	max-width 960px,
+	min-width 0px
+);

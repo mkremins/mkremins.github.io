@@ -1,0 +1,65 @@
+@import "codeblock";
+@import "colors";
+@import "profiles";
+@import "social-icons";
+@import "typography";
+
+body {
+	background: $bg-color;
+	font: $body-font;
+	height: 100%;
+	margin: 0 auto;
+	padding: 75px 50px;
+	width: 860px;
+	@include profile($medium-screens) {
+		margin: 0;
+		width: auto;
+	}
+	@include profile($tablets) {
+		word-wrap: break-word;
+	}
+	@include profile($handhelds) {
+		padding: 15px;
+	}
+}
+
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, table, pre, hr {
+	margin: 0 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font: $header-font;
+}
+
+h1, h2 {
+	font-size: 28px;
+	line-height: 1.1;
+}
+
+hr {
+	border: 0;
+	background-color: $detail-color;
+	color: $detail-color;
+	height: 1px;
+}
+
+a {
+	text-decoration: none;
+}
+
+blockquote {
+	border-left: 4px solid $detail-color;
+	font-style: italic;
+	margin: 20px 0;
+	padding: 0 0 0 10px;
+}
+
+code {
+	@include codeblock(2px, 4px);
+}
+
+pre {
+	@include codeblock(8px, 15px);
+	overflow-x: visible;
+}
