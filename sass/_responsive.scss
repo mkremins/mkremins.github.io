@@ -1,0 +1,19 @@
+@mixin profile($profile) {
+	$query : "";
+	$count : length($profile);
+
+	@for $n from 1 through $count {
+		$pair    : nth($profile, $n);
+		$feature : nth($pair, 1);
+		$value   : nth($pair, 2);
+
+		$query : $query + "(#{$feature}: #{$value})";
+		@if ($n != $count) {
+			$query : $query + " and ";
+		}
+	}
+
+	@media only screen and #{$query} {
+		@content;
+	}
+}
