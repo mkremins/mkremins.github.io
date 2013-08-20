@@ -16,7 +16,7 @@
   padding-left: .5em; }
 
 body {
-  background: #002b36;
+  background: #eeeeee;
   font: 18px/1.3 Ovo, serif;
   height: 100%;
   margin: 0 auto;
@@ -45,28 +45,28 @@ h1, h2 {
 
 hr {
   border: 0;
-  background-color: #073642;
-  color: #073642;
+  background-color: #dddddd;
+  color: #dddddd;
   height: 1px; }
 
 a {
   text-decoration: none; }
 
 blockquote {
-  border-left: 4px solid #073642;
+  border-left: 4px solid #dddddd;
   font-style: italic;
   margin: 20px 0;
   padding: 0 0 0 10px; }
 
 code {
-  background: #073642;
+  background: #dddddd;
   border-radius: 4px;
   color: #657b83;
   font: 12px/1.5 Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
   padding: 2px 4px; }
 
 pre {
-  background: #073642;
+  background: #dddddd;
   border-radius: 4px;
   color: #657b83;
   font: 12px/1.5 Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
@@ -74,7 +74,7 @@ pre {
   overflow-x: visible; }
 
 .content {
-  color: #839496;
+  color: #555555;
   float: right;
   padding-bottom: 50px;
   width: 500px; }
@@ -85,14 +85,14 @@ pre {
       position: static;
       width: 100%; } }
   .content h1, .content h2 {
-    color: #cb4b16; }
+    color: #555555; }
   .content h3, .content h4, .content h5, .content h6 {
-    color: #b58900; }
+    color: #555555; }
   .content a {
-    color: #2aa198; }
+    color: #888888; }
 
 #site-header {
-  color: #839496;
+  color: #555555;
   position: fixed;
   width: 225px; }
   @media only screen and (max-width: 960px) and (min-width: 0px) {
@@ -102,20 +102,20 @@ pre {
       position: static;
       width: 100%; } }
   #site-header h1, #site-header h2 {
-    color: #657b83; }
+    color: #555555; }
   #site-header a {
-    color: #657b83; }
+    color: #888888; }
   #site-header ul {
     list-style: none;
     padding-left: 0; }
     @media only screen and (max-width: 960px) and (min-width: 0px) {
       #site-header ul {
-        border-bottom: 1px solid #073642;
-        border-top: 1px solid #073642;
+        border-bottom: 1px solid #dddddd;
+        border-top: 1px solid #dddddd;
         padding: 8px 0;
         text-align: center; } }
     #site-header ul li {
-      border-left: 4px solid #073642;
+      border-left: 4px solid #dddddd;
       padding-left: 8px; }
       @media only screen and (max-width: 960px) and (min-width: 0px) {
         #site-header ul li {
