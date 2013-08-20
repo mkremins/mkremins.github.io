@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:700);
-@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400);
+@import url(http://fonts.googleapis.com/css?family=Ovo);
 @font-face {
   font-family: Entypo;
   src: url("/fonts/entypo.eot");
@@ -17,7 +17,7 @@
 
 body {
   background: #002b36;
-  font: 15px/1.5 "Droid Serif", serif;
+  font: 18px/1.3 Ovo, serif;
   height: 100%;
   margin: 0 auto;
   padding: 75px 50px;
