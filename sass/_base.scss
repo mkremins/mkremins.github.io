@@ -11,18 +11,7 @@ body {
 	background: $bg-color;
 	font: $body-font;
 	margin: 0 auto;
-	padding: 0 50px;
-	width: 860px;
-	@include profile($medium-screens) {
-		margin: 0;
-		width: auto;
-	}
-	@include profile($tablets) {
-		word-wrap: break-word;
-	}
-	@include profile($handhelds) {
-		padding: 15px;
-	}
+	width: 60%;
 }
 
 header {
@@ -33,7 +22,7 @@ a {
 	color: $link-color;
 	text-decoration: none;
 	&:hover {
-		color: $link-hover-color !important;
+		color: $link-hover-color;
 	}
 }
 
