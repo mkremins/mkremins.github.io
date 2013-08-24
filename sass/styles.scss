@@ -2,17 +2,14 @@
 
 .content {
 	color: $text-color;
-	float: right;
-	width: 60%;
 	h1, h2 {
 		color: $header-color;
+		&:hover {
+			color: $link-hover-color;
+		}
 	}
-	h3, h4, h5, h6 {
-		color: $subheader-color;
-	}
-	a {
-		color: $link-color;
-	}
+	float: right;
+	width: 60%;
 	background-color: white;
 	padding-left: 5%;
 	padding-right: 5%;
@@ -21,7 +18,12 @@
 }
 
 #site-header {
-	color: $text-color-side;
+	h1, h2 {
+		color: #666;
+		&:hover {
+			color: $link-hover-color;
+		}
+	}
 	position: fixed;
 	width: 15%;
 	text-align: right;
@@ -30,12 +32,6 @@
 		float: none;
 		position: static;
 		width: 100%;
-	}
-	h1, h2 {
-		color: $header-color-side;
-	}
-	a {
-		color: $link-color-side;
 	}
 	ul {
 		float: right;

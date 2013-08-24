@@ -23,6 +23,12 @@ body {
 header {
   padding-top: 50px; }
 
+a {
+  color: #888888;
+  text-decoration: none; }
+  a:hover {
+    color: #cc0055 !important; }
+
 h1, h2, h3, h4, h5, h6, p, ul, ol, table, pre, hr {
   margin: 0 0 20px; }
 
@@ -38,9 +44,6 @@ hr {
   background-color: #dddddd;
   color: #dddddd;
   height: 1px; }
-
-a {
-  text-decoration: none; }
 
 blockquote {
   border-left: 4px solid #dddddd;
@@ -74,26 +77,23 @@ pre {
   height: inherit; }
   .content h1, .content h2 {
     color: #555555; }
-  .content h3, .content h4, .content h5, .content h6 {
-    color: #555555; }
-  .content a {
-    color: #888888; }
+    .content h1:hover, .content h2:hover {
+      color: #cc0055; }
 
 #site-header {
-  color: #555555;
   position: fixed;
   width: 15%;
   text-align: right; }
+  #site-header h1, #site-header h2 {
+    color: #666; }
+    #site-header h1:hover, #site-header h2:hover {
+      color: #cc0055; }
   @media only screen and (max-width: 960px) and (min-width: 0px) {
     #site-header {
       clear: both;
       float: none;
       position: static;
       width: 100%; } }
-  #site-header h1, #site-header h2 {
-    color: #555555; }
-  #site-header a {
-    color: #888888; }
   #site-header ul {
     float: right;
     margin: 0 auto;

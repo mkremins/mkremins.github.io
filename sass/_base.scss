@@ -29,6 +29,14 @@ header {
 	padding-top: 50px;
 }
 
+a {
+	color: $link-color;
+	text-decoration: none;
+	&:hover {
+		color: $link-hover-color !important;
+	}
+}
+
 h1, h2, h3, h4, h5, h6, p, ul, ol, table, pre, hr {
 	margin: 0 0 20px;
 }
@@ -47,10 +55,6 @@ hr {
 	background-color: $detail-color;
 	color: $detail-color;
 	height: 1px;
-}
-
-a {
-	text-decoration: none;
 }
 
 blockquote {
