@@ -1,9 +1,3 @@
-@import "codeblock";
-@import "colors";
-@import "category";
-@import "profiles";
-@import "typography";
-
 body, html {
 	height: 100%;
 }
@@ -57,13 +51,4 @@ blockquote {
 	font-style: italic;
 	margin: 20px 0;
 	padding: 0 0 0 10px;
-}
-
-code {
-	@include codeblock(2px, 4px);
-}
-
-pre {
-	@include codeblock(8px, 15px);
-	overflow-x: visible;
 }

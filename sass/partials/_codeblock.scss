@@ -5,3 +5,12 @@
 	font: $fixed-font;
 	padding: $padding-vert $padding-horiz;
 }
+
+code {
+	@include codeblock(2px, 4px);
+}
+
+pre {
+	@include codeblock(8px, 15px);
+	overflow-x: visible;
+}
