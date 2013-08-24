@@ -7,7 +7,8 @@ body {
   background: #eeeeee;
   font: 18px/1.3 Ovo, serif;
   margin: 0 auto;
-  width: 60%; }
+  width: 60%;
+  overflow: hidden; }
 
 header {
   padding-top: 50px; }
@@ -56,6 +57,7 @@ pre {
   overflow-x: visible; }
 
 .content {
+  margin: 0;
   color: #555555;
   float: right;
   width: 60%;
@@ -63,7 +65,8 @@ pre {
   height: inherit;
   padding-left: 5%;
   padding-right: 5%;
-  padding-top: 50px; }
+  padding-top: 50px;
+  overflow: scroll; }
   .content h1, .content h2 {
     color: #555555; }
     .content h1:hover, .content h2:hover {
