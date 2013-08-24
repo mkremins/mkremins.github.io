@@ -1,0 +1,15 @@
+.posts {
+	padding-left: 0;
+}
+
+.post-listing {
+	list-style: none;
+
+	.title {
+		display: block;
+		font-size: 24px;
+		border-bottom: 2px dotted #ddd;
+		padding-bottom: 4px;
+		margin-bottom: 6px;
+	}
+}

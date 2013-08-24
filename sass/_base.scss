@@ -1,5 +1,6 @@
 @import "codeblock";
 @import "colors";
+@import "category";
 @import "profiles";
 @import "typography";
 
@@ -27,12 +28,16 @@ a {
 	}
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol, table, pre, hr {
+h2, h3, h4, h5, h6, p, ul, ol, table, pre, hr {
 	margin: 0 0 20px;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font: $header-font;
+}
+
+h1 {
+	margin: 0 0 30px;
 }
 
 h1, h2 {

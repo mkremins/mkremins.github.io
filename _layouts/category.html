@@ -2,11 +2,13 @@
 layout: default
 ---
 
-<p>{{ page.content }}</p>
-<hr>
-{% for post in site.posts %}
-  {% if post.category == page.category %}
-    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-    <blockquote>{{ post.excerpt }}</blockquote>
-  {% endif %}
-{% endfor %}
+<ul class="posts">
+	{% for post in site.posts %}
+		{% if post.category == page.category %}
+	<li class="post-listing">
+		<a class="title" href="{{ post.url }}">{{ post.title }}</a>
+		<p class="excerpt">{{ post.excerpt }}</p>
+	</li>
+		{% endif %}
+	{% endfor %}
+</ul>

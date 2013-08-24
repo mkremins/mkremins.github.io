@@ -1,5 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:700);
 @import url(http://fonts.googleapis.com/css?family=Ovo);
+.posts {
+  padding-left: 0; }
+
+.post-listing {
+  list-style: none; }
+  .post-listing .title {
+    display: block;
+    font-size: 24px;
+    border-bottom: 2px dotted #ddd;
+    padding-bottom: 4px;
+    margin-bottom: 6px; }
+
 body, html {
   height: 100%; }
 
@@ -19,11 +31,14 @@ a {
   a:hover {
     color: #cc0055; }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol, table, pre, hr {
+h2, h3, h4, h5, h6, p, ul, ol, table, pre, hr {
   margin: 0 0 20px; }
 
 h1, h2, h3, h4, h5, h6 {
   font: 16px/1.5 "Merriweather Sans", sans-serif; }
+
+h1 {
+  margin: 0 0 30px; }
 
 h1, h2 {
   font-size: 28px;
@@ -67,9 +82,9 @@ pre {
   padding-right: 5%;
   padding-top: 50px;
   overflow: scroll; }
-  .content h1, .content h2 {
+  .content h1 {
     color: #555555; }
-    .content h1:hover, .content h2:hover {
+    .content h1:hover {
       color: #cc0055; }
 
 #site-header {
