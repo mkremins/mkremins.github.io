@@ -1,15 +1,17 @@
 @import "codeblock";
 @import "colors";
 @import "profiles";
-@import "social-icons";
 @import "typography";
+
+body, html {
+	height: 100%;
+}
 
 body {
 	background: $bg-color;
 	font: $body-font;
-	height: 100%;
 	margin: 0 auto;
-	padding: 75px 50px;
+	padding: 0 50px;
 	width: 860px;
 	@include profile($medium-screens) {
 		margin: 0;
@@ -23,6 +25,9 @@ body {
 	}
 }
 
+header {
+	padding-top: 50px;
+}
 
 h1, h2, h3, h4, h5, h6, p, ul, ol, table, pre, hr {
 	margin: 0 0 20px;

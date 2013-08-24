@@ -1,26 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:700);
 @import url(http://fonts.googleapis.com/css?family=Ovo);
-@font-face {
-  font-family: Entypo;
-  src: url("/fonts/entypo.eot");
-  src: url("/fonts/entypo.eot?") format("eot"), url("/fonts/entypo.woff") format("woff"), url("/fonts/entypo.ttf") format("truetype"), url("/fonts/entypo.svg#svgentypo") format("svg"); }
-
-.icon-github:after {
-  content: "\E8AF";
-  font-family: Entypo;
-  padding-left: .5em; }
-
-.icon-twitter:after {
-  content: "\E8B5";
-  font-family: Entypo;
-  padding-left: .5em; }
+body, html {
+  height: 100%; }
 
 body {
   background: #eeeeee;
   font: 18px/1.3 Ovo, serif;
-  height: 100%;
   margin: 0 auto;
-  padding: 75px 50px;
+  padding: 0 50px;
   width: 860px; }
   @media only screen and (max-width: 960px) and (min-width: 0px) {
     body {
@@ -32,6 +19,9 @@ body {
   @media only screen and (max-width: 480px) and (min-width: 0px) {
     body {
       padding: 15px; } }
+
+header {
+  padding-top: 50px; }
 
 h1, h2, h3, h4, h5, h6, p, ul, ol, table, pre, hr {
   margin: 0 0 20px; }
@@ -76,14 +66,12 @@ pre {
 .content {
   color: #555555;
   float: right;
-  padding-bottom: 50px;
-  width: 500px; }
-  @media only screen and (max-width: 960px) and (min-width: 0px) {
-    .content {
-      clear: both;
-      float: none;
-      position: static;
-      width: 100%; } }
+  width: 60%;
+  background-color: white;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 50px;
+  height: inherit; }
   .content h1, .content h2 {
     color: #555555; }
   .content h3, .content h4, .content h5, .content h6 {
@@ -94,7 +82,8 @@ pre {
 #site-header {
   color: #555555;
   position: fixed;
-  width: 225px; }
+  width: 15%;
+  text-align: right; }
   @media only screen and (max-width: 960px) and (min-width: 0px) {
     #site-header {
       clear: both;
@@ -106,20 +95,15 @@ pre {
   #site-header a {
     color: #888888; }
   #site-header ul {
+    float: right;
+    margin: 0 auto;
+    width: 100%;
     list-style: none;
-    padding-left: 0; }
-    @media only screen and (max-width: 960px) and (min-width: 0px) {
-      #site-header ul {
-        border-bottom: 1px solid #dddddd;
-        border-top: 1px solid #dddddd;
-        padding: 8px 0;
-        text-align: center; } }
-    #site-header ul li {
-      border-left: 4px solid #dddddd;
-      padding-left: 8px; }
-      @media only screen and (max-width: 960px) and (min-width: 0px) {
-        #site-header ul li {
-          border: none;
-          clear: none;
-          display: inline;
-          padding: 0 12px; } }
+    padding-left: 0;
+    text-align: right; }
+  #site-header li {
+    border-bottom: 1px dotted #ddd;
+    padding-bottom: 2px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 2px; }

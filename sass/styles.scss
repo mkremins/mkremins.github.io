@@ -3,14 +3,7 @@
 .content {
 	color: $text-color;
 	float: right;
-	padding-bottom: 50px;
-	width: 500px;
-	@include profile($medium-screens) {
-		clear: both;
-		float: none;
-		position: static;
-		width: 100%;
-	}
+	width: 60%;
 	h1, h2 {
 		color: $header-color;
 	}
@@ -20,12 +13,18 @@
 	a {
 		color: $link-color;
 	}
+	background-color: white;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 50px;
+	height: inherit;
 }
 
 #site-header {
 	color: $text-color-side;
 	position: fixed;
-	width: 225px;
+	width: 15%;
+	text-align: right;
 	@include profile($medium-screens) {
 		clear: both;
 		float: none;
@@ -39,23 +38,21 @@
 		color: $link-color-side;
 	}
 	ul {
+		float: right;
+		margin: 0 auto;
+		width: 100%;
 		list-style: none;
 		padding-left: 0;
-		@include profile($medium-screens) {
-			border-bottom: 1px solid $detail-color;
-			border-top: 1px solid $detail-color;
-			padding: 8px 0;
-			text-align: center;
-		}
-		li {
-			border-left: 4px solid $detail-color;
-			padding-left: 8px;
-			@include profile($medium-screens) {
-				border: none;
-				clear: none;
-				display: inline;
-				padding: 0 12px;
-			}
+		text-align: right;
+		
+	}
+	li {
+		border-bottom: 1px dotted #ddd;
+		padding: {
+			bottom: 2px;
+			left: 0;
+			right: 0;
+			top: 2px;
 		}
 	}
 }
