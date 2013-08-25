@@ -2,7 +2,7 @@
 	background-color: #fff;
 
 	h1 {
-		color: $header-color;
+		@include hoverable($header-color, $link-hover-color);
 		font: {
 			family: $header-font;
 			size: 1.75em;
@@ -27,12 +27,9 @@
 	}
 
 	a {
-		color: $link-color;
+		@include hoverable($link-color, $link-hover-color);
 		font: {
 			family: $body-font;
-		}
-		&:hover {
-			color: $link-hover-color;
 		}
 	}
 

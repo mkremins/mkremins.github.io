@@ -1,6 +1,6 @@
 .sidebar {
 	h1 {
-		color: #666;
+		@include hoverable(#666, $link-hover-color);
 		font: {
 			family: $header-font;
 			size: 1.75em;
@@ -9,10 +9,7 @@
 	}
 
 	a {
-		color: $link-color;
-		&:hover {
-			color: $link-hover-color;
-		}
+		@include hoverable($link-color, $link-hover-color);
 	}
 
 	.nav {

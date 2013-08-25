@@ -36,6 +36,8 @@ body {
     font-family: "Merriweather Sans", Helvetica, sans-serif;
     font-size: 1.75em;
     font-weight: bold; }
+    .content h1:hover {
+      color: #cc0055; }
   .content h2 {
     color: #555555;
     font-family: Ovo, Georgia, serif;
@@ -71,10 +73,12 @@ body {
     border-radius: 0; }
 
 .sidebar h1 {
-  color: #666;
+  color: #666666;
   font-family: "Merriweather Sans", Helvetica, sans-serif;
   font-size: 1.75em;
   font-weight: bold; }
+  .sidebar h1:hover {
+    color: #cc0055; }
 .sidebar a {
   color: #888888; }
   .sidebar a:hover {
