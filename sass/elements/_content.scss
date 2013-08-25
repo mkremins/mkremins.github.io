@@ -24,7 +24,7 @@
 		@include hover($color-text-content, $color-text-hover);
 		font: {
 			family: $body-font;
-			size: 1.8em;
+			size: 28px;
 			weight: bold;
 		}
 	}
@@ -33,7 +33,7 @@
 		color: $color-text-content;
 		font: {
 			family: $body-font;
-			size: 1.75em;
+			size: 24px;
 		} 
 	}
 
@@ -41,7 +41,7 @@
 		color: $color-text-content;
 		font: {
 			family: $body-font;
-			size: 1.5em;
+			size: 21px;
 		} 
 	}
 
@@ -54,7 +54,7 @@
 		color: $color-text-content;
 		font: {
 			family: $body-font;
-			size: 1.1em;
+			size: 18px;
 		}
 	}
 
@@ -74,7 +74,7 @@
 		color: $color-text-content;
 		font: {
 			family: $fixed-font;
-			size: 0.75em;
+			size: 14px;
 		}
 		padding: 2px;
 	}
