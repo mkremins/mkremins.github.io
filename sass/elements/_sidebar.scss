@@ -43,10 +43,6 @@
 		@include hover($color-text-link, $color-text-hover);
 	}
 
-	.nav {
-		list-style: none;
-	}
-
 	.nav-item {
 		border-bottom: 1px dotted #ddd;
 		font: {
