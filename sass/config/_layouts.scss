@@ -1,0 +1,14 @@
+$handheld: (
+	max-width 480px,
+	min-width 0px
+);
+
+$tablet: (
+	max-width 768px,
+	min-width 481px
+);
+
+$medium: (
+	min-width 769px,
+	max-width 9999px
+);

@@ -1,11 +1,9 @@
-@import "profiles";
-
-@mixin respond-to($profile) {
+@mixin layout($layout) {
 	$query: "";
-	$count: length($profile);
+	$count: length($layout);
 
 	@for $n from 1 through $count {
-		$pair:    nth($profile, $n);
+		$pair:    nth($layout, $n);
 		$feature: nth($pair, 1);
 		$value:   nth($pair, 2);
 

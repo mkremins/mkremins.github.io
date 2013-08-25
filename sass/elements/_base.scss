@@ -1,0 +1,14 @@
+body, html {
+	@include layout($medium) {
+		height: 100%;
+	}
+}
+
+body {
+	background-color: #eee;
+	@include layout($medium) {
+		margin: 0 auto;
+		overflow: hidden;
+		width: 60%;
+	}
+}

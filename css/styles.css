@@ -1,37 +1,28 @@
-@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:700);
 @import url(http://fonts.googleapis.com/css?family=Ovo);
 a {
   text-decoration: none; }
 
-body, html {
-  height: 100%; }
-
-body {
-  margin: 0 auto;
-  overflow: hidden;
-  width: 60%; }
-
-.content {
-  float: right;
-  height: inherit;
-  padding-bottom: 50px;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 50px;
-  overflow: auto;
-  width: 60%; }
-
-.sidebar {
-  padding-top: 50px;
-  position: fixed;
-  text-align: right;
-  width: 15%; }
+@media only screen and (min-width: 769px) and (max-width: 9999px) {
+  body, html {
+    height: 100%; } }
 
 body {
   background-color: #eee; }
+  @media only screen and (min-width: 769px) and (max-width: 9999px) {
+    body {
+      margin: 0 auto;
+      overflow: hidden;
+      width: 60%; } }
 
 .content {
   background-color: #fff; }
+  @media only screen and (min-width: 769px) and (max-width: 9999px) {
+    .content {
+      float: right;
+      height: inherit;
+      padding: 50px 5%;
+      overflow: auto;
+      width: 60%; } }
   .content h1 {
     color: #555555;
     font-family: Ovo, Georgia, serif;
@@ -70,6 +61,12 @@ body {
     font-size: 0.75em;
     padding: 2px; }
 
+@media only screen and (min-width: 769px) and (max-width: 9999px) {
+  .sidebar {
+    padding-top: 50px;
+    position: fixed;
+    text-align: right;
+    width: 15%; } }
 .sidebar h1 {
   color: #666666;
   font-family: Ovo, Georgia, serif;

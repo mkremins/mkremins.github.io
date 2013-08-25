@@ -1,8 +1,16 @@
 .content {
 	background-color: #fff;
 
+	@include layout($medium) {
+		float: right;
+		height: inherit;
+		padding: 50px 5%;
+		overflow: auto;
+		width: 60%;
+	}
+
 	h1 {
-		@include hoverable($color-text-content, $color-text-hover);
+		@include hover($color-text-content, $color-text-hover);
 		font: {
 			family: $body-font;
 			size: 1.8em;
@@ -27,7 +35,7 @@
 	}
 
 	a {
-		@include hoverable($color-text-link, $color-text-hover);
+		@include hover($color-text-link, $color-text-hover);
 		font-family: $body-font;
 	}
 

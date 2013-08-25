@@ -1,4 +1,4 @@
-@mixin hoverable($color, $hover-color) {
+@mixin hover($color, $hover-color) {
 	color: $color;
 	&:hover {
 		color: $hover-color;
