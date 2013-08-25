@@ -9,19 +9,19 @@
 		<link rel="stylesheet" href="/css/styles.css">
 	</head>
 	<body>
-		<header id="site-header">
+		<div class="sidebar">
 			<a href="/"><h1>two left brains</h1></a>
-			<ul>
-				<li><a href="/">about</a></li>
-				<li><a href="/blog">blog</a></li>
-				<li><a href="/projects">projects</a></li>
-				<li><a href="http://github.com/mkremins">github</a></li>
-				<li><a href="http://twitter.com/maxkreminski">twitter</a></li>
+			<ul class="nav">
+				<li class="nav-item"><a href="/">about</a></li>
+				<li class="nav-item"><a href="/blog">blog</a></li>
+				<li class="nav-item"><a href="/projects">projects</a></li>
+				<li class="nav-item"><a href="http://github.com/mkremins">github</a></li>
+				<li class="nav-item"><a href="http://twitter.com/maxkreminski">twitter</a></li>
 			</ul>
-		</header>
-		<section class="content">
+		</div>
+		<div class="content">
 			<a href="{{ page.url }}"><h1>{{ page.title }}</h1></a>
 			{{ content }}
-		</section>
+		</div>
 	</body>
 </html>

@@ -1,0 +1,33 @@
+.sidebar {
+	h1 {
+		color: #666;
+		font: {
+			family: $header-font;
+			size: 1.75em;
+			weight: bold;
+		}
+	}
+
+	a {
+		color: $link-color;
+		&:hover {
+			color: $link-hover-color;
+		}
+	}
+
+	.nav {
+		list-style: none;
+	}
+
+	.nav-item {
+		border-bottom: 1px dotted #ddd;
+		font: {
+			family: $body-font;
+			size: 1.05em;
+		}
+		padding: {
+			bottom: 2px;
+			top: 2px;
+		}
+	}
+}

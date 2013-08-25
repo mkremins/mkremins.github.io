@@ -1,0 +1,81 @@
+.content {
+	background-color: #fff;
+
+	h1 {
+		color: $header-color;
+		font: {
+			family: $header-font;
+			size: 1.75em;
+			weight: bold;
+		}
+	}
+
+	h2 {
+		color: $header-color;
+		font: {
+			family: $body-font;
+			size: 1.75em;
+		} 
+	}
+
+	h3 {
+		color: $header-color;
+		font: {
+			family: $body-font;
+			size: 1.5em;
+		} 
+	}
+
+	a {
+		color: $link-color;
+		font: {
+			family: $body-font;
+		}
+		&:hover {
+			color: $link-hover-color;
+		}
+	}
+
+	p {
+		color: $text-color;
+		font: {
+			family: $body-font;
+			size: 1.1em;
+		}
+	}
+
+	blockquote {
+		border: {
+			left: 4px solid #ddd;
+		}
+		color: #bbb;
+		font: {
+			family: $body-font;
+			style: italic;
+		}
+		padding: {
+			left: 4px;
+		}
+	}
+
+	code {
+		background-color: #ddd;
+		border: {
+			radius: 2px;
+		}
+		color: $text-color;
+		font: {
+			family: $fixed-font;
+			size: 0.75em;
+		}
+		padding: 2px;
+	}
+
+	pre {
+		@extend code;
+		border: {
+			left: 2px solid #555;
+			radius: 0;
+		}
+	}
+}

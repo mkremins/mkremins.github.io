@@ -1,7 +1,8 @@
+@import "modules/reset";
+@import "modules/layout";
 @import "modules/colors";
 @import "modules/typography";
 
-@import "partials/base";
-@import "partials/category";
-@import "partials/codeblock";
-@import "partials/random";
+@import "elements/body";
+@import "elements/content";
+@import "elements/sidebar";

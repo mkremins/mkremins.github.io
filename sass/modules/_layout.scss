@@ -1,0 +1,30 @@
+body, html {
+	height: 100%;
+}
+
+body {
+	margin: 0 auto;
+	width: 60%;
+}
+
+$vertical-padding: 50px;
+
+.content {
+	float: right;
+	min-height: 100%;
+	margin: 0;
+	padding: {
+		bottom: $vertical-padding;
+		left: 5%;
+		right: 5%;
+		top: $vertical-padding;
+	}
+	width: 60%;
+}
+
+.sidebar {
+	padding-top: $vertical-padding;
+	position: fixed;
+	text-align: right;
+	width: 15%;
+}

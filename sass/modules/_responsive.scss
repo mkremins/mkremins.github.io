@@ -1,15 +1,17 @@
-@mixin profile($profile) {
-	$query : "";
-	$count : length($profile);
+@import "profiles";
+
+@mixin respond-to($profile) {
+	$query: "";
+	$count: length($profile);
 
 	@for $n from 1 through $count {
-		$pair    : nth($profile, $n);
-		$feature : nth($pair, 1);
-		$value   : nth($pair, 2);
+		$pair:    nth($profile, $n);
+		$feature: nth($pair, 1);
+		$value:   nth($pair, 2);
 
-		$query : $query + "(#{$feature}: #{$value})";
+		$query: $query + "(#{$feature}: #{$value})";
 		@if ($n != $count) {
-			$query : $query + " and ";
+			$query: $query + " and ";
 		}
 	}
 
