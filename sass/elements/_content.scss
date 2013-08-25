@@ -1,11 +1,11 @@
 .content {
 	background-color: #fff;
+	height: 100%;
+	overflow: scroll;
 
 	@include layout($medium) {
 		float: right;
-		//height: inherit;
 		padding: 50px $width-medium-padding;
-		//overflow: auto;
 		width: $width-medium-content;
 	}
 
