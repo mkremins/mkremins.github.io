@@ -1,15 +1,15 @@
 @mixin layout($layout) {
-	$query: "";
-	$count: length($layout);
+	$query: false;
 
-	@for $n from 1 through $count {
-		$pair:    nth($layout, $n);
+	@each $pair in $layout {
 		$feature: nth($pair, 1);
-		$value:   nth($pair, 2);
+		$value: nth($pair, 2);
+		$text: "(#{$feature}: #{$value})";
 
-		$query: $query + "(#{$feature}: #{$value})";
-		@if ($n != $count) {
-			$query: $query + " and ";
+		@if $query == false {
+			$query: $text;
+		} @else {
+			$query: "#{$query} and #{$text}";
 		}
 	}
 
