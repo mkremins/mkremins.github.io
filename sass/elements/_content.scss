@@ -3,10 +3,21 @@
 
 	@include layout($medium) {
 		float: right;
-		height: inherit;
-		padding: 50px 5%;
-		overflow: auto;
-		width: 60%;
+		//height: inherit;
+		padding: 50px $width-medium-padding;
+		//overflow: auto;
+		width: $width-medium-content;
+	}
+
+	@include layout($tablet) {
+		padding: 10px 40px;
+	}
+
+	@include layout($handheld) {
+		padding: 20px;
+		h1 {
+			margin-top: 0;
+		}
 	}
 
 	h1 {

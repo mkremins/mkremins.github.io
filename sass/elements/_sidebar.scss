@@ -1,9 +1,33 @@
 .sidebar {
+	background-color: #eee;
+
 	@include layout($medium) {
-		padding-top: 50px;
+		padding: 50px $width-medium-padding;
 		position: fixed;
 		text-align: right;
-		width: 15%;
+		width: $width-medium-sidebar;
+	}
+
+	@include layout($tablet) {
+		padding: 20px 40px;
+		.nav-item {
+			display: inline;
+			margin-right: 10px;
+		}
+	}
+
+	@include layout($handheld) {
+		padding: 0 20px;
+		h1 {
+			margin-bottom: 0;
+		}
+		.nav {
+			margin-top: 10px;
+		}
+		.nav-item {
+			display: inline;
+			margin-right: 5px;
+		}
 	}
 
 	h1 {

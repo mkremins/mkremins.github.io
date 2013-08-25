@@ -1,14 +1,23 @@
 body, html {
-	@include layout($medium) {
+	/*@include layout($medium) {
 		height: 100%;
-	}
+	}*/
 }
 
 body {
 	background-color: #eee;
+
 	@include layout($medium) {
 		margin: 0 auto;
-		overflow: hidden;
-		width: 60%;
+		/*overflow: hidden;*/
+		width: $width-medium-site;
+	}
+
+	@include layout($tablet) {
+		margin: 0;
+	}
+	
+	@include layout($handheld) {
+		margin: 0;
 	}
 }
