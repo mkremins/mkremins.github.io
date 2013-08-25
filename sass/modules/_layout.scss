@@ -4,6 +4,7 @@ body, html {
 
 body {
 	margin: 0 auto;
+	overflow: hidden;
 	width: 60%;
 }
 
@@ -11,14 +12,14 @@ $vertical-padding: 50px;
 
 .content {
 	float: right;
-	min-height: 100%;
-	margin: 0;
+	height: inherit;
 	padding: {
 		bottom: $vertical-padding;
 		left: 5%;
 		right: 5%;
 		top: $vertical-padding;
 	}
+	overflow: auto;
 	width: 60%;
 }
 

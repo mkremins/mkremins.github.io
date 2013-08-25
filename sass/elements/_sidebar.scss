@@ -1,15 +1,15 @@
 .sidebar {
 	h1 {
-		@include hoverable(#666, $link-hover-color);
+		@include hoverable($color-text-sidebar, $color-text-hover);
 		font: {
-			family: $header-font;
-			size: 1.75em;
+			family: $body-font;
+			size: 1.8em;
 			weight: bold;
 		}
 	}
 
 	a {
-		@include hoverable($link-color, $link-hover-color);
+		@include hoverable($color-text-link, $color-text-hover);
 	}
 
 	.nav {

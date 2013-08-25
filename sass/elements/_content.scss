@@ -2,16 +2,16 @@
 	background-color: #fff;
 
 	h1 {
-		@include hoverable($header-color, $link-hover-color);
+		@include hoverable($color-text-content, $color-text-hover);
 		font: {
-			family: $header-font;
-			size: 1.75em;
+			family: $body-font;
+			size: 1.8em;
 			weight: bold;
 		}
 	}
 
 	h2 {
-		color: $header-color;
+		color: $color-text-content;
 		font: {
 			family: $body-font;
 			size: 1.75em;
@@ -19,7 +19,7 @@
 	}
 
 	h3 {
-		color: $header-color;
+		color: $color-text-content;
 		font: {
 			family: $body-font;
 			size: 1.5em;
@@ -27,14 +27,12 @@
 	}
 
 	a {
-		@include hoverable($link-color, $link-hover-color);
-		font: {
-			family: $body-font;
-		}
+		@include hoverable($color-text-link, $color-text-hover);
+		font-family: $body-font;
 	}
 
 	p {
-		color: $text-color;
+		color: $color-text-content;
 		font: {
 			family: $body-font;
 			size: 1.1em;
@@ -42,25 +40,19 @@
 	}
 
 	blockquote {
-		border: {
-			left: 4px solid #ddd;
-		}
-		color: #bbb;
+		border-left: 4px solid #ddd;
+		color: $color-text-content;
 		font: {
 			family: $body-font;
 			style: italic;
 		}
-		padding: {
-			left: 4px;
-		}
+		padding-left: 4px;
 	}
 
 	code {
-		background-color: #ddd;
-		border: {
-			radius: 2px;
-		}
-		color: $text-color;
+		background-color: $color-bg-block;
+		border-radius: 2px;
+		color: $color-text-content;
 		font: {
 			family: $fixed-font;
 			size: 0.75em;
@@ -70,9 +62,5 @@
 
 	pre {
 		@extend code;
-		border: {
-			left: 2px solid #555;
-			radius: 0;
-		}
 	}
 }

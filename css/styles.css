@@ -8,16 +8,17 @@ body, html {
 
 body {
   margin: 0 auto;
+  overflow: hidden;
   width: 60%; }
 
 .content {
   float: right;
-  min-height: 100%;
-  margin: 0;
+  height: inherit;
   padding-bottom: 50px;
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 50px;
+  overflow: auto;
   width: 60%; }
 
 .sidebar {
@@ -33,8 +34,8 @@ body {
   background-color: #fff; }
   .content h1 {
     color: #555555;
-    font-family: "Merriweather Sans", Helvetica, sans-serif;
-    font-size: 1.75em;
+    font-family: Ovo, Georgia, serif;
+    font-size: 1.8em;
     font-weight: bold; }
     .content h1:hover {
       color: #cc0055; }
@@ -57,25 +58,22 @@ body {
     font-size: 1.1em; }
   .content blockquote {
     border-left: 4px solid #ddd;
-    color: #bbb;
+    color: #555555;
     font-family: Ovo, Georgia, serif;
     font-style: italic;
     padding-left: 4px; }
   .content code, .content pre {
-    background-color: #ddd;
+    background-color: #dddddd;
     border-radius: 2px;
     color: #555555;
     font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", monospace;
     font-size: 0.75em;
     padding: 2px; }
-  .content pre {
-    border-left: 2px solid #555;
-    border-radius: 0; }
 
 .sidebar h1 {
   color: #666666;
-  font-family: "Merriweather Sans", Helvetica, sans-serif;
-  font-size: 1.75em;
+  font-family: Ovo, Georgia, serif;
+  font-size: 1.8em;
   font-weight: bold; }
   .sidebar h1:hover {
     color: #cc0055; }
