@@ -1,7 +1,6 @@
 .content {
 	background-color: #fff;
-	height: 100%;
-	overflow: scroll;
+	min-height: 100%;
 
 	@include layout($medium) {
 		float: right;
@@ -27,6 +26,7 @@
 			size: 28px;
 			weight: bold;
 		}
+		overflow: hidden;
 	}
 
 	h2 {
@@ -76,10 +76,11 @@
 			family: $fixed-font;
 			size: 14px;
 		}
-		padding: 2px;
+		padding: 0 2px;
 	}
 
 	pre {
 		@extend code;
+		padding: 5px;
 	}
 }
