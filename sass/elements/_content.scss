@@ -23,8 +23,8 @@
 		}
 	}
 
-	h1 {
-		@include hover($color-text-content, $color-text-hover);
+	.page-title {
+		border-bottom: 1px solid #ddd;
 		font: {
 			family: $body-font;
 			size: 28px;
@@ -32,6 +32,11 @@
 		}
 		margin-bottom: 10px;
 		overflow: hidden;
+		padding-bottom: 15px;
+
+		a {
+			@include hover($color-text-content, $color-text-hover);
+		}
 	}
 
 	h2 {
@@ -87,12 +92,5 @@
 	pre {
 		@extend code;
 		padding: 5px;
-	}
-
-	hr {
-		background-color: #ddd;
-		border: none;
-		height: 1px;
-		margin-bottom: 10px;
 	}
 }

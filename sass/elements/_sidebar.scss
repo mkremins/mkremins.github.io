@@ -31,11 +31,14 @@
 	}
 
 	h1 {
-		@include hover($color-text-sidebar, $color-text-hover);
 		font: {
 			family: $body-font;
 			size: 28px;
 			weight: bold;
+		}
+
+		a {
+			@include hover($color-text-sidebar, $color-text-hover);
 		}
 	}
 
