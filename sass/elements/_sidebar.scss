@@ -6,6 +6,10 @@
 		position: fixed;
 		text-align: right;
 		width: $width-medium-sidebar;
+		.nav {
+			padding-left: 25%;
+			width: 75%;
+		}
 	}
 
 	@include layout($tablet) {
