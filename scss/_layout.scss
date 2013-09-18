@@ -1,0 +1,38 @@
+@import "util/responsive";
+
+body {
+	border-top: 4px solid #222;
+	margin: 0;
+}
+
+.site-header {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	margin: {
+		bottom: 2.5rem;
+		top: 1.25rem;
+	}
+	padding-left: 2.5rem;
+	width: 100%;
+}
+
+.content-wrapper {
+	@include layout($handheld) {
+		width: 80%;
+	}
+	@include layout($tablet) {
+		width: 60%;
+	}
+	margin: {
+		bottom: 5rem;
+		left: auto;
+		right: auto;
+		top: 0;
+	}
+	width: 45%;
+}
+
+%content-block {
+	margin-bottom: 1.5rem;
+}

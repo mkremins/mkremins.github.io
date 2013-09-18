@@ -1,26 +1,32 @@
 <!doctype html>
 <html>
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="chrome=1">
-		<meta charset="utf-8">
-		<title>{{ page.title }} | Fugue State Machine</title>
-		<meta name="google-site-verification" content="pilQIpRY1joFtI2AJweChCeYZsq6Fib5d4GTl0TwJjM">
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-		<link rel="stylesheet" href="/css/styles.css">
-	</head>
-	<body>
-		<div class="sidebar">
-			<h1 class="site-title"><a href="/">fugue state machine</a></h1>
-			<ul class="nav">
-				<li class="nav-item"><a href="/">about</a></li>
-				<li class="nav-item"><a href="/journal">journal</a></li>
-				<li class="nav-item"><a href="http://github.com/mkremins">github</a></li>
-				<li class="nav-item"><a href="http://twitter.com/maxkreminski">twitter</a></li>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<meta charset="utf-8">
+	<title>{{ page.title }} | Fugue State Machine</title>
+	<meta name="google-site-verification" content="pilQIpRY1joFtI2AJweChCeYZsq6Fib5d4GTl0TwJjM">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+	<header class="site-header">
+		<h1><a href="/">fugue state machine</a></h1>
+		<nav>
+			<ul>
+				<li><a href="/">about</a></li>
+				<li><a href="/journal">journal</a></li>
+				<li><a href="http://github.com/mkremins">github</a></li>
+				<li><a href="http://twitter.com/maxkreminski">twitter</a></li>
 			</ul>
-		</div>
-		<div class="content">
+		</nav>
+	</header>
+	<div class="content-wrapper">
+		<article>
 			<h1 class="page-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
-			{{ content }}
-		</div>
-	</body>
+			<div class="content">
+				{{ content }}
+			</div>
+		</article>
+	</div>		
+</body>
 </html>

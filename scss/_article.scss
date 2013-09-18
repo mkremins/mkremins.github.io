@@ -1,0 +1,42 @@
+article {
+	h1 {
+		@extend %content-block;
+		@include header-text(2rem);
+		margin-top: 3rem;
+	}
+
+	h2 {
+		@extend %content-block;
+		@include header-text(1.5rem);
+		margin-top: 3rem;
+	}
+
+	p, pre {
+		@extend %content-block;
+		@include body-text;
+	}
+
+	ul, ol, blockquote {
+		@extend %content-block;
+		@include body-text;
+		margin: {
+			left: 3rem;
+			right: 3rem;
+		}
+	}
+
+	ul {
+		list-style: disc;
+	}
+
+	ol {
+		list-style: decimal;
+	}
+
+	li {
+		padding-bottom: 0.5rem;
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+}
