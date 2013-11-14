@@ -1,0 +1,74 @@
+@import "reset";
+@import "layouts";
+
+body {
+  background: #fff;
+  color: #333;
+  font-family: Times;
+  font-size: 14px;
+  line-height: 1.25em;
+}
+
+.content {
+  margin: 40px 240px;
+  width: 680px;
+  @include layout-medium {
+    @include margin-horiz(120px);
+  }
+  @include layout-small {
+    @include margin-horiz(60px);
+    width: 600px;
+  }
+  @include layout-mobile {
+    @include margin-horiz(30px);
+    width: calc(100% - 60px);
+  }
+}
+
+.content > * {
+  margin-bottom: 3em;
+  position: relative;
+  width: 100%;
+  h1 { @extend %right-column; }
+}
+
+section > * {
+  display: inline-block;
+  @include layout-mobile {
+    display: block;
+    margin-bottom: 1em;
+  }
+}
+
+section .title {
+  @extend %left-column;
+  color: #888;
+  position: absolute;
+  text-align: right;
+  top: 1.17em;
+  left: -80px;
+  @include layout-mobile {
+    position: static;
+    text-align: left;
+  }
+}
+
+section .details { @extend %right-column; }
+
+section .details-item {
+  width: 50%;
+  @include layout-mobile { width: 100%; }
+  @include inline-block-collapsed();
+  margin-bottom: 1em;
+  h3 { color: #aaa; }
+}
+
+a {
+  color: #aaa;
+  &:hover {
+    color: #555;
+    text-decoration: underline;
+  }
+  &.twitter:hover { color: #4099ff; }
+  &.github:hover  { color: #6cc644; }
+}

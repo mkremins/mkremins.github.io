@@ -1,0 +1,38 @@
+@import "responsive";
+
+// responsive design mixins & breakpoints
+
+$break-medium: 1040px;
+$break-small:  880px;
+$break-mobile: 820px;
+
+@mixin layout-medium { @include width-below($break-medium) { @content; } }
+@mixin layout-small  { @include width-below($break-small)  { @content; } }
+@mixin layout-mobile { @include width-below($break-mobile) { @content; } }
+
+// two-column layout utilities
+
+$left-column-width:  20%;
+$right-column-width: 80%;
+
+%left-column {
+  width: $left-column-width;
+}
+
+%right-column {
+  margin-left: $left-column-width;
+  width: $right-column-width;
+  @include layout-mobile { margin-left: 0; }
+}
+
+// generic helpers
+
+@mixin margin-horiz($amount) {
+  margin-left:  $amount;
+  margin-right: $amount;
+}
+
+@mixin inline-block-collapsed {
+  display: inline-block;
+  margin-right: -1em; // remove undesirable spacing between elements
+}
