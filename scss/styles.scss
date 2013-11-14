@@ -63,6 +63,8 @@ section .details-item {
   h3 { color: #aaa; }
 }
 
+article { @extend %right-column; }
+
 a {
   color: #aaa;
   &:hover {
