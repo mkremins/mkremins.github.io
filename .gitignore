@@ -1,10 +1,1 @@
-# build
-/_site
 /.sass-cache
-
-# IDE
-*.sublime-project
-*.sublime-workspace
-
-# OS
-.DS_Store
