@@ -1,7 +1,0 @@
-@mixin prefix($name, $value) {
-  -webkit-#{$name}: #{$value};
-     -moz-#{$name}: #{$value};
-      -ms-#{$name}: #{$value};
-       -o-#{$name}: #{$value};
-          #{$name}: #{$value};
-}

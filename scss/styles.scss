@@ -1,76 +1,31 @@
 @import "reset";
-@import "layouts";
 
 body {
-  background: #fff;
-  color: #333;
-  font-family: Times;
-  font-size: 14px;
-  line-height: 1.25em;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 60px 80px;
 }
 
-.content {
-  margin: 40px 240px;
-  width: 680px;
-  @include layout-medium {
-    @include margin-horiz(120px);
-  }
-  @include layout-small {
-    @include margin-horiz(60px);
-    width: 600px;
-  }
-  @include layout-mobile {
-    @include margin-horiz(30px);
-    width: calc(100% - 60px);
-  }
+header, main { width: 500px; }
+
+%body-block-elem { margin-bottom: 0.5rem; }
+
+blockquote, h1, h2, h3, h4, h5, h6, li, p, pre, table {
+  @extend %body-block-elem;
 }
 
-.content > * {
-  margin-bottom: 3em;
-  position: relative;
-  width: 100%;
-  h1 { @extend %right-column; }
+h3 {
+  font-weight: bold;
 }
 
-section > * {
+.flat-list li {
   display: inline-block;
-  @include layout-mobile {
-    display: block;
-    margin-bottom: 1em;
+  &.title {
+    font-weight: bold;
+    &:after {
+      content: " / ";
+      font-weight: normal;
+    }
   }
-}
-
-section .title {
-  @extend %left-column;
-  color: #888;
-  position: absolute;
-  text-align: right;
-  top: 1.17em;
-  left: -80px;
-  @include layout-mobile {
-    position: static;
-    text-align: left;
-  }
-}
-
-section .details { @extend %right-column; }
-
-section .details-item {
-  width: 50%;
-  @include layout-mobile { width: 100%; }
-  @include inline-block-collapsed();
-  margin-bottom: 1em;
-  h3 { color: #aaa; }
-}
-
-article { @extend %right-column; }
-
-a {
-  color: #aaa;
-  &:hover {
-    color: #555;
-    text-decoration: underline;
-  }
-  &.twitter:hover { color: #4099ff; }
-  &.github:hover  { color: #6cc644; }
 }
