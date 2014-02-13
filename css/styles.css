@@ -13,14 +13,22 @@ body {
   line-height: 1.4;
   margin: 60px 80px; }
 
-header, main {
-  width: 500px; }
+.site-header {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: .8rem;
+  padding-bottom: .8rem;
+  width: 600px; }
 
-blockquote, h1, h2, h3, h4, h5, h6, li, p, pre, table {
+main {
+  width: 520px; }
+
+article {
+  margin-bottom: .8rem; }
+  article .flat-list {
+    margin-bottom: .1rem; }
+
+blockquote, p, pre, table {
   margin-bottom: 0.5rem; }
-
-h3 {
-  font-weight: bold; }
 
 .flat-list li {
   display: inline-block; }
