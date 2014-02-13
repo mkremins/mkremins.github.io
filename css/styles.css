@@ -12,15 +12,24 @@ body {
   font-size: 13px;
   line-height: 1.4;
   margin: 60px 80px; }
+  @media (max-width: 680px) {
+    body {
+      margin: 60px 40px; } }
 
 .site-header {
   border-bottom: 1px solid #ccc;
   margin-bottom: .8rem;
   padding-bottom: .8rem;
   width: 600px; }
+  @media (max-width: 760px) {
+    .site-header {
+      width: 100%; } }
 
 main {
   width: 520px; }
+  @media (max-width: 680px) {
+    main {
+      width: 100%; } }
 
 article {
   margin-bottom: .8rem; }

@@ -1,10 +1,14 @@
 @import "reset";
+@import "responsive";
 
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 1.4;
   margin: 60px 80px;
+  @include width-below(680px) {
+    margin: 60px 40px;
+  }
 }
 
 .site-header {
@@ -12,10 +16,16 @@ body {
   margin-bottom: .8rem;
   padding-bottom: .8rem;
   width: 600px;
+  @include width-below(760px) {
+    width: 100%;
+  }
 }
 
 main {
   width: 520px;
+  @include width-below(680px) {
+    width: 100%;
+  }
 }
 
 article {
