@@ -6,40 +6,56 @@ body {
   font-family: monospace;
   font-size: 14px;
   line-height: 1.4;
-  margin-left: 120px;
-  margin-top: 60px;
+  margin: 60px 240px;
   width: 560px;
-  @include width-below(680px) {
-    margin: 60px 40px;
+  @include width-below(800px) {
+    margin: 60px auto;
+  }
+  @include width-below(600px) {
+    margin: 60px 5%;
+    width: 90%;
   }
 }
 
 .site-header {
-  //border-bottom: 1px solid #ccc;
   margin-bottom: .8rem;
-  //padding-bottom: .8rem;
-  width: 560px;
-  @include width-below(760px) {
-    width: 100%;
-  }
-}
-
-main {
-  width: 560px;
-  @include width-below(680px) {
-    width: 100%;
-  }
 }
 
 article {
-  .flat-list {
-    margin-bottom: .1rem;
-  }
   margin-bottom: .8rem;
+  p { font-family: Georgia;  } //'Helvetica Neue', Helvetica, Arial, sans-serif; }
+}
+
+.article-header {
+  left: -1rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+  width: 600px;
+  a, .title { display: inline-block; }
+  .date {
+    color: #ccc;
+    float: right;
+    font-family: inherit;
+    position: relative;
+    top: -1.2rem;
+  }
 }
 
 %body-block-elem {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+blockquote, p, pre, table {
+  @extend %body-block-elem;
+}
+
+pre {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  left: -1rem;
+  padding: 0.4rem 0.8rem;
+  position: relative;
+  width: 600px;
 }
 
 a {
@@ -48,10 +64,6 @@ a {
   &:hover {
     text-decoration: underline;
   }
-}
-
-blockquote, p, pre, table {
-  @extend %body-block-elem;
 }
 
 .flat-list li {
