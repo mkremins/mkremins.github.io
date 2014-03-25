@@ -8,25 +8,25 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal; }
 
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-family: monospace;
+  font-size: 14px;
   line-height: 1.4;
-  margin: 60px 80px; }
+  margin-left: 120px;
+  margin-top: 60px;
+  width: 560px; }
   @media (max-width: 680px) {
     body {
       margin: 60px 40px; } }
 
 .site-header {
-  border-bottom: 1px solid #ccc;
   margin-bottom: .8rem;
-  padding-bottom: .8rem;
-  width: 600px; }
+  width: 560px; }
   @media (max-width: 760px) {
     .site-header {
       width: 100%; } }
 
 main {
-  width: 520px; }
+  width: 560px; }
   @media (max-width: 680px) {
     main {
       width: 100%; } }
@@ -39,10 +39,19 @@ article {
 blockquote, p, pre, table {
   margin-bottom: 0.5rem; }
 
+a {
+  color: #4183c4;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
 .flat-list li {
   display: inline-block; }
   .flat-list li.title {
     font-weight: bold; }
+    .flat-list li.title a {
+      color: black;
+      text-decoration: none; }
     .flat-list li.title:after {
       content: " / ";
       font-weight: normal; }

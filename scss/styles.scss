@@ -2,27 +2,30 @@
 @import "responsive";
 
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  //font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: monospace;
+  font-size: 14px;
   line-height: 1.4;
-  margin: 60px 80px;
+  margin-left: 120px;
+  margin-top: 60px;
+  width: 560px;
   @include width-below(680px) {
     margin: 60px 40px;
   }
 }
 
 .site-header {
-  border-bottom: 1px solid #ccc;
+  //border-bottom: 1px solid #ccc;
   margin-bottom: .8rem;
-  padding-bottom: .8rem;
-  width: 600px;
+  //padding-bottom: .8rem;
+  width: 560px;
   @include width-below(760px) {
     width: 100%;
   }
 }
 
 main {
-  width: 520px;
+  width: 560px;
   @include width-below(680px) {
     width: 100%;
   }
@@ -39,6 +42,14 @@ article {
   margin-bottom: 0.5rem;
 }
 
+a {
+  color: #4183c4;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 blockquote, p, pre, table {
   @extend %body-block-elem;
 }
@@ -46,6 +57,7 @@ blockquote, p, pre, table {
 .flat-list li {
   display: inline-block;
   &.title {
+    a { color: black; text-decoration: none; }
     font-weight: bold;
     &:after {
       content: " / ";
