@@ -1,72 +1,81 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0; }
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: inherit;
-  font-weight: normal; }
+  padding: 0;
+}
 
 body {
-  font-family: monospace;
-  font-size: 14px;
-  line-height: 1.4;
-  margin: 60px 240px;
-  width: 560px; }
-  @media (max-width: 800px) {
-    body {
-      margin: 60px auto; } }
-  @media (max-width: 600px) {
-    body {
-      margin: 60px 5%;
-      width: 90%; } }
+  color: #333;
+  font-family: "Lucida Grande";
+  font-size: 13px;
+  line-height: 20px;
+}
 
-.site-header {
-  margin-bottom: .8rem; }
-
-article {
-  margin-bottom: .8rem; }
-  article p {
-    font-family: Georgia; }
-
-.article-header {
-  left: -1rem;
-  margin-bottom: 0.8rem;
-  position: relative;
-  width: 600px; }
-  .article-header a, .article-header .title {
-    display: inline-block; }
-  .article-header .date {
-    color: #ccc;
-    float: right;
-    font-family: inherit;
-    position: relative;
-    top: -1.2rem; }
-
-blockquote, p, pre, table {
-  margin-bottom: 0.8rem; }
-
-pre {
-  background: #f9f9f9;
-  border: 1px solid #eee;
-  left: -1rem;
-  padding: 0.4rem 0.8rem;
-  position: relative;
-  width: 600px; }
+h1 {
+  border-bottom: 1px solid;
+  font-family: "Source Sans Pro";
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 1.8;
+}
 
 a {
-  color: #4183c4;
-  text-decoration: none; }
-  a:hover {
-    text-decoration: underline; }
+  color: inherit;
+  text-decoration: none;
+}
 
-.flat-list li {
-  display: inline-block; }
-  .flat-list li.title {
-    font-weight: bold; }
-    .flat-list li.title a {
-      color: black;
-      text-decoration: none; }
-    .flat-list li.title:after {
-      content: " / ";
-      font-weight: normal; }
+blockquote, h1, p, pre {
+  margin-bottom: 1rem;
+}
+
+.sidebar {
+  /*color: rgb(100,150,100);*/
+  color: #999;
+  left: 30px;
+  position: fixed;
+  width: 120px;
+}
+
+.sidebar h1 {
+  /*border-bottom-color: rgb(100,150,100);*/
+  border-bottom-color: #999;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.sidebar ul .current, .sidebar ul a:hover {
+  background-color: #e9e9e9;
+}
+
+main {
+  margin-left: 190px;
+  margin-top: 1.5rem;
+  width: 540px;
+}
+
+main a {
+  border-bottom: 1px solid;
+}
+
+main a:hover {
+  background-color: #e5e5e5;
+}
+
+dl {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+dl dt {
+  font-weight: bold;
+  width: 11%;
+}
+
+dl dd {
+  width: 89%;
+}
