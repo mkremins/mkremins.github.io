@@ -1,81 +1,63 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  color: #333;
-  font-family: "Lucida Grande";
-  font-size: 13px;
-  line-height: 20px;
+  background-color: rgb(61,67,81);
+  background-image: linear-gradient(rgb(66,72,86) 1px, transparent 1px),
+                    linear-gradient(90deg, rgb(66,72,86) 1px, transparent 1px);
+  background-position: -1px -1px, -1px -1px;
+  background-size: 20px 20px, 20px 20px;
+  color: #ddd;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.55;
+  margin: 3rem auto;
+  width: 544px;
 }
 
-h1 {
-  border-bottom: 1px solid;
-  font-family: "Source Sans Pro";
-  font-size: 24px;
-  font-weight: normal;
-  line-height: 1.8;
+@media(max-width: 640px) {
+  body {
+    width: 85%;
+  }
+}
+
+header {
+  margin-bottom: 4rem;
+}
+
+.menu {
+  list-style: none;
+  margin-left: 0;
+}
+.menu > li {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+.menu > li.selected > a,
+.menu > li > a:hover {
+  border-bottom: 2px solid rgb(101,115,130);
 }
 
 a {
-  color: inherit;
+  color: #37c3a2;
   text-decoration: none;
 }
+a:hover {
+  color: rgb(230,250,200);
+}
+main a:hover {
+  background: rgb(81,95,110);
+}
 
-blockquote, h1, p, pre {
+blockquote, h1, p, pre, ul {
   margin-bottom: 1rem;
 }
 
-.sidebar {
-  /*color: rgb(100,150,100);*/
-  color: #999;
-  left: 30px;
-  position: fixed;
-  width: 120px;
-}
-
-.sidebar h1 {
-  /*border-bottom-color: rgb(100,150,100);*/
-  border-bottom-color: #999;
-}
-
-.sidebar ul {
-  list-style: none;
-  margin-bottom: 10px;
-}
-
-.sidebar ul .current, .sidebar ul a:hover {
-  background-color: #e9e9e9;
-}
-
-main {
-  margin-left: 190px;
-  margin-top: 1.5rem;
-  width: 540px;
-}
-
-main a {
-  border-bottom: 1px solid;
-}
-
-main a:hover {
-  background-color: #e5e5e5;
-}
-
-dl {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-dl dt {
-  font-weight: bold;
-  width: 11%;
-}
-
-dl dd {
-  width: 89%;
+ul {
+  margin-left: 1.5rem;
 }
