@@ -37,6 +37,10 @@ header .title {
   margin-right: 2rem;
 }
 
+header .title a {
+  color: inherit;
+}
+
 .menu {
   display: inline-block;
   list-style: none;
