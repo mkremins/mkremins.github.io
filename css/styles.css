@@ -1,4 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700);
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -7,73 +8,92 @@
 }
 
 body {
-  background-color: rgb(61,67,81);
-  background-image: linear-gradient(rgb(66,72,86) 1px, transparent 1px),
-                    linear-gradient(90deg, rgb(66,72,86) 1px, transparent 1px);
-  background-position: -1px -1px, -1px -1px;
-  background-size: 20px 20px, 20px 20px;
-  color: #dfdfdf;
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
-  font-size: 18px;
-  line-height: 1.55;
-  margin: 3rem auto;
-  width: 570px;
-}
-
-@media(max-width: 640px) {
-  body {
-    width: 85%;
-  }
+  font-family: 'Vollkorn', serif;
+  font-size: 20px;
+  line-height: 1.5;
 }
 
 header {
-  margin-bottom: 2rem;
+  background-color: #eee;
+  background-image: linear-gradient(#e5e5e5 1px, transparent 1px),
+                    linear-gradient(90deg, #e5e5e5 1px, transparent 1px);
+  background-position: -1px -1px, -1px -1px;
+  background-size: 20px 20px, 20px 20px;
+  padding: 1.5rem 5rem;
 }
 
-header .title {
-  color: #dfdfdf;
-  display: inline-block;
-  font-size: 21px;
-  margin-right: 2rem;
+main {
+  margin-left: 2rem;
+  padding: 2rem 3rem;
+  width: 800px;
 }
 
-header .title a {
-  color: inherit;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
-.menu {
-  display: inline-block;
-  list-style: none;
-  margin-left: 0;
-}
-.menu > li {
-  display: inline-block;
-  margin-right: 1.5rem;
-}
-.menu > li.selected > a,
-.menu > li > a:hover {
-  border-bottom: 2px solid rgb(101,115,130);
-  padding: 0.2rem 0;
-}
-.menu .divider {
-  color: #bbb;
+h1 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 0;
 }
 
-a {
-  color: #37c3a2;
-  text-decoration: none;
-}
-a:hover {
-  color: rgb(230,250,200);
-}
-main a:hover {
-  background: rgb(81,95,110);
+h2 {
+  font-size: 24px;
 }
 
-blockquote, h1, p, pre, ul {
+h1 a, h2 a {
+  background: none;
+  padding: 0;
+}
+
+h2 a:hover {
+  background: yellow;
+}
+
+p {
   margin-bottom: 1rem;
 }
 
-ul {
-  margin-left: 1.5rem;
+ol, ul {
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+a {
+  background: yellow;
+  color: inherit;
+  padding: 0 2px;
+  text-decoration: none;
+}
+
+a:hover {
+  background: none;
+}
+
+.quip {
+  color: #797979;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+aside {
+  color: #666;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  left: 805px;
+  position: absolute;
+  width: 200px;
+}
+
+.date {
+  color: #666;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-style: italic;
+  margin-left: 0.5rem;
 }
