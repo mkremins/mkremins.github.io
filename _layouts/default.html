@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>{{ page.title }} | Affording Play</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <h1 class="title"><a href="/">Affording Play</a></h1>
+        <div class="header-links">
+          <a href="/about"><i class="fa fa-info-circle fa-lg"></i><span class="label">About</span></a>
+          <a href="https://github.com/mkremins"><i class="fa fa-github fa-lg"></i><span class="label">GitHub</span></a>
+          <a href="https://twitter.com/maxkreminski"><i class="fa fa-twitter fa-lg"></i><span class="label">Twitter</span></a>
+        </div>
+      </div>
+    </header>
+    <div class="body-content">
+      <main>
+        <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+        {{ content }}
+      </main>
+      <div class="side">
+        <h2>About</h2>
+        <p><a href="/">Affording Play</a> is an irregularly updated blog by <a href="https://twitter.com/maxkreminski">Max Kreminski</a> about humans, computers, and enabling each to better understand the other. <a href="/about" style="margin-left:0.15rem;">more »</a></p>
+      </div>
+    </div>
+  </body>
+</html>

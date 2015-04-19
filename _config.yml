@@ -1,0 +1,19 @@
+defaults:
+  -
+    scope:
+      path: "" # everything
+      type: posts
+    values:
+      layout: default
+  -
+    scope:
+      path: "" # everything
+      type: pages
+    values:
+      layout: default
+  -
+    scope:
+      path: "" # everything
+      type: drafts
+    values:
+      layout: default

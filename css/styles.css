@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
-@import url(http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700);
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -8,10 +9,12 @@
 }
 
 body {
-  font-family: 'Vollkorn', serif;
+  font-family: 'PT Serif', serif;
   font-size: 20px;
-  line-height: 1.5;
+  line-height: 1.625;
 }
+
+/* header stuff */
 
 header {
   background-color: #eee;
@@ -19,26 +22,85 @@ header {
                     linear-gradient(90deg, #e5e5e5 1px, transparent 1px);
   background-position: -1px -1px, -1px -1px;
   background-size: 20px 20px, 20px 20px;
-  padding: 1.5rem 5rem;
+  padding: 1.5rem 0;
+  position: relative;
 }
 
-main {
-  margin-left: 2rem;
-  padding: 2rem 3rem;
-  width: 800px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lato', sans-serif;
-  font-weight: normal;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
+.header-content {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  position: relative;
+  width: 1080px;
 }
 
 h1 {
   color: #333;
-  font-size: 28px;
+  font-family: 'PT Serif', serif;
+  font-size: 44px;
+  font-style: italic;
+  font-weight: normal;
   margin-bottom: 0;
+}
+
+.header-links {
+  color: #333;
+  font-family: 'Lato', sans-serif;
+  position: absolute;
+  right: 0;
+  top: 1.25rem;
+}
+
+.header-links > a {
+  background: none;
+  margin-left: 1.5rem;
+}
+
+.header-links > a:hover .label {
+  background: yellow;
+}
+
+.header-links .fa {
+  margin-right: 0.5rem;
+}
+
+/* main stuff */
+
+.body-content {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  width: 1080px;
+}
+
+main {
+  padding: 2rem 0;
+  width: 680px;
+}
+
+.side {
+  font-size: 17px;
+  margin-left: 80px;
+  padding: 2rem 0;
+  vertical-align: top;
+  width: 320px;
+}
+
+.side a {
+  background: none;
+  font-weight: bold;
+  padding: 0;
+}
+
+.side a:hover {
+  background: yellow;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -50,10 +112,6 @@ h1 a, h2 a {
   padding: 0;
 }
 
-h2 a:hover {
-  background: yellow;
-}
-
 p {
   margin-bottom: 1rem;
 }
@@ -61,6 +119,14 @@ p {
 ol, ul {
   margin-bottom: 1rem;
   margin-left: 1rem;
+}
+
+pre {
+  background: #eeeeee;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 18px;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
 }
 
 a {
@@ -74,18 +140,18 @@ a:hover {
   background: none;
 }
 
-.quip {
-  color: #797979;
-  font-family: 'Lato', sans-serif;
+code {
+  background: #eeeeee;
   font-size: 18px;
-  margin-bottom: 0;
+  font-family: 'Source Code Pro', monospace;
+  padding: 0 2px;
 }
 
 aside {
   color: #666;
   font-family: 'Lato', sans-serif;
   font-size: 12px;
-  left: 805px;
+  right: 15%;
   position: absolute;
   width: 200px;
 }
@@ -96,4 +162,25 @@ aside {
   font-size: 12px;
   font-style: italic;
   margin-left: 0.5rem;
+}
+
+@media (max-width: 1200px) {
+  .header-content, .body-content { width: 960px; }
+  main { width: 600px; }
+  .side { margin-left: 60px; width: 300px; }
+}
+
+@media (max-width: 1060px) {
+  .header-content, .body-content { width: 740px; }
+  main { width: 100%; }
+  .side { display: none; }
+}
+
+@media (max-width: 800px) {
+  .header-content, .body-content { width: 90%; }
+  .header-links .label { display: none; }
+}
+
+@media (max-width: 550px) {
+  .header-links { display: none; }
 }
