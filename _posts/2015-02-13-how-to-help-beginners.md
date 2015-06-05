@@ -3,8 +3,6 @@ title: How to help beginners learn to program
 permalink: /blog/how-to-help-beginners
 ---
 
-<style>main li { margin-bottom: 1rem; }</style>
-
 * Explain programming concepts to them, making liberal use of the words “trivial” and “easy”. This will reassure them that you know your stuff.
 * Adopt a new motto: “there are no smart questions”. Take any request for clarification as an opportunity to remind all the lurkers that there are some things *everyone* should be expected to already know.
 * To avoid coming across as condescending, leave out of your explanations the stuff that everyone already knows.

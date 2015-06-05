@@ -1,186 +1,219 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
-@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic);
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
-
 *, *::before, *::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: 'PT Serif', serif;
-  font-size: 20px;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -moz-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  font-family: 'PT Serif', Georgia, serif;
+  font-size: 1.25em;
   line-height: 1.625;
+  margin: 0 auto;
+  width: 960px;
 }
 
-/* header stuff */
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 header {
-  background-color: #eee;
-  background-image: linear-gradient(#e5e5e5 1px, transparent 1px),
-                    linear-gradient(90deg, #e5e5e5 1px, transparent 1px);
-  background-position: -1px -1px, -1px -1px;
-  background-size: 20px 20px, 20px 20px;
-  padding: 1.5rem 0;
-  position: relative;
-}
-
-.header-content {
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  align-items: center;
+  border-bottom: 1px dotted #ccc;
+  display: -moz-flex;
+  display: -webkit-flex;
   display: flex;
+  -moz-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
-  margin: 0 auto;
-  position: relative;
-  width: 1080px;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  width: 100%;
 }
 
-h1 {
-  color: #333;
-  font-family: 'PT Serif', serif;
-  font-size: 44px;
-  font-style: italic;
-  font-weight: normal;
+nav {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-left: auto;
+}
+
+.fa {
+  margin-right: 0.25rem;
+}
+
+header ul {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -moz-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  list-style: none;
+}
+
+header li {
   margin-bottom: 0;
 }
 
-.header-links {
-  color: #333;
-  font-family: 'Lato', sans-serif;
-  position: absolute;
-  right: 0;
-  top: 1.25rem;
+header li a {
+  padding: 0.5rem 0.9rem;
 }
 
-.header-links > a {
-  background: none;
-  margin-left: 1.5rem;
-}
-
-.header-links > a:hover .label {
-  background: yellow;
-}
-
-.header-links .fa {
-  margin-right: 0.5rem;
-}
-
-/* main stuff */
-
-.body-content {
-  display: flex;
-  flex-flow: row wrap;
-  margin: 0 auto;
-  width: 1080px;
+header li a:hover {
+  background: #eee;
 }
 
 main {
-  padding: 2rem 0;
-  width: 680px;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -moz-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 
-.side {
-  font-size: 17px;
-  margin-left: 80px;
-  padding: 2rem 0;
-  vertical-align: top;
-  width: 320px;
+article {
+  border-right: 1px dotted #ccc;
+  padding-bottom: 1rem;
+  padding-right: 30px;
+  padding-top: 2rem;
+  width: 660px;
 }
 
-.side a {
-  background: none;
-  font-weight: bold;
-  padding: 0;
+.sidebar {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  padding-bottom: 1rem;
+  padding-left: 30px;
+  padding-top: 2rem;
+  width: 300px;
 }
 
-.side a:hover {
-  background: yellow;
+footer {
+  border-top: 1px dotted #ccc;
+  height: 1px;
+  margin-bottom: 6rem;
+  width: 100%;
 }
 
 h2, h3, h4, h5, h6 {
-  font-family: 'Lato', sans-serif;
-  font-weight: normal;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
   margin-bottom: 1rem;
-  text-transform: uppercase;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 2.25rem;
+  line-height: 1;
+  margin-bottom: 1.5rem;
 }
 
-h1 a, h2 a {
+article.post h2 {
+  margin-bottom: 0.25rem;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+article h2 a {
   background: none;
-  padding: 0;
+}
+
+article h2 a:hover {
+  background: none;
 }
 
 p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-ol, ul {
-  margin-bottom: 1rem;
-  margin-left: 1rem;
+main ol, main ul {
+  margin-bottom: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+article li {
+  margin-bottom: 1.5rem;
+}
+
+table {
+  margin-bottom: 1.5rem;
 }
 
 pre {
   background: #eeeeee;
   font-family: 'Source Code Pro', monospace;
-  font-size: 18px;
-  margin-bottom: 1rem;
+  font-size: 0.88em;
+  margin-bottom: 1.5rem;
   padding: 0.5rem;
 }
 
-a {
-  background: yellow;
-  color: inherit;
-  padding: 0 2px;
-  text-decoration: none;
+blockquote {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
-a:hover {
+blockquote p:not(:last-child) {
+  font-style: italic;
+}
+
+main a {
+  background: yellow;
+}
+
+main a:hover {
   background: none;
 }
 
 code {
   background: #eeeeee;
-  font-size: 18px;
+  font-size: 0.88em;
   font-family: 'Source Code Pro', monospace;
   padding: 0 2px;
-}
-
-aside {
-  color: #666;
-  font-family: 'Lato', sans-serif;
-  font-size: 12px;
-  right: 15%;
-  position: absolute;
-  width: 200px;
+  white-space: nowrap;
 }
 
 .date {
   color: #666;
-  font-family: 'Lato', sans-serif;
-  font-size: 12px;
-  font-style: italic;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
   margin-left: 0.5rem;
 }
 
-@media (max-width: 1200px) {
-  .header-content, .body-content { width: 960px; }
-  main { width: 600px; }
-  .side { margin-left: 60px; width: 300px; }
+article > .date {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  margin-left: 0;
 }
 
-@media (max-width: 1060px) {
-  .header-content, .body-content { width: 740px; }
-  main { width: 100%; }
-  .side { display: none; }
+.twitter-tweet {
+  margin: 2rem auto !important;
+}
+
+@media (max-width: 1040px) {
+  body { -moz-justify-content: center; -webkit-justify-content: center; justify-content: center; width: 90%; }
+  article { border-right: none; padding-right: 0; }
+  .sidebar { display: none; }
 }
 
 @media (max-width: 800px) {
-  .header-content, .body-content { width: 90%; }
-  .header-links .label { display: none; }
-}
-
-@media (max-width: 550px) {
-  .header-links { display: none; }
+  header { margin-top: 1rem; padding-bottom: 1rem; }
+  article { padding-bottom: 0; }
+  footer { display: none; }
 }
