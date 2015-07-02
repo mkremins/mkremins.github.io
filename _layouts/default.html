@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Source+Sans+Pro:200,400,600,400italic,600italic|PT+Serif:400,700,400italic,700italic|Source+Code+Pro' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    {% if page.date %}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@maxkreminski">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 250 }}">
+    {% endif %}
   </head>
   <body>
     <header>
