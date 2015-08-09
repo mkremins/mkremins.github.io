@@ -215,6 +215,6 @@ article > .date {
 
 @media (max-width: 800px) {
   header { margin-top: 1rem; padding-bottom: 1rem; }
-  article { padding-bottom: 0; }
+  article { padding-bottom: 0; width: inherit; }
   footer { display: none; }
 }
