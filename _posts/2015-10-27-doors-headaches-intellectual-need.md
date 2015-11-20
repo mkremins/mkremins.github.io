@@ -3,8 +3,7 @@ title: Locked doors, headaches, and intellectual need
 permalink: /blog/doors-headaches-intellectual-need
 ---
 
-You know those things that, once you learn about them for the first time, you start seeing them absolutely *everywhere*?
-Recently, that's been my experience with *problem-solution ordering issues*. They keep cropping up: not just in the context of game design, where I first encountered them, but also in such apparently unrelated fields as math education and functional programming.
+You know those things that, once you learn about them for the first time, you start seeing them absolutely *everywhere*? Recently, that's been my experience with *problem-solution ordering issues*. They keep cropping up: not just in the context of game design, where I first encountered them, but also in such apparently unrelated fields as math education and functional programming.
 
 Despite this, however, I've never seen problem-solution ordering issues explicitly discussed in any of the online communities I participate in. So I'm going to try to define what they are; trace them through the different fields in which I've encountered them; and hopefully, in the process, demonstrate how a working awareness of these issues can help you avoid certain common pitfalls in teaching and communicating new ideas.
 
