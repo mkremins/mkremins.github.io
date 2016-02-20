@@ -29,6 +29,8 @@ To quote directly from the "Create by Reacting" section of Bret Victor's essay, 
 > I was recently watching an artist friend begin a painting, and I asked him what a particular shape on the canvas was going to be. He said that he wasn't sure yet; he was just "pushing paint around on the canvas", reacting to and getting inspired by the forms that emerged. Likewise, most musicians don't compose entire melodies in their head and then write them down; instead, they noodle around on a instrument for a while, playing with patterns and reacting to what they hear, adjusting and sculpting.
 >
 > An essential aspect of a painter's canvas and a musical instrument is the immediacy with which the artist gets *something there* to react to. A canvas or sketchbook serves as an "external imagination", where an artist can grow an idea from birth to maturity by continuously *reacting to what's in front of him*.
+>
+> <footer>Bret Victor, <a href="http://worrydream.com/LearnableProgramming/">“Learnable Programming”</a></footer>
 
 In other words: humans become proficient at manipulating complex systems in part through reactive experimentation and play.
 
@@ -39,6 +41,8 @@ An important part of the answer to this question can be found in Anna Anthropy's
 > an unfortunate trend in contemporary games is to spell out every detail in a hand-holding “tutorial” session at the outset of a game – unfortunate because it shows both a great deal of contempt for the player’s intuition and a lack of confidence in the designer’s own design. but more than that, it’s a design failure because it tells the player the rules instead of allowing her to learn them.
 >
 > what if the first level of the game were laid out in such a way that the player could learn the rules simply by playing through it, without needing to be told them outright?
+>
+> <footer>Anna Anthropy, <a href="http://auntiepixelante.com/?p=465">“level design lesson: to the right, hold on tight”</a></footer>
 
 Super Mario Bros. doesn't tell the player how to play. In fact, it never utters a single word. Instead, practically every aspect of its first level is aligned in *showing* the player how to play the game by giving them something to react to.
 

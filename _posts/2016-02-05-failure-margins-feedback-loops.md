@@ -21,7 +21,7 @@ At the core of this idea is the observation that (most) stealth games tend to be
 >
 > The average stealth game has failure (you've been discovered), the limbo in-between (you're being hunted), and success (you're undetected). In contrast to the action game, most of the game time takes place in that "success" part when you're in a safe hiding spot, scouting out places.
 >
-> &mdash; [Robert Yang](http://www.blog.radiator.debacle.us/2011/07/dark-past-part-4-useful-post-or-randy.html)
+> <footer>Robert Yang, <a href="http://www.blog.radiator.debacle.us/2011/07/dark-past-part-4-useful-post-or-randy.html">“Dark Past (part 4): The Useful Post (?)”</a></footer>
 
 To illustrate this point, Smith throws in some diagrams:
 
@@ -35,7 +35,7 @@ To understand why this is the case, we'll turn to [Tom Francis's take](http://ww
 
 > A big failure spectrum is good because a lot of the most emotional moments in a game happen on the cusp of failure. If you were *this* close to being seen, your escape is exhilarating. But if failure is a ‘game over’ screen, spending a lot of time on the cusp of failure means a lot of ‘game over’ screens. Each one interrupts your immersion and ends your investment in this current run. It pulls you out of the game, and you find yourself in a menu, then at a checkpoint or a savegame. Mentally acclimatising to how much of your story has been lost forces you to disengage from it, and you have to build up all that immersion again from scratch.
 >
-> &mdash; [Tom Francis](http://www.pentadact.com/2014-12-29-what-works-and-why-invisible-inc/)
+> <footer>Tom Francis, <a href="http://www.pentadact.com/2014-12-29-what-works-and-why-invisible-inc/">“What Works And Why: Invisible Inc”</a></footer>
 
 In other words: total failure comes with a *cost* in terms of time and effort wasted, immersion shattered, and story progress lost. This cost is the number-one reason that players tend to become frustrated and discouraged when they experience total failure.
 
@@ -51,7 +51,7 @@ Let's change gears a bit, now, and talk about programming – and, more specific
 
 > [...] what has to be built by the programmer is a theory of how certain affairs of the world will be handled by, or supported by, a computer program.
 >
-> &mdash; [Peter Naur](http://pages.cs.wisc.edu/~remzi/Naur.pdf)
+> <footer>Peter Naur, <a href="http://pages.cs.wisc.edu/~remzi/Naur.pdf">“Programming as Theory Building”</a></footer>
 
 Essentially, the programmer's aim is to develop a *theory* of how some high-level goal can be accomplished through the application of a specific procedure or algorithm, and of how that algorithm can then be expressed as machine-executable code.
 
@@ -59,7 +59,7 @@ One implication of this view, Naur notes, is that
 
 > [The] problem of education of new programmers [...] is quite similar to that of the educational problem of other activities where the knowledge of how to do certain things dominates over the knowledge that certain things are the case, such as writing and playing a musical instrument. The most important educational activity is the student's doing the relevant things under suitable supervision and guidance.
 >
-> &mdash; [Peter Naur](http://pages.cs.wisc.edu/~remzi/Naur.pdf)
+> <footer>Peter Naur, <a href="http://pages.cs.wisc.edu/~remzi/Naur.pdf">“Programming as Theory Building”</a></footer>
 
 Naur is suggesting, here, that programming – at least from an educational perspective – belongs to a category of activities in which [procedural knowledge](https://en.wikipedia.org/wiki/Procedural_knowledge) "dominates over" [declarative](https://en.wikipedia.org/wiki/Descriptive_knowledge). Certainly the activity of playing games would also seem to belong to this category!
 

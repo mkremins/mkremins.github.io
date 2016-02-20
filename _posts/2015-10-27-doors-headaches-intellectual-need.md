@@ -33,7 +33,7 @@ Consider Dan Meyer's question for math educators: [if math is the aspirin, then 
 >
 > Math shouldn’t feel pointless. Math isn’t pointless. It may not have a point in job [y] or [z] but math has a point in math. We invented new math to resolve the limitations of old math. My challenge to all of us here is, before you offer students the new, more powerful math, put them in a place to experience the limitations of the older, less powerful math.
 >
-> &mdash; [Dan Meyer](http://blog.mrmeyer.com/2015/if-math-is-the-aspirin-then-how-do-you-create-the-headache/)
+> <footer>Dan Meyer, <a href="http://blog.mrmeyer.com/2015/if-math-is-the-aspirin-then-how-do-you-create-the-headache/">“If Math Is The Aspirin, Then How Do You Create The Headache?”</a></footer>
 
 In other words: if you introduce the solution (in this case, a new kind of math) before introducing the kind of problems that it's meant to solve, the solution is likely to come across as pointless and arbitrary. But if you first let students try to tackle these problems with the math they already understand, they're likely to come away with a kind of intellectual "headache" – and, therefore, to better understand the purpose of the "aspirin" you're trying to sell.
 

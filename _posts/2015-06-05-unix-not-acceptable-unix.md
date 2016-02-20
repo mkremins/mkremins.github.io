@@ -59,7 +59,7 @@ Unix permits programs to communicate with one another, and with the user, exclus
 
 > Write programs to handle text streams, because that is a universal interface.
 >
-> &mdash; [Doug McIlroy](http://en.wikipedia.org/wiki/Unix_philosophy#cite_ref-6)
+> <footer>Doug McIlroy, <a href="http://harmful.cat-v.org/cat-v/unix_prog_design.pdf">“Program Design in the UNIX Environment”</a></footer>
 
 The original designers of Unix viewed the "simplicity" of text streams as an advantage. Consequently, they declined to impose any structure on the data that was to pass between programs. This decision, intended to banish inessential complexity, instead managed only to push essential complexity further downstream.
 
