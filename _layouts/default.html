@@ -28,7 +28,7 @@
     </header>
     <main>
       <article class="{% if page.date %}post{% endif %}">
-        <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+        <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
         {% if page.date %}
         <div class="date">{{ page.date | date_to_long_string }}</div>
         {% endif %}
