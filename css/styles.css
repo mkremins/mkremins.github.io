@@ -238,6 +238,10 @@ article > .date {
 
 @media (max-width: 640px) {
   .posts { display: block; }
-  .post-listing { display: flex; flex-flow: column-reverse; margin-bottom: 0.75rem; }
+  .post-listing {
+    display: -moz-flex; display: -webkit-flex; display: flex;
+    -moz-flex-flow: column-reverse; -webkit-flex-flow: column-reverse; flex-flow: column-reverse;
+    margin-bottom: 0.75rem;
+  }
   .post-listing > .title { line-height: 1.3; }
 }
