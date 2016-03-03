@@ -7,6 +7,7 @@ defaults:
       type: posts
     values:
       layout: default
+      permalink: /blog/:slug/
   -
     scope:
       path: "" # everything
@@ -19,3 +20,4 @@ defaults:
       type: drafts
     values:
       layout: default
+      permalink: /blog/:slug/

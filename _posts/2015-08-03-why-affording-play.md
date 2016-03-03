@@ -1,6 +1,5 @@
 ---
 title: Why “Affording Play”?
-permalink: /blog/why-affording-play
 ---
 
 Why is this blog called "Affording Play"? What, for that matter, does the phrase "affording play" even *mean*?

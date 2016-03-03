@@ -1,6 +1,5 @@
 ---
 title: Creative tools for non-creators
-permalink: /blog/creative-tools-non-creators
 ---
 
 I keep coming back to the idea of tools that unlock creativity in people who don't ordinarily think of themselves as creative. Yesterday, some of my scattered thoughts on the subject spontaneously crystallized into something resembling a coherent argument: successful tools of this kind tend to differ from successful "real" or "professional" creative tools in a number of fairly consistent ways.

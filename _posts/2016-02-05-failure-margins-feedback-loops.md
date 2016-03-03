@@ -1,6 +1,5 @@
 ---
 title: Failure margins and feedback loops
-permalink: /blog/failure-margins-feedback-loops
 ---
 
 Learning necessarily involves failure. This is because learning, by definition, takes place at the very edge of what you're able to handle: within the [zone of proximal development](https://en.wikipedia.org/wiki/Zone_of_proximal_development) that separates what you're already comfortable doing from that which you can't yet do at all.

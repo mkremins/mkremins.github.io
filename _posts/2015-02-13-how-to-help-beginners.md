@@ -1,6 +1,5 @@
 ---
 title: How to help beginners learn to program
-permalink: /blog/how-to-help-beginners
 ---
 
 Explain programming concepts to them, making liberal use of the words “trivial” and “easy”. This will reassure them that you know your stuff.

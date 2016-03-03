@@ -1,6 +1,5 @@
 ---
 title: Locked doors, headaches, and intellectual need
-permalink: /blog/doors-headaches-intellectual-need
 ---
 
 You know those things that, once you learn about them for the first time, you start seeing them absolutely *everywhere*? Recently, that's been my experience with *problem-solution ordering issues*. They keep cropping up: not just in the context of game design, where I first encountered them, but also in such apparently unrelated fields as math education and functional programming.

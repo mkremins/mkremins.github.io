@@ -1,6 +1,5 @@
 ---
 title: Unix is not an acceptable Unix
-permalink: /blog/unix-not-acceptable-unix
 ---
 
 The Unix command line is full of surprises. For instance: did you know that the OS X version of the `ls` tool, most frequently used to get a list of the files in the current working directory, recognizes no fewer than [38 different flags](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/ls.1.html)?
