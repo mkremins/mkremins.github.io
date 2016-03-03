@@ -1,12 +1,12 @@
 ---
 title: Recent posts
 ---
-<table>
+<div class="posts">
   {% for post in site.posts %}
-  <tr>
-    <td class="date" style="padding-right:1.5rem">{{ post.date | date_to_string }}</td>
-    <td><a href="{{ post.url }}">{{ post.title }}</a></td>
-  </tr>
+  <div class="post-listing">
+    <div class="date">{{ post.date | date_to_string }}</div>
+    <div class="title"><a href="{{ post.url }}">{{ post.title }}</a></div>
+  </div>
   {% endfor %}
-</table>
+</div>
 <p>See also the <a href="/about">about page</a> to learn more about me and/or about this site.</p>

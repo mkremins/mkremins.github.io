@@ -89,6 +89,11 @@ article {
   width: 660px;
 }
 
+.posts { border-spacing: 2px; display: table; margin-bottom: 1.5rem; }
+.post-listing { display: table-row; }
+.post-listing > * { display: table-cell; }
+.post-listing > .date { padding-right: 1.5rem; vertical-align: middle; }
+
 .sidebar {
   font-size: 1.1rem;
   line-height: 1.5;
@@ -207,13 +212,11 @@ code {
   color: #666;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1rem;
-  margin-left: 0.5rem;
 }
 
 article > .date {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
-  margin-left: 0;
 }
 
 .twitter-tweet {
@@ -231,4 +234,10 @@ article > .date {
   article { padding-bottom: 0; width: inherit; }
   img { width: 90%; } /* TODO come up with a better solution for responsive images */
   .site-footer { display: none; }
+}
+
+@media (max-width: 640px) {
+  .posts { display: block; }
+  .post-listing { display: flex; flex-flow: column-reverse; margin-bottom: 0.75rem; }
+  .post-listing > .title { line-height: 1.3; }
 }
