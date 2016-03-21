@@ -4,9 +4,11 @@ title: Recent posts
 <div class="posts">
   {% for post in site.posts %}
   <div class="post-listing">
-    <div class="date">{{ post.date | date_to_string }}</div>
-    <div class="title"><a href="{{ post.url }}">{{ post.title }}</a></div>
+    <h3 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    <div class="date">{{ post.date | date_to_long_string }}</div>
+    <div class="excerpt">{{ post.excerpt }}</div>
+    <p style="margin-top:0.5rem;"><a class="more-link" href="{{ post.url }}">Read more »</a></p>
   </div>
   {% endfor %}
 </div>
-<p>See also the <a href="/about">about page</a> to learn more about me and/or about this site.</p>
+<style>h2{display:none}</style>
