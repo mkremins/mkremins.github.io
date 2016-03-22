@@ -77,3 +77,5 @@ Rather than re-evaluating the Unix command line with an eye towards improving it
 What are the odds that we somehow stumbled upon the best possible interface for interacting with the computer 40 years ago? What are the odds, in other words, that what we're doing still makes sense today?
 
 Even the earliest version of Unix was ultimately only a particular, flawed implementation of the Unix philosophy. If we want to encourage more widespread acceptance of the *philosophy*, we should not try to defend the *implementation* by downplaying its flaws. Instead, we should confront these flaws head-on and work to build systems that address them while also adhering to the spirit – if not the letter – of the principles on which Unix was built.
+
+<style>.full-post li{margin-bottom:1.5rem}</style>

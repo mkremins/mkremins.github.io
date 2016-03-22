@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include common_head.html %}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@maxkreminski">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 250 }}">
+  </head>
+  <body>
+    {% include site_header.html %}
+    <main>
+      <article class="full-post">
+        <header class="page-header">
+          <h2 class="title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
+          <div class="date">{{ page.date | date_to_long_string }}</div>
+        </header>
+        <div class="content">{{ content }}</div>
+      </article>
+    </main>
+    {% include site_sidebar.html %}
+    {% include site_footer.html %}
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include common_head.html %}
+  </head>
+  <body>
+    {% include site_header.html %}
+    <main>
+      <header class="page-header">
+        <h2 class="title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
+      </header>
+      <div class="content">{{ content }}</div>
+    </main>
+    {% include site_sidebar.html %}
+    {% include site_footer.html %}
+  </body>
+</html>

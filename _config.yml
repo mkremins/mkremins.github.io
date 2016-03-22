@@ -6,18 +6,18 @@ defaults:
       path: "" # everything
       type: posts
     values:
-      layout: default
+      layout: post
       permalink: /blog/:slug/
   -
     scope:
       path: "" # everything
       type: pages
     values:
-      layout: default
+      layout: page
   -
     scope:
       path: "" # everything
       type: drafts
     values:
-      layout: default
+      layout: post
       permalink: /blog/:slug/

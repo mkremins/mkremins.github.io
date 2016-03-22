@@ -118,5 +118,3 @@ The [Elm](http://elm-lang.org/) programming language, with its emphasis on [huma
 What do all of these patterns have in common? Most obvious, it seems to me, is that all of them essentially *tighten the feedback loop* between failure and renewed play. So far as I know, this is an unambiguously good thing: a sufficiently tight feedback loop enables people to [learn by trying and reacting](http://mkremins.github.io/blog/why-affording-play/) in a way that feels very natural for skills, like programming, that rely heavily on procedural knowledge.
 
 Overall, then, if you want to design more readily learnable tools (or, for that matter, more readily learnable games), consider trying for tighter feedback loops and wider margins of partial failure. Your [users/players/students] will thank you!
-
-<style>ol li {margin-bottom: 0;}</style>
