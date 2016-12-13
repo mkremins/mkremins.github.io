@@ -119,6 +119,14 @@ img { display: block; margin: 0 auto; max-width: 100%; }
 
 .twitter-tweet { margin: 2rem auto !important; }
 
+hr {
+  border: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+hr:after { content: '***'; }
+
 /* media queries */
 
 @media (max-width: 1040px) {
