@@ -11,7 +11,7 @@ My favorite part of the video is the bit from ~9:00-9:25. The player egregiously
 
 Crafting socially believable NPCs is already a huge challenge for non-VR games, but VR adds a whole new level of difficulty. Existing frameworks for scripting conversation and other forms of social behavior in game characters are totally unequipped to deal with body language and gesture.
 
-One potential research direction here is to construct computational models of [proxemics](en.wikipedia.org/wiki/Proxemics) – basically how humans use space in interpersonal interactions. Some of the VR projects I worked on at the [Mobile & Environmental Media Lab](http://mobilemedia.usc.edu/) actually dealt with proxemics to a certain extent! But the intersection between VR and proxemics is so huge that we were really only able to scratch the surface during my time there.
+One potential research direction here is to construct computational models of [proxemics](https://en.wikipedia.org/wiki/Proxemics) – basically how humans use space in interpersonal interactions. Some of the VR projects I worked on at the [Mobile & Environmental Media Lab](http://mobilemedia.usc.edu/) actually dealt with proxemics to a certain extent! But the intersection between VR and proxemics is so huge that we were really only able to scratch the surface during my time there.
 
 ![](/img/proxemics.png)
 
