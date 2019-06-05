@@ -1,0 +1,60 @@
+[
+{
+  "title": "Exploring Poemspace Through Procedural Erasure",
+  "url": "",
+  "year": "2019",
+  "venue": "Computational Poetry Workshop",
+  "venue_long": "Computational Poetry Workshop"
+},
+{
+  "title": "Procedural Narrative Design with Parametrized Storylets",
+  "url": "https://www.gdcvault.com/play/1025699/Tech",
+  "year": "2019",
+  "venue": "GDC",
+  "venue_long": "Game Developers Conference",
+  "venue_note": "Independent Games Summit microtalks: Tech Toolbox"
+},
+{
+  "title": "Procedural Narrative Design with Parametrized Storylets",
+  "url": "",
+  "year": "2019",
+  "venue": "GDC",
+  "venue_long": "Game Developers Conference",
+  "venue_note": "AI Summit microtalks: Experimental AI for Games"
+},
+{
+  "title": "Making blackout poetry with computers!",
+  "url": "https://www.youtube.com/watch?v=klO7XBFUIj8",
+  "year": "2019",
+  "venue": "!!Con West",
+  "venue_long": "!!Con West"
+},
+{
+  "title": "Gardening as a Mode of Play",
+  "url": "https://www.youtube.com/watch?v=TvlZinAvpwg",
+  "year": "2018",
+  "venue": "Roguelike Celebration",
+  "venue_long": "Roguelike Celebration"
+},
+{
+  "title": "Gardening as a Mode of Play",
+  "url": "https://www.twitch.tv/videos/319700999",
+  "year": "2018",
+  "venue": "QGCon",
+  "venue_long": "Queerness and Games Conference"
+},
+{
+  "title": "Proceduralizing Character Development with Parametrized Storylets",
+  "url": "https://www.youtube.com/watch?v=k3x6QU0Mqgc&t=10119s",
+  "year": "2018",
+  "venue": "UCSC Games Showcase",
+  "venue_long": "UCSC Games Showcase"
+},
+{
+  "title": "Crafting Compelling Character Arcs for Procedurally Generated Characters",
+  "url": "https://www.youtube.com/watch?v=66O6WDcT8KY",
+  "year": "2017",
+  "venue": "Roguelike Celebration",
+  "venue_long": "Roguelike Celebration"
+},
+]

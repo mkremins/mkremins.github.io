@@ -1,14 +1,183 @@
 ---
-title: Recent posts
+title: Max Kreminski
+layout: null
 ---
-{% for post in site.posts %}
-<article class="post-preview">
-  <header>
-    <h3 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-    <div class="date">{{ post.date | date_to_long_string }}</div>
-  </header>
-  <div class="excerpt">{{ post.excerpt }}</div>
-  <div class="more"><a href="{{ post.url }}">Read more »</a></div>
-</article>
-{% endfor %}
-<style>.page-header{display:none}</style>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Max Kreminski</title>
+	<style>
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		font-size: 15px;
+		line-height: 1.5;
+	}
+	h1, h2 {
+		margin-bottom: 1rem;
+	}
+	h1 a {
+		color: inherit;
+		text-decoration: none;
+	}
+	p {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	p:last-child {
+		margin-bottom: 0;
+	}
+	a {
+		color: green;
+	}
+	a[href=""]{
+		color:red; /* highlight broken links */
+	}
+	header .left, .container {
+		margin: 0 auto;
+		max-width: 80ch;
+		padding: 2ch;
+	}
+	/* header stuff */
+	header .left {
+		position: relative;
+	}
+	.header-affiliation {
+		margin: 0;
+	}
+	/* nav stuff */
+	nav ul {
+		display: flex;
+		flex-flow: row wrap;
+		list-style: none;
+	}
+	nav li {
+		margin-right: 1ch;
+	}
+	/* footer stuff */
+	footer {
+		background: #111;
+		color: white;
+		margin-top: 2rem;
+	}
+	footer nav ul {
+		justify-content: flex-end;
+	}
+	footer a {
+		color: inherit;
+	}
+	footer nav a {
+		text-decoration: none;
+	}
+	footer nav a:hover {
+		text-decoration: underline;
+	}
+	/* cards stuff */
+	.card {
+		margin-bottom: 1rem;
+	}
+	.card:last-child {
+		margin-bottom: 0;
+	}
+	.title {
+		font-weight: bold;
+		margin-bottom: 0;
+	}
+	.title + p {
+		margin-top: 0;
+	}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="left">
+			<h1><a href="/">Max Kreminski</a></h1>
+			<p class="header-affiliation">PhD Student, Computational Media</p>
+			<p class="header-affiliation">Expressive Intelligence Studio</p>
+			<p class="header-affiliation">UC Santa Cruz</p>
+			<p class="header-pronoun">Pronouns: <a href="https://pronoun.is/they">they/them</a></p>
+			<nav>
+				<ul>
+					<li><a href="mailto:mkremins@ucsc.edu">email</a></li>
+					<li><a href="/cv">cv</a></li>
+					<li><a href="https://scholar.google.com/citations?user=Ja4R1yEAAAAJ">scholar</a></li>
+					<li><a href="/blog">blog</a></li>
+					<li><a href="https://twitter.com/maxkreminski">twitter</a></li>
+					<li><a href="https://github.com/mkremins">github</i></a></li>
+					<li><a href="https://mkremins.itch.io">itch.io</i></a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main>
+		<section class="about">
+			<div class="container">
+				<h2 class="section-title">About</h2>
+				<p>I’m a <a href="https://www.soe.ucsc.edu/departments/computational-media">Computational Media</a> PhD student in the <a href="https://eis.ucsc.edu">Expressive Intelligence Studio</a> at <a href="https://www.ucsc.edu/">UC Santa Cruz</a>, studying how computers can better support human creativity. My work focuses on the design and development of approachable <em>mixed-initiative creative tools</em> powered by artificial intelligence and generative methods, with the goal of helping people create stuff they wouldn’t be able to create alone.<!--I <a href="https://mkremins.itch.io">design games</a>, <a href="https://github.com/mkremins">program computers</a>, <a href="/">write words</a>, and conduct research on the subjects of human-computer interaction, creativity, and play.--></p>
+				<p>I value <a href="https://twitter.com/maxkreminski/status/1121174498533732352">personal computation</a>, <a href="http://computationalcreativity.net/iccc2015/proceedings/10_2Compton.pdf">casual creators</a>, <a href="https://twitter.com/maxkreminski/status/1041033401275281409">language-y interfaces</a> that let users explicitly tell the computer what they want, and the <a href="https://twitter.com/maxkreminski/status/887815522061926400">“trashy”</a> things beginners tend to create when they’re just getting started. Frivolity is important to me. My background is in game design, and I think we’ve got a lot to learn from how games function – not just as spaces for creative expression, but as creative partners in their own right.</p>
+				<!--<p>Broadly speaking, my research interests include artificial intelligence, human-computer interaction, computational creativity, generative methods, and interactive narrative. If I had to sum them all up in one keyword, I’d probably go for <a href="">casual creators</a>.</p></p>-->
+			</div>
+		</section>
+		<section id="publications">
+			<div class="container">
+				<h2 class="section-title">Publications</h2>
+				{% for pub in site.data.publications %}
+				<div class="card pub-card">
+					<div class="title">{% if pub.url and pub.url != "" %}<a href="{{pub.url}}">{{pub.title}}</a>{% else %}{{pub.title}}{% endif %}</div>
+					<div class="authors">{{pub.authors | join: ", "}}</div>
+					<div class="venue"><span title="{{pub.venue_long}}">{{pub.venue}}</span> {{pub.year}} {% if pub.venue_note and pub.venue_note != "" %}({{pub.venue_note}}){% endif %}</div>
+				</div>
+			  {% endfor %}
+			</div>
+		</section>
+		<section id="talks">
+			<div class="container">
+				<h2 class="section-title">Talks</h2>
+				{% for talk in site.data.talks %}
+				<div class="card talk-card">
+					<div class="title">{% if talk.url and talk.url != "" %}<a href="{{talk.url}}">{{talk.title}}</a>{% else %}{{talk.title}}{% endif %}</div>
+					<div class="venue">{{talk.venue}} {{talk.year}} {% if talk.venue_note and talk.venue_note != "" %}({{talk.venue_note}}){% endif %}</div>
+				</div>
+			  {% endfor %}
+			</div>
+		</section>
+		<section id="projects">
+			<div class="container">
+				<h2 class="section-title">Projects</h2>
+				<p>Note: These are only a few of my projects! See my <a href="https://mkremins.itch.io">itch.io</a> and <a href="https://github.com/mkremins">GitHub</a> pages for more.</p>
+				<div class="card project-card">
+					<div class="title"><a href="https://mkremins.github.io/blackout">Procedural blackout poetry</a></div>
+					<p class="desc">An ongoing series of investigations into the creation of procedural blackout poetry. Includes a <a href="https://mkremins.github.io/blackout">browser bookmarklet</a> that can turn any arbitrary webpage into blackout poetry and a <a href="https://mkremins.github.io/blackout/interactive">mixed-initiative tool</a> that lets you work together with an AI to create blackout poetry of your own. <a href="https://github.com/mkremins/blackout">Code available here.</a></p>
+				</div>
+				<div class="card project-card">
+					<div class="title"><a href="https://mkremins.itch.io/starfreighter">Starfreighter</a></div>
+					<p class="desc">An experimental procedural narrative game set in a completely procedurally generated galaxy. Uses <a href="https://mkremins.github.io/publications/Storylets_SketchingAMap.pdf">parametrized storylets</a> to achieve a greater level of dynamism than is possible with typical branching narrative structures. <a href="https://github.com/mkremins/starfreighter">Code available here.</a></p>
+				</div>
+				<div class="card project-card">
+					<div class="title"><a href="https://mkremins.itch.io/epitaph">Epitaph</a></div>
+					<p class="desc">A procedural narrative idlegame about existential risks and the death of civilizations, made for the <a href="https://itch.io/jam/fermi-paradox-jam">Fermi Paradox Jam</a> in September 2016. My first attempt to create a <a href="https://mkremins.github.io/publications/GardeningGames.pdf">gardening game</a>: a game that uses procedural content generation to position the player as the caretaker of a living world, which will keep growing and changing even in the player's absence. <a href="https://github.com/mkremins/epitaph">Code available here.</a></p>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<div class="container">
+			<nav>
+				<ul>
+					<li><a href="mailto:mkremins@ucsc.edu">email</a></li>
+					<li><a href="/cv">cv</a></li>
+					<li><a href="https://scholar.google.com/citations?user=Ja4R1yEAAAAJ">scholar</a></li>
+					<li><a href="/blog">blog</a></li>
+					<li><a href="https://twitter.com/maxkreminski">twitter</a></li>
+					<li><a href="https://github.com/mkremins">github</i></a></li>
+					<li><a href="https://mkremins.itch.io">itch.io</i></a></li>
+				</ul>
+			</nav>
+		</div>
+	</footer>
+</body>
+</html>

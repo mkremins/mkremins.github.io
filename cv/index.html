@@ -11,13 +11,14 @@
   }
   body {
     /*background: #eee;*/
-    font-family: Georgia;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
   }
   main {
-    /*background: white;*/
     margin: 0 auto;
-    max-width: 720px;
-    padding: 1rem;
+    max-width: 80ch;
+    padding: 2ch;
   }
   .header {
     text-align: center;
@@ -37,6 +38,18 @@
   section {
     margin-bottom: 2rem;
   }
+  .yeartable > * > *:last-child {
+    float: right;
+
+  }
+  /*
+  .yeartable > * {
+    display: table-row;
+  }
+  .yeartable > * > * {
+    display: table-cell;
+  }
+  */
   </style>
 </head>
 <body>
@@ -60,19 +73,22 @@
       <h2>Publications</h2>
       <!--<h3>Journal Articles</h3>-->
       <h3>Conference Papers</h3>
-      <p>Jacob Garbe, Max Kreminski, Ben Samuel, Noah Wardrip-Fruin, Michael Mateas. “StoryAssembler: An Engine for Generating Dynamic Choice-Driven Narratives.” Foundations of Digital Games (2019).</p>
-      <p>Joshua McVeigh-Schultz, Max Kreminski, Keshav Prasad, Perry Hoberman, Scott S. Fisher. <a href="/publications/ImmersiveDesignFiction.pdf">“Immersive Design Fiction: Using VR to Prototype Speculative Interfaces and Interaction Rituals within a Virtual Storyworld.”</a> Designing Interactive Systems Conference (2018).</p>
-      <p>Heather Desurvire, Max Kreminski. <a href="/publications/VRPLAY.pdf">“Are Game Design and User Research Guidelines Specific to Virtual Reality Effective in Creating a More Optimal Player Experience? Yes: VR PLAY.”</a> 7th International Conference on Design, User Experience and Usability (2018).</p>
+      <p>StoryAssembler: An Engine for Generating Dynamic Choice-Driven Narratives. Jacob Garbe, Max Kreminski, Ben Samuel, Noah Wardrip-Fruin, Michael Mateas. International Conference on the Foundations of Digital Games (FDG), 2019.</p>
+      <p><a href="/publications/ImmersiveDesignFiction.pdf">Immersive Design Fiction: Using VR to Prototype Speculative Interfaces and Interaction Rituals within a Virtual Storyworld.</a> Joshua McVeigh-Schultz, Max Kreminski, Keshav Prasad, Perry Hoberman, Scott S. Fisher. Conference on Designing Interactive Systems (DIS), 2018.</p>
+      <p><a href="/publications/VRPLAY.pdf">Are Game Design and User Research Guidelines Specific to Virtual Reality Effective in Creating a More Optimal Player Experience? Yes: VR PLAY.</a> Heather Desurvire, Max Kreminski. International Conference on Design, User Experience and Usability (DUXU), 2018.</p>
       <h3>Workshop Papers</h3>
-      <p>Max Kreminski, Noah Wardrip-Fruin. <a href="/publications/GardeningGames.pdf">“Gardening Games: An Alternative Philosophy of PCG in Games.”</a> 9th Workshop on Procedural Content Generation (2018).</p>
+      <p>Generative Games as Storytelling Partners. Max Kreminski, Noah Wardrip-Fruin. FDG Workshop on the User Experience of Artificial Intelligence in Games (UX of AI), 2019.</p>
+      <p>Cozy Mystery Construction Kit: Prototyping Toward an AI-Assisted Collaborative Storytelling Mystery Game. Max Kreminski, Devi Acharya, Nick Junius, Elisabeth Oliver, Kate Compton, Melanie Dickinson, Cyril Focht, Stacey Mason, Stella Mazeika, Noah Wardrip-Fruin. FDG Workshop on Procedural Content Generation (PCG), 2019.</p>
+      <p>Generators that Read. Max Kreminski, Isaac Karth, Noah Wardrip-Fruin. FDG Workshop on Procedural Content Generation (PCG), 2019.</p>
+      <p><a href="/publications/GardeningGames.pdf">Gardening Games: An Alternative Philosophy of PCG in Games.</a> Max Kreminski, Noah Wardrip-Fruin. FDG Workshop on Procedural Content Generation (PCG), 2018.</p>
       <h3>Posters and Demos</h3>
-      <p>Max Kreminski, Noah Wardrip-Fruin. <a href="/publications/Storylets_SketchingAMap.pdf">“Sketching a Map of the Storylets Design Space.”</a> International Conference on Interactive Digital Storytelling (2018).</p>
-      <p>Max Kreminski, Noah Wardrip-Fruin. <a href="/publications/ThrowingBottles.pdf">“Throwing Bottles at God: Predictive Text as a Game Mechanic in an AI-Based Narrative Game.”</a> International Conference on Interactive Digital Storytelling (2018).</p>
+      <p><a href="/publications/Storylets_SketchingAMap.pdf">Sketching a Map of the Storylets Design Space.</a> Max Kreminski, Noah Wardrip-Fruin. International Conference on Interactive Digital Storytelling (ICIDS), 2018.</p>
+      <p><a href="/publications/ThrowingBottles.pdf">Throwing Bottles at God: Predictive Text as a Game Mechanic in an AI-Based Narrative Game.</a> Max Kreminski, Noah Wardrip-Fruin. International Conference on Interactive Digital Storytelling (ICIDS), 2018.</p>
     </section>
     <section>
       <h2>Talks</h2>
       <!--<p><a href=""></a></p>-->
-      <!--<p><a href="">“Blackout Poetry as Subtractive Procedural Generation.”</a> Invited panelist, Computational Poetry Workshop.</p>--><!-- invited -->
+      <p><a href="">“Exploring Poemspace Through Procedural Erasure.”</a> Computational Poetry Workshop 2019.</p><!-- invited -->
       <p>“Procedural Narrative Design with Parametrized Storylets.” Experimental AI for Games, Game Developers Conference 2019.</p><!-- invited -->
       <p><a href="https://www.gdcvault.com/play/1025699/Tech">“Procedural Narrative Design with Parametrized Storylets.”</a> Tech Toolbox, Game Developers Conference 2019.</p><!-- invited -->
       <!--<p>“Gardening as a Mode of Play.” Invited guest lecture, Porter 61 Seminar in Arts, University of California, Santa Cruz.</p>-->
@@ -80,7 +96,7 @@
       <!--<p>“Mining and Gardening with Generative Systems.” Invited guest lecture, Computational Media 176 Game Systems, University of California, Santa Cruz.</p>-->
       <p><a href="https://www.youtube.com/watch?v=TvlZinAvpwg">“Gardening as a Mode of Play.”</a> Roguelike Celebration 2018.</p>
       <p><a href="https://www.twitch.tv/videos/319700999">“Gardening as a Mode of Play.”</a> Queerness and Games Conference 2018.</p>
-      <p><a href="https://www.youtube.com/watch?v=k3x6QU0Mqgc&t=10119s">“Proceduralizing Character Development with Parametrized Storylets.”</a> Sammy Showcase 2018.</p>
+      <p><a href="https://www.youtube.com/watch?v=k3x6QU0Mqgc&t=10119s">“Proceduralizing Character Development with Parametrized Storylets.”</a> UCSC Games Showcase 2018.</p>
       <p><a href="https://www.youtube.com/watch?v=66O6WDcT8KY">“Crafting Compelling Character Arcs for Procedurally Generated Characters.”</a> Roguelike Celebration 2017.</p><!-- invited -->
     </section>
     <section>
@@ -98,12 +114,14 @@
       <p>2015–2017. Junior User Researcher, User Behavioristics. User research consulting; collection and analysis of qualitative and quantitative data on user behavior in mobile and VR games and apps.</p>
     </section>
     <section>
-      <h2>Service</h2>
-      <p>2019. Program Committee, IEEE Conference on Games (CoG 2019)</p>
-      <p>2018. Additional Reviewer (Demos Track), International Conference on Interactive Digital Storytelling (ICIDS 2018)</p>
-      <p>2018. Program Committee, Fifth Workshop on Experimental AI in Games (EXAG 2018)</p>
-      <p>2017. Additional Reviewer (Demos Track), International Conference on Interactive Digital Storytelling (ICIDS 2017)</p>
-      <p>2017. Program Committee, Fourth Workshop on Experimental AI in Games (EXAG 2017)</p>
+      <h2>Conference / Workshop Organization</h2>
+      <p>AIIDE Workshop on Experimental AI in Games (EXAG), 2019</p>
+    </section>
+    <section>
+      <h2>Reviewing</h2>
+      <p>IEEE Conference on Games (CoG), 2019</p>
+      <p>Internatonal Conference on Interactive Digital Storytelling (ICIDS), 2017-2018</p>
+      <p>AIIDE Workshop on Experimental AI in Games (EXAG), 2017-2018</p>
     </section>
   </main>
 </body>
