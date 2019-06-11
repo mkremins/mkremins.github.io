@@ -9,7 +9,7 @@
 },
 {
   "title": "Cozy Mystery Construction Kit: Prototyping Toward an AI-Assisted Collaborative Storytelling Mystery Game",
-  "url": "",
+  "url": "https://mkremins.github.io/publications/CozyMysteryConstructionKit.pdf",
   "authors": ["Max Kreminski", "Devi Acharya", "Nick Junius", "Elisabeth Oliver", "Kate Compton", "Melanie Dickinson", "Cyril Focht", "Stacey Mason", "Stella Mazeika", "Noah Wardrip-Fruin"],
   "year": "2019",
   "venue": "PCG Workshop",
@@ -17,7 +17,7 @@
 },
 {
   "title": "Generators that Read",
-  "url": "",
+  "url": "https://mkremins.github.io/publications/GeneratorsThatRead.pdf",
   "authors": ["Max Kreminski", "Isaac Karth", "Noah Wardrip-Fruin"],
   "year": "2019",
   "venue": "PCG Workshop",
