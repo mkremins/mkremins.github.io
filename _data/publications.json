@@ -25,7 +25,7 @@
 },
 {
   "title": "StoryAssembler: An Engine for Generating Dynamic Choice-Driven Narratives",
-  "url": "",
+  "url": "https://mkremins.github.io/publications/StoryAssembler.pdf",
   "authors": ["Jacob Garbe", "Max Kreminski", "Ben Samuel", "Noah Wardrip-Fruin", "Michael Mateas"],
   "year": "2019",
   "venue": "FDG",
