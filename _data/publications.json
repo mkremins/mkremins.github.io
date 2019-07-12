@@ -1,5 +1,13 @@
 [
 {
+  "title": "Evaluating AI-Based Games Through Retellings",
+  "url": "",
+  "authors": ["Max Kreminski", "Ben Samuel", "Edward Melcer", "Noah Wardrip-Fruin"],
+  "year": "2019",
+  "venue": "AIIDE",
+  "venue_long": "Artificial Intelligence and Interactive Digital Entertainment"
+},
+{
   "title": "Generative Games as Storytelling Partners",
   "url": "https://mkremins.github.io/publications/GenerativeGames_StorytellingPartners.pdf",
   "authors": ["Max Kreminski", "Noah Wardrip-Fruin"],
