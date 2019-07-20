@@ -8,6 +8,15 @@
   "venue_long": "Artificial Intelligence and Interactive Digital Entertainment"
 },
 {
+  "title": "Creativity Support for Story Construction Play Experiences",
+  "url": "",
+  "authors": ["Max Kreminski"],
+  "year": "2019",
+  "venue": "AIIDE",
+  "venue_long": "Artificial Intelligence and Interactive Digital Entertainment",
+  "venue_note": "doctoral consortium paper"
+},
+{
   "title": "Generative Games as Storytelling Partners",
   "url": "https://mkremins.github.io/publications/GenerativeGames_StorytellingPartners.pdf",
   "authors": ["Max Kreminski", "Noah Wardrip-Fruin"],
