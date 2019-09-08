@@ -1,5 +1,13 @@
 [
 {
+  "title": "Felt: A Simple Story Sifter",
+  "url_TODO": "https://mkremins.github.io/publications/Felt_SimpleStorySifter.pdf",
+  "authors": ["Max Kreminski", "Melanie Dickinson", "Noah Wardrip-Fruin"],
+  "year": "2019",
+  "venue": "ICIDS",
+  "venue_long": "International Conference on Interactive Digital Storytelling"
+},
+{
   "title": "Evaluating AI-Based Games Through Retellings",
   "url": "https://mkremins.github.io/publications/EvaluatingViaRetellings.pdf",
   "authors": ["Max Kreminski", "Ben Samuel", "Edward Melcer", "Noah Wardrip-Fruin"],
