@@ -1,7 +1,7 @@
 [
 {
   "title": "Felt: A Simple Story Sifter",
-  "url_TODO": "https://mkremins.github.io/publications/Felt_SimpleStorySifter.pdf",
+  "url": "https://mkremins.github.io/publications/Felt_SimpleStorySifter.pdf",
   "authors": ["Max Kreminski", "Melanie Dickinson", "Noah Wardrip-Fruin"],
   "year": "2019",
   "venue": "ICIDS",
