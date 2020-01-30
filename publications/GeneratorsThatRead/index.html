@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>Generators that Read</title>
+  <style>
+  body {
+    font-family: Georgia, sans-serif;
+    line-height: 1.5;
+    margin: 2rem auto;
+    max-width: 700px;
+    padding: 0 1rem;
+  }
+  h1, h2, h3 {
+    line-height: 1.25;
+  }
+  pre {
+    background: #eee;
+    padding: 0.5rem;
+    -webkit-user-select: all;
+    user-select: all;
+    white-space: pre-wrap;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+  .caption {
+    font-style: italic;
+    text-align: center;
+  }
+  .caption em {
+    font-style: normal;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+  tr:not(:last-child) td {
+    padding-bottom: 0.5rem;
+  }
+  td:not(:last-child) {
+    padding-right: 1rem;
+  }
+  sup, sub {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+  }
+  /* header, header a { color: #aaa; } */
+  </style>
+</head>
+<body>
+<!--<header><a href="/">Max Kreminski</a> / <a href="/">Publications</a></header>-->
+<h1>Generators that Read</h1>
+<div class="authors"><a href="https://mkremins.github.io">Max Kreminski</a>, Isaac Karth, Noah Wardrip-Fruin</div>
+<div class="pubinfo">
+  Presented at <a href="http://fdg2019.org/">FDG 2019</a> •
+  <a href="#cite">How to cite</a> •
+  <a href="%22Generators that Read%22 Kreminski">Google Scholar</a> •
+  <a href="https://mkremins.github.io/publications/GeneratorsThatRead.pdf">PDF</a>
+</div>
+<p>Most discussions of procedural content generation have focused primarily on the artifacts that generators produce or the process by which these artifacts are created. Less focus, however, has been placed on the methods by which generators interpret their input. Many generators take complex input, act as part of a generative pipeline, are part of a mixed-initiative communication with the user, or otherwise need to take context into account during generation. In these cases, the process by which the generator reads and makes sense of its input is often just as interesting as the process by which it produces an output artifact. It is worthwhile to take a closer look at how generators read. Via a case study of two erasure poetry generators, we propose the concept of a <em>generativist reading</em>: a process of reading that produces generative models. Many existing generators have dual input/output or reading/writing processes that are presented as a monolithic unit, but our understanding of both processes and results is enriched when we clearly distinguish between how generators write and how they read.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Recent years have seen an increased interest in approaches to procedural content generation that interpret and meaningfully respond to complex forms of input, often forms of input that were not originally intended to be used as input to a generator. Challenges such as the Settlement Generation Challenge of the Generative Design in Minecraft Competition&nbsp;[<a href="#ref_Salge:2018:GDM:3235765.3235814">1</a>] have explicitly encouraged a focus on the development of <em>context-sensitive</em> generators, capable of taking an arbitrary <em>Minecraft</em> map as input and generating a settlement that fits well within the context of that particular map. Projects like <em>WikiMystery</em>&nbsp;[<a href="#ref_WikiMystery">2</a>] have used existing corpuses of open data as a foundation for the generation of murder mystery scenarios. And essentially all approaches that fall under the umbrella of <em>procedural content generation via machine learning</em>&nbsp;[<a href="#ref_PCGML">3</a>] begin by training on a large corpus of input data.</p>
+<p>Nevertheless, there remains a tendency in the community to talk about generation as though it is primarily a process of <em>writing</em> or ex nihilo creation of artifacts, sidelining or even outright erasing the sophistication of the increasingly complex components of generators that concern themselves primarily with the <em>reading</em> of input. We believe it is worthwhile to look more closely at how generators read.</p>
+<p>At the same time, we observe a tendency within computer science research to place an emphasis on <em>correctness</em> and <em>unambiguousness</em> in the development of algorithms for interpreting complex forms of input. From natural language processing to emotion recognition from face images, much of the literature implicitly assumes that it is both possible and desirable to produce an objectively correct and unambiguous interpretation of these complex inputs within the computer. We contend, however, that extracting machine-usable meaning from complex input necessarily entails a creative act of interpretation: the complexity of the input ensures that it could always be read differently, and the approach to interpretation that you choose to apply will affect the nature of the interpretation you produce.</p>
+<p>Moreover, we argue that, for the purpose of procedural content generation, it is often beneficial to accept “incorrect” and “ambiguous” readings of complex input as valid, enabling our generators to produce surprising outputs by selecting from among a wide range of mutually incompatible but equally viable interpretations of the same input. Likewise, when designing generators to be used in mixed-initiative contexts, it may  be desirable to embrace multivocality by exposing the user to a variety of possible interpretations of the same input, thereby helping them to see alternatives they might not otherwise have considered. </p>
+<p>There are many different approaches to reading, and within the humanities, many forms of critical practice are organized around a particular theory or methodology of reading. Borrowing this lens, we suggest that different approaches to reading might inform or inspire the development of novel approaches to procedural generation, and that analyses of existing generators may benefit from thorough examination of how these generators read their input in a way that engages deeply with a particular theory of reading.</p>
+<p>Rather than viewing generators as monolithic black boxes, generators can be viewed as a pipeline of data transformations&nbsp;[<a href="#ref_compton2017generative">4</a>]. Many common procedural content generation techniques can be subdivided into modular units that chain into each other, often forming a complex web. In some fields, such as parametric 3D modeling or shaders, these connections are made explicit through the use of node-based interfaces. Node based interfaces explicitly route the outputs of one stage of the pipeline into the inputs of the next (Fig.  ref{fig:houdini}). In the PCG field, this has been expanded by the Generominos ideation cards, which model a pipeline of data transformations, explicitly highlighting the importance of matching inputs and outputs&nbsp;[<a href="#ref_compton2017generominos">5</a>].</p>
+<div class="figure" id="fig:houdini">
+                  <img src="files/houdini_node_examples.png"/>
+                  <p class="caption">A portion of a node-graph in SideFX’s Houdini, a procedural 3D modeling and effects software, demonstrating how the web of nodes is connected via inputs and outputs.</p>
+                  </div>
+<p>For example, consider WaveFunctionCollapse (WFC), a constraint-based and example-driven approach to procedural content generation. WFC is composed of two linked generative processes: an input model that translates an image into adjacency constraint data, and a probabilistic constraint solver that turns the data into new generated images&nbsp;[<a href="#ref_Karth:2017:WCS:3102071.3110566">6</a>]. The constraint solver cannot act on its own without some form of input to specify the constraint data. The generator needs both its input and its output components to operate. Further, WaveFunctionCollapse has multiple input models that read input data with different approaches. By examining how the different input models process the data that the generator reads, we can gain greater insight into the process of the generator as a whole.</p>
+<p>As another example, consider that many of the novel generators created for National Novel Generation Month (NaNoGenMo)<sup><a href="#footnote1">1</a></sup> draw on the same source texts—frequently including <em>Alice in Wonderland</em>, <em>Moby-Dick</em>, and <em>The Odyssey</em>—yet produce very different outputs. This is possible in part because each generator takes a different approach to reading its input text.</p>
+<p>In this paper, we first discuss the reasons we might want our generators to interpret and respond to complicated forms of input—or, in other words, to read. Then we investigate, from a humanities perspective, what exactly it means to read, with an eye to how a diverse range of existing approaches to reading might inform the development of new approaches to procedural content generation. Next we introduce the concept of <em>generativist readings</em>: readings of texts that take the form of sets of rules for producing more texts of a similar nature. We present a brief comparison of two similar erasure poetry generators that are differentiated almost exclusively by their approaches to reading. Finally, we discuss the broader implications of a deeper investigation of reading in the context of generative methods.</p>
+<p>We focus our investigation primarily on generators that read complex inputs which were not originally intended primarily as inputs to a generator. A generator that reads complicated generator-specific configuration files, for instance, is of less interest to us than a generator that reads <em>Minecraft</em> worlds or arbitrary English texts. Nevertheless, generators that read complicated forms of generator-specific input may still be amenable to some of the same forms of analysis, so we do not exclude them entirely from the scope of our interest. </p>
+<h2 id="why-do-we-want-our-generators-to-read-">Why Do We Want Our Generators to Read?</h2>
+<h3 id="context-sensitive-generation">Context-Sensitive Generation</h3>
+<p>There are a wide range of problem domains that call for <em>context-sensitive</em> forms of procedural content generation: the generation of artifacts that, rather than standing alone, are expected to fit in to some existing complex context. One example of a problem that calls for context-sensitive generation can be found in the Settlement Generation Challenge of the Generative Design in Minecraft Competition&nbsp;[<a href="#ref_Salge:2018:GDM:3235765.3235814">1</a>], which tasks competitors with building a generator that can produce a convincing settlement on any arbitrary chunk of terrain in the voxel-based construction game <em>Minecraft</em>. In order to reward competitors for producing generators that are truly context-sensitive, competitors are not given access to the specific maps that will be used as testbeds for their settlement generation processes. Therefore, they must do their best to produce generators that are capable of functioning in a wide range of potential contexts, and are disincentivized to produce generators that are prone to overwriting large swaths of the existing terrain without regard for how a generated settlement might fit more naturally into its surroundings.</p>
+<p>In other cases, it is often desirable to generate content that fits around or fills the gaps between a number of fixed “landmarks” without overwriting those landmarks. This too necessitates generators that are capable of reading and responding to an established context.</p>
+<h3 id="generative-pipelines">Generative Pipelines</h3>
+<p>Building on the notion of context-sensitive generation, it is important to acknowledge that many generators do not operate in a vacuum. In particular, especially in games that make extensive use of procedural content generation, a single generator is often merely one component of a larger generative pipeline that consists of many generators wired together end-to-end. In these situations, the complex output of one generator becomes complex input to another generator, and the downstream generator must then interpret the input in some nontrivial way in order to generate an output artifact that matches or meaningfully adapts to the input artifact.</p>
+<p>When working with procedurally-generated base terrain, a frequent problem is to appropriately respect the elevation of the terrain when placing objects, particularly when generating buildings, towns, and road networks on rough terrain&nbsp;[<a href="#ref_emilien2012procedural">7</a>]. For example, <em>Minecraft</em> settlement generation is itself an instance of a problem where generative pipelining leads to a need for downstream generators that are capable of interpreting and responding to the complex output of upstream generators (in this case, the base terrain generator itself)&nbsp;[<a href="#ref_Salge:2018:GDM:3235765.3235814">1</a>]. Likewise, world generation in the roguelike <em>Caves of Qud</em> makes use of multiple distinct generators, each of which feeds into other generators in the pipeline&nbsp;[<a href="#ref_QudEndToEnd">8</a>].</p>
+<h3 id="mixed-initiative-co-creativity">Mixed-Initiative Co-Creativity</h3>
+<p>When building mixed-initiative co-creative tools&nbsp;[<a href="#ref_MICC">9</a>] that attempt to use procedural generation to supplement or augment the work of a human user, it is especially critical for the generative systems employed by the tool to be capable of reading or interpreting whatever the human user has created so far. In cases where the generator is not capable of doing this, it is likely to step on the user’s toes in various ways, for instance by overwriting their work and replacing it with generated content.</p>
+<p>This behavior can be seen in the context of mixed-initiative 2D platformer level design tools with <em>Morai Maker</em>&nbsp;[<a href="#ref_MoraiMaker">10</a>], an AI-driven game level editor in which a human user and an AI level designer take turns collaborating on a single shared design. Unlike earlier human/AI collaborative level design tools such as <em>Tanagra</em>&nbsp;[<a href="#ref_Tanagra">11</a>], which provides the human user with a suite of tools for communicating their design intent to the AI directly, <em>Morai Maker</em> attempts to infer what it should do in response to the human user’s actions largely without explicit guidance. Partly as a result of this lack of guidance, the AI collaborator has a tendency to apparently ignore or repeatedly overwrite the human user’s edits to the shared design, which can produce frustration in users who desire a greater degree of control over the design process. The user experience of <em>Morai Maker</em> under its current design constraints, then, hinges on its ability to read the design the user has created so far, ideally with an eye to deriving an understanding of the user’s intention purely from the actions they have taken. Improving the AI collaborator’s capability to read the human user’s partial level designs would directly result in an overall improvement to the user experience of collaborating with the AI.</p>
+<h2 id="what-does-it-mean-to-read-">What Does It Mean to Read?</h2>
+<p>There are many different kinds of reading. Within the humanities, the term “reading” has taken on an expansive definition as an umbrella term under which a wide variety of approaches to the analysis and interpretation of texts may be considered. Indeed, following the <em>linguistic turn</em>&nbsp;[<a href="#ref_LinguisticTurn">12</a>] in the humanities, the term “text” has itself taken on a broader meaning than in its original sense of purely linguistic or written works, and is now widely understood to encompass all kinds of cultural artifacts&nbsp;[<a href="#ref_PoeticsText">13</a>, <a href="#ref_lotman">14</a>], from advertisements to zoo signage. As such, the notion of “reading” is a contested one, and merits further examination if we are to apply it as a lens to the understanding of generative methods. We do not attempt a comprehensive survey of all possible approaches to reading, as such an undertaking would be well outside the scope of this work. Instead, we offer samples of several diverse perspectives on the question of what it means to read, with the goal of illustrating the range of approaches that are possible and hinting at how different approaches to reading might inform or inspire different approaches to procedural generation.</p>
+<h3 id="close-reading">Close Reading</h3>
+<p>Close reading is “the thorough interpretation of a text passage by the determination of central themes and the analysis of their development”&nbsp;[<a href="#ref_janicke2015close">15</a>]. “Close reading concerns close attention to textual details with respect to elements such as setting, characterization, point of view, figuration, diction, rhetorical style, tone, rhythm, plot, and allusion,” often examining the gap between what is said and what can be inferred&nbsp;[<a href="#ref_rapaport">16</a>]. The methodology is evaluated, in part, by its explanatory power for the details of the presentation.</p>
+<p>A generator that performs a close reading of its input is concerned with the details of the input. Interactive Data Visualization Inc.’s SpeedTree, to give one example, pays careful attention to the shape of the nearby terrain—at a fairly high level of granularity—when placing a tree.</p>
+<h3 id="distant-reading">Distant Reading</h3>
+<p>Positioned in contrast to close reading, in <em>distant reading</em> “the reality of the text undergoes a process of deliberate reduction and abstraction”&nbsp;[<a href="#ref_moretti2005graphs">17</a>]. Rather than concerning itself with the details of presentation, distant reading is a process that operates on models and visualizations of the text. This thousand-foot view reveals commonalities and structures that would otherwise go unseen but that can now be visualized by graphs, maps, trees, and other data structures.</p>
+<p>One approach to designing a generator is to program a model of the process that created the desired result, or has a visual similarity to the desired result. In the first case, a teleological terrain generator&nbsp;[<a href="#ref_Barr:1991:TM:111154.111171">18</a>] might include simulations of geological processes, erosion, the shifting flow of rivers, and so on. In contrast, an ontological terrain generator&nbsp;[<a href="#ref_MUSGRAVE2003428">19</a>] might use Perlin noise to emulate the shape of the desired terrain. In either case, the generator is modeling a system, and both creating and analyzing the generator involve a process of reading via that model.</p>
+<h3 id="critical-approach">Critical Approach</h3>
+<p>A critical approach to reading is performed by mapping a theory onto a literary work to explain its meaning, a two-directional process where “the theory should illuminate a work, and a work should illuminate a theory”&nbsp;[<a href="#ref_rapaport">16</a>]. We can characterize image generation via deep learning neural networks (such as Deep Dream&nbsp;[<a href="#ref_mordvintsev2015inceptionism">20</a>]) as a generator that reads its input by mapping a theory (learned in training) onto the input image. </p>
+<h3 id="hermeneutics">Hermeneutics</h3>
+<p>A <em>grammatical hermeneutic</em> reading attempts to derive the meaning of a text through analysis of elements that are present within the text itself, rather than from elements outside the text, such as the intention of the author&nbsp;[<a href="#ref_Hermeneutics">21</a>]. For our purposes, an important factor to recognize is that this often deliberately results in multiple parallel readings of a single text. For example, the European medieval exegesis of sacred texts, influenced by Aquinas, simultaneously looked for four senses in every text: a literal (<em>sensus literalis</em>), moral or tropological (<em>sensus tropologicus</em>), allegorical (<em>sensus allegoricus</em>), and mystic (<em>sensus anagogicus</em>) sense&nbsp;[<a href="#ref_10.2307/2849551">22</a>]&nbsp;[<a href="#ref_hollanderDante">23</a>, p. 99].</p>
+<p>The recognition that a single work can have multiple senses challenges the assumption that a reading will arrive at a single, unambiguous classification. A text can be read in multiple ways simultaneously, and multiple generators can produce a variety of valid interpretations—even mutually incompatible interpretations—of the same input.</p>
+<h3 id="poetics">Poetics</h3>
+<p>In contrast to hermeneutic approaches to reading, poetics represents an alternative perspective that focuses instead on the <em>felt effects</em> of a text in the reader&nbsp;[<a href="#ref_Poetics1">24</a>, <a href="#ref_Poetics2">25</a>]. Whereas it is fairly straightforward to see how close or distant reading might be employed in the construction of a generator, it is less obvious how the framework of poetics might be applied to a machine reader, especially insofar as the term “felt effects” may be interpreted as concerning itself primarily with a text’s <em>physiological</em> effects. Nevertheless, generation based on a subjective experience of a text—perhaps from the perspective of one interpreting agent among many in an artificial artist commune such as CheapArtistsDoneQuick&nbsp;[<a href="#ref_comptonSharedLanguage">26</a>] or The Digital Clockwork Muse&nbsp;[<a href="#ref_ClockworkMuse">27</a>]—remains an intriguing possibility. </p>
+<p>For an example of an existing generative technique that may exhibit something like mechanical felt effects, consider word vectors, which are constructed through a mechanical analysis of word adjacencies&nbsp;[<a href="#ref_Mikolov2013EfficientEO">28</a>, <a href="#ref_Mikolov2013DistributedRO">29</a>]. Because word vectors describe points in a much larger <em>continuous</em> space, they allow for a kind of “semantic bleed” between adjacent words, similar to how ambiguity and wordplay operates in textual poetics for human readers. Further, word vectors capture semantic relationships in the text that was read&nbsp;[<a href="#ref_linguistic-regularities-in-continuous-space-word-representations">30</a>], indirectly modeling or mimicking some of the subjective effects of reading in human readers through their very method of construction.</p>
+<h3 id="proceduralist-readings">Proceduralist Readings</h3>
+<p>Proceduralist readings represent still another approach to reading, this time an approach native to game studies and focused primarily on the interpretation of interactive or rule-based texts such as videogames. Proceduralist readings “address a convergence point between [...] expression and interpretation” and focus on “internal readings of a game’s dynamic” yielding “meaning derivations”&nbsp;[<a href="#ref_Treanor:2011:PRF:2159365.2159381">31</a>]. These meaning derivations are structured logical arguments for the interpretation of the game’s mechanical and sensory cues as the higher-level meanings that emerge as the game’s dynamics and aesthetics.</p>
+<p>Proceduralist readings have themselves been proceduralized: building on the Operational Logics framework as a game description language, Martens et al. describe a procedure for automated reasoning about games&nbsp;[<a href="#ref_martens2016proceduralist">32</a>]. This proceduralization, in turn, has become an essential component of Gemini&nbsp;[<a href="#ref_Gemini">33</a>], a generator of abstract games. Gemini provides users with a specification language that they may use to specify what arguments they want the generated games to make. Gemini then uses this specification to guide its search within the design space of possible games, identifying and returning games that may be read in the desired ways.</p>
+<h3 id="takeaways">Takeaways</h3>
+<p>As evidenced by the brief sampling here, a wide variety of theories of reading have been introduced, and each such theory has interesting potential implications for generators that read. Proceduralizing various approaches to reading may prove a successful strategy for the discovery of new approaches to generation. Moreover, deep engagement with a particular theory of reading may enable deeper analysis of existing generators that process complex inputs.</p>
+<p>It is also important to note the double meaning of the term “reading” as it is commonly understood: the same term applies both to the process of interpretation and to the concrete interpretations that are produced through the application of this process. Reading a text produces a particular reading of the text in question, and a reading of a text may be examined, understood, or interpreted as a concrete artifact or text in and of itself. Therefore, when a generator reads an input text, it may be useful to consider the reading it produces as an artifact that merits examination, even if this reading is not intended to be directly consumed or experienced by the generator’s audience at the end of the generative process. In the following section, we further examine the implications of this view.</p>
+<h2 id="generativist-readings">Generativist Readings</h2>
+<p>By analogy to proceduralist readings, we propose the notion of <em>generativist readings</em>. A generativist reading is an interpretation of a text consisting of a set of rules for generating artifacts similar to or based on the text. Much like a proceduralist reading of an interactive text focuses on deriving meaning from the rules or procedures within the text, a generativist reading attempts to answer the question of what this text can tell us about how to produce more similar texts.</p>
+<p>Generativist readings need not be exclusively constructed by mechanical processes. Oftentimes, when we create generators to produce types of artifacts that were previously exclusively handmade, we essentially find ourselves manually conducting a generativist reading of a corpus of examples. For instance, if a human reader was to read <em>Moby-Dick</em> and handcraft a Tracery&nbsp;[<a href="#ref_Tracery">34</a>] grammar that utilizes vocabulary and sentence structures drawn from the book to produce sentences that sound plausibly as though they could be drawn directly from the source text, the resulting grammar would constitute a generativist reading of the text. Similar practices are not uncommon among Twitter bot creators, who may often begin by writing out the source text that a generator will try to imitate and then recursively substitute grammar rules in place of concrete words, gradually sublimating the text itself into a statistical model of the text. Manual generativist readings may even be used as an instrument of critique: consider Umberto Eco’s proposal of algorithms for plot generation in the style of various filmmakers as a way of parodying those filmmakers’ styles.&nbsp;[<a href="#ref_MakeYourOwnMovie">35</a>]</p>
+<p>However, in practice, many generativist readings <em>are</em> constructed by mechanical processes. Mechanical processes of generation that rely on generativist readings typically begin by conducting one or more generativist readings of an input text or corpus. The generator then queries or manipulates these readings to produce individual output artifacts. For instance, text generation with Markov chains follows a two-step process. First, the computer conducts a generativist reading of the source text by moving over the text and tracking the overall frequency with which each word it encounters follows each other word. Then, the process of generation employs the statistical model created through reading to write new texts that imitate the read text. This same structure can be observed in many forms of generation, especially in procedural content generation via machine learning&nbsp;[<a href="#ref_PCGML">3</a>], which hinges entirely on the construction of generative models from which individual output artifacts can then be sampled.</p>
+<p>Some practitioners in the generative art world recognize the reading process as an intrinsic part of generation. For example, in the view of everest pipkin:</p>
+<blockquote>
+When I say that the creative act is the reader’s, I imply the creator as well as the audience. When working with generative text, it is impossible not to read. One has to look for bodies of text that can function as useful sources for tools; big enough, or concrete enough, or with the right type of repetitive structure; learnable. And then one has to read the output of such machines, refining rules and structures to fix anything that breaks that aura of the space one is looking for. In this, we are not unlike the medieval scholar who studies holy verse to become fluent enough in that space that it becomes building block.&nbsp;[<a href="#ref_pipkin2016history">36</a>]
+</blockquote>
+<p>Generators with more complexity stem from reading with more sophistication: compared with a Markov chain, the better performance of Long Short Term Memory neural network architecture&nbsp;[<a href="#ref_doi:10.1162/neco.1997.9.8.1735">37</a>] can be partially attributed to a more in-depth reading process that takes into account correlations that are more complex than the short horizon a reasonable Markov chain can remember. </p>
+<p>While reading is an intrinsic part of machine learning, it is not confined to neural networks. Procedural generation algorithms like WaveFunctionCollapse&nbsp;[<a href="#ref_Karth:2017:WCS:3102071.3110566">6</a>] also depend on reading. WaveFunctionCollapse performs a generativist reading on the images it uses as input and translates them into a model that can in turn be used to generate new examples that imitate structures it has recognized in the input.</p>
+<p>Not every generator that makes use of reading as part of the generative process necessarily conducts a generativist reading. Gemini&nbsp;[<a href="#ref_Gemini">33</a>], a generator of simple abstract games based on Martens et al.’s proceduralization of proceduralist readings&nbsp;[<a href="#ref_martens2016proceduralist">32</a>], conducts proceduralist readings on the games it generates in order to determine whether or not they can be interpreted in a way that matches the arguments the user has specified they want to make. However, this reading occurs only internally—the things it reads are the incomplete games that it has itself generated—and it does not build a generative model of these games based on its reading, but merely uses its reading to direct its search within the possibility space.</p>
+<p>In contrast to Gemini’s proceduralist reading approach, the Ludi game generation system reads abstract games in terms of their rules, as formatted in a game description language. Ludi reads game rules through a process of analyzing self-play simulations. Ludi then evaluates their fitness as defined by a set of algorithmically-measured aesthetic criteria&nbsp;[<a href="#ref_Browne5404867">38</a>]. The writing process combines the read game rules into new mixtures of rules. These are added to the collection of game descriptions to create the next generation of games and the reading and writing process repeats. It has been suggested to us that Ludi uses a form of generativist reading: the analysis and evolving process is aimed at generating new game rules that are similar to the game descriptions it read as input, and it builds up a generative model that attempts to describe the possibility space of aesthetically interesting game descriptions.  </p>
+<h2 id="case-study">Case Study</h2>
+<p>As an illustration of the potential importance of reading to the generative process, we now present a brief comparison of two similar erasure poetry generators: <em>The Deletionist</em>&nbsp;[<a href="#ref_TheDeletionist">39</a>] and <em>blackout</em>&nbsp;[<a href="#ref_Blackout">40</a>]. Both of these generators are packaged as browser bookmarklets and present themselves as ways of turning arbitrary web pages into poetry by erasing most of a page’s text. Moreover, the processes by which these generators write their modifications to the target page are both straightforward and nearly identical. The difference between these two generators thus lies almost entirely in how each generator reads or interprets a page’s text prior to modification.</p>
+<p><em>The Deletionist</em> interprets each webpage as a single unit, considering all the text on the page at once rather than breaking it up into smaller pieces for analysis. It decides which words to erase deterministically, such that running it repeatedly on the same webpage will produce the same result every time. Its selection of which parts of the text to retain is based on one of several regular expression patterns, many of which use either the start or end of words to determine whether some or part of the word should be retained. In some cases, for instance, it will choose to retain primarily words beginning with the letter M, while in other cases, it will choose to retain words ending with a period. It also frequently retains certain common whitelisted words, such as “from” and “like”. Once it has decided which parts of the text to retain, all other parts are erased.</p>
+<p><em>blackout</em> takes a markedly different approach. Rather than treating the whole page as a single unit, it reads each paragraph in isolation and makes no attempt to coordinate its reading of one paragraph with its reading of the next. It reads nondeterministically, such that running it repeatedly on the same webpage will typically produce different results from one run to the next. Its selection of which words to retain, meanwhile, makes use of part-of-speech tagging and probabilistic fuzzy matching of valid sequences of parts of speech, recognizing simple declarative sentences that could be formed by omitting some or all of the words in a paragraph and selecting some valid sentence for each paragraph.</p>
+<p>A side-by-side comparison of the outputs that these two generators produce when run on the same input page will further confirm that the differences between them lie largely in terms of how they read the input they are provided. This serves to illustrate an important principle: for generators that take nontrivial input (and that can thus can meaningfully be said to consist of a distinct “reading” and “writing” component), it is possible to alter or replace either the reading or the writing part without changing the other component and still get interestingly different results.</p>
+<div class="figure" id="fig:blackout">
+                  <img src="files/blackout.png"/>
+                  <p class="caption">An erasure poem generated by running <em>blackout</em> on one paragraph of the 2019 PCG Workshop call for papers, taking the form of a simple declarative sentence.</p>
+                  </div>
+<div class="figure" id="fig:deletionist">
+                  <img src="files/deletionist.png"/>
+                  <p class="caption">An erasure poem generated by running <em>The Deletionist</em> on the same input, taking the form of a series of syllables corresponding to musical notes.</p>
+                  </div>
+<p>Both generators are equipped with a variety of patterns, each of which is tested against the input before the generator makes a final determination about how to generate the output poem. This can be seen as leveraging a form of internal multivocality, embracing the ambiguity of the reading process by engaging with a variety of interpretations of the same input. Moreover, in the case of <em>blackout</em>, the generator creatively misapplies a part-of-speech tagging algorithm taken from a natural language processing package to deliberately preserve ambiguities of interpretation in the source text. Rather than flattening ambiguous words (which could be parsed as having several distinct and mutually incompatible parts of speech) into a single most likely interpretation, as in the typical application of similar algorithms, <em>blackout</em> avoids this flattening by treating words as having arbitrarily many distinct part-of-speech tags until the final poem is rendered.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>As we have seen, reading is a useful analytic lens we can use to better understand how generators process input, including context sensitive generation, chaining generators together into pipelines, and furthering mixed-initiative co-creativity.</p>
+<p>By treating the problem of extracting machine-usable meaning from complex input as a form of reading, we suggest that—when crafting a generator that reads—it is often desirable to preserve ambiguity and embrace the possibility of incorrectness, rather than attempting to read correctly and unambiguously. Interpretation is essentially a kind of creative act, and different approaches to interpretation may inform the development of new approaches to generation. 
+A terrain generator that models a physical process reads its model in a different way than a tree generator that curves roots around nearby stones. The idea of a proceduralist reading is an already accepted methodology in game studies, and, in part, inspires our introduction of generativist readings.</p>
+<p>A generativist reading is an interpretation of a text into a generator of similar texts. The existing practice of many generative artists and bot creators can be considered as generativist readings, while mechanical generativist readings are foundational to many existing approaches to PCG, including procedural content generation via machine learning. The greater the complexity of the generator, the more sophisticated the reading: breakdowns in generative pipelines can be caused by a mismatch in complexity between the input and the output, as with Compton et al.’s example of complex input from a Kinect being effectively reduced to button-presses by a badly designed pipeline&nbsp;[<a href="#ref_compton2017generominos">5</a>].</p>
+<p>As a brief illustration, we contrasted two erasure poetry generators, <em>The Deletionist</em>&nbsp;[<a href="#ref_TheDeletionist">39</a>] and <em>blackout</em>&nbsp;[<a href="#ref_Blackout">40</a>] and demonstrated that the differences between them rests almost entirely on the different approaches to reading the input.</p>
+<p>Many generators have interesting approaches to reading. However, the way generators read is less discussed than how they write, and seldom separated into a subject worthy of discussion on its own. Despite this, we have demonstrated several ways in which particular generators cannot be understood without first examining how they read. Therefore, when we discuss generators, we should go beyond discussing what the output looks like and consider including a clear separation in our discussion: between the ways in which a generator writes and the ways in which it reads.</p>
+<h4 id="acknowledgements">Acknowledgements</h4>
+<p>The authors would like to thank the anonymous referees for their valuable comments and helpful suggestions.</p><h2 id="footnotes">Footnotes</h2>
+<p class="footnote" id="footnote1"><sup>1</sup> <a href="https://nanogenmo.github.io/">https://nanogenmo.github.io/</a></p>
+<h2 id="references">References</h2>
+<p class="ref" id="ref_Salge:2018:GDM:3235765.3235814">
+               [1] Christoph Salge, Michael Cerny Green, Rodgrigo Canaan, Julian Togelius.
+               2018.
+               <a href="http://doi.acm.org/10.1145/3235765.3235814">Generative Design in Minecraft (GDMC): Settlement Generation Competition</a>.
+               In <em>Proceedings of the 13th International Conference on the Foundations of Digital Games</em>.
+               </p><p class="ref" id="ref_WikiMystery">
+               [2] Gabriella Alves Bulhoes Barros, Michael Green, Antonios Liapis, Julian Togelius.
+               2019.
+               <a href="https://scholar.google.com/scholar?q=%22Who killed Albert Einstein? From open data to murder mystery games%22 Gabriella Alves Bulhoes Barros">Who killed Albert Einstein? From open data to murder mystery games</a>.
+               
+               </p><p class="ref" id="ref_PCGML">
+               [3] Adam Summerville, Sam Snodgrass, Matthew Guzdial, Christoffer Holmgård, Amy K Hoover, Aaron Isaksen, Andy Nealen, Julian Togelius.
+               2018.
+               <a href="https://scholar.google.com/scholar?q=%22Procedural content generation via machine learning (PCGML)%22 Adam Summerville">Procedural content generation via machine learning (PCGML)</a>.
+               
+               </p><p class="ref" id="ref_compton2017generative">
+               [4] Kate Compton, Michael Mateas.
+               2017.
+               <a href="https://aaai.org/ocs/index.php/AIIDE/AIIDE17/paper/view/15896">A generative framework of generativity</a>.
+               In <em>Experimental AI in Games Workshop 2017, at the Thirteenth Artificial Intelligence and Interactive Digital Entertainment Conference</em>.
+               </p><p class="ref" id="ref_compton2017generominos">
+               [5] Kate Compton, Edward Melcer, Michael Mateas.
+               2017.
+               <a href="https://aaai.org/ocs/index.php/AIIDE/AIIDE17/paper/view/15898">Generominos: Ideation Cards for Interactive Generativity</a>.
+               In <em>Experimental AI in Games Workshop 2017, at the Thirteenth AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment</em>.
+               </p><p class="ref" id="ref_Karth:2017:WCS:3102071.3110566">
+               [6] Isaac Karth, Adam M. Smith.
+               2017.
+               <a href="http://doi.acm.org/10.1145/3102071.3110566">WaveFunctionCollapse is Constraint Solving in the Wild</a>.
+               In <em>Proceedings of the 12th International Conference on the Foundations of Digital Games</em>.
+               </p><p class="ref" id="ref_emilien2012procedural">
+               [7] Arnaud Emilien, Adrien Bernhardt, Adrien Peytavie, Marie-Paule Cani, Eric Galin.
+               2012.
+               <a href="https://scholar.google.com/scholar?q=%22Procedural generation of villages on arbitrary terrains%22 Arnaud Emilien">Procedural generation of villages on arbitrary terrains</a>.
+               
+               </p><p class="ref" id="ref_QudEndToEnd">
+               [8] Jason Grinblat, Brian Bucklew.
+               2019.
+               <a href="https://scholar.google.com/scholar?q=%22Math for Game Developers: End-to-End Procedural Generation in ‘Caves of Qud’%22 Jason Grinblat">Math for Game Developers: End-to-End Procedural Generation in ‘Caves of Qud’</a>.
+               In <em>Game Developer’s Conference 2019</em>.
+               </p><p class="ref" id="ref_MICC">
+               [9] Georgios N Yannakakis, Antonios Liapis, Constantine Alexopoulos.
+               2014.
+               <a href="https://scholar.google.com/scholar?q=%22Mixed-initiative co-creativity%22 Georgios N Yannakakis">Mixed-initiative co-creativity</a>.
+               In <em>Proceedings of the 9th International Conference on the Foundations of Digital Games</em>.
+               </p><p class="ref" id="ref_MoraiMaker">
+               [10] Matthew Guzdial, Nicholas Liao, Jonathan Chen, Shao-Yu Chen, Shukan Shah, Vishwa Shah, Joshua Reno, Gillian Smith, Mark Riedl.
+               2019.
+               <a href="https://scholar.google.com/scholar?q=%22Friend, Collaborator, Student, Manager: How Design of an AI-Driven Game Level Editor Affects Creators%22 Matthew Guzdial">Friend, Collaborator, Student, Manager: How Design of an AI-Driven Game Level Editor Affects Creators</a>.
+               In <em>Proceedings of ACM SIGCHI Conference on Human Factors in Computing Systems (CHI)</em>.
+               </p><p class="ref" id="ref_Tanagra">
+               [11] Gillian Smith, Jim Whitehead, Michael Mateas.
+               2010.
+               <a href="https://scholar.google.com/scholar?q=%22Tanagra: A mixed-initiative level design tool%22 Gillian Smith">Tanagra: A mixed-initiative level design tool</a>.
+               In <em>Proceedings of the Fifth International Conference on the Foundations of Digital Games</em>.
+               </p><p class="ref" id="ref_LinguisticTurn">
+               [12] Christoph Reinfandt.
+               2009.
+               <a href="https://scholar.google.com/scholar?q=%22Reading Texts after the Linguistic Turn: Approaches from Literary Studies and Their Implications%22 Christoph Reinfandt">Reading Texts after the Linguistic Turn: Approaches from Literary Studies and Their Implications</a>.
+               In <em>Reading Primary Sources: The Interpretation of Texts from Modern History</em>.
+               </p><p class="ref" id="ref_PoeticsText">
+               [13] P. Ffrench.
+               2012.
+               <a href="https://scholar.google.com/scholar?q=%22Text%22 P. Ffrench">Text</a>.
+               In <em>The Princeton Encyclopedia of Poetry and Poetics : Fourth Edition</em>.
+               </p><p class="ref" id="ref_lotman">
+               [14] Yuri Lotman.
+               1977.
+               <a href="https://scholar.google.com/scholar?q=%22The Structure of the Artistic Text%22 Yuri Lotman">The Structure of the Artistic Text</a>.
+               
+               </p><p class="ref" id="ref_janicke2015close">
+               [15] Stefan Jänicke, Greta Franzini, Muhammad Faisal Cheema, Gerik Scheuermann.
+               2015.
+               <a href="https://scholar.google.com/scholar?q=%22On close and distant reading in digital humanities: A survey and future challenges%22 Stefan Jänicke">On close and distant reading in digital humanities: A survey and future challenges</a>.
+               In <em>Eurographics Conference on Visualization (EuroVis)-STARs. The Eurographics Association</em>.
+               </p><p class="ref" id="ref_rapaport">
+               [16] Herman Rapaport.
+               2011.
+               <a href="https://scholar.google.com/scholar?q=%22The Literary Theory Toolkit: A Compendium of Concepts and Methods%22 Herman Rapaport">The Literary Theory Toolkit: A Compendium of Concepts and Methods</a>.
+               
+               </p><p class="ref" id="ref_moretti2005graphs">
+               [17] F. Moretti, A. Piazza.
+               2005.
+               <a href="https://scholar.google.com/scholar?q=%22Graphs, Maps, Trees: Abstract Models for a Literary History%22 F. Moretti">Graphs, Maps, Trees: Abstract Models for a Literary History</a>.
+               
+               </p><p class="ref" id="ref_Barr:1991:TM:111154.111171">
+               [18] Alan H. Barr.
+               1991.
+               <a href="http://dl.acm.org/citation.cfm?id=111154.111171">Teleological Modeling</a>.
+               In <em>Making Them Move</em>.
+               </p><p class="ref" id="ref_MUSGRAVE2003428">
+               [19] F. Kenton Musgrave.
+               2003.
+               <a href="http://www.sciencedirect.com/science/article/pii/B9781558608481500437">14 - A brief introduction to fractals</a>.
+               In <em>Texturing and Modeling (Third Edition)</em>.
+               </p><p class="ref" id="ref_mordvintsev2015inceptionism">
+               [20] Alexander Mordvintsev, Christopher Olah, Mike Tyka.
+               2015.
+               <a href="https://scholar.google.com/scholar?q=%22Inceptionism: Going deeper into neural networks%22 Alexander Mordvintsev">Inceptionism: Going deeper into neural networks</a>.
+               
+               </p><p class="ref" id="ref_Hermeneutics">
+               [21] Georgia Warnke.
+               2016.
+               <a href="http://oxfordre.com/literature/view/10.1093/acrefore/9780190201098.001.0001/acrefore-9780190201098-e-114">Hermeneutics</a>.
+               
+               </p><p class="ref" id="ref_10.2307/2849551">
+               [22] Harry Caplan.
+               1929.
+               <a href="https://scholar.google.com/scholar?q=%22The Four Senses of Scriptural Interpretation and the Mediaeval Theory of Preaching%22 Harry Caplan">The Four Senses of Scriptural Interpretation and the Mediaeval Theory of Preaching</a>.
+               
+               </p><p class="ref" id="ref_hollanderDante">
+               [23] R. Hollander.
+               2001.
+               <a href="https://scholar.google.com/scholar?q=%22Dante: A Life in Works%22 R. Hollander">Dante: A Life in Works</a>.
+               
+               </p><p class="ref" id="ref_Poetics1">
+               [24] Jonathan Culler.
+               2015.
+               <a href="https://scholar.google.com/scholar?q=%22Theory of the Lyric%22 Jonathan Culler">Theory of the Lyric</a>.
+               
+               </p><p class="ref" id="ref_Poetics2">
+               [25] B. M. Reed.
+               2012.
+               <a href="http://ebookcentral.proquest.com/lib/ucsc/detail.action?docID=913846">Poetics, Western</a>.
+               In <em>The Princeton Encyclopedia of Poetry and Poetics : Fourth Edition</em>.
+               </p><p class="ref" id="ref_comptonSharedLanguage">
+               [26] Kate Compton, Johnathan Pagnutti, Jim Whitehead.
+               2017.
+               <a href="https://scholar.google.com/scholar?q=%22A shared language for creative communities of artbots%22 Kate Compton">A shared language for creative communities of artbots</a>.
+               In <em>Proceedings of the 2017 Co-Creation Workshop</em>.
+               </p><p class="ref" id="ref_ClockworkMuse">
+               [27] Rob Saunders, John S Gero.
+               2001.
+               <a href="https://scholar.google.com/scholar?q=%22The digital clockwork muse: A computational model of aesthetic evolution%22 Rob Saunders">The digital clockwork muse: A computational model of aesthetic evolution</a>.
+               In <em>Proceedings of the AISB’01 Symposium on Artificial Intelligence and Creativity in Arts and Science</em>.
+               </p><p class="ref" id="ref_Mikolov2013EfficientEO">
+               [28] Tomas Mikolov, Kai Chen, Gregory S. Corrado, Jeffrey Dean.
+               2013.
+               <a href="https://scholar.google.com/scholar?q=%22Efficient Estimation of Word Representations in Vector Space%22 Tomas Mikolov">Efficient Estimation of Word Representations in Vector Space</a>.
+               
+               </p><p class="ref" id="ref_Mikolov2013DistributedRO">
+               [29] Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg Corrado, Jeffrey Dean.
+               2013.
+               <a href="http://dl.acm.org/citation.cfm?id=2999792.2999959">Distributed Representations of Words and Phrases and Their Compositionality</a>.
+               In <em>Proceedings of the 26th International Conference on Neural Information Processing Systems - Volume 2</em>.
+               </p><p class="ref" id="ref_linguistic-regularities-in-continuous-space-word-representations">
+               [30] Tomas Mikolov, Wen-tau Yih, Geoffrey Zweig.
+               2013.
+               <a href="https://www.microsoft.com/en-us/research/publication/linguistic-regularities-in-continuous-space-word-representations/">Linguistic Regularities in Continuous Space Word Representations</a>.
+               In <em>Proceedings of the 2013 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT-2013)</em>.
+               </p><p class="ref" id="ref_Treanor:2011:PRF:2159365.2159381">
+               [31] Mike Treanor, Bobby Schweizer, Ian Bogost, Michael Mateas.
+               2011.
+               <a href="http://doi.acm.org/10.1145/2159365.2159381">Proceduralist Readings: How to Find Meaning in Games with Graphical Logics</a>.
+               In <em>Proceedings of the 6th International Conference on Foundations of Digital Games</em>.
+               </p><p class="ref" id="ref_martens2016proceduralist">
+               [32] Chris Martens, Adam Summerville, Michael Mateas, Joseph Osborn, Sarah Harmon, Noah Wardrip-Fruin, Arnav Jhala.
+               2016.
+               <a href="https://www.aaai.org/ocs/index.php/AIIDE/AIIDE16/paper/view/14061">Proceduralist readings, Procedurally</a>.
+               In <em>Proceedings of the Twelfth AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment</em>.
+               </p><p class="ref" id="ref_Gemini">
+               [33] Adam Summerville, Chris Martens, Ben Samuel, Joseph Osborn, Noah Wardrip-Fruin, Michael Mateas.
+               2018.
+               <a href="https://scholar.google.com/scholar?q=%22Gemini: Bidirectional generation and analysis of games via ASP%22 Adam Summerville">Gemini: Bidirectional generation and analysis of games via ASP</a>.
+               In <em>Proceedings of the Fourteenth AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment</em>.
+               </p><p class="ref" id="ref_Tracery">
+               [34] Kate Compton, Ben Kybartas, Michael Mateas.
+               2015.
+               <a href="https://scholar.google.com/scholar?q=%22Tracery: An Author-Focused Generative Text Tool%22 Kate Compton">Tracery: An Author-Focused Generative Text Tool</a>.
+               In <em>Interactive Storytelling</em>.
+               </p><p class="ref" id="ref_MakeYourOwnMovie">
+               [35] Umberto Eco.
+               1993.
+               <a href="https://scholar.google.com/scholar?q=%22Make Your Own Movie%22 Umberto Eco">Make Your Own Movie</a>.
+               In <em>Misreadings</em>.
+               </p><p class="ref" id="ref_pipkin2016history">
+               [36] everest pipkin.
+               2016.
+               <a href="https://medium.com/@everestpipkin/a-long-history-of-generated-poetics-cutups-from-dickinson-to-melitzah-fce498083233">A Long History of Generated Poetics: cutups from Dickinson to Melitzah</a>.
+               
+               </p><p class="ref" id="ref_doi:10.1162/neco.1997.9.8.1735">
+               [37] Sepp Hochreiter, Jürgen Schmidhuber.
+               1997.
+               <a href="https://scholar.google.com/scholar?q=%22Long Short-Term Memory%22 Sepp Hochreiter">Long Short-Term Memory</a>.
+               
+               </p><p class="ref" id="ref_Browne5404867">
+               [38] C. Browne, F. Maire.
+               2010.
+               <a href="https://scholar.google.com/scholar?q=%22Evolutionary Game Design%22 C. Browne">Evolutionary Game Design</a>.
+               
+               </p><p class="ref" id="ref_TheDeletionist">
+               [39] Amaranth Borsuk, Jesper Juul, Nick Montfort.
+               2013.
+               <a href="https://scholar.google.com/scholar?q=%22The Deletionist%22 Amaranth Borsuk">The Deletionist</a>.
+               
+               </p><p class="ref" id="ref_Blackout">
+               [40] Max Kreminski.
+               2017.
+               <a href="https://scholar.google.com/scholar?q=%22blackout%22 Max Kreminski">blackout</a>.
+               
+               </p><h2 id="cite">How to cite this work</h2>
+<pre>
+@inproceedings{GeneratorsThatRead,
+  title={Generators that Read},
+  author={Kreminski, Max and Karth, Isaac and Wardrip-Fruin, Noah},
+  booktitle={Proceedings of the 14th International Conference on the Foundations of Digital Games},
+  year={2019},
+  month={8}
+}
+</pre>
+</body>
+</html>
