@@ -80,31 +80,20 @@ layout: null
       <h2>Publications</h2>
       <!--<h3>Journal Articles</h3>-->
       <h3>Full Conference Papers</h3>
-      <!--
-      {% for pub in site.data.publications %}
-      <p>{% if pub.url and pub.url != "" %}<a href="{{pub.url}}">{{pub.title}}</a>{% else %}{{pub.title}}{% endif %}. {{pub.authors | join: ", "}}. {{pub.venue_long}} ({{pub.venue}}), {{pub.year}}.</p>
-      {% endfor %}
-      -->
-      <p>Getting Academical: A Choice-Based Interactive Storytelling Game for Teaching Responsible Conduct of Research. Edward Melcer, Katelyn Grasse, James Ryan, Nick Junius, Max Kreminski, Dietrich Squinkifer, Brent Hill, Noah Wardrip-Fruin. Foundations of Digital Games (FDG), 2020.</p>
-      <p>Why Are We Like This?: Exploring Writing Mechanics for an AI-Augmented Storytelling Game. Max Kreminski, Melanie Dickinson, Michael Mateas, Noah Wardrip-Fruin. Electronic Literature Organization (ELO), 2020.</p>
-      <p><a href="/publications/Felt_SimpleStorySifter.pdf">Felt: A Simple Story Sifter.</a> Max Kreminski, Melanie Dickinson, Noah Wardrip-Fruin. International Conference on Interactive Digital Storytelling (ICIDS), 2019. <span class="acceptrate">Acceptance rate: 30%.</span></p>
-      <p><a href="/publications/EvaluatingViaRetellings.pdf">Evaluating AI-Based Games Through Retellings.</a> Max Kreminski, Ben Samuel, Edward Melcer, Noah Wardrip-Fruin. Artificial Intelligence and Interactive Digital Entertainment (AIIDE), 2019. <span class="acceptrate">Acceptance rate: 25%.</span></p>
-      <p><a href="https://mkremins.github.io/publications/StoryAssembler.pdf">StoryAssembler: An Engine for Generating Dynamic Choice-Driven Narratives.</a> Jacob Garbe, Max Kreminski, Ben Samuel, Noah Wardrip-Fruin, Michael Mateas. Foundations of Digital Games (FDG), 2019. <span class="award">Best paper honorable mention.</span></p>
-      <p><a href="/publications/ImmersiveDesignFiction.pdf">Immersive Design Fiction: Using VR to Prototype Speculative Interfaces and Interaction Rituals within a Virtual Storyworld.</a> Joshua McVeigh-Schultz, Max Kreminski, Keshav Prasad, Perry Hoberman, Scott S. Fisher. Designing Interactive Systems (DIS), 2018.</p>
-      <p><a href="/publications/VRPLAY.pdf">Are Game Design and User Research Guidelines Specific to Virtual Reality Effective in Creating a More Optimal Player Experience? Yes: VR PLAY.</a> Heather Desurvire, Max Kreminski. Design, User Experience and Usability (DUXU), 2018.</p>
+      {% assign pubtype = "full" %}
+      {% include pubs_of_pubtype.html %}
       <h3>Short Conference Papers</h3>
-      <p>Why Are We Like This?: The AI Architecture of a Co-Creative Storytelling Game. Max Kreminski, Melanie Dickinson, Michael Mateas, Noah Wardrip-Fruin. Foundations of Digital Games (FDG), 2020.</p>
-      <p>Teaching Responsible Conduct of Research Through an Interactive Storytelling Game. Edward F. Melcer, James Ryan, Nick Junius, Max Kreminski, Dietrich Squinkifer, Brent Hill, Noah Wardrip‑Fruin. CHI Late-Breaking Work on Human Factors in Computing Systems (CHI LBW), 2020.</p>
+      {% assign pubtype = "short" %}
+      {% include pubs_of_pubtype.html %}
       <h3>Workshop Papers</h3>
-      <p><a href="/publications/GenerativeGames_StorytellingPartners.pdf">Generative Games as Storytelling Partners.</a> Max Kreminski, Noah Wardrip-Fruin. FDG Workshop on the User Experience of Artificial Intelligence in Games (UX of AI), 2019.</p>
-      <p><a href="/publications/CozyMysteryConstructionKit.pdf">Cozy Mystery Construction Kit: Prototyping Toward an AI-Assisted Collaborative Storytelling Mystery Game.</a> Max Kreminski, Devi Acharya, Nick Junius, Elisabeth Oliver, Kate Compton, Melanie Dickinson, Cyril Focht, Stacey Mason, Stella Mazeika, Noah Wardrip-Fruin. FDG Workshop on Procedural Content Generation (PCG), 2019.</p>
-      <p><a href="/publications/GeneratorsThatRead.pdf">Generators that Read.</a> Max Kreminski, Isaac Karth, Noah Wardrip-Fruin. FDG Workshop on Procedural Content Generation (PCG), 2019.</p>
-      <p><a href="/publications/GardeningGames.pdf">Gardening Games: An Alternative Philosophy of PCG in Games.</a> Max Kreminski, Noah Wardrip-Fruin. FDG Workshop on Procedural Content Generation (PCG), 2018.</p>
+      {% assign pubtype = "workshop" %}
+      {% include pubs_of_pubtype.html %}
       <h3>Posters and Demos</h3>
-      <p><a href="/publications/Storylets_SketchingAMap.pdf">Sketching a Map of the Storylets Design Space.</a> Max Kreminski, Noah Wardrip-Fruin. International Conference on Interactive Digital Storytelling (ICIDS), 2018.</p>
-      <p><a href="/publications/ThrowingBottles.pdf">Throwing Bottles at God: Predictive Text as a Game Mechanic in an AI-Based Narrative Game.</a> Max Kreminski, Noah Wardrip-Fruin. International Conference on Interactive Digital Storytelling (ICIDS), 2018.</p>
+      {% assign pubtype = "poster_or_demo" %}
+      {% include pubs_of_pubtype.html %}
       <h3>Doctoral Consortium Papers</h3>
-      <p><a href="/publications/CreativitySupport_StoryConstruction.pdf">Creativity Support for Story Construction Play Experiences.</a> Max Kreminski. Artificial Intelligence and Interactive Digital Entertainment (AIIDE), 2019.</p>
+      {% assign pubtype = "doctoral_consortium" %}
+      {% include pubs_of_pubtype.html %}
     </section>
     <section>
       <h2>Talks</h2>

@@ -23,7 +23,8 @@
   "authors": ["Max Kreminski", "Melanie Dickinson", "Michael Mateas", "Noah&nbsp;Wardrip&#8209;Fruin"],
   "year": "2020",
   "venue": "ELO",
-  "venue_long": "Electronic Literature Organization"
+  "venue_long": "Electronic Literature Organization",
+  "pubtype": "full"
 },
 {
   "title": "Teaching Responsible Conduct of Research Through an Interactive Storytelling Game",
@@ -31,7 +32,8 @@
   "authors": ["Edward F. Melcer", "James Ryan", "Nick Junius", "Max Kreminski", "Dietrich Squinkifer", "Brent Hill", "Noah&nbsp;Wardrip&#8209;Fruin"],
   "year": "2020",
   "venue": "CHI LBW",
-  "venue_long": "CHI Late-Breaking Work on Human Factors in Computing Systems"
+  "venue_long": "CHI Late-Breaking Work on Human Factors in Computing Systems",
+  "pubtype": "short"
 },
 {
   "title": "Felt: A Simple Story Sifter",
@@ -39,7 +41,9 @@
   "authors": ["Max Kreminski", "Melanie Dickinson", "Noah Wardrip-Fruin"],
   "year": "2019",
   "venue": "ICIDS",
-  "venue_long": "International Conference on Interactive Digital Storytelling"
+  "venue_long": "International Conference on Interactive Digital Storytelling",
+  "pubtype": "full",
+  "award": "Acceptance rate: 30%."
 },
 {
   "title": "Evaluating AI-Based Games Through Retellings",
@@ -47,7 +51,9 @@
   "authors": ["Max Kreminski", "Ben Samuel", "Edward Melcer", "Noah Wardrip-Fruin"],
   "year": "2019",
   "venue": "AIIDE",
-  "venue_long": "Artificial Intelligence and Interactive Digital Entertainment"
+  "venue_long": "Artificial Intelligence and Interactive Digital Entertainment",
+  "pubtype": "full",
+  "award": "Acceptance rate: 25%."
 },
 {
   "title": "Creativity Support for Story Construction Play Experiences",
@@ -56,7 +62,8 @@
   "year": "2019",
   "venue": "AIIDE",
   "venue_long": "Artificial Intelligence and Interactive Digital Entertainment",
-  "venue_note": "doctoral consortium paper"
+  "venue_note": "doctoral consortium paper",
+  "pubtype": "doctoral_consortium"
 },
 {
   "title": "Generative Games as Storytelling Partners",
@@ -64,7 +71,8 @@
   "authors": ["Max Kreminski", "Noah Wardrip-Fruin"],
   "year": "2019",
   "venue": "UX of AI Workshop",
-  "venue_long": "FDG Workshop on the User Experience of Artificial Intelligence in Games"
+  "venue_long": "FDG Workshop on the User Experience of Artificial Intelligence in Games",
+  "pubtype": "workshop"
 },
 {
   "title": "Cozy Mystery Construction Kit: Prototyping Toward an AI-Assisted Collaborative Storytelling Mystery Game",
@@ -72,7 +80,8 @@
   "authors": ["Max Kreminski", "Devi Acharya", "Nick Junius", "Elisabeth Oliver", "Kate Compton", "Melanie Dickinson", "Cyril Focht", "Stacey Mason", "Stella Mazeika", "Noah Wardrip-Fruin"],
   "year": "2019",
   "venue": "PCG Workshop",
-  "venue_long": "FDG Workshop on Procedural Content Generation"
+  "venue_long": "FDG Workshop on Procedural Content Generation",
+  "pubtype": "workshop"
 },
 {
   "title": "Generators that Read",
@@ -80,7 +89,8 @@
   "authors": ["Max Kreminski", "Isaac Karth", "Noah Wardrip-Fruin"],
   "year": "2019",
   "venue": "PCG Workshop",
-  "venue_long": "FDG Workshop on Procedural Content Generation"
+  "venue_long": "FDG Workshop on Procedural Content Generation",
+  "pubtype": "workshop"
 },
 {
   "title": "StoryAssembler: An Engine for Generating Dynamic Choice-Driven Narratives",
@@ -88,7 +98,9 @@
   "authors": ["Jacob Garbe", "Max Kreminski", "Ben Samuel", "Noah Wardrip-Fruin", "Michael Mateas"],
   "year": "2019",
   "venue": "FDG",
-  "venue_long": "Foundations of Digital Games"
+  "venue_long": "Foundations of Digital Games",
+  "pubtype": "full",
+  "award": "Best paper honorable mention."
 },
 {
   "title": "Sketching a Map of the Storylets Design Space",
@@ -97,7 +109,8 @@
   "year": "2018",
   "venue": "ICIDS",
   "venue_long": "International Conference on Interactive Digital Storytelling",
-  "venue_note": "poster paper"
+  "venue_note": "poster paper",
+  "pubtype": "poster_or_demo"
 },
 {
   "title": "Throwing Bottles at God: Predictive Text as a Game Mechanic in an AI-Based Narrative Game",
@@ -106,7 +119,8 @@
   "year": "2018",
   "venue": "ICIDS",
   "venue_long": "International Conference on Interactive Digital Storytelling",
-  "venue_note": "demo paper"
+  "venue_note": "demo paper",
+  "pubtype": "poster_or_demo"
 },
 {
   "title": "Gardening Games: An Alternative Philosophy of PCG in Games",
@@ -114,7 +128,8 @@
   "authors": ["Max Kreminski", "Noah Wardrip-Fruin"],
   "year": "2018",
   "venue": "PCG Workshop",
-  "venue_long": "FDG Workshop on Procedural Content Generation"
+  "venue_long": "FDG Workshop on Procedural Content Generation",
+  "pubtype": "workshop"
 },
 {
   "title": "Immersive Design Fiction: Using VR to Prototype Speculative Interfaces and Interaction Rituals within a Virtual Storyworld",
@@ -122,7 +137,8 @@
   "authors": ["Joshua McVeigh-Schultz", "Max Kreminski", "Keshav Prasad", "Perry Hoberman", "Scott S. Fisher"],
   "year": "2018",
   "venue": "DIS",
-  "venue_long": "Designing Interactive Systems"
+  "venue_long": "Designing Interactive Systems",
+  "pubtype": "full"
 },
 {
   "title": "Are Game Design and User Research Guidelines Specific to Virtual Reality Effective in Creating a More Optimal Player Experience? Yes: VR PLAY",
@@ -130,6 +146,7 @@
   "authors": ["Heather Desurvire", "Max Kreminski"],
   "year": "2018",
   "venue": "DUXU",
-  "venue_long": "Design, User Experience, and Usability"
+  "venue_long": "Design, User Experience, and Usability",
+  "pubtype": "full"
 }
 ]
