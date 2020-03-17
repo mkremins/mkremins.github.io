@@ -1,5 +1,23 @@
 [
 {
+  "title": "Why Are We Like This?: The AI Architecture of a Co-Creative Storytelling Game",
+  "url": "",
+  "authors": ["Max Kreminski", "Melanie Dickinson", "Michael Mateas", "Noah&nbsp;Wardrip&#8209;Fruin"],
+  "year": "2020",
+  "venue": "FDG",
+  "venue_long": "Foundations of Digital Games",
+  "pubtype": "short"
+},
+{
+  "title": "Getting Academical: A Choice-Based Interactive Storytelling Game for Teaching Responsible Conduct of Research",
+  "url": "",
+  "authors": ["Edward Melcer", "Katelyn Grasse", "James Ryan", "Nick Junius", "Max Kreminski", "Dietrich Squinkifer", "Brent Hill", "Noah&nbsp;Wardrip&#8209;Fruin"],
+  "year": "2020",
+  "venue": "FDG",
+  "venue_long": "Foundations of Digital Games",
+  "pubtype": "full"
+},
+{
   "title": "Why Are We Like This?: Exploring Writing Mechanics for an AI-Augmented Storytelling Game",
   "url": "",
   "authors": ["Max Kreminski", "Melanie Dickinson", "Michael Mateas", "Noah&nbsp;Wardrip&#8209;Fruin"],
