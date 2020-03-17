@@ -1,3 +1,7 @@
+---
+title: Max Kreminski – CV
+layout: null
+---
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +42,10 @@
   section {
     margin-bottom: 2rem;
   }
-  .oneline-entries p:not(:last-child) {
+  .oneline-entries {
+    margin-bottom: 1rem;
+  }
+  .oneline-entries p {
     margin-bottom: 0;
   }
   .award, .acceptrate {
@@ -72,14 +79,22 @@
     <section>
       <h2>Publications</h2>
       <!--<h3>Journal Articles</h3>-->
-      <h3>Conference Papers</h3>
+      <h3>Full Conference Papers</h3>
+      <!--
+      {% for pub in site.data.publications %}
+      <p>{% if pub.url and pub.url != "" %}<a href="{{pub.url}}">{{pub.title}}</a>{% else %}{{pub.title}}{% endif %}. {{pub.authors | join: ", "}}. {{pub.venue_long}} ({{pub.venue}}), {{pub.year}}.</p>
+      {% endfor %}
+      -->
+      <p>Getting Academical: A Choice-Based Interactive Storytelling Game for Teaching Responsible Conduct of Research. Edward Melcer, Katelyn Grasse, James Ryan, Nick Junius, Max Kreminski, Dietrich Squinkifer, Brent Hill, Noah Wardrip-Fruin. Foundations of Digital Games (FDG), 2020.</p>
       <p>Why Are We Like This?: Exploring Writing Mechanics for an AI-Augmented Storytelling Game. Max Kreminski, Melanie Dickinson, Michael Mateas, Noah Wardrip-Fruin. Electronic Literature Organization (ELO), 2020.</p>
-      <p>Teaching Responsible Conduct of Research Through an Interactive Storytelling Game. Edward F. Melcer, James Ryan, Nick Junius, Max Kreminski, Dietrich Squinkifer, Brent Hill, Noah Wardrip‑Fruin. CHI Late-Breaking Work on Human Factors in Computing Systems (CHI LBW), 2020.</p>
       <p><a href="/publications/Felt_SimpleStorySifter.pdf">Felt: A Simple Story Sifter.</a> Max Kreminski, Melanie Dickinson, Noah Wardrip-Fruin. International Conference on Interactive Digital Storytelling (ICIDS), 2019. <span class="acceptrate">Acceptance rate: 30%.</span></p>
       <p><a href="/publications/EvaluatingViaRetellings.pdf">Evaluating AI-Based Games Through Retellings.</a> Max Kreminski, Ben Samuel, Edward Melcer, Noah Wardrip-Fruin. Artificial Intelligence and Interactive Digital Entertainment (AIIDE), 2019. <span class="acceptrate">Acceptance rate: 25%.</span></p>
       <p><a href="https://mkremins.github.io/publications/StoryAssembler.pdf">StoryAssembler: An Engine for Generating Dynamic Choice-Driven Narratives.</a> Jacob Garbe, Max Kreminski, Ben Samuel, Noah Wardrip-Fruin, Michael Mateas. Foundations of Digital Games (FDG), 2019. <span class="award">Best paper honorable mention.</span></p>
       <p><a href="/publications/ImmersiveDesignFiction.pdf">Immersive Design Fiction: Using VR to Prototype Speculative Interfaces and Interaction Rituals within a Virtual Storyworld.</a> Joshua McVeigh-Schultz, Max Kreminski, Keshav Prasad, Perry Hoberman, Scott S. Fisher. Designing Interactive Systems (DIS), 2018.</p>
       <p><a href="/publications/VRPLAY.pdf">Are Game Design and User Research Guidelines Specific to Virtual Reality Effective in Creating a More Optimal Player Experience? Yes: VR PLAY.</a> Heather Desurvire, Max Kreminski. Design, User Experience and Usability (DUXU), 2018.</p>
+      <h3>Short Conference Papers</h3>
+      <p>Why Are We Like This?: The AI Architecture of a Co-Creative Storytelling Game. Max Kreminski, Melanie Dickinson, Michael Mateas, Noah Wardrip-Fruin. Foundations of Digital Games (FDG), 2020.</p>
+      <p>Teaching Responsible Conduct of Research Through an Interactive Storytelling Game. Edward F. Melcer, James Ryan, Nick Junius, Max Kreminski, Dietrich Squinkifer, Brent Hill, Noah Wardrip‑Fruin. CHI Late-Breaking Work on Human Factors in Computing Systems (CHI LBW), 2020.</p>
       <h3>Workshop Papers</h3>
       <p><a href="/publications/GenerativeGames_StorytellingPartners.pdf">Generative Games as Storytelling Partners.</a> Max Kreminski, Noah Wardrip-Fruin. FDG Workshop on the User Experience of Artificial Intelligence in Games (UX of AI), 2019.</p>
       <p><a href="/publications/CozyMysteryConstructionKit.pdf">Cozy Mystery Construction Kit: Prototyping Toward an AI-Assisted Collaborative Storytelling Mystery Game.</a> Max Kreminski, Devi Acharya, Nick Junius, Elisabeth Oliver, Kate Compton, Melanie Dickinson, Cyril Focht, Stacey Mason, Stella Mazeika, Noah Wardrip-Fruin. FDG Workshop on Procedural Content Generation (PCG), 2019.</p>
@@ -108,38 +123,75 @@
       <p><a href="https://www.youtube.com/watch?v=66O6WDcT8KY">“Crafting Compelling Character Arcs for Procedurally Generated Characters.”</a> Roguelike Celebration 2017.</p><!-- invited -->
     </section>
     <section>
-      <h2>Teaching</h2>
+      <h2>Exhibitions</h2>
+      <p><em>Why Are We Like This?</em> Melanie Dickinson, Max Kreminski, Michael Mateas, Noah Wardrip-Fruin. Digital game. ”(un)continuity” (juried group exhibition). Electronic Literature Organization (ELO). Orlando, Florida. Jul. 16–19, 2020.</p>
+      <p><em>Epitaph.</em> Max Kreminski. Digital game. ”QGCon 2018 Arcade” (juried group exhibition). Queerness and Games Conference. Montreal, Quebec. Sep. 28-30, 2018.</p>
+      <p><em>tiny manifesto.</em> Max Kreminski. Written manifesto. ”Manifesto Jam Selections” (invited group exhibition). Now Play This - A Festival of Experimental Game Design. London, England. Apr. 6-8, 2018.</p>
+      <p><em>Epitaph.</em> Max Kreminski. Digital game. ”The Winteractive Festival” (juried group exhibition). University of Southern California. Los Angeles, California. Dec. 7, 2016.</p>
+    </section>
+    <section>
+      <h2>Teaching Experience</h2>
+      <h3>Graduate Teaching Assistant</h3>
+      <div class="oneline-entries">
+        <p>UCSC CMPM 172: Game Design Studio III (Spring 2020)</p>
+        <p>UCSC CMPM 171: Game Design Studio II (Winter 2020)</p>
+        <p>UCSC CMPM 170: Game Design Studio I (Fall 2019)</p>
+        <p>UCSC CMPM 147: Generative Design (Summer 2019)</p>
+        <p>UCSC CMPM 80K: Foundations of Video Game Design (Winter 2019)</p>
+        <p>UCSC CMPM 176: Game Systems (Fall 2018)</p>
+        <p>UCSC CMPM 80K: Foundations of Video Game Design (Summer 2018)</p>
+      </div>
+      <h3>Guest Lectures</h3>
+      <p>“Gardening as a Mode of Play.” 2019. Invited guest lecture, Porter 61 Seminar in Arts, University of California, Santa Cruz.</p>
+      <p>“Mining and Gardening with Generative Systems.” 2018. Invited guest lecture, Computational Media 176 Game Systems, University of California, Santa Cruz.</p>
+      <!--
       <p>Winter 2020. Teaching Assistant, Computational Media 171 Game Design Studio II, University of California, Santa Cruz. Second phase of three-phase senior capstone sequence for game design majors.</p>
       <p>Fall 2019. Teaching Assistant, Computational Media 170 Game Design Studio I, University of California, Santa Cruz. First phase of three-phase senior capstone sequence for game design majors. Helped manage logistics for a 200-person class while mentoring several other junior teaching assistants. Met with three to four student game design teams per week to provide guidance during the iterative prototyping process.</p>
       <p>Summer 2019. Teaching Assistant, Computational Media 147 Generative Design, University of California, Santa Cruz. Project-focused upper-division game design course presenting a survey of generative methods.</p>
       <p>Winter 2019. Teaching Assistant, Computational Media 80K Foundations of Video Game Design, University of California, Santa Cruz. Introductory game design, development, and critique class. Led three sections per week, together consisting of more than 100 students total.</p>
       <p>Fall 2018. Teaching Assistant, Computational Media 176 Game Systems, University of California, Santa Cruz. Upper-division game design course focused on the design and analysis of systems in analog and digital games.</p>
       <p>Summer 2018. Teaching Assistant, Computational Media 80K Foundations of Video Game Design, University of California, Santa Cruz. Introductory game design, development, and critique class. Taught three different game-making tools in five weeks.</p>
+      -->
     </section>
     <section>
-      <h2>Employment</h2>
+      <h2>Professional Experience</h2>
       <p>Summer 2019. SIP Mentor, Science Internship Program, UC Santa Cruz. Mentored high school students working on computational media research projects.</p>
       <!--<p>2017–. Graduate Researcher, UCSC Expressive Intelligence Studio.</p>-->
       <p>2016–2017. Undergraduate Research Associate, USC Mobile & Environmental Media Lab. Design, rapid prototyping, and development of VR and AR experiences with Unity, C#, and SteamVR.</p>
       <p>Summer 2016. Undergraduate Research Associate, USC Game Innovation Lab. Python scripting and data analysis to provide insights on player behavior in <em>Mission: Admission</em>, an educational game for high school students about the college admissions process.</p>
       <p>2015–2017. Junior User Researcher, User Behavioristics. User research consulting; collection and analysis of qualitative and quantitative data on user behavior in mobile and VR games and apps.</p>
     </section>
-    <section class="oneline-entries">
+    <section>
       <h2>Fellowships and Scholarships</h2>
-      <p>2017–2018. University of California Chancellor’s Fellowship</p>
-      <p>2016–2017. INTEL University Research Fellowship</p>
+      <div class="oneline-entries">
+        <p>2017–2018. University of California Chancellor’s Fellowship</p>
+        <p>2016–2017. INTEL University Research Fellowship</p>
+      </div>
     </section>
-    <section class="oneline-entries">
-      <h2>Conference / Workshop Organization</h2>
-      <p>International Conference on Interactive Digital Storytelling (ICIDS) Demonstrations Chair, 2019</p>
-      <p>AIIDE Workshop on Experimental AI in Games (EXAG) Co-Chair, 2019</p>
-    </section>
-    <section class="oneline-entries">
-      <h2>Reviewing</h2>
-      <p>AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment (AIIDE), 2019</p>
-      <p>IEEE Conference on Games (CoG), 2019</p>
-      <p>International Conference on Interactive Digital Storytelling (ICIDS), 2017-2019</p>
-      <p>AIIDE Workshop on Experimental AI in Games (EXAG), 2017-2019</p>
+    <section>
+      <h2>Organizational Activity</h2>
+      <h3>Co-Organizer</h3>
+      <div class="oneline-entries">
+        <p>ICCC Workshop on Casual Creators (CCW), 2020</p>
+        <p>AIIDE Workshop on Experimental AI in Games (EXAG), 2019</p>
+      </div>
+      <h3>Demonstrations Chair</h3>
+      <div class="oneline-entries">
+        <p>International Conference on Interactive Digital Storytelling (ICIDS), 2019</p>
+      </div>
+      <h3>Publicity Co-Chair</h3>
+      <div class="oneline-entries">
+        <p>AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment (AIIDE), 2020</p>
+      </div>
+      <h3>Reviewer</h3>
+      <div class="oneline-entries">
+        <p>International Conference on the Foundations of Digital Games (FDG), 2020</p>
+        <p>FDG Workshop on Procedural Content Generation (PCG), 2020</p>
+        <p>AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment (AIIDE), 2019</p>
+        <p>IEEE Conference on Games (CoG), 2019</p>
+        <p>International Conference on Interactive Digital Storytelling (ICIDS), 2017-2019</p>
+        <p>AIIDE Workshop on Experimental AI in Games (EXAG), 2017-2019</p>
+      </div>
     </section>
   </main>
 </body>
