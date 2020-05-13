@@ -1,5 +1,7 @@
+<ol class="pubs-list">
 {% for pub in site.data.publications %}
 {% if pub.pubtype == pubtype %}
-<p>{% if pub.url and pub.url != "" %}<a href="{{pub.url}}">{{pub.title}}</a>{% else %}{{pub.title}}{% endif %}. {{pub.authors | join: ", "}}. {{pub.venue_long}} ({{pub.venue}}), {{pub.year}}. {% if pub.award and pub.award != "" %}<em>{{pub.award}}</em>{% endif %}</p>
+<li><span class="authors">{{pub.authors | join: ", "}}.</span> {% if pub.url and pub.url != "" %}<a href="{{pub.url}}">“{{pub.title}}.”</a>{% else %}“{{pub.title}}.”{% endif %}  {{pub.venue_long}} ({{pub.venue}}), {{pub.year}}. {% if pub.award and pub.award != "" %}<em>{{pub.award}}</em>{% endif %}</li>
 {% endif %}
 {% endfor %}
+</ol>

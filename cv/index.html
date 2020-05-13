@@ -7,128 +7,149 @@ layout: null
 <head>
   <meta charset="UTF-8">
   <title>Max Kreminski – CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <style>
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  /* reset base styles */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* basic page structure */
+  body { font-family: "Source Sans Pro", sans-serif; font-size: 16px; line-height: 1.5; }
+  main { margin: 0 auto; max-width: 90ch; padding: 2ch; }
+
+  /* page header */
+  header { margin-bottom: 1rem; text-align: center; }
+  header h1 { font-size: 1.5rem; margin-bottom: 0; }
+  header p { margin-bottom: 0; }
+
+  /* normal body content */
+  h2 { margin-left: -1.5rem; text-transform: uppercase; }
+  h2, h3 { font-size: 1rem; margin-bottom: 0; }
+  p { margin-bottom: 0.5rem; }
+  section { margin-bottom: 1rem; margin-left: 1.5rem; }
+
+  /* publications */
+  .pubs-list li { margin-bottom: 0.5rem; }
+  .award, .acceptrate { font-style: italic; }
+
+  /* dated entries */
+  .dated-entry { position: relative; margin-bottom: 0.5rem; }
+  .dated-content { width: 80%; }
+  .dated-date { position: absolute; right:0; top: 0; text-align: right; }
+  .oneline-entries { margin-bottom: 1rem; }
+  .oneline-entries .dated-entry { margin-bottom: 0; }
+
+  /* when printing, make the font smaller and the page wider (FIXME this is fragile) */
+  @media print {
+    body { font-size: 12px; }
+    header h1 { font-size: 18px; }
+    h2, h3 { font-size: 12px; }
+    p, .pubs-list li, .dated-entry { margin-bottom: 6px; }
+    section, .oneline-entries { margin-bottom: 12px; }
+    main { max-width: 100%; }
   }
-  body {
-    /*background: #eee;*/
-    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    font-size: 15px;
-    line-height: 1.5;
-  }
-  main {
-    margin: 0 auto;
-    max-width: 80ch;
-    padding: 2ch;
-  }
-  .header {
-    text-align: center;
-  }
-  .header h1, .header p {
-    margin-bottom: 0;
-  }
-  h1, h2, h3, p {
-    margin-bottom: 1rem;
-  }
-  ul, ol {
-    padding-left: 1rem;
-  }
-  .pubs-list li {
-    margin-bottom: 1rem;
-  }
-  section {
-    margin-bottom: 2rem;
-  }
-  .oneline-entries {
-    margin-bottom: 1rem;
-  }
-  .oneline-entries p {
-    margin-bottom: 0;
-  }
-  .award, .acceptrate {
-    font-style: italic;
-  }
-  /*
-  .yeartable > * > *:last-child {
-    float: right;
-  }
-  .yeartable > * {
-    display: table-row;
-  }
-  .yeartable > * > * {
-    display: table-cell;
-  }
-  */
   </style>
 </head>
 <body>
   <main>
-    <section class="header">
+    <header>
       <h1>Max Kreminski</h1>
       <p>mkremins@ucsc.edu</p>
       <p><a href="https://mkremins.github.io">mkremins.github.io</a></p>
-    </section>
+    </header>
     <section>
       <h2>Education</h2>
-      <p>2017–. Ph.D. in Computational Media, University of California, Santa Cruz</p>
-      <p>2013–2017. B.A. in Interactive Entertainment, University of Southern California <!--(minor in Game User Research)--></p>
+      <div class="dated-entry">
+        <div class="dated-content"><strong>University of California, Santa Cruz</strong><br>
+        Ph.D. in Computational Media<br>
+        Advisors: Noah Wardrip-Fruin, Michael Mateas</div>
+        <div class="dated-date">2017–present</div>
+      </div>
+      <div class="dated-entry">
+        <div class="dated-content"><strong>University of Southern California</strong><br>
+        B.A. in Interactive Entertainment<br>
+        Minor in Game User Research</div>
+        <div class="dated-date">2013–2017</div>
+      </div>
     </section>
+    <!--<section>
+      <h2>Journal Articles</h2>
+      {% assign pubtype = "journal" %}
+      {% include pubs_of_pubtype.html %}
+    </section>-->
     <section>
-      <h2>Publications</h2>
-      <!--<h3>Journal Articles</h3>-->
-      <h3>Full Conference Papers</h3>
+      <h2>Conference Papers</h2>
       {% assign pubtype = "full" %}
       {% include pubs_of_pubtype.html %}
-      <h3>Short Conference Papers</h3>
+    </section>
+    <!--<section>
+      <h2>Short Conference Papers</h2>
       {% assign pubtype = "short" %}
       {% include pubs_of_pubtype.html %}
-      <h3>Workshop Papers</h3>
+    </section>-->
+    <section>
+      <h2>Workshop Papers</h2>
       {% assign pubtype = "workshop" %}
       {% include pubs_of_pubtype.html %}
-      <h3>Posters and Demos</h3>
+    </section>
+    <section>
+      <h2>Posters and Demos</h2>
       {% assign pubtype = "poster_or_demo" %}
       {% include pubs_of_pubtype.html %}
-      <h3>Doctoral Consortium Papers</h3>
+    </section>
+    <section>
+      <h2>Doctoral Consortium Papers</h2>
       {% assign pubtype = "doctoral_consortium" %}
       {% include pubs_of_pubtype.html %}
     </section>
     <section>
       <h2>Talks</h2>
-      <!--<p><a href=""></a></p>-->
-      <p><a href="https://www.youtube.com/watch?v=BDcZSWHu8RQ">“Sifting Stories to Support Player Storytelling.”</a> Roguelike Celebration 2019.</p>
-      <!--<p>PCG Workshop 10-year anniversary panel. Invited.</p>-->
-      <p><a href="">“Exploring Poemspace Through Procedural Erasure.”</a> Computational Poetry Workshop 2019.</p><!-- invited -->
-      <p>“Procedural Narrative Design with Parametrized Storylets.” Experimental AI for Games, Game Developers Conference 2019.</p><!-- invited -->
-      <p><a href="https://www.gdcvault.com/play/1025699/Tech">“Procedural Narrative Design with Parametrized Storylets.”</a> Tech Toolbox, Game Developers Conference 2019.</p><!-- invited -->
-      <!--<p>“Gardening as a Mode of Play.” Invited guest lecture, Porter 61 Seminar in Arts, University of California, Santa Cruz.</p>-->
-      <p><a href="https://www.youtube.com/watch?v=klO7XBFUIj8">“Making blackout poetry with computers!”</a> !!Con West 2019.</p>
-      <!--<p>“Mining and Gardening with Generative Systems.” Invited guest lecture, Computational Media 176 Game Systems, University of California, Santa Cruz.</p>-->
-      <p><a href="https://www.youtube.com/watch?v=TvlZinAvpwg">“Gardening as a Mode of Play.”</a> Roguelike Celebration 2018.</p>
-      <p><a href="https://www.twitch.tv/videos/319700999">“Gardening as a Mode of Play.”</a> Queerness and Games Conference 2018.</p>
-      <p><a href="https://www.youtube.com/watch?v=k3x6QU0Mqgc&t=10119s">“Proceduralizing Character Development with Parametrized Storylets.”</a> UCSC Games Showcase 2018.</p>
-      <p><a href="https://www.youtube.com/watch?v=66O6WDcT8KY">“Crafting Compelling Character Arcs for Procedurally Generated Characters.”</a> Roguelike Celebration 2017.</p><!-- invited -->
+      {% for talk in site.data.talks %}
+      <p>{% if talk.url and talk.url != "" %}<a href="{{talk.url}}">“{{talk.title}}.”</a>{% else %}“{{talk.title}}.”{% endif %}<br>
+      {{talk.venue}} {{talk.year}}{% if talk.venue_note and talk.venue_note != "" %} ({{talk.venue_note}}){% endif %}.</p>
+      {% endfor %}
+      <!--TODO add the PCG Workshop 10-year anniversary panel (invited)? falls between GDC 2019 and roguelike celebration 2019 talks -->
     </section>
     <section>
       <h2>Exhibitions</h2>
-      <p><em>Why Are We Like This?</em> Melanie Dickinson, Max Kreminski, Michael Mateas, Noah Wardrip-Fruin. Digital game. ”(un)continuity” (juried group exhibition). Electronic Literature Organization (ELO). Orlando, Florida. Jul. 16–19, 2020.</p>
+      <p><em>Why Are We Like This?</em> Melanie Dickinson, Max Kreminski, Michael Mateas, Noah Wardrip-Fruin. Digital game. “(un)continuity” (juried group exhibition). Electronic Literature Organization (ELO). Orlando, Florida. Jul. 16–19, 2020.</p>
       <p><em>Epitaph.</em> Max Kreminski. Digital game. ”QGCon 2018 Arcade” (juried group exhibition). Queerness and Games Conference. Montreal, Quebec. Sep. 28-30, 2018.</p>
+      <!--
       <p><em>tiny manifesto.</em> Max Kreminski. Written manifesto. ”Manifesto Jam Selections” (invited group exhibition). Now Play This - A Festival of Experimental Game Design. London, England. Apr. 6-8, 2018.</p>
       <p><em>Epitaph.</em> Max Kreminski. Digital game. ”The Winteractive Festival” (juried group exhibition). University of Southern California. Los Angeles, California. Dec. 7, 2016.</p>
+      -->
     </section>
     <section>
       <h2>Teaching Experience</h2>
-      <h3>Graduate Teaching Assistant</h3>
+      <h3>Teaching Assistant</h3>
       <div class="oneline-entries">
-        <p>UCSC CMPM 172: Game Design Studio III (Spring 2020)</p>
-        <p>UCSC CMPM 171: Game Design Studio II (Winter 2020)</p>
-        <p>UCSC CMPM 170: Game Design Studio I (Fall 2019)</p>
-        <p>UCSC CMPM 147: Generative Design (Summer 2019)</p>
-        <p>UCSC CMPM 80K: Foundations of Video Game Design (Winter 2019)</p>
-        <p>UCSC CMPM 176: Game Systems (Fall 2018)</p>
-        <p>UCSC CMPM 80K: Foundations of Video Game Design (Summer 2018)</p>
+        <div class="dated-entry">
+          <div class="dated-content">CMPM 172: Game Design Studio III</div>
+          <div class="dated-date">Spring 2020</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content">CMPM 171: Game Design Studio II</div>
+          <div class="dated-date">Winter 2020</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content">CMPM 170: Game Design Studio I</div>
+          <div class="dated-date">Fall 2019</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content">CMPM 147: Generative Design</div>
+          <div class="dated-date">Summer 2019</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content">CMPM 80K: Foundations of Video Game Design</div>
+          <div class="dated-date">Winter 2019</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content">CMPM 176: Game Systems</div>
+          <div class="dated-date">Fall 2018</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content">CMPM 80K: Foundations of Video Game Design</div>
+          <div class="dated-date">Summer 2018</div>
+        </div>
       </div>
       <h3>Guest Lectures</h3>
       <p>“Gardening as a Mode of Play.” 2019. Invited guest lecture, Porter 61 Seminar in Arts, University of California, Santa Cruz.</p>
@@ -142,46 +163,132 @@ layout: null
       <p>Summer 2018. Teaching Assistant, Computational Media 80K Foundations of Video Game Design, University of California, Santa Cruz. Introductory game design, development, and critique class. Taught three different game-making tools in five weeks.</p>
       -->
     </section>
+    <!--
     <section>
-      <h2>Professional Experience</h2>
-      <p>Summer 2019. SIP Mentor, Science Internship Program, UC Santa Cruz. Mentored high school students working on computational media research projects.</p>
-      <!--<p>2017–. Graduate Researcher, UCSC Expressive Intelligence Studio.</p>-->
-      <p>2016–2017. Undergraduate Research Associate, USC Mobile & Environmental Media Lab. Design, rapid prototyping, and development of VR and AR experiences with Unity, C#, and SteamVR.</p>
-      <p>Summer 2016. Undergraduate Research Associate, USC Game Innovation Lab. Python scripting and data analysis to provide insights on player behavior in <em>Mission: Admission</em>, an educational game for high school students about the college admissions process.</p>
-      <p>2015–2017. Junior User Researcher, User Behavioristics. User research consulting; collection and analysis of qualitative and quantitative data on user behavior in mobile and VR games and apps.</p>
+      <h2>Mentoring and Student Advising</h2>
+      <h3>Undergraduate Students</h3>
+      <div class="oneline-entries">
+        <div class="dated-entry">
+          <div class="dated-content"><em>Camellia Shea</em>, Independent Study and Research Project</div>
+          <div class="dated-date">Summer 2020</div>
+        </div>
+      </div>
+    </section>
+    -->
+    <section>
+      <h2>Other Work Experience</h2>
+      <div class="dated-entry">
+        <div class="dated-content"><em>SIP Mentor</em>, Science Internship Program, UC Santa Cruz. Mentored high school students working on computational media research projects.</div>
+        <div class="dated-date">Summer 2019</div>
+      </div>
+      <div class="dated-entry">
+        <div class="dated-content"><em>Undergraduate Research Associate</em>, USC Mobile & Environmental Media Lab. Design, rapid prototyping, and development of VR and AR experiences with Unity, C#, and SteamVR.</div>
+        <div class="dated-date">2016–2017</div>
+      </div>
+      <div class="dated-entry">
+        <div class="dated-content"><em>Undergraduate Research Associate</em>, USC Game Innovation Lab. Python scripting and data analysis to provide insights on player behavior in <em>Mission: Admission</em>, an educational game for high school students about the college admissions process.</div>
+        <div class="dated-date">Summer 2016</div>
+      </div>
+      <div class="dated-entry">
+        <div class="dated-content"><em>Junior User Researcher</em>, User Behavioristics. User research consulting; collection and analysis of qualitative and quantitative data on user behavior in mobile and VR games and apps.</div>
+        <div class="dated-date">2015–2017</div>
+      </div>
     </section>
     <section>
       <h2>Fellowships and Scholarships</h2>
       <div class="oneline-entries">
-        <p>2017–2018. University of California Chancellor’s Fellowship</p>
-        <p>2016–2017. INTEL University Research Fellowship</p>
+        <div class="dated-entry">
+          <div class="dated-content">University of California Chancellor’s Fellowship</div>
+          <div class="dated-date">2017–2018</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content">INTEL University Research Fellowship</div>
+          <div class="dated-date">2016–2017</div>
+        </div>
       </div>
     </section>
     <section>
       <h2>Organizational Activity</h2>
-      <h3>Co-Organizer</h3>
+      <h3>Leadership</h3>
       <div class="oneline-entries">
-        <p>ICCC Workshop on Casual Creators (CCW), 2020</p>
-        <p>AIIDE Workshop on Experimental AI in Games (EXAG), 2019</p>
+        <div class="dated-entry">
+          <div class="dated-content"><em>Publicity Co-Chair</em>, AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment</div>
+          <div class="dated-date">AIIDE 2020</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content"><em>Co-Organizer</em>, AIIDE Workshop on Experimental AI in Games</div>
+          <div class="dated-date">EXAG 2020</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content"><em>Co-Organizer</em>, ICCC Workshop on Casual Creators</div>
+          <div class="dated-date">CCW 2020</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content"><em>Demonstrations Chair</em>, International Conference on Interactive Digital Storytelling</div>
+          <div class="dated-date">ICIDS 2019</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content"><em>Co-Organizer</em>, AIIDE Workshop on Experimental AI in Games</div>
+          <div class="dated-date">EXAG 2019</div>
+        </div>
       </div>
-      <h3>Demonstrations Chair</h3>
+      <h3>Reviewing</h3>
       <div class="oneline-entries">
-        <p>International Conference on Interactive Digital Storytelling (ICIDS), 2019</p>
-      </div>
-      <h3>Publicity Co-Chair</h3>
-      <div class="oneline-entries">
-        <p>AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment (AIIDE), 2020</p>
-      </div>
-      <h3>Reviewer</h3>
-      <div class="oneline-entries">
-        <p>International Conference on the Foundations of Digital Games (FDG), 2020</p>
-        <p>FDG Workshop on Procedural Content Generation (PCG), 2020</p>
-        <p>AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment (AIIDE), 2019</p>
-        <p>IEEE Conference on Games (CoG), 2019</p>
-        <p>International Conference on Interactive Digital Storytelling (ICIDS), 2017-2019</p>
-        <p>AIIDE Workshop on Experimental AI in Games (EXAG), 2017-2019</p>
+        <!--
+        <div class="dated-entry">
+          <div class="dated-content">IEEE Transactions on Games</div>
+          <div class="dated-date">ToG</div>
+        </div>
+        -->
+        <div class="dated-entry">
+          <div class="dated-content"><em>Reviewer</em>, Foundations of Digital Games</div>
+          <div class="dated-date">FDG 2020</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content"><em>Reviewer</em>, FDG Workshop on Procedural Content Generation</div>
+          <div class="dated-date">PCG 2020</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content"><em>Reviewer</em>, International Conference on Interactive Digital Storytelling</div>
+          <div class="dated-date">ICIDS 2019</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content"><em>Reviewer</em>, AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment</div>
+          <div class="dated-date">AIIDE 2019</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content"><em>Reviewer</em>, AIIDE Workshop on Experimental AI in Games</div>
+          <div class="dated-date">EXAG 2019</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content"><em>Reviewer</em>, IEEE Conference on Games</div>
+          <div class="dated-date">CoG 2019</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content"><em>Reviewer</em>, International Conference on Interactive Digital Storytelling</div>
+          <div class="dated-date">ICIDS 2018</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content"><em>Reviewer</em>, AIIDE Workshop on Experimental AI in Games</div>
+          <div class="dated-date">EXAG 2018</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content"><em>Reviewer</em>, International Conference on Interactive Digital Storytelling</div>
+          <div class="dated-date">ICIDS 2017</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-content"><em>Reviewer</em>, AIIDE Workshop on Experimental AI in Games</div>
+          <div class="dated-date">EXAG 2017</div>
+        </div>
       </div>
     </section>
   </main>
+  <script>
+  // bold my name in author lists
+  // FIXME this should be done in Jekyll probably, not JS
+  for (let authorsNode of document.querySelectorAll('.authors')) {
+    authorsNode.innerHTML = authorsNode.innerHTML.replace("Max Kreminski", "<strong>Max Kreminski</strong>");
+  }
+  </script>
 </body>
 </html>

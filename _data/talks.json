@@ -11,7 +11,8 @@
   "url": "",
   "year": "2019",
   "venue": "Computational Poetry Workshop",
-  "venue_long": "Computational Poetry Workshop"
+  "venue_long": "Computational Poetry Workshop",
+  "note": "invited"
 },
 {
   "title": "Procedural Narrative Design with Parametrized Storylets",
@@ -19,7 +20,8 @@
   "year": "2019",
   "venue": "GDC",
   "venue_long": "Game Developers Conference",
-  "venue_note": "Independent Games Summit microtalks: Tech Toolbox"
+  "venue_note": "Independent Games Summit microtalks: Tech Toolbox",
+  "note": "invited"
 },
 {
   "title": "Procedural Narrative Design with Parametrized Storylets",
@@ -27,7 +29,8 @@
   "year": "2019",
   "venue": "GDC",
   "venue_long": "Game Developers Conference",
-  "venue_note": "AI Summit microtalks: Experimental AI for Games"
+  "venue_note": "AI Summit microtalks: Experimental AI for Games",
+  "note": "invited"
 },
 {
   "title": "Making blackout poetry with computers!",
@@ -62,6 +65,7 @@
   "url": "https://www.youtube.com/watch?v=66O6WDcT8KY",
   "year": "2017",
   "venue": "Roguelike Celebration",
-  "venue_long": "Roguelike Celebration"
+  "venue_long": "Roguelike Celebration",
+  "note": "invited"
 },
 ]
