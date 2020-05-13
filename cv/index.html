@@ -39,6 +39,11 @@ layout: null
   .oneline-entries { margin-bottom: 1rem; }
   .oneline-entries .dated-entry { margin-bottom: 0; }
 
+  /* try to limit badness of .dated-content trying to overlap .dated-date on narrow displays */
+  @media (max-width: 90ch) {
+    .dated-content { width: 70%; }
+  }
+
   /* when printing, make the font smaller and the page wider (FIXME this is fragile) */
   @media print {
     body { font-size: 12px; }
