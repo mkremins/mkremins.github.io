@@ -1,5 +1,14 @@
 [
 {
+  "title": "Tabletop Roleplaying Games as Procedural Content Generators",
+  "url": "",
+  "authors": ["Matthew Guzdial", "Devi Acharya", "Max Kreminski", "Mike Cook", "Mirjam Eladhari", "Antonios Liapis", "Anne Sullivan"],
+  "year": "2020",
+  "venue": "PCG Workshop",
+  "venue_long": "FDG Workshop on Procedural Content Generation",
+  "pubtype": "workshop"
+},
+{
   "title": "Why Are We Like This?: The AI Architecture of a Co-Creative Storytelling Game",
   "url": "",
   "authors": ["Max Kreminski", "Melanie Dickinson", "Michael Mateas", "Noah&nbsp;Wardrip&#8209;Fruin"],
