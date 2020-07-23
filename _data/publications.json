@@ -1,5 +1,25 @@
 [
 {
+  "title": "Germinate: A Mixed-Initiative Casual Creator for Rhetorical Games",
+  "url": "",
+  "authors": ["Max Kreminski", "Melanie Dickinson", "Joseph C. Osborn", "Adam Summerville", "Michael Mateas", "Noah&nbsp;Wardrip&#8209;Fruin"],
+  "year": "2020",
+  "venue": "AIIDE",
+  "venue_long": "Artificial Intelligence and Interactive Digital Entertainment",
+  "pubtype": "full",
+  "award": "Acceptance rate: 25%."
+},
+{
+  "title": "Why Are We Like This?",
+  "url": "",
+  "authors": ["Melanie Dickinson", "Max Kreminski", "Michael Mateas", "Noah&nbsp;Wardrip&#8209;Fruin"],
+  "year": "2020",
+  "venue": "AIIDE",
+  "venue_long": "Artificial Intelligence and Interactive Digital Entertainment",
+  "venue_note": "playable experience paper",
+  "pubtype": "poster_or_demo"
+},
+{
   "title": "Tabletop Roleplaying Games as Procedural Content Generators",
   "url": "https://mkremins.github.io/publications/TTRPGs_PCG2020.pdf",
   "authors": ["Matthew Guzdial", "Devi Acharya", "Max Kreminski", "Michael Cook", "Mirjam Eladhari", "Antonios Liapis", "Anne Sullivan"],
