@@ -13,6 +13,7 @@ layout: null
     <name>Max Kreminski</name>
   </author>
   {% for post in site.posts %}
+  {% if post.hidden != true %}
     <entry>
       <title>{{ post.title }}</title>
       <link href="{{ site.url }}{{ post.url }}"/>
@@ -20,5 +21,6 @@ layout: null
       <id>{{ site.url }}{{ post.id }}</id>
       <content type="html">{{ post.content | xml_escape }}</content>
     </entry>
+  {% endif %}
   {% endfor %}
 </feed>
