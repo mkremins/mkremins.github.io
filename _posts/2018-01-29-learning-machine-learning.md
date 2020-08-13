@@ -1,5 +1,6 @@
 ---
 title: Learning and (machine) “learning”
+hidden: true
 ---
 
 In [“Toward a Critical Technical Practice: Lessons Learned in Trying to Reform AI”](http://polaris.gseis.ucla.edu/pagre/critical.html), Philip E. Agre points out that, in the field of artificial intelligence research, “each [AI implementation] technique is both a method for designing artifacts and a thematics for narrating its operation.” Thus, many of the terms used to discuss the implementation of AI systems take on a kind of dual meaning.
