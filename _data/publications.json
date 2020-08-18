@@ -2,7 +2,7 @@
 {
   "title": "Germinate: A Mixed-Initiative Casual Creator for Rhetorical Games",
   "url": "https://mkremins.github.io/publications/Germinate_AIIDE2020.pdf",
-  "authors": ["Max Kreminski", "Melanie Dickinson", "Joseph C. Osborn", "Adam Summerville", "Michael Mateas", "Noah&nbsp;Wardrip&#8209;Fruin"],
+  "authors": ["Max Kreminski", "Melanie Dickinson", "Joseph C. Osborn", "Adam Summerville", "Michael Mateas", "Noah Wardrip-Fruin"],
   "year": "2020",
   "venue": "AIIDE",
   "venue_long": "Artificial Intelligence and Interactive Digital Entertainment",
@@ -12,7 +12,7 @@
 {
   "title": "Why Are We Like This?",
   "url": "",
-  "authors": ["Melanie Dickinson", "Max Kreminski", "Michael Mateas", "Noah&nbsp;Wardrip&#8209;Fruin"],
+  "authors": ["Melanie Dickinson", "Max Kreminski", "Michael Mateas", "Noah Wardrip-Fruin"],
   "year": "2020",
   "venue": "AIIDE",
   "venue_long": "Artificial Intelligence and Interactive Digital Entertainment",
@@ -31,7 +31,7 @@
 {
   "title": "Why Are We Like This?: The AI Architecture of a Co-Creative Storytelling Game",
   "url": "https://mkremins.github.io/publications/WAWLT_FDG2020.pdf",
-  "authors": ["Max Kreminski", "Melanie Dickinson", "Michael Mateas", "Noah&nbsp;Wardrip&#8209;Fruin"],
+  "authors": ["Max Kreminski", "Melanie Dickinson", "Michael Mateas", "Noah Wardrip-Fruin"],
   "year": "2020",
   "venue": "FDG",
   "venue_long": "Foundations of Digital Games",
@@ -40,7 +40,7 @@
 {
   "title": "Getting Academical: A Choice-Based Interactive Storytelling Game for Teaching Responsible Conduct of Research",
   "url": "https://mkremins.github.io/publications/RCR_FDG2020.pdf",
-  "authors": ["Edward F. Melcer", "Katelyn M. Grasse", "James Ryan", "Nick Junius", "Max Kreminski", "Dietrich Squinkifer", "Brent Hill", "Noah&nbsp;Wardrip&#8209;Fruin"],
+  "authors": ["Edward F. Melcer", "Katelyn M. Grasse", "James Ryan", "Nick Junius", "Max Kreminski", "Dietrich Squinkifer", "Brent Hill", "Noah Wardrip-Fruin"],
   "year": "2020",
   "venue": "FDG",
   "venue_long": "Foundations of Digital Games",
@@ -49,7 +49,7 @@
 {
   "title": "Why Are We Like This?: Exploring Writing Mechanics for an AI-Augmented Storytelling Game",
   "url": "https://mkremins.github.io/publications/WAWLT_ELO2020.pdf",
-  "authors": ["Max Kreminski", "Melanie Dickinson", "Michael Mateas", "Noah&nbsp;Wardrip&#8209;Fruin"],
+  "authors": ["Max Kreminski", "Melanie Dickinson", "Michael Mateas", "Noah Wardrip-Fruin"],
   "year": "2020",
   "venue": "ELO",
   "venue_long": "Electronic Literature Organization",
@@ -58,7 +58,7 @@
 {
   "title": "Teaching Responsible Conduct of Research Through an Interactive Storytelling Game",
   "url": "https://mkremins.github.io/publications/RCR_CHI2020.pdf",
-  "authors": ["Edward F. Melcer", "James Ryan", "Nick Junius", "Max Kreminski", "Dietrich Squinkifer", "Brent Hill", "Noah&nbsp;Wardrip&#8209;Fruin"],
+  "authors": ["Edward F. Melcer", "James Ryan", "Nick Junius", "Max Kreminski", "Dietrich Squinkifer", "Brent Hill", "Noah Wardrip-Fruin"],
   "year": "2020",
   "venue": "CHI LBW",
   "venue_long": "CHI Late-Breaking Work on Human Factors in Computing Systems",
