@@ -1,5 +1,14 @@
 [
 {
+  "title": "Storytelling Games, TTRPGs, and Player Stories",
+  "members": ["Mirjam Eladhari", "Matthew Guzdial", "Max Kreminski", "Antonios Liapis", "Anne Sullivan"],
+  "year": "2020",
+  "venue": "FDG",
+  "venue_long": "Foundations of Digital Games",
+  "note": "invited",
+  "type": "panel"
+},
+{
   "title": "AI Support for Player Storytelling in Digital Games",
   "url": "",
   "year": "2020",
@@ -13,6 +22,15 @@
   "year": "2019",
   "venue": "Roguelike Celebration",
   "venue_long": "Roguelike Celebration"
+},
+{
+  "title": "Changes over the last 10 years in PCG research and practice",
+  "members": ["Kate Compton", "Max Kreminski", "Adam Smith", "Anne Sullivan", "Julian Togelius"],
+  "year": "2019",
+  "venue": "PCG Workshop",
+  "venue_long": "FDG Workshop on Procedural Content Generation",
+  "note": "invited",
+  "type": "panel"
 },
 {
   "title": "Exploring Poemspace Through Procedural Erasure",

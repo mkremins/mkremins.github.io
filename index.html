@@ -171,10 +171,12 @@ layout: null
 			<div class="container">
 				<h2 class="section-title">Talks</h2>
 				{% for talk in site.data.talks %}
+				{% if talk.type != "panel" %}
 				<div class="card talk-card">
 					<div class="title">{% if talk.url and talk.url != "" %}<a href="{{talk.url}}">{{talk.title}}</a>{% else %}{{talk.title}}{% endif %}</div>
 					<div class="venue">{{talk.venue}} {{talk.year}} {% if talk.venue_note and talk.venue_note != "" %}({{talk.venue_note}}){% endif %}</div>
 				</div>
+				{% endif %}
 			  {% endfor %}
 			</div>
 		</section>

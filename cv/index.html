@@ -114,12 +114,15 @@ layout: null
       {% include pubs_of_pubtype.html %}
     </section>
     <section>
-      <h2>Talks</h2>
+      <h2>Talks and Panels</h2>
       {% for talk in site.data.talks %}
-      <p>{% if talk.url and talk.url != "" %}<a href="{{talk.url}}">“{{talk.title}}.”</a>{% else %}“{{talk.title}}.”{% endif %}<br>
+      {% if talk.type == "panel" %}
+      <p><em>Panelist</em>, “{{talk.title}}.”<br>{{talk.members|join:", "}}.<br>{{talk.venue}} {{talk.year}}.</p>
+      {% else %}
+      <p><em>Speaker</em>, {% if talk.url and talk.url != "" %}<a href="{{talk.url}}">“{{talk.title}}.”</a>{% else %}“{{talk.title}}.”{% endif %}<br>
       {{talk.venue}} {{talk.year}}{% if talk.venue_note and talk.venue_note != "" %} ({{talk.venue_note}}){% endif %}.</p>
+      {% endif %}
       {% endfor %}
-      <!--TODO add the PCG Workshop 10-year anniversary panel (invited)? falls between GDC 2019 and roguelike celebration 2019 talks -->
     </section>
     <section>
       <h2>Exhibitions</h2>
