@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>Germinate: A Mixed-Initiative Casual Creator for Rhetorical Games</title>
+  <style>
+  body {
+    font-family: Georgia, sans-serif;
+    line-height: 1.5;
+    margin: 2rem auto;
+    max-width: 700px;
+    padding: 0 1rem;
+  }
+  h1, h2, h3 {
+    line-height: 1.25;
+  }
+  pre {
+    background: #eee;
+    overflow: scroll;
+    padding: 0.5rem;
+    -webkit-user-select: all;
+    user-select: all;
+    white-space: pre-wrap;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+  .caption {
+    font-style: italic;
+    text-align: center;
+  }
+  .caption em {
+    font-style: normal;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+  tr:not(:last-child) td {
+    padding-bottom: 0.5rem;
+  }
+  td:not(:last-child) {
+    padding-right: 1rem;
+  }
+  sup, sub {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+  }
+  /* header, header a { color: #aaa; } */
+  </style>
+</head>
+<body>
+<!--<header><a href="/">Max Kreminski</a> / <a href="/">Publications</a></header>-->
+<h1>Germinate: A Mixed-Initiative Casual Creator for Rhetorical Games</h1>
+<div class="authors"><a href="https://mkremins.github.io">Max Kreminski</a>, <a href="https://melaniedickinson.com">Melanie Dickinson</a>, Joseph C. Osborn, Adam Summerville, Michael Mateas, Noah Wardrip-Fruin</div>
+<div class="pubinfo">
+  Presented at <a href="https://webdocs.cs.ualberta.ca/~santanad/aiide/">AIIDE 2020</a> •
+  <a href="#cite">How to cite</a> •
+  <a href="https://scholar.google.com/scholar?q=%22Germinate: A Mixed-Initiative Casual Creator for Rhetorical Games%22 Kreminski">Google Scholar</a> •
+  <a href="https://mkremins.github.io/publications/Germinate_AIIDE2020.pdf">PDF</a>
+</div>
+<p></p>
+<p></p>
+<p>Digital games are hindered as an artform by significant technical barriers to entry, which exclude many would-be game developers from participating in this medium of expression. <em>Casual creators</em> for game design attempt to mitigate these barriers, but—like conventional game development tools—often require users to “work their way up” from low-level mechanics to high-level rhetorical or expressive goals, rather than allowing them to start with high-level rhetorical goals and “work their way down.” The constraint-based game generator Gemini is well-suited to the generation of games that meet high-level expressive goals, but is difficult for casual users to work with. We present Germinate, a mixed-initiative casual creator for rhetorical games that extends Gemini with a more approachable graphical user interface. A preliminary expert evaluation revealed that Germinate affords a playful approach to rhetorical game design by generating games that successfully meet user intent in surprising and novel ways.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Making videogames requires significant technical knowledge, and the technical barriers to entry associated with game creation exclude many would-be game creators from participating in digital game design as a medium of expression. Both the <em>gulf of execution</em> (the difficulty of translating one’s creative intent into executable code) and the <em>gulf of evaluation</em> (the difficulty of evaluating a work-in-progress game design and determining how it could be improved)&nbsp;[<a href="#ref_DirectManipulation">1</a>] contribute to the overall difficulty of making games.</p>
+<p>Furthermore, the goal of game design is usually to produce some sort of experiential, rhetorical, or <em>aesthetic</em> effect in the player, but it is not possible to modify a game’s aesthetic effects directly. Instead, game designers may only directly modify <em>mechanics</em>, which interact with one another to produce emergent <em>dynamics</em>, which in turn interact with players to produce aesthetics&nbsp;[<a href="#ref_MDA">2</a>]. This has led to the development of the theory of <em>procedural rhetoric</em>&nbsp;[<a href="#ref_PersuasiveGames">3</a>], which attempts to show how changes in mechanics lead to changes in a game’s perceived meaning.</p>
+<p><em>Casual creators</em>&nbsp;[<a href="#ref_CasualCreators">4</a>, <a href="#ref_CasualCreatorsDiss">5</a>] for game design—approachable digital game creation tools that emphasize the process of exploring a game design space over the production of fully realized games—attempt to mitigate the difficulty of making digital games. These tools typically target users who are experts in a particular domain but inexpert as game designers, such as journalist creators of newsgames&nbsp;[<a href="#ref_Newsgames">6</a>], or users who are interested in creating and sharing games primarily as a form of casual self-expression, such as game-literate but non-designer players of games. These users can benefit substantially from the creativity support that casual creators provide, and they may not know how to craft low-level game mechanics that facilitate the communication of their expressive or rhetorical intent through game design.</p>
+<p>However, most casual creators for game design still require users to build games up from low-level specifications of mechanics and individual pieces of content, rather than allowing users to directly express their rhetorical intent to a system capable of generating games that fulfill this intent. If the game designer’s end goal is to achieve a rhetorical effect on the player, as is often the case with newsgames and other personal&nbsp;[<a href="#ref_Zinesters">7</a>] or persuasive&nbsp;[<a href="#ref_PersuasiveGames">3</a>] games, then a rhetoric-forward approach to design may be preferable over an approach that starts with mechanics—especially for initial exploration of how an argument might be expressed through procedural rhetoric, before the game designer has decided what mechanics they want to pursue.</p>
+<p>In this paper, we present Germinate, a mixed-initiative co-creative&nbsp;[<a href="#ref_MICCJournal">8</a>] casual creator for rhetorical game design. Germinate is open-source<sup><a href="#footnote1">1</a></sup> and can be used in a web browser. Germinate is built on Gemini&nbsp;[<a href="#ref_Gemini">9</a>], an abstract game generator that operationalizes the theory of <em>proceduralist readings</em>&nbsp;[<a href="#ref_ProceduralistReadings">10</a>] for game generation, and provides additional scaffolding for the basic interaction loop of working with Gemini in order to make it more approachable to casual users. In the remainder of this paper, we first discuss related work in the areas of rhetoric-driven game generation and casual creators for game design. We then describe how Germinate works as a system. We discuss how Germinate makes use of casual creator design patterns, and present the results of a preliminary expert evaluation showing how Germinate functions as a casual creator. Finally, we discuss takeaways that might be applicable to the development of future mixed-initiative casual creators for game design.</p>
+<p></p>
+<h2 id="related-work">Related Work</h2>
+<p>The Game-O-Matic system&nbsp;[<a href="#ref_GameOMatic">11</a>] represents an early landmark example of both a casual creator for game design and a rhetoric-forward approach to game generation. Game-O-Matic 
+
+is unusual among game generators in its presentation of an interactive interface for human-in-the-loop game generation, which
+allows users to specify their rhetorical intent for a game as a diagram containing both <em>nouns</em> (i.e., named entities that must appear in the generated game) and <em>verbs</em> (i.e., a fixed set of abstract mechanical relationships, such as “chases”, “makes”, and “helps”, that one entity may have with another). Verbs are represented by directed arrows from one noun to another; any given pair of nouns can be related to one another by zero or more verbs. Users may also choose the sprites by which each noun should be represented in the generated games. When the user is satisfied with their intent, they instruct the generator to produce a game for them. They can then play the generated game directly within the Game-O-Matic user interface to determine what they like about it, what they dislike, and how they want to modify their intent (if at all) in response to the generated game.</p>
+<p>The abstract game generator Gemini is based on an operationalization of the theory of proceduralist readings, and—like Game-O-Matic—takes a rhetoric-forward approach to generation. Gemini simultaneously generates game rulesets and proceduralist <em>interpretations</em> of those rulesets via answer set programming (ASP), a constraint satisfaction framework based on first-order logic. Gemini users provide the generator with a <em>design intent</em>, a short AnsProlog program that provides additional constraints on the overall generative space of Gemini games. The constraint solver proves that all of the interpretations demanded by the design intent are satisfied in every generated game. Therefore, only games with internally consistent proceduralist readings can be generated. 
+Gemini generates games in the Cygnus game description language—a strict superset of the popular Video Game Description Language (VGDL)&nbsp;[<a href="#ref_VGDL">12</a>, <a href="#ref_VGDLFollowup">13</a>]—and has a more sophisticated model of games than Game-O-Matic, so it can generate games that Game-O-Matic can’t. For instance, while Game-O-Matic only supports relationships between entities, Gemini also supports named resources; relationships between entities and resources; and precise low-level specifications of mechanics. Gemini also supports much more complex and expressive constraints on the generative space than Game-O-Matic allows, because Gemini design intents can make full use of AnsProlog language constructs to further constrain the generative space in arbitrary ways.</p>
+<p>Many past approaches to game generation&nbsp;[<a href="#ref_OrchestratingGameGeneration">14</a>, <a href="#ref_TogeliusGameGeneration">15</a>] make use of evolutionary algorithms, attempting to generate progressively better games through incremental optimization of a utility function. This approach has been broadly successful for open-ended game generation, but in the context of rhetorical game generation, it is difficult to specify a utility function representing the extent to which a game instantiates a particular argument through its procedural rhetoric. In contrast, Gemini captures the specification of desired rhetorical qualities in a game by inferring whether those qualities follow from a set of mechanics using ASP. The inferential chains can be quite complex, and are not easily captured by evaluation functions that measure properties of rollouts of the game given an artificial player, or through static, numeric evaluation of the mechanics present in a game. The ANGELINA 3 and 4 systems&nbsp;[<a href="#ref_AngelinaPartI">16</a>, <a href="#ref_AngelinaPartII">17</a>] take an evolutionary approach, but also attempt to theme their games in meaningful or rhetorical ways through the judicious selection of appropriate assets. These themes are, however, limited in the extent to which they engage with the procedural rhetoric of the game’s rules and mechanics to create meaning.</p>
+<p>Other casual creators for game design that don’t make use of game generation directly include Wevva&nbsp;[<a href="#ref_Wevva">18</a>] and the other work under the label of “fluidic games”&nbsp;[<a href="#ref_FluidicGames">19</a>]. These systems work by defining a large game design space characterized by hundreds of numerical parameters and presenting users with an approachable interface for exploring this space. This approach has been successful in enabling game creation across broad audiences. From a rhetorical game design perspective, however, these systems—like many other game creation tools—leave it up to the user to craft or discover low-level mechanics that create the desired meaning.</p>
+<h2 id="system-description">System Description</h2>
+<div class="figure" id="fig:GerminateUI">
+                  <img src="GerminateUI.png"/>
+                  <p class="caption">The Germinate user interface. The left side of the screen contains user-specified properties for generated games. The right side of the screen shows a single generated game at a time, with controls for navigating the pool of generated games; a playable version of the currently selected game; and a representation of the generated game’s actual properties, which can be imported into the intent or used as inspiration when manually revising the intent.</p>
+                  </div>
+<p>Germinate is a mixed-initiative casual creator for rhetorical games, similar to those produced by Game-O-Matic&nbsp;[<a href="#ref_GameOMatic">11</a>]. Germinate extends the underlying Gemini game generator with a browser-based graphical user interface that allows users to specify the properties they would like the generated games to have. Once the user has specified their desired game properties, they request a batch of games. Germinate translates these properties into a <em>Gemini intent</em> (an AnsProlog program that specifies additional constraints on the overall Gemini possibility space) and passes this intent to the underlying generator, which begins incrementally generating a batch of games. As games are generated, they are sent back to the Germinate frontend (figure <a href="#fig:GerminateUI">fig:GerminateUI</a>), which allows the user to navigate through the pool of generated games; play the games in their web browser; and view the rules of these generated games, displayed as cards similar to those the user may use to specify their intent.</p>
+<p>The overall interaction loop of working with Germinate is as follows:</p>
+<ol>
+                  <li> Specify some initial constraints on the generative space.</li>
+<li> Request a batch of games.</li>
+<li> If the intent contains contradictions, go back and change it to eliminate the contradictions, then repeat Step 2; else go on to Step 4.</li>
+<li> Inspect the generated games, by playing them and reading the rules.</li>
+<li> Modify the constraints on the generative space to reflect your improved understanding of your own intent.</li>
+<li> Repeat from Step 2.</li>
+                  </ol>
+<p>This mirrors the interaction loop we found to be most effective when working with Gemini in general, but provides additional scaffolding around intent editing and evaluation of generated games. On the intent editing side, we mitigate the <em>gulf of execution</em> by providing users with a more structured interface for modifying the intent. This makes it harder for the user to accidentally produce a malformed intent, whether due to AnsProlog syntax errors or incorrect specification of Cygnus predicates—both of which are common when editing Gemini intent files directly. On the evaluation side, we mitigate the <em>gulf of evaluation</em> by providing users with live, playable versions of generated games directly in line with the intent that produced them. A similar interaction loop is also common when authoring answer set programs in general&nbsp;[<a href="#ref_ASPAuthoring">20</a>].</p>
+<h3 id="the-germinate-intent-language">The Germinate Intent Language</h3>
+<p>Germinate breaks down design intents into four types of <em>cards</em>: entity cards, resource cards, relationship cards, and trigger cards.</p>
+<p><strong>Entity cards</strong> describe Gemini <em>entities</em>: graphical objects with names and sprites that move around within the two-dimensional physical space of the game’s playing field, potentially responding to user input and interactions (such as collisions) with other entities.</p>
+<p><strong>Resource cards</strong> describe Gemini <em>resources</em>: named quantitative values that are displayed to the player in resource bars, and in terms of which all the game’s goals are ultimately framed. </p>
+<p>Both entity and resource cards in Germinate may be annotated with a variety of appropriate <em>tags</em>, which constrain certain properties of the entities and resources to which they are attached. For instance, an entity may be given the “Quantity several” tag to specify that it must be possible for multiple instances of this entity to exist at any given time, or the “Controlled by player” tag to specify that this entity must respond directly to player controls; a resource may be given the “Initially low” tag to specify that its value must start out nearly empty; and both entities and resources can be given the “Player thinks it’s good” tag to specify that Gemini must <em>read</em> this entity or resource as good for the player overall.</p>
+<p><strong>Relationship cards</strong> do not map directly to a single underlying concept in Gemini. All relationships consist of a <em>relationship type</em>, a <em>left-hand side</em>, and a <em>right-hand side</em>. Depending on the relationship’s type, the left-hand and right-hand sides of the relationship may be entities, resources, or both. They may also be left blank, which signals to the generator that this side of the relationship should be filled in during generation. (For instance, a <code>Ghost produces _</code> relationship would indicate to the generator that the <code>Ghost</code> entity must be read as producing <em>some</em> sort of resource, but which resource this actually is is left up to the generator.) Most relationship types correspond to Gemini <em>readings</em> (such as the <code>produces</code>, <code>consumes</code>, and <code>helps</code> readings), but some (such as the <code>collides with</code> relationship type) correspond to outcomes instead. </p>
+<p><strong>Trigger cards</strong> map closely to Gemini “outcomes”, which tie together one or more <em>preconditions</em> (situations that might emerge during gameplay) with one or more <em>results</em> (effects that happen when these preconditions are met).</p>
+<p>The space of Gemini design intents that Germinate is capable of producing is a strict subset of the full Gemini intent space. As a result, Gemini is capable of producing many games that Germinate cannot. However, the restrictions that Germinate places on the intent space support casual use in several different ways. First, these restrictions focus users on exploring the most well-tested subset of Gemini’s readings, reducing unpleasant surprises arising from poorly-tested interactions of Gemini game features. Second, restrictions mitigate fear of the blank canvas&nbsp;[<a href="#ref_GGaSP">21</a>] by ensuring that even an empty or trivial initial intent can be used to produce mostly-random games that provide concrete inspiration for further intent refinement. And third, restrictions mitigate the temptation to precisely specify all game rules and interactions by hand as part of the intent, promoting the beneficial forms of surprise that we identified during preliminary expert evaluation of Germinate.
+
+
+
+</p>
+<h3 id="germinate-gemini-translation">Germinate/Gemini Translation</h3>
+<p>The differences between the Germinate and Gemini intent languages require translation to be performed at two key places in the interaction loop. When the user submits their design intent to the generator for consideration, it must first be translated from a Germinate intent (a set of cards specifying desirable game properties) to a Gemini intent (an answer set program constraining the Gemini generative space in appropriate ways). Then, when a generated game is sent back to the user in the form of a particular solution to the proposed answer set program, it must be parsed and translated back into Germinate cards, so that these cards can be easily read by the user and imported directly into the design intent during intent revision if the user so chooses. Both of these translation steps are required for the user to be able to “have a conversation” with the generator: without the former translation step, the user would be unable to specify their intent to the generator in a way the generator could understand, and without the latter step, the user would have difficulty interpreting the generator’s intent in adding the additional unspecified mechanics that it did.</p>
+<p>Some intents translate straightforwardly from the Germinate to the Gemini intent language. For example, one evaluator of the tool created an intent stating that the generated games should contain two entities (books and students); two resources (knowledge and tiredness); and that books, students, and knowledge should be perceived by players as good, while tiredness should be perceived as bad. Each of these concepts can be expressed directly as a single Gemini intent predicate, so the intent translates directly into the following AnsProlog code (simplified slightly for readability):</p>
+<pre>entity(book).
+:- not reading(book,good).
+entity(student).
+:- not reading(student,good).
+resource(knowledge).
+:- not reading(knowledge,good).
+resource(tiredness).
+:- not reading(tiredness,bad).</pre>
+<p>Some intents, however, are slightly more difficult to translate. Intents involving negation often require more work to transform into AnsProlog code, as do intents involving higher-order concepts that Germinate exposes to users directly but that map to a more complicated set of Gemini intent predicates under the surface. Suppose a user wants to add some new restrictions to the previous intent: books must be perceived by the player as either good, bad, or neutral, but not “complicated” (i.e. both good and bad); students must have the “collides with” relation to one another; the tiredness resource must not start off empty; and the mechanics must not involve clicking on students to increase knowledge. This adds several more complicated integrity constraints to the AnsProlog program:</p>
+<pre>:- not 0 { reading(book,good;bad) } 1.
+:- not result(_,apply_restitution(
+  student,student)).
+:- initialize(set_value(
+  tiredness,scalar(0))).
+click_on_student_for_knowledge :-
+  precondition(
+    control_event(click(student)),O),
+  result(O,modify(increase,knowledge)).
+:- click_on_student_for_knowledge.</pre>
+<p>
+In addition to translating design intents into a form that the generator can understand, Germinate must also translate generated games back into the Germinate interface language. Games generated by Gemini (i.e. game rulesets expressible in the Cygnus game description language) contain a range of assertions, including some that Germinate does not yet know how to interpret or present to the user. To give one example, the first game generated by Gemini for the simple evaluator-created intent described earlier in this section consists of 76 total statements, many of which pertain to inferences that Gemini has made about how this game’s procedural rhetoric can be “read” by the player. Germinate recognizes and displays to the user in some form 39 of these statements: 8 pertaining to entity and resource tags, including the reading of entities and resources as “good” or “bad”, the quantities of entities, and the initial values of resources; 6 pertaining to readings of relationships between entities and resources, including “produces”, “consumes”, “helps”, and “shares” relationships; and 25 pertaining to preconditions and postconditions on generated game mechanics, or “triggers”. All of these Germinate-recognized facts about the generated game can then be imported back into the intent in some form, if the user decides to further explore this part of the design space.</p>
+<p>
+</p>
+<h2 id="evaluation">Evaluation</h2>
+<p>To evaluate Germinate, we employed two kinds of evaluation. First, we performed a principles-based evaluation, treating the casual creator design patterns identified by [<a href="#ref_CasualCreators">4</a>] as a set of design principles. Second, we performed a preliminary expert evaluation with four researchers in the field, all of whom have experience working with game generators other than Gemini.</p>
+<h3 id="casual-creator-design-patterns">Casual Creator Design Patterns</h3>
+<p>[<a href="#ref_CasualCreators">4</a>] define eleven <em>design patterns</em> for casual creators, five of which are present in Germinate.</p>
+<p><strong>No blank canvas.</strong> Germinate is capable of generating games regardless of whether the user has specified any properties in the intent, meaning that users can always rely on the system to provide inspiration. Additionally, Germinate often generates games that contain additional, inspiring random elements beyond those specified by the users.</p>
+<p><strong>Limiting actions to encourage exploration.</strong> Users of Germinate are restricted to a relatively narrow subset of the full Gemini intent language, which was chosen to steer users toward a known-good subset of the overall generative space. </p>
+<p><strong>Mutant shopping.</strong> Germinate produces a few distinct variations on each base game that Gemini creates in response to the user-supplied intent, allowing users to scan through these variants for inspiration and import the desirable features of multiple generated games into a single combined intent.</p>
+<p><strong>Modifying the meaningful.</strong> Germinate foregrounds specification of high-level rhetorical intent over granular specification of low-level mechanics, although both modes of interaction are available. </p>
+<p><strong>Simulation and approximating feedback.</strong> To assist users in understanding the generated games, Germinate parses mechanics and Gemini-emitted “readings” from generated games and displays them in card format. This allows the user to read these cards to understand what arguments the generator is “trying to make” and how the rules are structured, providing additional approximating feedback beyond what a user could learn from playing the generated games.</p>
+<p>Of the remaining six casual creator design patterns, we found that two (<strong>Instant feedback</strong> and the <strong>Chorus Line</strong>, the latter of which is a “sub-pattern” of the former) are technically infeasible to realize in the current version of Germinate, due to how long Gemini takes to produce games once given an intent. Two more (<strong>Entertaining evaluations</strong> and <strong>Saving and sharing</strong>) are technically feasible but not yet implemented in Germinate. And two others (<strong>Hosted communities</strong> and <strong>Modding, hacking, teaching</strong>) are community-oriented design patterns that are unsupported by the current version of Germinate, which focuses on “single-player” features alone.</p>
+<h3 id="preliminary-expert-evaluation">Preliminary Expert Evaluation</h3>
+<p>
+Germinate is meant to be used by people with a variety of backgrounds.  There are several ways we could evaluate the tool—for example, whether it makes Gemini experts more efficient at producing games achieving their design goals, whether Germinate is usable from a traditional task-oriented HCI standpoint, or whether non-experts find the tool pleasant and diverting to use.  In order to rapidly gather feedback and validate our approach before taking on a larger user study, we chose to focus our preliminary evaluation on overall impressions of the tool and the sense of agency experienced by users familiar with game generation but not deeply familiar with Gemini while using the tool.</p>
+<p>
+
+
+<em>Emma’s Journey</em>&nbsp;[<a href="#ref_StoryAssembler">22</a>] is an experimental narrative game that juxtaposes choice-based narrative scenes with abstract minigames generated by Gemini. The creators of <em>Emma’s Journey</em> used scene-specific Gemini design intents to generate games whose procedural rhetoric matches and contributes to the intended procedural rhetoric of each scene.
+As an initial assessment of Germinate’s capabilities, two co-authors familiar with Gemini attempted to reproduce games from specific <em>Emma’s Journey</em> scenes using Germinate, working from the same prompts originally used to hand-author Gemini design intents as obtained from the creators of <em>Emma’s Journey</em>.  We found that while we were able to get close to the goal intent within a few minutes (comparable to the time experts might spend hand-authoring), we could not exactly phrase the intent goals due to the subset of Gemini exposed by Germinate.  On the other hand, the resulting games were surprising and interesting, branching off in ways that were both unexpected and sometimes preferable.  Moreover, Germinate’s constraints led us to explore a broad variety of ways to translate the given intents to Germinate’s intents language.</p>
+<p>It is important to note that this is not the primary mode of use intended for Germinate, which as a casual creator tool is meant to be more exploratory.  However, we do feel that this preliminary assessment is informative, suggesting that Germinate is competitive with hand-authored design intent files even in the hands of Gemini experts.</p>
+<p>
+
+For our main evaluation, we enlisted three Ph.D. researchers in game generation (not deeply familiar with Gemini) and one post-bac researcher.  After a 5 minute walkthrough of Germinate’s user interface and ontology, we instructed each subject to play around with the tool for 10 minutes and talk through their thinking and reasoning.  If the user did not say anything for a period of time, we would prompt them.  Afterwards, we administered the following brief user experience questionnaire&nbsp;[<a href="#ref_laugwitz2008construction">23</a>], of which the first question was free response and the remaining questions were on a three-point scale:</p>
+<ol>
+                  <li> What is your overall impression of the tool?</li>
+<li> How easy was it to use the tool?</li>
+<li> Were you able to use the tool without unnecessary effort?</li>
+<li> Did you feel you had enough control over the generated games?</li>
+<li> Was it fun to use?</li>
+                  </ol>
+<p></p>
+<h3 id="results">Results</h3>
+<p>Our first respondent (the post-bac researcher) felt that overall, Germinate was intended for game creators who wanted to drive game design by story or environment elements rather than specific rules or mechanics.  They especially liked to play with the randomization features.  They described the tool as “easy to use” (2) (although waiting for games to be generated was frustrating), stated that “some unnecessary effort” (3) was involved (especially when the generated intent was not satisfiable for one reason or another), and they felt “some control” (4) over the generated games.  This user especially appreciated that the system pushed them away from traditional game rules and mechanics and towards more surprising areas of the generative space.  Finally, they felt that the tool was “fun to use” (5), commenting specifically on the evocative use of emoji and the loose, not overly goal-oriented interaction style.  They also believed that given more time with the tool, they could learn how to exert more influence over, for example, the control schemes used for the game entities.</p>
+<p>A researcher in playable AI systems found Germinate “an interesting casual creator for game generation,” and engaged with the tool “without any specific goals.”  They mainly worked by defining entity and resource tags and relationships, but felt uncertain about the concrete meaning of terms used in the interface.  Their main frustrations concerned the unclear rules of generated games; still, they drew out semantic arguments unprompted (“my Friend is chasing Success”).</p>
+<p>They found the tool neither easy nor hard to use (2), since the tool can’t be meaningfully separated from the games and affordances of the generator.  They did not experience a sensation of unnecessary effort (3), and since they had no specific goals they felt “full control—as much control as [they] were looking for,” but perhaps not enough if they intended to create a specific game (4).  Finally, they felt the tool was fun to use (5) and experiment with as a casual user (as opposed, say, to a creator of newsgames).</p>
+<p>A game generation researcher felt that the tool is a “good step,” but felt that the games were too similar to each other.  They found the tool “hard to use” (2) most likely because they felt that they had “some/no control” over the generated games (4).  However, they did feel that the there was “no unnecessary effort” in using the tool (3) and ultimately found that the tool as “somewhat fun to use” (5) (although they noted that they wished they had more time to play around with the relationships and potential expressible space of the system).</p>
+<p>On the other hand, one of the game generation researchers felt that generally, “[t]here’s a pleasant flow to using the tool, and it was able to generate some games I wasn’t expecting but really liked.” The intent and resultant game can be seen in figure <a href="#fig:surprising">fig:surprising</a>. They especially liked how Germinate generated games that fulfilled the rhetorical intent without using the mechanics they were expecting. They described the tool as “easy to use” (2) (although they noted that there was a friction in how the rules are presented and how they wanted to be able to tell the generator to change a specific rule), said that there was “no unnecessary effort” (3) in using the tool, felt that they had “full control” over the generated games (4), and felt that the tool was “fun” (5) to use.</p>
+<h2 id="discussion">Discussion</h2>
+<p></p>
+<div class="figure" id="fig:surprising">
+                  <img src="MikeCookGame.png"/>
+                  <p class="caption">A generated game that surprised one of the expert participants.  The intent states that books, students, and knowledge are good, while tiredness is bad.  The participant expected a game in which a student chased books, but the resultant game featured a student warily circling the books while the player tried to corral the books towards the student.</p>
+                  </div>
+<p>All expert users surveyed in our evaluation found Germinate to be at least “somewhat fun to use”, and three of four said it was “fun” unreservedly. Three found that there was “no unnecessary effort” involved in using the tool, while one felt that there was “some unnecessary effort.” Two of the expert evaluators felt that they had “full control” over the generated games, while the other two felt that they had “some control”. Two found it “easy to use”, one “hard to use”, and one somewhere in between. Altogether, we conclude that—despite some rough edges—Germinate succeeds among these 
+expert users in its overall goal of facilitating a casual approach to rhetorical game design, oriented more toward playful exploration of a sometimes-surprising generative space than toward precise specification and realization of a single, clearly envisioned game. 
+Further evaluation will be needed to show that the same holds for casual users with no prior game generation experience as well.</p>
+<p>Although Germinate’s intent space is substantially more restricted than that of Gemini, we nevertheless preserve the desirable Gemini property of being able to generate games that the earlier interpretation-driven game generator Game-O-Matic could not. In particular, the Gemini intent language allows users to specify named resources with their own properties, as distinct from entities; relationships between entities and resources; fine-grained specifications of an individual entity’s gameplay properties; and fine-grained specifications of diverse mechanics—none of which are supported by Game-O-Matic, and all of which are made available to users of Germinate.</p>
+<p>Moreover, the finer-grained control that we sacrifice in giving up direct editing of AnsProlog design intents is rewarded here by greater approachability for casual users, who could feasibly use Germinate to perform interpretation-driven game generation without any knowledge of AnsProlog. This trading off of control for power is a common feature of casual creators, and can arguably be considered beneficial insofar as it facilitates user reflection on intent. </p>
+<p>The most common user frustrations we encountered in our expert evaluation involved opaque interactions between user-specified constraints. These interactions sometimes resulted in the generation of unsatisfiable intents without any feedback given to the users as to why the intent was unsatisfiable. User-friendly explication of how constraints interact and why an unsatisfiable intent cannot be fulfilled—in other words, improved error reporting—is therefore a top priority for future work.
+It would be fairly straightforward to modify Germinate to report some warnings to the user when they submit an intent that is likely to be unsatisfiable due to mutually incompatible constraints, especially since we’re already logging some of these warnings to the console—but this wouldn’t be sufficient to capture the full range of mutually incompatible constraints you can specify with any nontrivial fragment of the intent language.
+Moreover, it is inherently difficult to get the underlying Clingo solver (around which Gemini is built) to report the reason an intent is unsatisfiable: there are often several distinct integrity constraints that are all violated by a bad intent, making it difficult to isolate the precise reason for the failure&nbsp;[<a href="#ref_ASPDebugging">24</a>]. During debugging, we made use of a script that performs a binary search over the core Gemini AnsProlog integrity constraints (low-level constraints that capture Gemini’s definition of what a game is) and repeatedly re-runs the solver with some constraints relaxed to identify the constraints that are most likely invalidating the current intent; this approach could possibly be used to improve error reporting going forward, but to do so would be nontrivial from both an engineering and a user experience perspective.</p>
+<p>Another possibility for future work involves exposing the derivation trees of Gemini arguments to users directly and allowing users to phrase their intents partly in terms of these derivations. Gemini internally contains hundreds of individual rules that specify particular arguments as to why a game with certain characteristics can be interpreted as possessing a certain rhetorical property, and it seems (based on the expert evaluation we conducted here) that users often want to be able to both understand why the generator is interpreting this game in a particular way and inform the generator that some of its internal interpretive strategies should not be considered here. Exposing these derivation trees to the user, and letting the user specify in their design intent that some derivation steps should not be used, would perhaps restore some of the finer-grained control that users found the current version of Germinate to be lacking, without overwhelming users with the full complexity of the AnsProlog language.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>We present Germinate, a casual creator for rhetorical games based on the Gemini game generator. Principles-based and preliminary expert evaluation shows that Germinate successfully affords an approachable and playful form of rhetorical game design, satisfying the user’s expressive intent in surprising but inspiring ways, and scaffolding both the execution and evaluation sides of the interaction loop. Larger-scale evaluation in the future will be necessary to show that these desirable properties hold for casual users as well.</p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>This research was supported by a Seed Fund Award CITRIS-2017-0187 from CITRIS and the Banatao Institute at the University of California.</p><h2 id="footnotes">Footnotes</h2>
+<p class="footnote" id="footnote1"><sup>1</sup> https://github.com/ExpressiveIntelligence/Germinate</p>
+<h2 id="references">References</h2>
+<p class="ref" id="ref_DirectManipulation">
+               [1] Edwin L Hutchins, James D Hollan, Donald A Norman.
+               1985.
+               <a href="https://scholar.google.com/scholar?q=%22Direct manipulation interfaces%22 Edwin L Hutchins">Direct manipulation interfaces</a>.
+               
+               </p><p class="ref" id="ref_MDA">
+               [2] Robin Hunicke, Marc LeBlanc, Robert Zubek.
+               2004.
+               <a href="https://scholar.google.com/scholar?q=%22MDA: A formal approach to game design and game research%22 Robin Hunicke">MDA: A formal approach to game design and game research</a>.
+               In <em>Proceedings of the AAAI Workshop on Challenges in Game AI</em>.
+               </p><p class="ref" id="ref_PersuasiveGames">
+               [3] Ian Bogost.
+               2007.
+               <a href="https://scholar.google.com/scholar?q=%22Persuasive Games: The Expressive Power of Videogames%22 Ian Bogost">Persuasive Games: The Expressive Power of Videogames</a>.
+               
+               </p><p class="ref" id="ref_CasualCreators">
+               [4] Kate Compton, Michael Mateas.
+               2015.
+               <a href="https://scholar.google.com/scholar?q=%22Casual creators%22 Kate Compton">Casual creators</a>.
+               In <em>International Conference on Computational Creativity</em>.
+               </p><p class="ref" id="ref_CasualCreatorsDiss">
+               [5] Katherine Compton.
+               2019.
+               <a href="https://scholar.google.com/scholar?q=%22Casual Creators: Defining a Genre of Autotelic Creativity Support Systems%22 Katherine Compton">Casual Creators: Defining a Genre of Autotelic Creativity Support Systems</a>.
+               
+               </p><p class="ref" id="ref_Newsgames">
+               [6] Mike Treanor, Michael Mateas.
+               2009.
+               <a href="https://scholar.google.com/scholar?q=%22Newsgames: Procedural Rhetoric Meets Political Cartoons%22 Mike Treanor">Newsgames: Procedural Rhetoric Meets Political Cartoons</a>.
+               In <em>DiGRA Conference</em>.
+               </p><p class="ref" id="ref_Zinesters">
+               [7] Anna Anthropy.
+               2012.
+               <a href="https://scholar.google.com/scholar?q=%22Rise of the Videogame Zinesters: How Freaks, Normals, Amateurs, Artists, Dreamers, Drop-Outs, Queers, Housewives, and People Like You Are Taking Back an Art Form%22 Anna Anthropy">Rise of the Videogame Zinesters: How Freaks, Normals, Amateurs, Artists, Dreamers, Drop-Outs, Queers, Housewives, and People Like You Are Taking Back an Art Form</a>.
+               
+               </p><p class="ref" id="ref_MICCJournal">
+               [8] Antonios Liapis, Georgios N Yannakakis, Constantine Alexopoulos, Phil Lopes.
+               2016.
+               <a href="https://scholar.google.com/scholar?q=%22Can computers foster human users’ creativity? Theory and praxis of mixed-initiative co-creativity%22 Antonios Liapis">Can computers foster human users’ creativity? Theory and praxis of mixed-initiative co-creativity</a>.
+               
+               </p><p class="ref" id="ref_Gemini">
+               [9] Adam Summerville, Chris Martens, Ben Samuel, Joseph Osborn, Noah Wardrip-Fruin, Michael Mateas.
+               2018.
+               <a href="https://scholar.google.com/scholar?q=%22Gemini: bidirectional generation and analysis of games via ASP%22 Adam Summerville">Gemini: bidirectional generation and analysis of games via ASP</a>.
+               In <em>Fourteenth Artificial Intelligence and Interactive Digital Entertainment Conference</em>.
+               </p><p class="ref" id="ref_ProceduralistReadings">
+               [10] Mike Treanor, Bobby Schweizer, Ian Bogost, Michael Mateas.
+               2011.
+               <a href="http://doi.acm.org/10.1145/2159365.2159381">Proceduralist readings: how to find meaning in games with graphical logics</a>.
+               In <em>Proceedings of the 6th International Conference on Foundations of Digital Games</em>.
+               </p><p class="ref" id="ref_GameOMatic">
+               [11] Mike Treanor, Bryan Blackford, Michael Mateas, Ian Bogost.
+               2012.
+               <a href="https://scholar.google.com/scholar?q=%22Game-O-Matic: Generating videogames that represent ideas%22 Mike Treanor">Game-O-Matic: Generating videogames that represent ideas</a>.
+               In <em>Proceedings of the Third Workshop on Procedural Content Generation in Games</em>.
+               </p><p class="ref" id="ref_VGDL">
+               [12] Marc Ebner, John Levine, Simon M Lucas, Tom Schaul, Tommy Thompson, Julian Togelius.
+               2013.
+               <a href="https://scholar.google.com/scholar?q=%22Towards a video game description language%22 Marc Ebner">Towards a video game description language</a>.
+               
+               </p><p class="ref" id="ref_VGDLFollowup">
+               [13] Tom Schaul.
+               2013.
+               <a href="https://scholar.google.com/scholar?q=%22A video game description language for model-based or interactive learning%22 Tom Schaul">A video game description language for model-based or interactive learning</a>.
+               In <em>2013 IEEE Conference on Computational Inteligence in Games (CIG)</em>.
+               </p><p class="ref" id="ref_OrchestratingGameGeneration">
+               [14] Antonios Liapis, Georgios N Yannakakis, Mark J Nelson, Mike Preuss, Rafael Bidarra.
+               2018.
+               <a href="https://scholar.google.com/scholar?q=%22Orchestrating game generation%22 Antonios Liapis">Orchestrating game generation</a>.
+               
+               </p><p class="ref" id="ref_TogeliusGameGeneration">
+               [15] Ahmed Khalifa, Michael Cerny Green, Diego Perez-Liebana, Julian Togelius.
+               2017.
+               <a href="https://scholar.google.com/scholar?q=%22General video game rule generation%22 Ahmed Khalifa">General video game rule generation</a>.
+               In <em>2017 IEEE Conference on Computational Intelligence and Games (CIG)</em>.
+               </p><p class="ref" id="ref_AngelinaPartI">
+               [16] Michael Cook, Simon Colton, Jeremy Gow.
+               2016.
+               <a href="https://scholar.google.com/scholar?q=%22The ANGELINA videogame design system—part i%22 Michael Cook">The ANGELINA videogame design system—part i</a>.
+               
+               </p><p class="ref" id="ref_AngelinaPartII">
+               [17] Michael Cook, Simon Colton, Jeremy Gow.
+               2016.
+               <a href="https://scholar.google.com/scholar?q=%22The ANGELINA videogame design system—part ii%22 Michael Cook">The ANGELINA videogame design system—part ii</a>.
+               
+               </p><p class="ref" id="ref_Wevva">
+               [18] Edward Jack Powley, Mark J Nelson, Swen E Gaudl, Simon Colton, Blanca P’erez Ferrer, Rob Saunders, Peter Ivey, Michael Cook.
+               2017.
+               <a href="https://scholar.google.com/scholar?q=%22Wevva: Democratising game design%22 Edward Jack Powley">Wevva: Democratising game design</a>.
+               In <em>Thirteenth Artificial Intelligence and Interactive Digital Entertainment Conference</em>.
+               </p><p class="ref" id="ref_FluidicGames">
+               [19] Mark Nelson, Swen Gaudl, Simon Colton, Edward Powley, Blanca Perez Ferrer, Rob Saunders, Peter Ivey, Michael Cook.
+               2017.
+               <a href="https://scholar.google.com/scholar?q=%22Fluidic games in cultural contexts%22 Mark Nelson">Fluidic games in cultural contexts</a>.
+               In <em>International Conference on Computational Creativity</em>.
+               </p><p class="ref" id="ref_ASPAuthoring">
+               [20] Martin Brain, Owen Cliffe, Marina De Vos.
+               2009.
+               <a href="https://scholar.google.com/scholar?q=%22A pragmatic programmer’s guide to answer set programming%22 Martin Brain">A pragmatic programmer’s guide to answer set programming</a>.
+               
+               </p><p class="ref" id="ref_GGaSP">
+               [21] Max Kreminski, Noah Wardrip-Fruin.
+               2019.
+               <a href="https://scholar.google.com/scholar?q=%22Generative games as storytelling partners%22 Max Kreminski">Generative games as storytelling partners</a>.
+               In <em>Proceedings of the 14th International Conference on the Foundations of Digital Games</em>.
+               </p><p class="ref" id="ref_StoryAssembler">
+               [22] Jacob Garbe, Max Kreminski, Ben Samuel, Noah Wardrip-Fruin, Michael Mateas.
+               2019.
+               <a href="https://scholar.google.com/scholar?q=%22StoryAssembler: an engine for generating dynamic choice-driven narratives%22 Jacob Garbe">StoryAssembler: an engine for generating dynamic choice-driven narratives</a>.
+               In <em>Proceedings of the 14th International Conference on the Foundations of Digital Games</em>.
+               </p><p class="ref" id="ref_laugwitz2008construction">
+               [23] Bettina Laugwitz, Theo Held, Martin Schrepp.
+               2008.
+               <a href="https://scholar.google.com/scholar?q=%22Construction and evaluation of a user experience questionnaire%22 Bettina Laugwitz">Construction and evaluation of a user experience questionnaire</a>.
+               In <em>Symposium of the Austrian HCI and Usability Engineering Group</em>.
+               </p><p class="ref" id="ref_ASPDebugging">
+               [24] Tommi Syrjänen.
+               2006.
+               <a href="https://scholar.google.com/scholar?q=%22Debugging inconsistent answer set programs%22 Tommi Syrjänen">Debugging inconsistent answer set programs</a>.
+               In <em>Proceedings of the 11th International Workshop on Nonmonotonic Reasoning (NMR’06)</em>.
+               </p><h2 id="cite">How to cite this work</h2>
+<pre>
+@inproceedings{Germinate_AIIDE2020,
+  title={Germinate: A Mixed-Initiative Casual Creator for Rhetorical Games},
+  author={Kreminski, Max and Dickinson, Melanie and Osborn, Joseph C. and Summerville, Adam and Mateas, Michael and Wardrip-Fruin, Noah},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment},
+  year={2020},
+  month={10}
+}
+</pre>
+</body>
+</html>

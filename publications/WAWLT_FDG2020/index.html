@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>Why Are We Like This?: The AI Architecture of a Co-Creative Storytelling Game</title>
+  <style>
+  body {
+    font-family: Georgia, sans-serif;
+    line-height: 1.5;
+    margin: 2rem auto;
+    max-width: 700px;
+    padding: 0 1rem;
+  }
+  h1, h2, h3 {
+    line-height: 1.25;
+  }
+  pre {
+    background: #eee;
+    overflow: scroll;
+    padding: 0.5rem;
+    -webkit-user-select: all;
+    user-select: all;
+    white-space: pre-wrap;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+  .caption {
+    font-style: italic;
+    text-align: center;
+  }
+  .caption em {
+    font-style: normal;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+  tr:not(:last-child) td {
+    padding-bottom: 0.5rem;
+  }
+  td:not(:last-child) {
+    padding-right: 1rem;
+  }
+  sup, sub {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+  }
+  /* header, header a { color: #aaa; } */
+  </style>
+</head>
+<body>
+<!--<header><a href="/">Max Kreminski</a> / <a href="/">Publications</a></header>-->
+<h1><em>Why Are We Like This?</em>:<br>The AI Architecture of a Co-Creative Storytelling Game</h1>
+<div class="authors"><a href="https://mkremins.github.io">Max Kreminski</a>, <a href="https://melaniedickinson.com">Melanie Dickinson</a>, Michael Mateas, Noah Wardrip-Fruin</div>
+<div class="pubinfo">
+  Presented at <a href="https://webdocs.cs.ualberta.ca/~santanad/aiide/">FDG 2020</a> •
+  <a href="#cite">How to cite</a> •
+  <a href="https://scholar.google.com/scholar?q=%22undefined%22 Kreminski">Google Scholar</a> •
+  <a href="https://mkremins.github.io/publications/WAWLT_FDG2020.pdf">PDF</a>
+</div>
+<p></p>
+<p></p>
+<p>
+
+
+
+</p>
+<p>
+
+
+
+
+</p>
+<p>We present <em>Why Are We Like This?</em> (<em>WAWLT</em>), a mixed-initiative, co-creative storytelling game in which two players develop a story transcript by selecting and editing actions to perform and narrativize in an ongoing simulation.
+In this paper, we lay out the major technical features of <em>WAWLT</em>’s AI architecture—including story sifting via Datalog queries, social simulation, action suggestions, and player-specified but system-understandable author goals—and discuss how these features work together to produce a play experience that facilitates player creativity.</p>
+<p>
+</p>
+<p>
+</p>
+<p>
+
+
+
+
+
+
+
+</p>
+<p>
+</p>
+<h2 id="introduction">Introduction</h2>
+<p><em>Why Are We Like This?</em> (<em>WAWLT</em>) is an AI-supported digital storytelling game. In <em>WAWLT</em>, one or more players (ideally two) work to construct a story, supported by an AI system that serves to provide players with inspiration and keep the story moving forward, even when players are unsure what should happen next.</p>
+<p><em>WAWLT</em>’s current setting involves a small community of researchers who are temporarily stranded during a symposium at a remote venue. Stories revolve around the conflicts that emerge between these characters due to misunderstandings and shared history. Characters in <em>WAWLT</em> use <em>story sifting patterns</em> to make narrative sense of the world. Because different characters have access to different sifting patterns, they tell themselves different stories about the events that have transpired—and these conflicting understandings lead them to act in conflicting ways. By choosing which of several possible narrative frames each character will adopt for the same events, and how characters will act on the world based on their understanding of past events, players guide the evolution of these emergent conflicts.</p>
+<p><em>WAWLT</em> represents an example of AI-based game design&nbsp;[<a href="#ref_AIBased">1</a>] inspired by the study of existing player storytelling practices&nbsp;[<a href="#ref_Retellings">2</a>, <a href="#ref_EvaluatingViaRetellings">3</a>] in simulation-driven games.
+In designing <em>WAWLT</em>, we set out to provide creativity support features that would help players overcome four major barriers to creativity documented in&nbsp;[<a href="#ref_GGaSP">4</a>]: fear of the blank canvas; fear of judgment; writer’s block; and perfectionism. Further design inspiration was drawn from tabletop storytelling games&nbsp;[<a href="#ref_Microscope">5</a>, <a href="#ref_TheQuietYear">6</a>, <a href="#ref_ArchivesOfTheSky">7</a>], and from the AI-augmented improvisational theater experience <em>Bad News</em>&nbsp;[<a href="#ref_BadNews">8</a>].
+<em>WAWLT</em> aims to support player storytelling practices by providing players with intelligent plot direction suggestions, drawn from a live social simulation and guided by player utterances in a machine-understandable <em>intent language</em>.</p>
+<p>This paper briefly describes the <em>WAWLT</em> AI architecture and the roles of its key subsystems in supporting mixed-initiative storytelling. For more on the design of <em>WAWLT</em>, see [<a href="#ref_WAWLT_ELO2020">9</a>].</p>
+<h2 id="related-work">Related Work</h2>
+<p><em>WAWLT</em> is a mixed-initiative co-creative&nbsp;[<a href="#ref_MICC">10</a>] casual creator&nbsp;[<a href="#ref_CasualCreators">11</a>] for storytelling. Many of its storytelling mechanics were inspired by similar mechanics from tabletop storytelling games&nbsp;[<a href="#ref_Microscope">5</a>, <a href="#ref_TheQuietYear">6</a>, <a href="#ref_ArchivesOfTheSky">7</a>]. Other casual creators for storytelling, such as <em>Writing Buddy</em>&nbsp;[<a href="#ref_WritingBuddy">12</a>], and other mixed-initiative co-creative storytelling systems, such as <em>Mimisbrunnur</em>&nbsp;[<a href="#ref_Mimisbrunnur">13</a>], have provided valuable design inspiration for <em>WAWLT</em>, but have not fully embraced the use of a fine-grained simulated storyworld as we aim to here.</p>
+<p>The same is true of co-creative writing processes driven by language models&nbsp;[<a href="#ref_BotnikPredictiveWriter">14</a>, <a href="#ref_CreativeHelp">15</a>, <a href="#ref_SyntheticLiterature">16</a>, <a href="#ref_WritingWithTheMachine">17</a>]. Moreover, language model-based systems are particularly flawed from a creativity support perspective due to their lack of an explicit world model. Because of this lack, they frequently go off track or make suggestions that clearly contradict previous statements, forcing users to spend time and energy repeatedly reminding them of established facts via prompting techniques. This distracts from the useful creativity support features they provide (suggestions about “what happens next”) and exacerbates the problem of maintaining consistency, which even experienced authors may already find difficult on their own.</p>
+<p><em>WAWLT</em> is built around <em>story sifting</em>&nbsp;[<a href="#ref_OpenDesignChallenges">18</a>, <a href="#ref_CuratingSimulatedStoryworlds">19</a>] in both its implementation and its design, making central use of the story sifting and simulation engine Felt&nbsp;[<a href="#ref_Felt">20</a>]. Story sifting approaches to emergent narrative attempt to address the challenges of narrative generation through curation: by allowing a simulated storyworld to run, generating a massive chronicle of mostly-uninteresting simulated events, and then searching within this chronicle for patterns of narratively compelling events, it is possible to provide players with compelling stories or microstories without baking knowledge of how to tell a compelling story directly into the simulation engine itself. Several existing play experiences&nbsp;[<a href="#ref_DwarfGrandpa">21</a>, <a href="#ref_BadNews">8</a>, <a href="#ref_CMCK">22</a>] make use of story sifting technology to some extent, but we believe <em>WAWLT</em> is the first to center story sifting as a player-facing game mechanic.</p>
+<h2 id="example-play-session">Example Play Session</h2>
+<div class="figure" id="undefined">
+                  <img src="SystemDiagram.png"/>
+                  <p class="caption">An overall system diagram of <em>WAWLT</em>, showing the important modules and data flows. Pink subsystems (action definitions and the storyworld state database) consist of inert data; blue subsystems (author goals, suggested actions, autonomous actions, and the storyworld investigator) act on this data; and the transcript emerges from player actions over the course of play.</p>
+                  </div>
+<p>At the start of a play session, two players sit down and generate a new <em>WAWLT</em> scenario. The game generates a storyworld state database containing an initial cast of characters and institutions and some basic relationships between them. It then performs <em>backstory simulation</em> to quickly generate a history for this cast.</p>
+<p>Control is handed off to the players, who are prompted to choose some <em>author goals</em> and a subset of all the characters at the symposium to participate in the first <em>scene</em>. The players don’t yet know anything about the history of the storyworld, so they pick a couple of characters with interesting-sounding names and traits to participate in the first scene. They also select a single author goal: “cast suspicion on Vincent”, one of the two characters they selected.</p>
+<p>The system prompts the players with five different <em>action suggestions</em>, all of which could motivate Vincent to pursue revenge against another character.
+The players discuss which of these actions to perform, then select an action in which Mikayla, the other character in the scene, makes a disparaging comment about Vincent’s research. A terse system-generated description of this action is added to the <em>transcript</em>, with an editable text box below it in which the players can write a more detailed description. The action’s <em>effects</em> are also run, updating the storyworld state database.</p>
+<p>The players want to learn more about Mikayla and Vincent, so they use the <em>characters</em> tab of the <em>storyworld investigator</em> to look up Mikayla’s and Vincent’s <em>information cards</em>. They discover that Mikayla and Vincent are both doctoral students in the same lab who had previously worked on a major project together, but eventually both left the project over personal differences. This information helps the players develop a clearer picture of the relationship between Mikayla and Vincent up until this point, and allows them to write dialogue in their description of the insult action that makes reference to these past events.</p>
+<p>After selecting several more system-suggested actions for Mikayla and Vincent to perform within this scene, the players decide that they have accomplished their current author goal of casting suspicion on Vincent. They end the scene, and are prompted to pick characters and author goals for a new scene. In the meantime, characters not participating in the first scene have performed a number of <em>autonomous actions</em>, guided by the players’ author goals. The players use the storyworld investigator to view these background events, and use this to guide their selection of participants and author goals for the second scene.</p>
+<p>The players disagree briefly about whether the next scene should focus on establishing a conflict between two <em>characters</em> (Alex and Rashida) or between two <em>values</em> (comfort and safety). Eventually, they choose to compromise, selecting three author goals: one goal that explicitly focuses action suggestions on the establishment of a values conflict, and two goals that instruct the system to involve both Alex and Rashida in the plot as much as possible.</p>
+<p>As the play session continues, the players’ focus shifts from investigating the history of the storyworld and opening up new possibilities toward pulling threads together to bring the story to a satisfying conclusion. Correspondingly, in early scenes, the players choose author goals focused on escalating tension and introducing new conflicts, but in later scenes, they select goals that steer action suggestions toward reconciliation between characters instead.</p>
+<h2 id="architecture">Architecture</h2>
+<h3 id="storyworld-state-database">Storyworld State Database</h3>
+<p>The state of the <em>WAWLT</em> storyworld is stored in a DataScript&nbsp;[<a href="#ref_DataScript">23</a>] database managed by the Felt&nbsp;[<a href="#ref_Felt">20</a>] story sifting and simulation engine. Storyworld entities represented in the database include characters, projects, institutions, events, relationships, and impressions. The latter two of these are especially interesting, and are described at greater length here:</p>
+<p>A <strong>relationship</strong> entity stores one character’s view of another, including both <em>impressions</em> formed of that character’s actions and <em>role relationship</em> information (for instance, in the case of an advisor/student relationship or a marriage). It also contains a numeric <em>charge</em> value representing the source character’s overall attitude toward the target, with positive values reflecting a positive attitude and vice versa. There are two relationship entities for every pair of characters, one pointing in each direction.</p>
+<p>An <strong>impression</strong> represents a source character’s evaluation of a target character based on a particular introspection event. Each impression stores a pointer back to its <em>cause</em>: the event that led to its creation. One character’s overall charge toward another is given by the sum of the numerical scores associated with the source character’s impressions of the target. A single relationship may be defined by up to three positive and three negative impressions; stronger impressions displace weaker ones over time, and some actions (“gossip actions”) allow impressions to be communicated from one character to another.
+Many simulation-driven narrative systems&nbsp;[<a href="#ref_Talespin">24</a>, <a href="#ref_TalkOfTheTown">25</a>, <a href="#ref_Versu">26</a>] model character knowledge phenomena at a fine-grained level, tracking per-character awareness of many individual facts about the world. In <em>WAWLT</em>, we instead assume that all characters know about every event, but that most characters only care about events that are somehow directly relevant to them. Character <em>knowledge</em> is thus replaced in our system by subjective impressions, which are fewer in number and more reliably narratively consequential than granular facts about the world.</p>
+<p>At the beginning of each play session, we initialize a cast of 10 characters with random traits and probabilistically set role relationships (“works for”, “advises”, etc) between characters where appropriate. 
+We then run <em>backstory simulation</em> to flesh out several years of character life history and shared intellectual and social history among the cast.
+This bootstrapping of social context mitigates <em>fear of the blank canvas</em>&nbsp;[<a href="#ref_CasualCreators">11</a>, <a href="#ref_GGaSP">4</a>] in players by providing an interesting starting scenario, with many sites of narrative potential for players to develop through play. Backstory simulation draws from a pool of longer-timescale backstory actions that aren’t available during gameplay, such as “join institution”, “write paper together”, “publish a controversial book”, “take industry position”, and “take leave to parent”.
+After initial setup, subsequent simulation actions draw from a larger pool of shorter-timescale actions that make sense to happen in the course of a few days, on location at the symposium.</p>
+<h3 id="author-goals">Author Goals</h3>
+<p>Author goals provide players with a <em>player intent language</em>&nbsp;[<a href="#ref_LanguagesOfPlay">27</a>] that they can use to explicitly communicate their current creative intent to the system. This intent language is one of the main novel features of the <em>WAWLT</em> architecture.</p>
+<p>Examples of supported author goals include “Involve <em>character</em> in plot as <em>role</em>”; “Cast suspicion on <em>character</em>”; “Defuse tension between <em>character</em> and <em>character</em>”; and “Introduce false lead”. Italics in goal names indicate parameter slots. For instance, if players want to focus on actions involving a particular character, they can add this character to a <em>character</em> slot in any goal that provides one. Alternatively, players can also leave this slot empty, in which case the system will treat it as a wildcard that stands for “any character.”</p>
+<p><em>Custom author goals</em> that allow players to specify finer-grained constraints on action suggestions are also available. When specifying a custom author goal, players can use a lightweight textual query language to (for instance) prioritize actions that contain specific substrings in their taglines, feature specific characters, or belong to specific categories (such as “introspection actions” or “actions that involve projects”). These criteria can also be combined in arbitrary ways.</p>
+<p>Author goals are used to rank all currently possible actions in order to provide players with action suggestions. Each author goal is associated with a heuristic function that takes a possible action as an argument and returns a numerical score representing the relevance of this possible action to this author goal. To provide players with action suggestions, <em>WAWLT</em> first generates a list of all currently possible actions, then evaluates these possible actions against the set of currently active author goals. Every active author goal contributes a score to each possible action, and the list of possible actions is sorted by the total combined score from all active author goals, so that the most goal-relevant actions appear closest to the top of the suggestions list. This provides players with support in navigating the space of currently possible actions, which may contain hundreds of possible actions at any given point.</p>
+<p>Author goals are also intended to help players negotiate their intent with one another by making this intent explicit. Because players have to agree on what author goals to select, and because they’re prompted to adjust their author goals at the start of every new scene, the system encourages players to regularly discuss their intent with one another, and players may have to explicitly argue for the things they want to have happen in the story. In this way, author goals can function similarly to the “palette” mechanism in tabletop storytelling games like <em>Microscope</em>&nbsp;[<a href="#ref_Microscope">5</a>], which requires players to explicitly discuss what they do and don’t want to include in the story they are creating together.</p>
+<h3 id="action-suggestions">Action Suggestions</h3>
+<p>Character actions in <em>WAWLT</em> are defined as Felt&nbsp;[<a href="#ref_Felt">20</a>] actions. They have preconditions, which take the form of Felt sifting patterns, and effects, which update the database when the action is performed.</p>
+<p>Actions include both <em>external actions</em>, in which characters act on the world outside of themselves, and <em>introspection actions</em>, in which characters reflect on past events through the lens of a particular narrative frame. External actions might include “discuss a shared value with Rashida”, “insult Vincent”, or “sabotage Alex’s experiment”; introspection actions might include “speculate that Lea dislikes me” or “conclude that Mikayla is a mean person.” Introspection actions often produce <em>impressions</em> that influence the introspecting character’s attitude toward another character. By separating out character reasoning into a category of first-class actions that players can observe and perform directly, and that are added to the transcript for players to elaborate on within their stories, we hope to expose character reasoning to the players explicitly—and, thereby, to mitigate the <em>Tale-Spin effect</em>&nbsp;[<a href="#ref_ExpressiveProcessing">28</a>], in which a system is mistaken by players as less intelligent than it actually is due to insufficient exposure of the internal processes.</p>
+<p>The action suggestion interface displays the five most highly ranked possible actions for characters who are involved in the current scene. Possible actions in the action suggestion interface are displayed alongside some details about why this action is currently possible, including a display of which active author goals contribute to the surfacing of this action suggestion; a tree of previous actions that causally contributed to this action; and a short description of any other preconditions for this action, such as the presence of certain character traits on the action’s protagonist.</p>
+<p>The player may use a search bar to filter action suggestions without changing author goals. This search bar uses the same lightweight textual query language used in custom author goals.</p>
+<h3 id="autonomous-actions">Autonomous Actions</h3>
+<p>Characters who aren’t involved in the current scene can perform actions autonomously in the background. Autonomous actions are influenced by author goals, but chosen via weighted random selection from several of the higher-scoring possible actions for offscreen characters, rather than selected by the players. Autonomous actions are intended to help mitigate writer’s block by ensuring that the storyworld will always continue to develop in significant ways, even if the players can’t think of anything interesting to do in a particular scene. We are inspired here by the design property of <em>incrementality</em>&nbsp;[<a href="#ref_GGaSP">4</a>], which was found to support player storytelling in existing simulation-driven games.</p>
+<h3 id="storyworld-investigator">Storyworld Investigator</h3>
+<p>The <em>storyworld investigator</em> provides players with fine-grained tools for investigating the history and current state of the storyworld while writing their stories. The investigator is divided into several tabs, each of which displays a complete list of all instances of a certain type of storyworld entity (characters, relationships, projects, institutions, and events) and lets the player view <em>information cards</em> containing more detailed information about these entities. Information cards are linked together with hyperlinks to enable rapid exploration of the web of storyworld entities. For instance, while viewing the information card for a particular character, links under the “Relationships” section allow rapid navigation to information cards containing more detailed information about this character’s relationships with other characters, including the impressions that shape each character’s perception of the other.</p>
+<h3 id="transcript">Transcript</h3>
+<p>The transcript holds a running record of “the story so far”: an <em>artifact of play</em>&nbsp;[<a href="#ref_Threadsteading">29</a>] containing short system-generated summaries of all player-accepted action suggestions since the start of the play session, interleaved with more detailed player-generated prose descriptions of these actions. By allowing players to annotate events with their own descriptions, we aim to provide support for <em>extrapolative narrativization</em>&nbsp;[<a href="#ref_EvaluatingViaRetellings">3</a>]: a player storytelling behavior in which players seize on and elaborate minor details in the stories they tell about their play experiences, regardless of whether these details are explicitly modeled in the simulation. Editable free-text descriptions of events give players a place to decide for themselves what aspects of an event are most important, and to establish and reference recurring story elements not modeled in the computational system.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this paper, we presented the AI architecture of <em>Why Are We Like This?</em> (<em>WAWLT</em>), an AI-supported storytelling game intended to provide explicit support for the kinds of player storytelling practices seen in many simulation-driven games. <em>WAWLT</em> makes extensive use of story sifting, both to implement character subjectivity (through introspection actions) and to provide players with tools for investigating the history and current state of the storyworld (through the storyworld investigator). <em>WAWLT</em> also supports player storytelling practices by providing players with intelligent plot direction suggestions, drawn from an ongoing social simulation and guided by player utterances in a machine-understandable intent language, realized here in the form of <em>author goals</em>.</p>
+<p>
+</p><h2 id="references">References</h2>
+<p class="ref" id="ref_AIBased">
+               [1] Mirjam P Eladhari, Anne Sullivan, Gillian Smith, Josh McCoy.
+               2011.
+               <a href="https://scholar.google.com/scholar?q=%22AI-based game design: enabling new playable experiences%22 Mirjam P Eladhari">AI-based game design: enabling new playable experiences</a>.
+               
+               </p><p class="ref" id="ref_Retellings">
+               [2] Mirjam Palosaari Eladhari.
+               2018.
+               <a href="https://scholar.google.com/scholar?q=%22Re-tellings: the fourth layer of narrative as an instrument for critique%22 Mirjam Palosaari Eladhari">Re-tellings: the fourth layer of narrative as an instrument for critique</a>.
+               In <em>Proc. ICIDS</em>.
+               </p><p class="ref" id="ref_EvaluatingViaRetellings">
+               [3] Max Kreminski, Ben Samuel, Edward Melcer, Noah Wardrip-Fruin.
+               2019.
+               <a href="https://scholar.google.com/scholar?q=%22Evaluating AI-based games through retellings%22 Max Kreminski">Evaluating AI-based games through retellings</a>.
+               In <em>Proc. AIIDE</em>.
+               </p><p class="ref" id="ref_GGaSP">
+               [4] Max Kreminski, Noah Wardrip-Fruin.
+               2019.
+               <a href="https://scholar.google.com/scholar?q=%22Generative games as storytelling partners%22 Max Kreminski">Generative games as storytelling partners</a>.
+               In <em>Proc. FDG</em>.
+               </p><p class="ref" id="ref_Microscope">
+               [5] Ben Robbins.
+               2011.
+               <a href="https://scholar.google.com/scholar?q=%22Microscope: A Fractal Role-Playing Game of Epic Histories%22 Ben Robbins">Microscope: A Fractal Role-Playing Game of Epic Histories</a>.
+               
+               </p><p class="ref" id="ref_TheQuietYear">
+               [6] Avery Alder.
+               2013.
+               <a href="https://scholar.google.com/scholar?q=%22The Quiet Year%22 Avery Alder">The Quiet Year</a>.
+               
+               </p><p class="ref" id="ref_ArchivesOfTheSky">
+               [7] Aaron Reed.
+               2018.
+               <a href="https://scholar.google.com/scholar?q=%22Archives of the Sky%22 Aaron Reed">Archives of the Sky</a>.
+               
+               </p><p class="ref" id="ref_BadNews">
+               [8] Ben Samuel, James Ryan, Adam J Summerville, Michael Mateas, Noah Wardrip-Fruin.
+               2016.
+               <a href="https://scholar.google.com/scholar?q=%22Bad News: an experiment in computationally assisted performance%22 Ben Samuel">Bad News: an experiment in computationally assisted performance</a>.
+               In <em>Proc. ICIDS</em>.
+               </p><p class="ref" id="ref_WAWLT_ELO2020">
+               [9] Max Kreminski, Melanie Dickinson, Michael Mateas, Noah Wardrip-Fruin.
+               2020.
+               <a href="https://scholar.google.com/scholar?q=%22Why Are We Like This?: Exploring Writing Mechanics for an AI-Augmented Storytelling Game%22 Max Kreminski">Why Are We Like This?: Exploring Writing Mechanics for an AI-Augmented Storytelling Game</a>.
+               In <em>Proc. Electronic Literature Organization</em>.
+               </p><p class="ref" id="ref_MICC">
+               [10] Antonios Liapis, Georgios N Yannakakis, Constantine Alexopoulos, Phil Lopes.
+               2016.
+               <a href="https://scholar.google.com/scholar?q=%22Can computers foster human users’ creativity? Theory and praxis of mixed-initiative co-creativity%22 Antonios Liapis">Can computers foster human users’ creativity? Theory and praxis of mixed-initiative co-creativity</a>.
+               
+               </p><p class="ref" id="ref_CasualCreators">
+               [11] Kate Compton, Michael Mateas.
+               2015.
+               <a href="https://scholar.google.com/scholar?q=%22Casual creators%22 Kate Compton">Casual creators</a>.
+               In <em>Proc. International Conference on Computational Creativity</em>.
+               </p><p class="ref" id="ref_WritingBuddy">
+               [12] Ben Samuel, Michael Mateas, Noah Wardrip-Fruin.
+               2016.
+               <a href="https://scholar.google.com/scholar?q=%22The design of Writing Buddy: a mixed-initiative approach towards computational story collaboration%22 Ben Samuel">The design of Writing Buddy: a mixed-initiative approach towards computational story collaboration</a>.
+               In <em>Proc. ICIDS</em>.
+               </p><p class="ref" id="ref_Mimisbrunnur">
+               [13] Ingibergur Sindri Stefnisson, David Thue.
+               2018.
+               <a href="https://scholar.google.com/scholar?q=%22Mimisbrunnur: AI-assisted authoring for interactive storytelling%22 Ingibergur Sindri Stefnisson">Mimisbrunnur: AI-assisted authoring for interactive storytelling</a>.
+               In <em>Proc. AIIDE</em>.
+               </p><p class="ref" id="ref_BotnikPredictiveWriter">
+               [14] Botnik.
+               2017.
+               <a href="https://scholar.google.com/scholar?q=%22Predictive Writer%22 Botnik">Predictive Writer</a>.
+               
+               </p><p class="ref" id="ref_CreativeHelp">
+               [15] Melissa Roemmele, Andrew S Gordon.
+               2015.
+               <a href="https://scholar.google.com/scholar?q=%22Creative Help: a story writing assistant%22 Melissa Roemmele">Creative Help: a story writing assistant</a>.
+               In <em>Proc. ICIDS</em>.
+               </p><p class="ref" id="ref_SyntheticLiterature">
+               [16] Enrique Manjavacas, Folgert Karsdorp, Ben Burtenshaw, Mike Kestemont.
+               2017.
+               <a href="https://scholar.google.com/scholar?q=%22Synthetic literature: writing science fiction in a co-creative process%22 Enrique Manjavacas">Synthetic literature: writing science fiction in a co-creative process</a>.
+               In <em>Proc. Computational Creativity in Natural Language Generation (CC-NLG)</em>.
+               </p><p class="ref" id="ref_WritingWithTheMachine">
+               [17] Robin Sloan.
+               2016.
+               <a href="https://scholar.google.com/scholar?q=%22Writing with the machine%22 Robin Sloan">Writing with the machine</a>.
+               
+               </p><p class="ref" id="ref_OpenDesignChallenges">
+               [18] James Owen Ryan, Michael Mateas, Noah Wardrip-Fruin.
+               2015.
+               <a href="https://scholar.google.com/scholar?q=%22Open design challenges for interactive emergent narrative%22 James Owen Ryan">Open design challenges for interactive emergent narrative</a>.
+               In <em>Proc. ICIDS</em>.
+               </p><p class="ref" id="ref_CuratingSimulatedStoryworlds">
+               [19] James Ryan.
+               2018.
+               <a href="https://scholar.google.com/scholar?q=%22Curating Simulated Storyworlds%22 James Ryan">Curating Simulated Storyworlds</a>.
+               
+               </p><p class="ref" id="ref_Felt">
+               [20] Max Kreminski, Melanie Dickinson, Noah Wardrip-Fruin.
+               2019.
+               <a href="https://scholar.google.com/scholar?q=%22Felt: a simple story sifter%22 Max Kreminski">Felt: a simple story sifter</a>.
+               In <em>Proc. ICIDS</em>.
+               </p><p class="ref" id="ref_DwarfGrandpa">
+               [21] Jacob Garbe.
+               2018.
+               <a href="https://scholar.google.com/scholar?q=%22Simulation of history and recursive narrative scaffolding%22 Jacob Garbe">Simulation of history and recursive narrative scaffolding</a>.
+               
+               </p><p class="ref" id="ref_CMCK">
+               [22] Max Kreminski, Devi Acharya, Nick Junius, Elisabeth Oliver, Kate Compton, Melanie Dickinson, Cyril Focht, Stacey Mason, Stella Mazeika, Noah Wardrip-Fruin.
+               2019.
+               <a href="https://scholar.google.com/scholar?q=%22Cozy Mystery Construction Kit: prototyping toward an AI-assisted collaborative storytelling mystery game%22 Max Kreminski">Cozy Mystery Construction Kit: prototyping toward an AI-assisted collaborative storytelling mystery game</a>.
+               In <em>Proc. FDG</em>.
+               </p><p class="ref" id="ref_DataScript">
+               [23] Nikita Prokopov.
+               2014.
+               <a href="https://scholar.google.com/scholar?q=%22DataScript%22 Nikita Prokopov">DataScript</a>.
+               
+               </p><p class="ref" id="ref_Talespin">
+               [24] James R Meehan.
+               1977.
+               <a href="https://scholar.google.com/scholar?q=%22TALE-SPIN, an interactive program that writes stories%22 James R Meehan">TALE-SPIN, an interactive program that writes stories</a>.
+               In <em>Proc. IJCAI</em>.
+               </p><p class="ref" id="ref_TalkOfTheTown">
+               [25] James Owen Ryan, Adam Summerville, Michael Mateas, Noah Wardrip-Fruin.
+               2015.
+               <a href="https://scholar.google.com/scholar?q=%22Toward characters who observe, tell, misremember, and lie%22 James Owen Ryan">Toward characters who observe, tell, misremember, and lie</a>.
+               In <em>Proc. AIIDE</em>.
+               </p><p class="ref" id="ref_Versu">
+               [26] Richard Evans, Emily Short.
+               2013.
+               <a href="https://scholar.google.com/scholar?q=%22Versu—a simulationist storytelling system%22 Richard Evans">Versu—a simulationist storytelling system</a>.
+               
+               </p><p class="ref" id="ref_LanguagesOfPlay">
+               [27] Chris Martens, Matthew A Hammer.
+               2017.
+               <a href="https://scholar.google.com/scholar?q=%22Languages of play: towards semantic foundations for game interfaces%22 Chris Martens">Languages of play: towards semantic foundations for game interfaces</a>.
+               In <em>Proc. FDG</em>.
+               </p><p class="ref" id="ref_ExpressiveProcessing">
+               [28] Noah Wardrip-Fruin.
+               2009.
+               <a href="https://scholar.google.com/scholar?q=%22Expressive Processing: Digital Fictions, Computer Games, and Software Studies%22 Noah Wardrip-Fruin">Expressive Processing: Digital Fictions, Computer Games, and Software Studies</a>.
+               
+               </p><p class="ref" id="ref_Threadsteading">
+               [29] Lea Albaugh, April Grow, Chenxi Liu, James McCann, Gillian Smith, Jennifer Mankoff.
+               2016.
+               <a href="https://scholar.google.com/scholar?q=%22Threadsteading: playful interaction for textile fabrication devices%22 Lea Albaugh">Threadsteading: playful interaction for textile fabrication devices</a>.
+               In <em>2016 CHI Extended Abstracts</em>.
+               </p><h2 id="cite">How to cite this work</h2>
+<pre>
+@inproceedings{WAWLT_FDG2020,
+  title={Why Are We Like This?: The AI Architecture of a Co-Creative Storytelling Game},
+  author={Kreminski, Max and Dickinson, Melanie and Mateas, Michael and Wardrip-Fruin, Noah},
+  booktitle={International Conference on the Foundations of Digital Games},
+  year={2020},
+  month={9}
+}
+</pre>
+</body>
+</html>

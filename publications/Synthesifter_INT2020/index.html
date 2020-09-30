@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>Toward Example-Driven Program Synthesis of Story Sifting Patterns</title>
+  <style>
+  body {
+    font-family: Georgia, sans-serif;
+    line-height: 1.5;
+    margin: 2rem auto;
+    max-width: 700px;
+    padding: 0 1rem;
+  }
+  h1, h2, h3 {
+    line-height: 1.25;
+  }
+  pre {
+    background: #eee;
+    overflow: scroll;
+    padding: 0.5rem;
+    -webkit-user-select: all;
+    user-select: all;
+    white-space: pre-wrap;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+  .caption {
+    font-style: italic;
+    text-align: center;
+  }
+  .caption em {
+    font-style: normal;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+  tr:not(:last-child) td {
+    padding-bottom: 0.5rem;
+  }
+  td:not(:last-child) {
+    padding-right: 1rem;
+  }
+  sup, sub {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+  }
+  /* header, header a { color: #aaa; } */
+  </style>
+</head>
+<body>
+<!--<header><a href="/">Max Kreminski</a> / <a href="/">Publications</a></header>-->
+<h1>Toward Example-Driven Program Synthesis of Story Sifting Patterns</h1>
+<div class="authors"><a href="https://mkremins.github.io">Max Kreminski</a>, Noah Wardrip-Fruin, Michael Mateas</div>
+<div class="pubinfo">
+  Presented at <a href="https://sites.google.com/view/int2020/home">INT 2020</a> •
+  <a href="#cite">How to cite</a> •
+  <a href="https://scholar.google.com/scholar?q=%22Toward Example-Driven Program Synthesis of Story Sifting Patterns%22 Kreminski">Google Scholar</a> •
+  <a href="https://mkremins.github.io/publications/Synthesifter_INT2020.pdf">PDF</a>
+</div>
+<p></p>
+<p></p>
+<p></p>
+<p>Unlike in <em>strong story</em> narrative systems, where the creation of narrative is orchestrated from the top down by a drama manager or similar agent, stories in emergent narrative systems emerge bottom-up from the behavior of autonomous characters in a simulated storyworld. As a result, emergent narrative systems do not always know what stories they’re telling, and a perennial challenge for these systems involves recognizing and showcasing emergent stories as they unfold. <em>Story sifting</em> technologies can enable a narrative system to automatically recognize emergent stories that match certain <em>sifting patterns</em>, but hand-authoring these sifting patterns can be difficult and time-consuming. To support users in authoring these sifting patterns, we present an interactive example-driven program synthesizer that can generate realistic sifting patterns given a few examples of target event sequences and refine the resulting patterns based on further user feedback.</p>
+<h2 id="introduction">Introduction</h2>
+<p>In emergent narrative systems, story emerges organically from interaction between characters in a simulated storyworld&nbsp;[<a href="#ref_EmergentNarrative">1</a>].
+Past research in player retellings of their play experiences in simulation-driven emergent narrative games has shown that these games often function as storytelling partners for the player&nbsp;[<a href="#ref_Retellings">2</a>, <a href="#ref_GGaSP">3</a>, <a href="#ref_EvaluatingViaRetellings">4</a>]. To support this style of play, we would like to make these games better at mixed-initiative co-creative&nbsp;[<a href="#ref_MICCJournal">5</a>] storytelling.</p>
+<p>One difficulty in doing this is that it’s hard to get emergent narrative games to understand the emergent stories they’re producing. Unlike in <em>strong story</em> narrative systems&nbsp;[<a href="#ref_StrongStory">6</a>, <a href="#ref_StrongStoryRiedl">7</a>], where the creation of narrative is orchestrated from the top down by a drama manager or similar agent, emergent stories are not necessarily recognized by the system that produces them. However, the more understanding the system has of the stories that are emerging, the more effectively it can surface these stories to the player and support narrative development. In particular, understanding of the story that is emerging from the human interactor’s perspective enables the narrative system to present the interactor with <em>offers</em> of various ways in which the story might be further developed&nbsp;[<a href="#ref_EmergentNarrativeAuthoring">8</a>]. As a result, it’s often desirable to provide emergent narrative systems with more sophisticated ways of understanding the stories they’re creating.</p>
+<p><em>Story sifting</em>&nbsp;[<a href="#ref_OpenDesignChallenges">9</a>, <a href="#ref_CuratingSimulatedStoryworlds">10</a>] is one way to build narrative systems that understand emergent stories. So far, implementing story sifting has involved hand-writing lots and lots of small <em>story sifting patterns</em> that recognize certain kinds of interesting emergent microstories.
+
+While this approach has its advantages, thinking up and writing these sifting patterns can be both time-consuming and error-prone. The Felt system&nbsp;[<a href="#ref_Felt">11</a>] attempts to mitigate some of the difficulties of authoring sifting patterns by introducing an approachable domain-specific language intended to improve authorial leverage and open up the authoring of sifting patterns to writers as well as dedicated narrative system programmers, but substantial difficulties remain.</p>
+<p>In order to partially address the difficulties of hand-writing sifting patterns, we propose an approach to synthesizing sifting patterns from user-provided examples of target event sequences: an interactive, domain-specific <em>example-driven program synthesizer</em> for story sifting patterns represented as Datalog-equivalent queries in the Felt story sifting DSL. Our system leverages inductive logic programming, along with other program synthesis techniques, to generate plausible story sifting patterns from few examples and present these patterns to the user for interactive refinement.</p>
+<h2 id="related-work">Related Work</h2>
+<p>Our work draws on existing literature in program synthesis, and specifically the synthesis of Datalog programs, to which Felt sifting patterns are equivalent. Much past work on synthesizing logic programs has been done under the banner of <em>inductive logic programming</em> (ILP). ILP systems—including FOIL&nbsp;[<a href="#ref_FOIL">12</a>], GOLEM&nbsp;[<a href="#ref_GOLEM">13</a>], and Progol&nbsp;[<a href="#ref_Progol">14</a>]—attempt to learn a logic program that correctly characterizes the distinction between a set of positive and a set of negative examples&nbsp;[<a href="#ref_ILP">15</a>]. Most existing ILP systems aspire to generality, limiting the extent to which they can use domain knowledge about what kinds of programs are likely wanted to avoid exhaustively searching a relatively unrestricted space of potential programs. However, the Metagol system&nbsp;[<a href="#ref_Metagol">16</a>] compromises by allowing the user to provide a set of meta-rules that encompass a sort of domain theory, rendering the problem of predicate invention more computationally tractable by cutting down the search space.</p>
+<p>More recently, a number of other techniques from the wider program synthesis literature have been applied to Datalog program synthesis, including constraint-based&nbsp;[<a href="#ref_ConstraintBasedDatalogSynthesis">17</a>], syntax-guided&nbsp;[<a href="#ref_SyntaxGuidedDatalogSynthesis">18</a>], and provenance-guided&nbsp;[<a href="#ref_ProvenanceGuidedDatalogSynthesis">19</a>] approaches. These newer systems have improved on both the performance and the expressivity of classical ILP approaches to logic program synthesis: they can either produce the same programs substantially more quickly than older systems; produce programs that older systems could not have produced at all, for instance by introducing new predicate invention techniques; or both.</p>
+<p>To the best of our knowledge, program synthesis has not yet been applied in an interactive or generative narrative research context. However, there has been some limited use of program synthesis in the adjacent procedural content generation and game generation communities. For instance, the ILP system Leda&nbsp;[<a href="#ref_Leda">20</a>] synthesizes AnsProlog inference rules describing the relationship between low-level game mechanics and higher-level aspects of player experience. Meanwhile,  [<a href="#ref_ProgramSynthesis_GenerativeMethod">21</a>] apply non-ILP program synthesis techniques to the generation of boss monster behaviors for digital games.</p>
+<h2 id="background">Background</h2>
+<p>Our goal is to synthesize Felt sifting patterns. As background, to showcase the features of the Felt sifting DSL, we first present a complete hand-authored Felt sifting pattern, adapted from the <code>arson-revenge</code> pattern documented in [<a href="#ref_CuratingSimulatedStoryworlds">10</a>]:</p>
+<pre>(eventSequence ?e1 ?e2)
+[?e1 eventType hatchRevengeScheme]
+[?e2 eventType setFire]
+(contributingCause ?e1 ?e2)
+[?e1 actor ?arsonist]
+[?e2 actor ?arsonist]
+(not [?e2 tag accidental])</pre>
+<p>This pattern matches a sequence of two events: a <code>hatchRevengeScheme</code> event, followed by a non-accidental <code>setFire</code> event with the same protagonist and to which the first event was a contributing cause. Tokens beginning with a question mark, such as <code>?e1</code> and <code>?arsonist</code>, denote logic variables, whose values are unified with one another across the whole sifting pattern. Square-bracketed clauses (such as <code>[?e2 eventType setFire]</code> and <code>[?e1 actor ?arsonist]</code>) indicate assertions of the form <code>[entity attribute value]</code>, which can be read as stating that the entity on the left has an attribute with the name in the middle whose value is the string, number, or entity ID on the right. Parenthesized clauses (such as <code>(eventSequence ?e1 ?e2)</code> and <code>(contributingCause ?e1 ?e2)</code>) denote invocations of domain-specific Datalog inference rules, defined as part of the simulation. Clauses can also be negated with the special <code>not</code> syntax, as in <code>(not [?e2 tag accidental])</code> here.</p>
+<p>From a program synthesis perspective, the problem of generating story sifting patterns has several unusual aspects that informed our approach.</p>
+<ul>
+                  <li> Our past experience authoring sifting patterns has given us a strong domain theory about which relations between events, characters, and other storyworld entities are worthwhile to explore when sifting, enabling us to aggressively prune the search space of candidate programs.</li>
+<li> We don’t want our synthesis algorithm to generate relations involving certain properties. For instance, in a sifting pattern, relationships between the numeric IDs of involved entities shouldn’t be considered, nor should relationships including characters who aren’t directly involved in the events under consideration. Further, because we want to create interpretable sifting patterns that can be presented to an end user directly, to explore these irrelevant relationships would run the risk of overwhelming the user with extraneous information.</li>
+<li> Ideally, for easy interoperability with other tools (including Felt), we want our synthesis algorithm to be fast enough to run interactively in a web browser—a task for which state-of-the-art general-purpose ILP systems, in spite of their significant performance improvements in recent years, are still not well-suited.</li>
+<li> We don’t need to tackle the difficult ILP problem of inventing reusable intermediate predicates ourselves, as we can generally rely on the authors of the simulation domain to have provided relevant intermediate predicates for us.</li>
+                  </ul>
+<p>For these reasons, instead of leveraging an existing off-the-shelf ILP system or other synthesizer, we elected to build a small domain-specific ILP system of our own, intended for interactive use as a human-in-the-loop authoring tool.</p>
+<h2 id="approach">Approach</h2>
+<p>Given a database of storyworld events, we first present the user with an interface for selecting <em>positive examples</em>: sequences of events that the synthesized sifting pattern should match. Initially, each positive example is represented as a sequence of one or more numeric event IDs. Once the user has selected a set of positive examples, we <em>enrich</em> each example with background information by running several queries against the database to fetch and cache information about the events and characters that are directly involved in this example. What background information needs to be fetched depends on how events and characters are represented in the simulated storyworld at hand; for the simple storyworld we used to evaluate this technique, the information fetched by this process includes the type and tags of each event in the sequence, as well as the numeric IDs of the characters that participated in each event as an actor or target.</p>
+<p>We then pick an example at random and generate a set of <em>properties</em> for this example. As in  [<a href="#ref_PropertySignatures">22</a>], a property is a small program that takes in an example and returns a boolean value indicating whether this property holds for this example. Intuitively, a property can be thought of as a straightforwardly answerable yes/no question about the example: for instance, “Does the first event in the sequence have event type <code>betray</code>?” or “Is the protagonist of the first event the same person as the target of the last event?” Once a set of properties intended to be applied to all of the user-provided examples has been generated, we can test these properties against an example to produce the example’s <em>property signature</em>: the subset of all generated properties that hold for this example.</p>
+<p>Our current approach generates two kinds of properties, based on the most commonly used features in an existing library of sifting patterns developed for the emergent narrative game <em>Why Are We Like This?</em>&nbsp;[<a href="#ref_WAWLT_ELO">23</a>, <a href="#ref_WAWLT_FDG">24</a>].
+First, we examine the distinguishing attributes of each event in the example sequence and generate <em>event attribute properties</em>. In our test simulation, events are distinguished by their <code>eventType</code> and <code>tag</code> attributes, so we generate properties of the form <code>eventType_eN_type</code> for each event’s type and properties of the form <code>eventTag_eN_tag</code> for each tag on each event. For instance, if the first event in the example sequence is an <code>insultDismissively</code> event with the tags <code>unfriendly</code> and <code>highStatus</code>, the example’s property signature would include the following properties:</p>
+<p></p>
+<ul>
+                  <li> <code>eventType_e1_insultDismissively</code></li>
+<li> <code>eventTag_e1_unfriendly</code></li>
+<li> <code>eventTag_e1_highStatus</code></li>
+                  </ul>
+<p>
+
+
+
+
+
+
+
+
+</p>
+<p></p>
+<p>Next, we generate <em>entity relationship properties</em> based on a simulation-specific library of Datalog inference rules relating involved entities to one another. These rules include character/character relationships, e.g. <code>likes</code>, <code>dislikes</code>, and <code>ancestor</code>; character/event relationships, e.g. <code>eventAdvancesHeldValue</code>; and event/event relationships, e.g. <code>indirectCause</code>. These rules form a significant part of the domain theory about which relationships might be relevant to story sifting in a particular simulation, and our system is able to translate these rules directly into properties, allowing the domain theory to evolve as new rules are defined.</p>
+<p></p>
+<p>Once we’ve generated a complete property signature for the first example, we test these properties against the second example and remove any that don’t hold. We then iteratively repeat this process for all the other examples, winnowing down the set of properties to just those that hold for all positive examples.</p>
+<p>The resulting set of properties may need to be pruned to eliminate redundancies. First, we prune properties that logically duplicate other properties, for instance by asserting a relationship between two logic variables representing characters for which the same relationship has already been asserted. (If the protagonist of the first event and the target of the second event are known to be the same character, and we’ve already asserted that the target of the first event is friends with the protagonist of the first event, we don’t need to reassert the same relationship between the target of the first event and the target of the second.)
+Then we prune properties that are fully logically subsumed by other properties. For instance, in our test simulation, an event’s tags are always dependent on its type; therefore, we eliminate all properties of the form <code>eventTag_eN_TAG</code> if a property of the form  <code>eventType_eN_TYPE</code> is also present.</p>
+<p>At this point, we can synthesize a story sifting pattern (i.e. a Datalog-equivalent query in the Felt story sifting DSL) and run it against the storyworld state database to get any <em>other</em> matches that might exist, besides the user-selected positive examples, and show these to the user.</p>
+<p>If the user thinks the pattern shouldn’t match one or more of these examples, then they can add these examples as <em>negative examples</em>. We generate properties for each negative example in the same way as before, and identify which properties are consistently true for all negative examples and consistently untrue for all positive examples. Then we refine the synthesized sifting pattern to exclude these negative properties and re-present the matches to the user.</p>
+<h2 id="usage-examples">Usage Examples</h2>
+<p>Story sifting can be applied to event sequences from a variety of sources. At one end of the spectrum, sifting techniques are sometimes used to extract narrative from sequences of game events that were initially generated without regard for narrativity, as in many sports games&nbsp;[<a href="#ref_SportsCommentary">25</a>]. At the other end of the spectrum, sifting can also be applied to the output of sophisticated narrative simulations like Talk of the Town&nbsp;[<a href="#ref_TalkOfTheTown">26</a>] and <em>Dwarf Fortress</em>&nbsp;[<a href="#ref_DwarfFortress">27</a>, <a href="#ref_DwarfGrandpa">28</a>], which employ high-fidelity models of character motivation and other narrative-relevant concerns at the level of event generation, before sifting is applied. Because these event sources vary widely in the baseline level of narrative structure and sophistication they provide, we want our approach to testing to assume minimal narrative structure in the storyworld database. This allows us both to stress-test the generality of our synthesis approach (ensuring that it doesn’t implicitly depend on regularities in a particular simulation) and to place the primary authoring affordance on example specification (rather than spreading it between example specification and simulation authoring). </p>
+<p>Therefore, in order to test our system, we first generated a simple storyworld containing five characters and 200 random events. To establish a rudimentary social graph, a handful of directed <code>likes</code> and <code>dislikes</code> relationships and a handful of symmetric <code>coworkers</code> relationships were added between some pairs of characters at random. Additionally, from a pool of eight <em>values</em> (such as <code>authority</code>, <code>communalism</code>, and <code>comfort</code>), each character was randomly assigned two values that they support and one value that they oppose. </p>
+<p></p>
+<p>For each event, we randomly selected one of 35 possible event types, then randomly assigned two different characters to be the actor and target of this event. Events were also assigned a handful of tags based on their event type; the storyworld as a whole contained 12 total distinct event tags, with each individual event having between one and four tags. Events of certain types were also marked as supporting or opposing some of the values held by characters: for instance, a <code>rejectSuperiority</code> event might be marked as opposing the <code>authority</code> value. The resulting storyworld was then used as background for the following examples.</p>
+<p></p>
+<h3 id="simple-positive-examples">Simple Positive Examples</h3>
+<p>We attempted to synthesize sifting patterns for several recurring, emergent patterns of events that we found narratively compelling. First, we attempted to synthesize a sifting pattern for the microstory “romantic failure followed by romantic success”, which we chose to operationalize as a sequence of two romantic failures for the same character, followed by a romantic success for that same character. We provided the system with one positive example of this pattern:</p>
+<ol>
+                  <li> Sarah tried to flirt with Mira, but was rejected.</li>
+<li> Sarah tried to ask Mira out on a date, but was rejected.</li>
+<li> Sarah tried to ask Emin out on a date, and succeeded.</li>
+                  </ol>
+<p>Given only this example, our system generates 35 properties. 3 of these (one per event in the example) involve event types; 10 involve event tags; 4 involve statements about the same character being involved in two different roles, for instance as the target of both the first and the second events. The remaining 18 properties involve various character/character relationships, for instance indicating that Mira dislikes Sarah; Mira likes Emin; and that Emin and Sarah are coworkers. </p>
+<p>We then provided another positive example for the same pattern:</p>
+<ol>
+                  <li> Zach tried to ask Emin out on a date, but was rejected.</li>
+<li> Zach tried to rekindle a romantic relationship with Sarah, but was rejected.</li>
+<li> Zach tried to flirt with Mira, and succeeded.</li>
+                  </ol>
+<p>This second example was sufficient to reduce the set of common properties between both examples down to just nine:</p>
+<ul>
+                  <li> <code>eventTag_e1_negative</code></li>
+<li> <code>eventTag_e1_romantic</code></li>
+<li> <code>eventTag_e2_negative</code></li>
+<li> <code>eventTag_e2_romantic</code></li>
+<li> <code>eventTag_e3_positive</code></li>
+<li> <code>eventTag_e3_romantic</code></li>
+<li> <code>sameCharacter_e1actor_e2actor</code></li>
+<li> <code>sameCharacter_e1actor_e3actor</code></li>
+<li> <code>sameCharacter_e2actor_e3actor</code></li>
+                  </ul>
+<p>By prepending a set of static <em>setup clauses</em> and pruning setup clauses that introduced unused logic variables, these properties were then translated into the following complete Felt sifting pattern:</p>
+<pre>(eventSequence ?e1 ?e2 ?e3)
+[?e1 actor ?e1actor]
+[?e2 actor ?e2actor]
+[?e3 actor ?e3actor]
+[?e1 tag negative] [?e1 tag romantic]
+[?e2 tag negative] [?e2 tag romantic]
+[?e3 tag positive] [?e3 tag romantic]
+[(= ?e1actor ?e2actor ?e3actor)]</pre>
+<p></p>
+<p>The <code>eventSequence</code> setup clause here ensures that all of its arguments are database entities of type <code>event</code>, and that all of these events occurred in chronological order from left to right (potentially interspersed with arbitrarily many other events). Meanwhile, setup clauses of the form <code>[?eN actor ?eNactor]</code> are used to bind characters involved in these events to temporary logic variables, so that they can be referenced in later clauses.</p>
+<p>Besides the two provided positive examples, the resultant sifting pattern also matched 41 other event sequences in the database, all of which fulfilled the intended requirements. Many of these matches included some, but not all, of the events provided in the positive examples.</p>
+<h3 id="adding-negative-examples">Adding Negative Examples</h3>
+<p>Building on the same “romantic failure followed by romantic success” microstory, we next attempted to refine the synthesized sifting pattern to specifically require that the first event in the sequence is not a <em>major</em> romantic failure (such as a breakup or failed proposal). Some events in our test simulation had the <code>major</code> tag, but there was no corresponding <code>minor</code> tag for non-major events, so this had to be accomplished through the use of negative properties.</p>
+<p>From the set of matches for the previous sifting pattern, we added the following match as a <em>negative example</em>:</p>
+<ol>
+                  <li> Mira tried to propose to Emin, but was rejected.</li>
+<li> Mira tried to ask Zach out on a date, but was rejected.</li>
+<li> Mira tried to flirt with Zach, and succeeded.</li>
+                  </ol>
+<p>The system initially proposed several candidate negative properties, all of which were true for the single negative example but false for both of the positive examples:</p>
+<ul>
+                  <li> <code>eventType_e1_propose_rejected</code></li>
+<li> <code>sameCharacter_e2target_e3target</code></li>
+<li> <code>likes_e1actor_e1target</code></li>
+                  </ul>
+<p></p>
+<p>However, the first of these three properties was too specific (targeting the event type, rather than the tags, of the first event in the sequence), while the latter two were incidentally 
+applicable, but unrelated to our intent. To further refine the pattern, we then provided a second negative example:</p>
+<ol>
+                  <li> Emin broke up with Vincent.</li>
+<li> Emin tried to flirt with Vincent, but was rejected.</li>
+<li> Emin tried to ask Sarah out on a date, and succeeded.</li>
+                  </ol>
+<p>This enabled the system to further filter down the set of candidate negative properties, resulting in the addition of the following (correct) clause to the sifting pattern:</p>
+<pre>(not [?e1 tag major])</pre>
+<p>Note that this negative clause was initially subsumed by the more specific <code>eventType</code> constraint when only a single negative example was provided. A second negative example was needed to show the system that it was the event <em>tags</em> (rather than the event <em>type</em>) of the first event in the sequence that we actually intended to restrict.</p>
+<h3 id="incorporating-entity-relationships">Incorporating Entity Relationships</h3>
+<p>Next, we attempted to synthesize a sifting pattern for a microstory in which a character’s ideological rival calls them out on a hypocritical action. An example of this pattern might look something like the following sequence of events:</p>
+<ol>
+                  <li> A performs an action opposed to one of their own values.</li>
+<li> B criticizes A.</li>
+                  </ol>
+<p></p>
+<p>...where B is a character who holds a value to which A is opposed, or vice versa. Although this sequence of events is short, matching instances of this microstory requires the synthesis of a pattern that includes both a character/character relationship (i.e. that characters A and B hold opposed values) and a character/event relationship (i.e. that the first action in the sequence harms a value held by A, or advances a value to which A is opposed).</p>
+<p>We first provided the system with two positive examples. This was sufficient to produce the following nearly-correct sifting pattern:</p>
+<pre>(eventSequence ?e1 ?e2)
+[?e1 actor ?e1actor]
+[?e2 actor ?e2actor]
+[?e2 target ?e2target]
+[?e2 eventType criticize]
+[(= ?e1actor ?e2target)]
+(likes ?e2actor ?e1actor)
+(opposedValues ?e1actor ?e2actor)
+(eventHarmsHeldValue ?e1 ?e1actor)</pre>
+<p>We then had to provide one more positive example to eliminate the spurious <code>(likes ?e2actor ?e1actor)</code> clause, introduced by a property that incidentally happened to hold for the first two examples we provided but that was not part of our intent. Alternatively, an attentive user might notice that this clause was not part of their intent and manually eliminate it from the sifting pattern without giving the system any further examples.</p>
+<h3 id="currently-unsupported-negative-constraints">Currently Unsupported Negative Constraints</h3>
+<p>Besides the constraint types illustrated here, there exists one other type of constraint that’s fairly common in existing Felt sifting patterns, but that our system currently doesn’t make any attempt to synthesize. These are <em>compound negative event constraints</em>, which (among other uses) allow sifting patterns to avoid matching candidate event sequences that are interrupted by events with certain attributes. For instance, suppose you want to write a sifting pattern to match a “violation of hospitality” microstory, in which a traveling character enters a town, is shown hospitality by a resident of this town, and then experiences harm at the hands of this same town resident character. A naïve implementation of this sifting pattern might look like this:</p>
+<pre>(eventSequence ?e1 ?e2 ?e3)
+[?e1 eventType enterTown]
+[?e1 actor ?guest]
+[?e2 eventType showHospitality]
+[?e2 actor ?host] [?e2 target ?guest]
+[?e3 tag harm]
+[?e3 actor ?host] [?e3 target ?guest]</pre>
+<p>However, this sifting pattern would also match event sequences like the following, in which the intended interpretation of the matched events is invalidated by the traveler leaving the town before the final event of the intended sequence plays out:</p>
+<ol>
+                  <li> Yann enters town.</li>
+<li> Yann is shown hospitality by Ema.</li>
+<li style="color:red"> Yann leaves town.</li>
+<li> Ema pickpockets Yann, getting away with all their money.</li>
+                  </ol>
+<p>To address this problem, an additional clause might be appended to the end of the sifting pattern, taking advantage of the <code>not-join</code> syntax (inherited from the DataScript library atop which the Felt sifting pattern DSL is built) to specify that the traveler must not leave town between the first and last events of the sequence. This clause essentially states that there must not exist any event with the specified characteristics (<code>?eMid</code>)  between <code>?e1</code> and <code>?e3</code>:</p>
+<pre>(not-join [?e1 ?e3 ?guest]
+  (eventSequence ?e1 ?eMid ?e3)
+  [?eMid eventType leaveTown]
+  [?eMid actor ?guest])</pre>
+<p>However, the search space of possible compound negative event clauses for any given set of user-provided examples is very large. The first difficulty lies in identifying which event or events that aren’t part of the provided negative example are somehow disqualifying the negative examples from consideration. We could narrow down the search space somewhat by considering only events that occurred between the start and the end of the provided negative example, and that involved at least one of the characters involved in the example events directly, but this could still include prohibitively many events. And the second difficulty lies in determining what aspects of the disqualifying event are responsible for the disqualification: is it the event type, the tags, the actor, the target, one of the relationships between these entities to one another (or to other entities in the example), or some combination of these factors?</p>
+<p>Perhaps the most promising way to cut down this search space is to ask the user for further guidance as to which interceding events are responsible for disqualifying each negative example. This guidance could then allow the system to suggest reasonable combinations of negative properties involving these events. However, presenting the user with an interface that allows them to easily identify the relevant events may be difficult due to the sheer volume of events generated by many emergent narrative systems. 
+For the time being, we leave this problem to future work.</p>
+<div class="figure" id="fig:SynthesifterUI">
+                  <img src="SynthesifterUI.png"/>
+                  <p class="caption">A screenshot of the system’s current user interface. On the left sits a scrolling, filterable log of all events that have occurred in the storyworld so far, allowing the user to select event sequences to use as examples. On the right sits an editable view of the current synthesized sifting pattern; the sets of positive and negative examples the user has provided; and the set of additional matches for the current candidate sifting pattern, which the user can add as positive or negative examples.</p>
+                  </div>
+<h2 id="discussion">Discussion</h2>
+<p>Our approach avoids many of the difficulties associated with general program synthesis by encoding a lot of information about the domain, especially in the form of hand-authored Datalog rules about relationships between characters and events. We don’t need to try to discover these rules generically if we’ve been provided with a good set of special-case rules up front, so we don’t have to do the actually-hard part of Datalog program synthesis (i.e. trying to invent these potentially-recursive rules ourselves given <em>just</em> the concrete examples.)</p>
+<p></p>
+<p>We avoid some of the <em>other</em> difficulties by including a human in the loop and building our synthesized programs out of relatively straightforward, individually comprehensible building blocks. Individual Datalog clauses can be presented to the human user as short, declarative natural language sentences, so even a relatively naïve user can figure out which clauses of the synthesized sifting pattern make sense and which ones don’t. In this sense, program synthesis serves as an on-ramp that teaches users about the DSL used to define sifting patterns and the set of features that this DSL supports, so that users can move from exclusively defining sifting patterns via examples toward modifying existing sifting patterns and maybe even constructing new sifting patterns from scratch via the textual DSL.</p>
+<p>
+We consider our approach to be an example of <em>human-centric program synthesis</em>&nbsp;[<a href="#ref_HumanCentricProgramSynthesis">29</a>], which deals with “what applications [of program synthesis] open up when a user has the programming skills to express specifications at a level beyond examples”. For us, synthesis functions partly as a teaching tool for introducing users to the textual language in which sifting patterns are expressed and making them aware of what affordances this language provides. Our synthesized programs aren’t treated as black boxes, but exposed to the user for editing, and it’s our hope that users will combine the programming-by-example features that this tool affords with direct manipulation of generated sifting patterns to modify, add, and remove constraints.</p>
+<p>Moreover, our tool remains useful even for experienced sifting pattern authors, who might not immediately notice all of the properties they intend the sifting pattern they’re writing to contain. 
+In addition, since the set of relationships that might exist between characters is likely to evolve over the course of developing a complex simulation-driven emergent narrative game, even experienced sifting pattern authors might benefit from the existence of a system that can surface new clause types to them as new Datalog rules are implemented by other developers. </p>
+<h2 id="limitations">Limitations</h2>
+<p>As discussed previously, our current system makes no attempt to synthesize compound negative event constraints. To support synthesis of these clauses will likely require further work on both the core synthesis algorithm and the user interface to provide the user with a way to explain why negative examples are negative by pointing out the specific interceding events that invalidate them.</p>
+<p>Currently, our approach enforces an implicit total ordering constraint on the events matched by the synthesized sifting pattern. All examples provided for a single sifting pattern (positive and negative) must be of the same length, and it’s assumed that the Nth event of each example event sequence is intended to play the same role in the target microstory as the Nth event of every other example. 
+This strict constraint may not always be intended or desirable; for instance, it’s sometimes preferable to construct a sifting pattern in which the middle events (between the first and last events of the matched sequence) are permitted to occur in any chronological order. However, assuming an implicit total ordering constraint allows us to simplify our approach to generating both properties and setup clauses. In the future, we may seek to relax this constraint, but to do so would require significant modification to our current approach.</p>
+<p>Like many learning approaches, our approach may overfit when few examples are available. In preliminary testing with an even smaller simulated storyworld, the system was prone to including properties in synthesized patterns that were incidentally true of all examples but not part of our intent. 
+This can be mitigated by users reviewing the synthesized sifting patterns and removing unintended clauses. Additionally, we may be able to help users debug overfitted patterns by procedurally relaxing each clause of the pattern and presenting the user with “almost matches”, inspired by Writing Buddy’s “almost actions”&nbsp;[<a href="#ref_WritingBuddy">30</a>]. This could help users diagnose which clause of a synthesized pattern is responsible for overfit.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>We present a domain-specific inductive logic programming system capable of synthesizing story sifting patterns in the Felt sifting DSL, given several user-provided examples of narratively interesting event sequences. Our system is intended for interactive use with a human user in the loop. We avoid or mitigate some of the difficulties of general-purpose program synthesis (especially the problem of intractably large search spaces) by encoding a lot of domain knowledge into the architecture of the synthesis algorithm. Our system features several key limitations, especially around the synthesis of complex negative constraints, but is nevertheless able to synthesize useful, realistic sifting patterns from a small number of example event sequences.</p>
+<p>Potential future work includes extension of the user interface and synthesis algorithm to better support complex negative constraints; incorporation of the synthesizer into a more full-featured and user-friendly sifting pattern authoring tool; evaluation of the resulting tool with a larger number of potential users; and a more detailed comparison of our hand-rolled domain-specific synthesizer against existing general-purpose Datalog program synthesizers, to determine whether we could feasibly re-encode the problem in a way that makes it more amenable to attack by a general-purpose synthesizer.</p>
+<p></p><h2 id="references">References</h2>
+<p class="ref" id="ref_EmergentNarrative">
+               [1] Sandy Louchart, John Truesdale, Neil Suttie, Ruth Aylett.
+               2015.
+               <a href="https://scholar.google.com/scholar?q=%22Emergent narrative, past, present and future of an interactive storytelling approach%22 Sandy Louchart">Emergent narrative, past, present and future of an interactive storytelling approach</a>.
+               In <em>Interactive Digital Narrative: History, Theory and Practice</em>.
+               </p><p class="ref" id="ref_Retellings">
+               [2] Mirjam Palosaari Eladhari.
+               2018.
+               <a href="https://scholar.google.com/scholar?q=%22Re-tellings: the fourth layer of narrative as an instrument for critique%22 Mirjam Palosaari Eladhari">Re-tellings: the fourth layer of narrative as an instrument for critique</a>.
+               In <em>International Conference on Interactive Digital Storytelling</em>.
+               </p><p class="ref" id="ref_GGaSP">
+               [3] Max Kreminski, Noah Wardrip-Fruin.
+               2019.
+               <a href="https://scholar.google.com/scholar?q=%22Generative games as storytelling partners%22 Max Kreminski">Generative games as storytelling partners</a>.
+               In <em>Proceedings of the 14th International Conference on the Foundations of Digital Games</em>.
+               </p><p class="ref" id="ref_EvaluatingViaRetellings">
+               [4] Max Kreminski, Ben Samuel, Edward Melcer, Noah Wardrip-Fruin.
+               2019.
+               <a href="https://scholar.google.com/scholar?q=%22Evaluating AI-based games through retellings%22 Max Kreminski">Evaluating AI-based games through retellings</a>.
+               In <em>Proceedings of the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment</em>.
+               </p><p class="ref" id="ref_MICCJournal">
+               [5] Antonios Liapis, Georgios N Yannakakis, Constantine Alexopoulos, Phil Lopes.
+               2016.
+               <a href="https://scholar.google.com/scholar?q=%22Can computers foster human users’ creativity? Theory and praxis of mixed-initiative co-creativity%22 Antonios Liapis">Can computers foster human users’ creativity? Theory and praxis of mixed-initiative co-creativity</a>.
+               
+               </p><p class="ref" id="ref_StrongStory">
+               [6] Michael Mateas, Andrew Stern.
+               2000.
+               <a href="https://scholar.google.com/scholar?q=%22Towards integrating plot and character for interactive drama%22 Michael Mateas">Towards integrating plot and character for interactive drama</a>.
+               In <em>Working notes of the Social Intelligent Agents: The Human in the Loop Symposium</em>.
+               </p><p class="ref" id="ref_StrongStoryRiedl">
+               [7] Mark Owen Riedl, Vadim Bulitko.
+               2013.
+               <a href="https://scholar.google.com/scholar?q=%22Interactive narrative: An intelligent systems approach%22 Mark Owen Riedl">Interactive narrative: An intelligent systems approach</a>.
+               
+               </p><p class="ref" id="ref_EmergentNarrativeAuthoring">
+               [8] Sandy Louchart, Ivo Swartjes, Michael Kriegel, Ruth Aylett.
+               2008.
+               <a href="https://scholar.google.com/scholar?q=%22Purposeful authoring for emergent narrative%22 Sandy Louchart">Purposeful authoring for emergent narrative</a>.
+               In <em>Joint International Conference on Interactive Digital Storytelling</em>.
+               </p><p class="ref" id="ref_OpenDesignChallenges">
+               [9] James Owen Ryan, Michael Mateas, Noah Wardrip-Fruin.
+               2015.
+               <a href="https://scholar.google.com/scholar?q=%22Open design challenges for interactive emergent narrative%22 James Owen Ryan">Open design challenges for interactive emergent narrative</a>.
+               In <em>International Conference on Interactive Digital Storytelling</em>.
+               </p><p class="ref" id="ref_CuratingSimulatedStoryworlds">
+               [10] James Ryan.
+               2018.
+               <a href="https://scholar.google.com/scholar?q=%22Curating Simulated Storyworlds%22 James Ryan">Curating Simulated Storyworlds</a>.
+               
+               </p><p class="ref" id="ref_Felt">
+               [11] Max Kreminski, Melanie Dickinson, Noah Wardrip-Fruin.
+               2019.
+               <a href="https://scholar.google.com/scholar?q=%22Felt: a simple story sifter%22 Max Kreminski">Felt: a simple story sifter</a>.
+               In <em>International Conference on Interactive Digital Storytelling</em>.
+               </p><p class="ref" id="ref_FOIL">
+               [12] J. Ross Quinlan.
+               1990.
+               <a href="https://scholar.google.com/scholar?q=%22Learning logical definitions from relations%22 J. Ross Quinlan">Learning logical definitions from relations</a>.
+               
+               </p><p class="ref" id="ref_GOLEM">
+               [13] Stephen Muggleton, Cao Feng.
+               1992.
+               <a href="https://scholar.google.com/scholar?q=%22Efficient induction of logic programs%22 Stephen Muggleton">Efficient induction of logic programs</a>.
+               
+               </p><p class="ref" id="ref_Progol">
+               [14] Stephen Muggleton.
+               1995.
+               <a href="https://scholar.google.com/scholar?q=%22Inverse entailment and Progol%22 Stephen Muggleton">Inverse entailment and Progol</a>.
+               
+               </p><p class="ref" id="ref_ILP">
+               [15] Stephen Muggleton, Luc De Raedt.
+               1994.
+               <a href="https://scholar.google.com/scholar?q=%22Inductive logic programming: Theory and methods%22 Stephen Muggleton">Inductive logic programming: Theory and methods</a>.
+               
+               </p><p class="ref" id="ref_Metagol">
+               [16] Stephen H Muggleton, Dianhuan Lin, Alireza Tamaddoni-Nezhad.
+               2015.
+               <a href="https://scholar.google.com/scholar?q=%22Meta-interpretive learning of higher-order dyadic datalog: Predicate invention revisited%22 Stephen H Muggleton">Meta-interpretive learning of higher-order dyadic datalog: Predicate invention revisited</a>.
+               
+               </p><p class="ref" id="ref_ConstraintBasedDatalogSynthesis">
+               [17] Aws Albarghouthi, Paraschos Koutris, Mayur Naik, Calvin Smith.
+               2017.
+               <a href="https://scholar.google.com/scholar?q=%22Constraint-based synthesis of Datalog programs%22 Aws Albarghouthi">Constraint-based synthesis of Datalog programs</a>.
+               In <em>International Conference on Principles and Practice of Constraint Programming</em>.
+               </p><p class="ref" id="ref_SyntaxGuidedDatalogSynthesis">
+               [18] Xujie Si, Woosuk Lee, Richard Zhang, Aws Albarghouthi, Paraschos Koutris, Mayur Naik.
+               2018.
+               <a href="https://scholar.google.com/scholar?q=%22Syntax-guided synthesis of Datalog programs%22 Xujie Si">Syntax-guided synthesis of Datalog programs</a>.
+               In <em>Proceedings of the 2018 26th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering</em>.
+               </p><p class="ref" id="ref_ProvenanceGuidedDatalogSynthesis">
+               [19] Mukund Raghothaman, Jonathan Mendelson, David Zhao, Mayur Naik, Bernhard Scholz.
+               2019.
+               <a href="https://scholar.google.com/scholar?q=%22Provenance-guided synthesis of Datalog programs%22 Mukund Raghothaman">Provenance-guided synthesis of Datalog programs</a>.
+               
+               </p><p class="ref" id="ref_Leda">
+               [20] Adam Summerville.
+               2018.
+               <a href="https://scholar.google.com/scholar?q=%22Towards Inductive Logic Programming for Game Analysis: Leda%22 Adam Summerville">Towards Inductive Logic Programming for Game Analysis: Leda</a>.
+               In <em>Workshops at the Thirty-Second AAAI Conference on Artificial Intelligence</em>.
+               </p><p class="ref" id="ref_ProgramSynthesis_GenerativeMethod">
+               [21] Eric Butler, Kristin Siu, Alexander Zook.
+               2017.
+               <a href="https://scholar.google.com/scholar?q=%22Program synthesis as a generative method%22 Eric Butler">Program synthesis as a generative method</a>.
+               In <em>Proceedings of the 12th International Conference on the Foundations of Digital Games</em>.
+               </p><p class="ref" id="ref_PropertySignatures">
+               [22] Augustus Odena, Charles Sutton.
+               2020.
+               <a href="https://scholar.google.com/scholar?q=%22Learning to Represent Programs with Property Signatures%22 Augustus Odena">Learning to Represent Programs with Property Signatures</a>.
+               In <em>International Conference on Learning Representations (ICLR)</em>.
+               </p><p class="ref" id="ref_WAWLT_ELO">
+               [23] Max Kreminski, Melanie Dickinson, Michael Mateas, Noah Wardrip-Fruin.
+               2020.
+               <a href="https://scholar.google.com/scholar?q=%22Why Are We Like This?: Exploring Writing Mechanics for an AI-Augmented Storytelling Game%22 Max Kreminski">Why Are We Like This?: Exploring Writing Mechanics for an AI-Augmented Storytelling Game</a>.
+               In <em>Proceedings of the Electronic Literature Organization Conference</em>.
+               </p><p class="ref" id="ref_WAWLT_FDG">
+               [24] Max Kreminski, Melanie Dickinson, Michael Mateas, Noah Wardrip-Fruin.
+               2020.
+               <a href="https://scholar.google.com/scholar?q=%22Why Are We Like This?: The AI Architecture of a Co-Creative Storytelling Game%22 Max Kreminski">Why Are We Like This?: The AI Architecture of a Co-Creative Storytelling Game</a>.
+               In <em>Proceedings of the Fifteenth International Conference on the Foundations of Digital Games</em>.
+               </p><p class="ref" id="ref_SportsCommentary">
+               [25] Martin Rhodes, Simon Coupland, Tracy Cruickshank.
+               2010.
+               <a href="https://scholar.google.com/scholar?q=%22Enhancing real-time sports commentary generation with dramatic narrative devices%22 Martin Rhodes">Enhancing real-time sports commentary generation with dramatic narrative devices</a>.
+               In <em>Joint International Conference on Interactive Digital Storytelling</em>.
+               </p><p class="ref" id="ref_TalkOfTheTown">
+               [26] James Owen Ryan, Adam Summerville, Michael Mateas, Noah Wardrip-Fruin.
+               2015.
+               <a href="https://scholar.google.com/scholar?q=%22Toward characters who observe, tell, misremember, and lie%22 James Owen Ryan">Toward characters who observe, tell, misremember, and lie</a>.
+               In <em>Eleventh Artificial Intelligence and Interactive Digital Entertainment Conference</em>.
+               </p><p class="ref" id="ref_DwarfFortress">
+               [27] Bay 12 Games.
+               2006.
+               <a href="https://scholar.google.com/scholar?q=%22Dwarf Fortress%22 Bay 12 Games">Dwarf Fortress</a>.
+               
+               </p><p class="ref" id="ref_DwarfGrandpa">
+               [28] Jacob Garbe.
+               2018.
+               <a href="https://scholar.google.com/scholar?q=%22Simulation of history and recursive narrative scaffolding%22 Jacob Garbe">Simulation of history and recursive narrative scaffolding</a>.
+               
+               </p><p class="ref" id="ref_HumanCentricProgramSynthesis">
+               [29] Will Crichton.
+               2019.
+               <a href="https://scholar.google.com/scholar?q=%22Human-Centric Program Synthesis%22 Will Crichton">Human-Centric Program Synthesis</a>.
+               In <em>PLATEAU Workshop @ UIST</em>.
+               </p><p class="ref" id="ref_WritingBuddy">
+               [30] Ben Samuel, Michael Mateas, Noah Wardrip-Fruin.
+               2016.
+               <a href="https://scholar.google.com/scholar?q=%22The design of Writing Buddy: a mixed-initiative approach towards computational story collaboration%22 Ben Samuel">The design of Writing Buddy: a mixed-initiative approach towards computational story collaboration</a>.
+               In <em>International Conference on Interactive Digital Storytelling</em>.
+               </p><h2 id="cite">How to cite this work</h2>
+<pre>
+@inproceedings{Synthesifter_INT2020,
+  title={Toward Example-Driven Program Synthesis of Story Sifting Patterns},
+  author={Kreminski, Max and Wardrip-Fruin, Noah and Mateas, Michael},
+  booktitle={Joint Proceedings of the AIIDE 2020 Workshops},
+  year={2020},
+  month={10}
+}
+</pre>
+</body>
+</html>
