@@ -19,9 +19,9 @@
   "award": "Acceptance rate: 25%."
 },
 {
-  "title": "Why Are We Like This?",
-  "url": "",
-  "authors": ["Melanie Dickinson", "Max Kreminski", "Michael Mateas", "Noah Wardrip-Fruin"],
+  "title": "Playable Experiences at the 16th AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment",
+  "url": "https://www.aaai.org/ojs/index.php/AIIDE/article/view/7457",
+  "authors": ["Melanie Dickinson", "Max Kreminski", "Michael Mateas", "Noah Wardrip-Fruin", "Sabine Wieluch"],
   "year": "2020",
   "venue": "AIIDE",
   "venue_long": "Artificial Intelligence and Interactive Digital Entertainment",
