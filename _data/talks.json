@@ -1,5 +1,14 @@
 [
 {
+  "title": "Murder Mysteries as a Grand Challenge in Computational Storytelling",
+  "members": ["Justus Robertson", "Markus Eger", "Gabriella Barros", "Max Kreminski", "Lara Martin"],
+  "year": "2020",
+  "venue": "INT",
+  "venue_long": "Intelligent Narrative Technologies",
+  "note": "invited",
+  "type": "panel"
+},
+{
   "title": "Synthesizing Story Sifters",
   "url": "https://www.youtube.com/watch?v=oaDI0lWkedg",
   "year": "2020",
