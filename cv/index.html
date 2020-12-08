@@ -114,20 +114,20 @@ layout: null
       {% include pubs_of_pubtype.html %}
     </section>
     <section>
-      <h2>Talks and Panels</h2>
+      <h2>Invited Talks and Panels</h2>
       {% for talk in site.data.talks %}
       {% if talk.type == "panel" %}
-      <p><em>Panelist</em>, “{{talk.title}}.”<br>{{talk.members|join:", "}}.<br>{{talk.venue}} {{talk.year}}.</p>
+      <p><em>Panelist</em>, “{{talk.title}}.”<!--<br>{{talk.members|join:", "}}.--><br>{{talk.venue_long}} {% if talk.venue_short %}({{talk.venue_short}}){% endif %} {{talk.year}}.</p>
       {% else %}
       <p><em>Speaker</em>, {% if talk.url and talk.url != "" %}<a href="{{talk.url}}">“{{talk.title}}.”</a>{% else %}“{{talk.title}}.”{% endif %}<br>
-      {{talk.venue}} {{talk.year}}{% if talk.venue_note and talk.venue_note != "" %} ({{talk.venue_note}}){% endif %}.</p>
+      {{talk.venue_long}} {% if talk.venue_short %}({{talk.venue_short}}){% endif %} {{talk.year}}.{% if talk.venue_note and talk.venue_note != "" %}<br><em>({{talk.venue_note}}.)</em>{% endif %}</p>
       {% endif %}
       {% endfor %}
     </section>
     <section>
-      <h2>Exhibitions</h2>
+      <h2>Art Exhibitions</h2>
       <p><em>Why Are We Like This?</em> Melanie Dickinson, Max Kreminski, Michael Mateas, Noah Wardrip-Fruin. Digital game. “(un)continuity” (juried group exhibition). Electronic Literature Organization (ELO). Orlando, Florida. Jul. 16-19, 2020.</p>
-      <p><em>Epitaph.</em> Max Kreminski. Digital game. ”QGCon 2018 Arcade” (juried group exhibition). Queerness and Games Conference. Montreal, Quebec. Sep. 28-30, 2018.</p>
+      <p><em>Epitaph.</em> Max Kreminski. Digital game. ”QGCon 2018 Arcade” (juried group exhibition). Queerness and Games Conference (QGCon). Montreal, Quebec. Sep. 28-30, 2018.</p>
       <!--
       <p><em>tiny manifesto.</em> Max Kreminski. Written manifesto. ”Manifesto Jam Selections” (invited group exhibition). Now Play This - A Festival of Experimental Game Design. London, England. Apr. 6-8, 2018.</p>
       <p><em>Epitaph.</em> Max Kreminski. Digital game. ”The Winteractive Festival” (juried group exhibition). University of Southern California. Los Angeles, California. Dec. 7, 2016.</p>
@@ -173,9 +173,11 @@ layout: null
           <div class="dated-date">Summer 2018</div>
         </div>
       </div>
+      <!--
       <h3>Guest Lectures</h3>
       <p>“Gardening as a Mode of Play.” 2019. Invited guest lecture, Porter 61 Seminar in Arts, University of California, Santa Cruz.</p>
       <p>“Mining and Gardening with Generative Systems.” 2018. Invited guest lecture, Computational Media 176 Game Systems, University of California, Santa Cruz.</p>
+      -->
       <!--
       <p>Winter 2020. Teaching Assistant, Computational Media 171 Game Design Studio II, University of California, Santa Cruz. Second phase of three-phase senior capstone sequence for game design majors.</p>
       <p>Fall 2019. Teaching Assistant, Computational Media 170 Game Design Studio I, University of California, Santa Cruz. First phase of three-phase senior capstone sequence for game design majors. Helped manage logistics for a 200-person class while mentoring several other junior teaching assistants. Met with three to four student game design teams per week to provide guidance during the iterative prototyping process.</p>
@@ -206,19 +208,19 @@ layout: null
       <h3>High School Students (via the Science Internship Program)</h3>
       <div class="oneline-entries">
         <div class="dated-entry">
-          <div class="dated-content"><em>Megna Anand*</em>, Science Internship Program (SIP) Project</div>
+          <div class="dated-content"><em>Megna Anand*</em>, Science Internship Program Project</div>
           <div class="dated-date">Summer 2019</div>
         </div>
         <div class="dated-entry">
-          <div class="dated-content"><em>Anish Kashyap*</em>, Science Internship Program (SIP) Project</div>
+          <div class="dated-content"><em>Anish Kashyap*</em>, Science Internship Program Project</div>
           <div class="dated-date">Summer 2019</div>
         </div>
         <div class="dated-entry">
-          <div class="dated-content"><em>Daniel Man*</em>, Science Internship Program (SIP) Project</div>
+          <div class="dated-content"><em>Daniel Man*</em>, Science Internship Program Project</div>
           <div class="dated-date">Summer 2019</div>
         </div>
         <div class="dated-entry">
-          <div class="dated-content"><em>Akhil Vemuri*</em>, Science Internship Program (SIP) Project</div>
+          <div class="dated-content"><em>Akhil Vemuri*</em>, Science Internship Program Project</div>
           <div class="dated-date">Summer 2019</div>
         </div>
       </div>
@@ -226,7 +228,7 @@ layout: null
     <section>
       <h2>Other Work Experience</h2>
       <div class="dated-entry">
-        <div class="dated-content"><em>SIP Mentor</em>, Science Internship Program, UC Santa Cruz. Mentored high school students working on computational media research projects.</div>
+        <div class="dated-content"><em>Research Mentor</em>, Science Internship Program, UC Santa Cruz. Mentored high school students working on computational media research projects.</div>
         <div class="dated-date">Summer 2019</div>
       </div>
       <div class="dated-entry">
