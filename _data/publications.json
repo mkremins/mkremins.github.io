@@ -1,5 +1,14 @@
 [
 {
+  "title": "Improving Undergraduate Attitudes Towards Responsible Conduct of Research Through an Interactive Storytelling Game",
+  "url": "",
+  "authors": ["Katelyn M. Grasse", "Edward F. Melcer", "Max Kreminski", "Nick Junius", "Noah Wardrip-Fruin"],
+  "year": "2021",
+  "venue": "CHI LBW",
+  "venue_long": "CHI Late-Breaking Work on Human Factors in Computing Systems",
+  "pubtype": "full"
+},
+{
   "title": "Toward Example-Driven Program Synthesis of Story Sifting Patterns",
   "url": "https://mkremins.github.io/publications/Synthesifter_INT2020.pdf",
   "authors": ["Max Kreminski", "Noah Wardrip-Fruin", "Michael Mateas"],
