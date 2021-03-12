@@ -1,0 +1,24 @@
+{%- assign years_seen = "" | split: "" -%}
+{%- assign pubs = site.data.publications | where: "pubtype", pubtype -%}
+{%- assign pubid = pubs | size -%}
+{%- for pub in pubs -%}
+  {%- assign authors_html = "" | split: "" -%}
+  {%- for author in pub.authors -%}
+    {%- if author == "Max Kreminski" -%}
+      {%- assign authors_html = authors_html | push: "<strong>Max Kreminski</strong>" -%}
+    {%- else -%}
+      {%- assign authors_html = authors_html | push: author -%}
+    {%- endif -%}
+  {%- endfor -%}
+  <div class="dated-entry">
+    <div class="dated-date">{%- unless years_seen contains pub.year %}{{pub.year}}{%- endunless -%}</div>
+    <div class="dated-content">
+      <span class="pubid">[{{pubprefix}}{{pubid}}]</span>
+      <span class="authors">{{authors_html | join: ", "}}.</span>
+      {% if pub.url and pub.url != "" %}<a href="{{pub.url}}">“{{pub.title}}.”</a>{% else %}“{{pub.title}}.”{% endif %}
+      {{pub.venue_long}} ({{pub.venue}}), {{pub.year}}. {% if pub.award and pub.award != "" %}<em>{{pub.award}}</em>{% endif %}
+    </div>
+  </div>
+  {%- assign years_seen = years_seen | push: pub.year -%}
+  {%- assign pubid = pubid | minus: 1 -%}
+{%- endfor -%}

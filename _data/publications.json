@@ -51,7 +51,7 @@
   "url": "https://mkremins.github.io/publications/TTRPGs_PCG2020.pdf",
   "authors": ["Matthew Guzdial", "Devi Acharya", "Max Kreminski", "Michael Cook", "Mirjam Eladhari", "Antonios Liapis", "Anne Sullivan"],
   "year": "2020",
-  "venue": "PCG Workshop",
+  "venue": "PCG",
   "venue_long": "FDG Workshop on Procedural Content Generation",
   "pubtype": "workshop"
 },
@@ -127,7 +127,7 @@
   "url": "https://mkremins.github.io/publications/GenerativeGames_StorytellingPartners.pdf",
   "authors": ["Max Kreminski", "Noah Wardrip-Fruin"],
   "year": "2019",
-  "venue": "UX of AI Workshop",
+  "venue": "UX of AI",
   "venue_long": "FDG Workshop on the User Experience of Artificial Intelligence in Games",
   "pubtype": "workshop"
 },
@@ -136,7 +136,7 @@
   "url": "https://mkremins.github.io/publications/CozyMysteryConstructionKit.pdf",
   "authors": ["Max Kreminski", "Devi Acharya", "Nick Junius", "Elisabeth Oliver", "Kate Compton", "Melanie Dickinson", "Cyril Focht", "Stacey Mason", "Stella Mazeika", "Noah Wardrip-Fruin"],
   "year": "2019",
-  "venue": "PCG Workshop",
+  "venue": "PCG",
   "venue_long": "FDG Workshop on Procedural Content Generation",
   "pubtype": "workshop"
 },
@@ -145,7 +145,7 @@
   "url": "https://mkremins.github.io/publications/GeneratorsThatRead.pdf",
   "authors": ["Max Kreminski", "Isaac Karth", "Noah Wardrip-Fruin"],
   "year": "2019",
-  "venue": "PCG Workshop",
+  "venue": "PCG",
   "venue_long": "FDG Workshop on Procedural Content Generation",
   "pubtype": "workshop"
 },
@@ -184,7 +184,7 @@
   "url": "https://mkremins.github.io/publications/GardeningGames.pdf",
   "authors": ["Max Kreminski", "Noah Wardrip-Fruin"],
   "year": "2018",
-  "venue": "PCG Workshop",
+  "venue": "PCG",
   "venue_long": "FDG Workshop on Procedural Content Generation",
   "pubtype": "workshop"
 },

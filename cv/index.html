@@ -14,43 +14,42 @@ layout: null
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   /* basic page structure */
-  body { font-family: "Source Sans Pro", sans-serif; font-size: 16px; line-height: 1.5; }
-  main { margin: 0 auto; max-width: 90ch; padding: 2ch; }
+  :root { --left-column-width: 7rem; };
+  html { font-size: 16px; }
+  body { font-family: "Source Sans Pro", sans-serif; line-height: 1.5; }
+  main { margin: 0 auto; max-width: 94ch; padding: 2ch; }
 
   /* page header */
-  header { margin-bottom: 1rem; text-align: center; }
-  header h1 { font-size: 1.5rem; margin-bottom: 0; }
+  header { margin-bottom: 2rem; padding-left: var(--left-column-width); }
+  header h1 { font-size: 1.5rem; }
   header p { margin-bottom: 0; }
 
   /* normal body content */
-  h2 { margin-left: -1.5rem; text-transform: uppercase; }
-  h2, h3 { font-size: 1rem; margin-bottom: 0; }
+  h2 { text-transform: uppercase; }
+  h2, h3 { font-size: 1.1rem; margin-bottom: 0.25rem; padding-left: var(--left-column-width); }
   p { margin-bottom: 0.5rem; }
-  section { margin-bottom: 1rem; margin-left: 1.5rem; }
+  a { color: #0000ee; }
+  section { margin-bottom: 2rem; }
 
   /* publications */
-  .pubs-list li { margin-bottom: 0.5rem; }
   .award, .acceptrate { font-style: italic; }
 
   /* dated entries */
-  .dated-entry { position: relative; margin-bottom: 0.5rem; }
-  .dated-content { width: 80%; }
-  .dated-date { position: absolute; right:0; top: 0; text-align: right; }
-  .oneline-entries { margin-bottom: 1rem; }
+  .dated-entry { display: flex; flex-flow: row wrap; position: relative; margin-bottom: 0.5rem; }
+  .dated-date { width: var(--left-column-width); text-align: right; padding-right: 2rem; }
+  .dated-content { width: calc(100% - var(--left-column-width)); }
+
+  .oneline-entries { margin-bottom: 0.5rem; }
   .oneline-entries .dated-entry { margin-bottom: 0; }
 
-  /* try to limit badness of .dated-content trying to overlap .dated-date on narrow displays */
-  @media (max-width: 90ch) {
-    .dated-content { width: 70%; }
+  /* on narrow displays, make the font smaller */
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
   }
 
-  /* when printing, make the font smaller and the page wider (FIXME this is fragile) */
+  /* when printing, make the font smaller and the page full-width */
   @media print {
-    body { font-size: 12px; }
-    header h1 { font-size: 18px; }
-    h2, h3 { font-size: 12px; }
-    p, .pubs-list li, .dated-entry { margin-bottom: 6px; }
-    section, .oneline-entries { margin-bottom: 12px; }
+    html { font-size: 12px; }
     main { max-width: 100%; }
   }
   </style>
@@ -62,308 +61,308 @@ layout: null
       <p>mkremins@ucsc.edu</p>
       <p><a href="https://mkremins.github.io">mkremins.github.io</a></p>
     </header>
-    <section>
+    <section id="education">
       <h2>Education</h2>
       <div class="dated-entry">
+        <div class="dated-date">2017-now</div>
         <div class="dated-content"><strong>Ph.D. in Computational Media</strong> (in progress)<br>
         University of California, Santa Cruz<br>
         Advisors: Noah Wardrip-Fruin, Michael Mateas</div>
-        <div class="dated-date">2017-present</div>
       </div>
       <div class="dated-entry">
+        <div class="dated-date">2020</div>
         <div class="dated-content"><strong>M.S. in Computational Media</strong><br>
         University of California, Santa Cruz<br>
         Thesis: <a href="https://escholarship.org/uc/item/47n0221v">Designing to Support Authorship Play in Emergent Narrative Games</a></div>
-        <div class="dated-date">Sep 2020</div>
       </div>
       <div class="dated-entry">
+        <div class="dated-date">2013-2017</div>
         <div class="dated-content"><strong>B.A. in Interactive Entertainment</strong><br>
         University of Southern California<br>
         Minor in Game User Research</div>
-        <div class="dated-date">2013-2017</div>
       </div>
     </section>
-    <!--<section>
-      <h2>Journal Articles</h2>
-      {% assign pubtype = "journal" %}
-      {% include pubs_of_pubtype.html %}
-    </section>-->
-    <section>
-      <h2>Conference Papers</h2>
-      {% assign pubtype = "full" %}
-      {% include pubs_of_pubtype.html %}
+    <section id="publications">
+      <h2>Publications</h2>
+      <h3>Conference Papers</h3>
+      {%- assign pubtype = "full" -%}
+      {%- assign pubprefix = "C" -%}
+      {%- include cvpubs.html -%}
+      <h3>Workshop Papers</h3>
+      {%- assign pubtype = "workshop" -%}
+      {%- assign pubprefix = "W" -%}
+      {%- include cvpubs.html -%}
+      <h3>Posters and Demos</h3>
+      {%- assign pubtype = "poster_or_demo" -%}
+      {%- assign pubprefix = "PD" -%}
+      {%- include cvpubs.html -%}
+      <h3>Doctoral Consortia</h3>
+      {%- assign pubtype = "doctoral_consortium" -%}
+      {%- assign pubprefix = "DC" -%}
+      {%- include cvpubs.html -%}
     </section>
-    <!--<section>
-      <h2>Short Conference Papers</h2>
-      {% assign pubtype = "short" %}
-      {% include pubs_of_pubtype.html %}
-    </section>-->
-    <section>
-      <h2>Workshop Papers</h2>
-      {% assign pubtype = "workshop" %}
-      {% include pubs_of_pubtype.html %}
-    </section>
-    <section>
-      <h2>Posters and Demos</h2>
-      {% assign pubtype = "poster_or_demo" %}
-      {% include pubs_of_pubtype.html %}
-    </section>
-    <section>
-      <h2>Doctoral Consortia</h2>
-      {% assign pubtype = "doctoral_consortium" %}
-      {% include pubs_of_pubtype.html %}
-    </section>
-    <section>
+    <section id="talks">
       <h2>Invited Talks and Panels</h2>
+      {%- assign years_seen = "" | split: "" -%}
       {% for talk in site.data.talks %}
-      {% if talk.type == "panel" %}
-      <p><em>Panelist</em>, “{{talk.title}}.”<!--<br>{{talk.members|join:", "}}.--><br>{{talk.venue_long}} {% if talk.venue_short %}({{talk.venue_short}}){% endif %} {{talk.year}}.</p>
-      {% else %}
-      <p><em>Speaker</em>, {% if talk.url and talk.url != "" %}<a href="{{talk.url}}">“{{talk.title}}.”</a>{% else %}“{{talk.title}}.”{% endif %}<br>
-      {{talk.venue_long}} {% if talk.venue_short %}({{talk.venue_short}}){% endif %} {{talk.year}}.{% if talk.venue_note and talk.venue_note != "" %}<br><em>({{talk.venue_note}}.)</em>{% endif %}</p>
-      {% endif %}
+      <div class="dated-entry">
+        <div class="dated-date">{%- unless years_seen contains talk.year %}{{talk.year}}{%- endunless -%}</div>
+        <div class="dated-content">
+        {% if talk.type == "panel" %}
+        <div>Panelist, “{{talk.title}}.”<!--<br>{{talk.members|join:", "}}.--><br>{{talk.venue_long}} {% if talk.venue_short %}({{talk.venue_short}}){% endif %} {{talk.year}}.</div>
+        {% else %}
+        <div>Speaker, {% if talk.url and talk.url != "" %}<a href="{{talk.url}}">“{{talk.title}}.”</a>{% else %}“{{talk.title}}.”{% endif %}<br>
+        {{talk.venue_long}} {% if talk.venue_short %}({{talk.venue_short}}){% endif %} {{talk.year}}.{% if talk.venue_note and talk.venue_note != "" %}<br>{{talk.venue_note}}.{% endif %}</div>
+        {% endif %}
+        </div>
+      </div>
+      {%- assign years_seen = years_seen | push: talk.year -%}
       {% endfor %}
     </section>
-    <section>
+    <section id="exhibitions">
       <h2>Art Exhibitions</h2>
-      <p><em>Why Are We Like This?</em> Melanie Dickinson, Max Kreminski, Michael Mateas, Noah Wardrip-Fruin. Digital game. “(un)continuity” (juried group exhibition). Electronic Literature Organization (ELO). Orlando, Florida. Jul. 16-19, 2020.</p>
-      <p><em>Epitaph.</em> Max Kreminski. Digital game. ”QGCon 2018 Arcade” (juried group exhibition). Queerness and Games Conference (QGCon). Montreal, Quebec. Sep. 28-30, 2018.</p>
+      <div class="dated-entry">
+        <div class="dated-date">2020</div>
+        <div class="dated-content">
+          <em>Why Are We Like This?</em> Melanie Dickinson, Max Kreminski, Michael Mateas, Noah Wardrip-Fruin. Digital game. “(un)continuity” (juried group exhibition). Electronic Literature Organization (ELO). Orlando, Florida. Jul. 16-19, 2020.
+        </div>
+      </div>
+      <div class="dated-entry">
+        <div class="dated-date">2018</div>
+        <div class="dated-content">
+          <em>Epitaph.</em> Max Kreminski. Digital game. ”QGCon 2018 Arcade” (juried group exhibition). Queerness and Games Conference (QGCon). Montreal, Quebec. Sep. 28-30, 2018.
+        </div>
+      </div>
       <!--
       <p><em>tiny manifesto.</em> Max Kreminski. Written manifesto. ”Manifesto Jam Selections” (invited group exhibition). Now Play This - A Festival of Experimental Game Design. London, England. Apr. 6-8, 2018.</p>
       <p><em>Epitaph.</em> Max Kreminski. Digital game. ”The Winteractive Festival” (juried group exhibition). University of Southern California. Los Angeles, California. Dec. 7, 2016.</p>
       -->
     </section>
-    <section>
-      <h2>Teaching Experience</h2>
+    <section id="teaching">
+      <h2>Teaching</h2>
       <h3>Instructor of Record</h3>
       <div class="oneline-entries">
         <div class="dated-entry">
+          <div class="dated-date">Su2021</div>
           <div class="dated-content">CMPM 148: Interactive Storytelling</div>
-          <div class="dated-date">Summer 2021</div>
         </div>
         <div class="dated-entry">
+          <div class="dated-date">W2021</div>
           <div class="dated-content">CMPM 171: Game Design Studio II <em>(co-instructor with Tad Leckman)</em></div>
-          <div class="dated-date">Winter 2021</div>
         </div>
       </div>
       <h3>Teaching Assistant</h3>
       <div class="oneline-entries">
         <div class="dated-entry">
+          <div class="dated-date">Sp2020</div>
           <div class="dated-content">CMPM 172: Game Design Studio III</div>
-          <div class="dated-date">Spring 2020</div>
         </div>
         <div class="dated-entry">
+          <div class="dated-date">W2020</div>
           <div class="dated-content">CMPM 171: Game Design Studio II</div>
-          <div class="dated-date">Winter 2020</div>
         </div>
         <div class="dated-entry">
+          <div class="dated-date">F2019</div>
           <div class="dated-content">CMPM 170: Game Design Studio I</div>
-          <div class="dated-date">Fall 2019</div>
         </div>
         <div class="dated-entry">
+          <div class="dated-date">Su2019</div>
           <div class="dated-content">CMPM 147: Generative Design</div>
-          <div class="dated-date">Summer 2019</div>
         </div>
         <div class="dated-entry">
+          <div class="dated-date">W2019</div>
           <div class="dated-content">CMPM 80K: Foundations of Video Game Design</div>
-          <div class="dated-date">Winter 2019</div>
         </div>
         <div class="dated-entry">
+          <div class="dated-date">F2018</div>
           <div class="dated-content">CMPM 176: Game Systems</div>
-          <div class="dated-date">Fall 2018</div>
         </div>
         <div class="dated-entry">
+          <div class="dated-date">Su2018</div>
           <div class="dated-content">CMPM 80K: Foundations of Video Game Design</div>
-          <div class="dated-date">Summer 2018</div>
         </div>
       </div>
-      <!--
-      <h3>Guest Lectures</h3>
-      <p>“Gardening as a Mode of Play.” 2019. Invited guest lecture, Porter 61 Seminar in Arts, University of California, Santa Cruz.</p>
-      <p>“Mining and Gardening with Generative Systems.” 2018. Invited guest lecture, Computational Media 176 Game Systems, University of California, Santa Cruz.</p>
-      -->
-      <!--
-      <p>Winter 2020. Teaching Assistant, Computational Media 171 Game Design Studio II, University of California, Santa Cruz. Second phase of three-phase senior capstone sequence for game design majors.</p>
-      <p>Fall 2019. Teaching Assistant, Computational Media 170 Game Design Studio I, University of California, Santa Cruz. First phase of three-phase senior capstone sequence for game design majors. Helped manage logistics for a 200-person class while mentoring several other junior teaching assistants. Met with three to four student game design teams per week to provide guidance during the iterative prototyping process.</p>
-      <p>Summer 2019. Teaching Assistant, Computational Media 147 Generative Design, University of California, Santa Cruz. Project-focused upper-division game design course presenting a survey of generative methods.</p>
-      <p>Winter 2019. Teaching Assistant, Computational Media 80K Foundations of Video Game Design, University of California, Santa Cruz. Introductory game design, development, and critique class. Led three sections per week, together consisting of more than 100 students total.</p>
-      <p>Fall 2018. Teaching Assistant, Computational Media 176 Game Systems, University of California, Santa Cruz. Upper-division game design course focused on the design and analysis of systems in analog and digital games.</p>
-      <p>Summer 2018. Teaching Assistant, Computational Media 80K Foundations of Video Game Design, University of California, Santa Cruz. Introductory game design, development, and critique class. Taught three different game-making tools in five weeks.</p>
-      -->
     </section>
-    <section>
+    <section id="mentoring">
       <h2>Mentoring and Student Advising</h2>
-      <p>* denotes students who contributed to a publication listed above.</p>
       <h3>Undergraduate Students</h3>
-      <div class="oneline-entries">
-        <div class="dated-entry">
-          <div class="dated-content"><em>Camellia Shea</em>, Independent Study and Research Project</div>
-          <div class="dated-date">Summer 2020</div>
-        </div>
-        <div class="dated-entry">
-          <div class="dated-content"><em>Anthony Medina*</em>, Independent Study and Research Project</div>
-          <div class="dated-date">Spring 2019</div>
-        </div>
-        <div class="dated-entry">
-          <div class="dated-content"><em>Katie Moses*</em>, Independent Study and Research Project</div>
-          <div class="dated-date">Spring 2019</div>
-        </div>
+      <!--<div class="dated-entry">
+        <div class="dated-date">Sp2021</div>
+        <div class="dated-content">Ari Iramanesh. Student-led independent study project: an entry for the Generative Design in Minecraft (GDMC) AI Settlement Generation Competition.</div>
+      </div>-->
+      <div class="dated-entry">
+        <div class="dated-date">Su2020</div>
+        <div class="dated-content">Camellia Shea. Student-led independent study project: Paper Hearts, an approachable digital game creation tool inspired by queer games and flatgames.</div>
+      </div>
+      <div class="dated-entry">
+        <div class="dated-date">Sp2019</div>
+        <div class="dated-content">Anthony Medina; Katie Moses. Students assisted with data collection and coding for my AIIDE 2019 paper, “Evaluating AI-Based Games Through Retellings.”</div>
       </div>
       <h3>High School Students (via the UCSC Science Internship Program)</h3>
-      <div class="oneline-entries">
-        <div class="dated-entry">
-          <div class="dated-content"><em>Megna Anand*</em>, Science Internship Program Project</div>
-          <div class="dated-date">Summer 2019</div>
-        </div>
-        <div class="dated-entry">
-          <div class="dated-content"><em>Anish Kashyap*</em>, Science Internship Program Project</div>
-          <div class="dated-date">Summer 2019</div>
-        </div>
-        <div class="dated-entry">
-          <div class="dated-content"><em>Daniel Man*</em>, Science Internship Program Project</div>
-          <div class="dated-date">Summer 2019</div>
-        </div>
-        <div class="dated-entry">
-          <div class="dated-content"><em>Akhil Vemuri*</em>, Science Internship Program Project</div>
-          <div class="dated-date">Summer 2019</div>
-        </div>
+      <div class="dated-entry">
+        <div class="dated-date">Su2019</div>
+        <div class="dated-content">Megna Anand; Anish Kashyap; Daniel Man; Akhil Vemuri. Students contributed to the development of AI-based games described as case studies in my ICIDS 2019 paper, “Felt: A Simple Story Sifter.”</div>
       </div>
     </section>
-    <section>
+    <section id="employment">
       <h2>Employment</h2>
       <div class="dated-entry">
-        <div class="dated-content"><em>Graduate Student Researcher</em>, UCSC Expressive Intelligence Studio. Contributed to funded research projects including a mixed-initiative game design tool; an educational game that teaches responsible conduct of research; and “social superpowers” for virtual reality meeting environments.</div>
-        <div class="dated-date">2017-present</div>
+        <div class="dated-date">2017-now</div>
+        <div class="dated-content">Graduate Student Researcher, UCSC Expressive Intelligence Studio. Contributed to funded research projects including a mixed-initiative game design tool; an educational game that teaches responsible conduct of research; and “social superpowers” for virtual reality meeting environments.</div>
       </div>
       <div class="dated-entry">
-        <div class="dated-content"><em>Consultant</em>, Zynga. Advised the Applied AI team on the use of generative methods in the game design and development process.</div>
         <div class="dated-date"><!--Nov-->2020</div>
+        <div class="dated-content">Consultant, Zynga. Advised the Applied AI team on the use of generative methods in the game design and development process.</div>
       </div>
       <div class="dated-entry">
-        <div class="dated-content"><em>Research Mentor</em>, UCSC Science Internship Program. Mentored high school students working on computational media research projects.</div>
-        <div class="dated-date">Summer 2019</div>
-      </div>
-      <div class="dated-entry">
-        <div class="dated-content"><em>Community Management Assistant</em>, UCSC Computational Media Department. Co-organized events and programs to build graduate student community.</div>
         <div class="dated-date">2019-2020</div>
+        <div class="dated-content">Community Management Assistant, UCSC Computational Media Department. Co-organized events and programs to build graduate student community.</div>
       </div>
       <div class="dated-entry">
-        <div class="dated-content"><em>Undergraduate Research Associate</em>, USC Mobile & Environmental Media Lab. Design, rapid prototyping, and development of VR and AR experiences with Unity, C#, and SteamVR.</div>
+        <div class="dated-date"><!--Summer-->2019</div>
+        <div class="dated-content">Research Mentor, UCSC Science Internship Program. Mentored high school students working on computational media research projects.</div>
+      </div>
+      <div class="dated-entry">
         <div class="dated-date">2016-2017</div>
+        <div class="dated-content">Undergraduate Research Associate, USC Mobile & Environmental Media Lab. Design, rapid prototyping, and development of VR and AR experiences with Unity, C#, and SteamVR.</div>
       </div>
       <div class="dated-entry">
-        <div class="dated-content"><em>Undergraduate Research Associate</em>, USC Game Innovation Lab. Python scripting and data analysis to provide insights on player behavior in <em>Mission: Admission</em>, an educational game for high school students about the college admissions process.</div>
-        <div class="dated-date">Summer 2016</div>
-      </div>
-      <div class="dated-entry">
-        <div class="dated-content"><em>Junior User Researcher</em>, User Behavioristics. User research consulting; collection and analysis of qualitative and quantitative data on user behavior in mobile and VR games and apps.</div>
         <div class="dated-date">2015-2017</div>
+        <div class="dated-content">Junior User Researcher, User Behavioristics. User research consulting; collection and analysis of qualitative and quantitative data on user behavior in mobile and VR games and apps.</div>
+      </div>
+      <div class="dated-entry">
+        <div class="dated-date"><!--Summer-->2016</div>
+        <div class="dated-content">Undergraduate Research Associate, USC Game Innovation Lab. Python scripting and data analysis to provide insights on player behavior in <em>Mission: Admission</em>, an educational game for high school students about the college admissions process.</div>
       </div>
     </section>
-    <section>
+    <section id="awards">
       <h2>Honors, Awards, and Fellowships</h2>
       <div class="oneline-entries">
         <div class="dated-entry">
-          <div class="dated-content">Exceptional Paper Award, Foundations of Digital Games (FDG)</div>
           <div class="dated-date">2020</div>
+          <div class="dated-content">Exceptional Paper Award, Foundations of Digital Games (FDG)</div>
         </div>
         <div class="dated-entry">
+          <div class="dated-date">2019</div>
           <div class="dated-content">Travel Grant Award, AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment (AIIDE)</div>
-          <div class="dated-date">2019</div>
         </div>
         <div class="dated-entry">
+          <div class="dated-date">2019</div>
           <div class="dated-content">Best Paper Honorable Mention, Foundations of Digital Games (FDG)</div>
-          <div class="dated-date">2019</div>
         </div>
         <div class="dated-entry">
-          <div class="dated-content">University of California Chancellor’s Fellowship</div>
           <div class="dated-date">2017-2018</div>
+          <div class="dated-content">University of California Chancellor’s Fellowship</div>
         </div>
         <div class="dated-entry">
-          <div class="dated-content">INTEL University Research Fellowship</div>
           <div class="dated-date">2016-2017</div>
+          <div class="dated-content">Intel University Research Fellowship</div>
         </div>
       </div>
     </section>
-    <section>
+    <section id="service">
       <h2>Professional Service</h2>
       <h3>Conference and Workshop Organization</h3>
       <div class="oneline-entries">
         <div class="dated-entry">
-          <div class="dated-content"><em>Social Media Co-Chair</em>, International Conference on Interactive Digital Storytelling (ICIDS)</div>
           <div class="dated-date">2021</div>
+          <div class="dated-content">Social Media Co-Chair, International Conference on Interactive Digital Storytelling (ICIDS)</div>
         </div>
         <div class="dated-entry">
-          <div class="dated-content"><em>Publicity Co-Chair</em>, AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment (AIIDE)</div>
           <div class="dated-date">2020</div>
+          <div class="dated-content">Publicity Co-Chair, AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment (AIIDE)</div>
         </div>
         <div class="dated-entry">
-          <div class="dated-content"><em>Co-Organizer</em>, AIIDE Workshop on Experimental AI in Games (EXAG)</div>
           <div class="dated-date">2020</div>
+          <div class="dated-content">Co-Organizer, AIIDE Workshop on Experimental AI in Games (EXAG)</div>
         </div>
         <div class="dated-entry">
-          <div class="dated-content"><em>Co-Organizer</em>, ICCC Workshop on Casual Creators (CasCre)</div>
           <div class="dated-date">2020</div>
+          <div class="dated-content">Co-Organizer, ICCC Workshop on Casual Creators (CasCre)</div>
         </div>
         <div class="dated-entry">
-          <div class="dated-content"><em>Demonstrations Chair</em>, International Conference on Interactive Digital Storytelling (ICIDS)</div>
           <div class="dated-date">2019</div>
+          <div class="dated-content">Demonstrations Chair, International Conference on Interactive Digital Storytelling (ICIDS)</div>
         </div>
         <div class="dated-entry">
-          <div class="dated-content"><em>Co-Organizer</em>, AIIDE Workshop on Experimental AI in Games (EXAG)</div>
           <div class="dated-date">2019</div>
+          <div class="dated-content">Co-Organizer, AIIDE Workshop on Experimental AI in Games (EXAG)</div>
         </div>
       </div>
       <h3>Reviewing and Program Committee Membership</h3>
       <div class="oneline-entries">
         <div class="dated-entry">
-          <div class="dated-content">International Conference on Artificial Intelligence in Music, Sound, Art and Design (EvoMUSART)</div>
-          <div class="dated-date">2021</div>
-        </div>
-        <div class="dated-entry">
-          <div class="dated-content">Foundations of Digital Games (FDG)</div>
           <div class="dated-date">2020-2021</div>
+          <div class="dated-content">Foundations of Digital Games (FDG)</div>
         </div>
         <div class="dated-entry">
+          <div class="dated-date">2021</div>
+          <div class="dated-content">International Conference on Artificial Intelligence in Music, Sound, Art and Design (EvoMUSART)</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-date">2020</div>
           <div class="dated-content">IEEE Transactions on Games (ToG)</div>
-          <div class="dated-date">2020</div>
         </div>
         <div class="dated-entry">
+          <div class="dated-date">2020</div>
           <div class="dated-content">IEEE Symposium Series on Computational Intelligence (SSCI)</div>
-          <div class="dated-date">2020</div>
         </div>
         <div class="dated-entry">
+          <div class="dated-date">2020</div>
           <div class="dated-content">FDG Workshop on Procedural Content Generation (PCG)</div>
-          <div class="dated-date">2020</div>
         </div>
         <div class="dated-entry">
-          <div class="dated-content">AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment (AIIDE)</div>
           <div class="dated-date">2019-2020</div>
+          <div class="dated-content">AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment (AIIDE)</div>
         </div>
         <div class="dated-entry">
+          <div class="dated-date">2017-2020</div>
           <div class="dated-content">International Conference on Interactive Digital Storytelling (ICIDS)</div>
-          <div class="dated-date">2017-2020</div>
         </div>
         <div class="dated-entry">
+          <div class="dated-date">2017-2020</div>
           <div class="dated-content">AIIDE Workshop on Experimental AI in Games (EXAG)</div>
-          <div class="dated-date">2017-2020</div>
         </div>
         <div class="dated-entry">
-          <div class="dated-content">IEEE Conference on Games (CoG)</div>
           <div class="dated-date">2019</div>
+          <div class="dated-content">IEEE Conference on Games (CoG)</div>
         </div>
       </div>
     </section>
-    <section>
+    <section id="media">
       <h2>Selected Media Coverage</h2>
-      <p><a href="https://www.newscientist.com/article/mg24933162-600-why-you-should-trust-reindeer-to-pick-stocks-over-politicians/">“Why you should trust reindeer to pick stocks over politicians”</a> (<em>Feedback</em> column). New Scientist, January 2021.</p>
-      <p><a href="https://elluba.medium.com/creative-ai-newsletter-10-art-design-and-music-updates-from-2020-6be7a2e26c49">“Creative AI newsletter #10 — Art, Design and Music updates from 2020”</a>. Creative AI Newsletter, January 2021.</p>
-      <p><a href="https://www.dicebreaker.com/games/scrabble/news/scrabble-variant-nonsense-words-blabrecs-ai">“Scrabble variant Blabrecs lets you play made-up words - but only if you fool an AI into thinking they’re real”</a>. Dicebreaker, December 2020.</p>
-      <p><a href="https://thenextweb.com/neural/2020/12/14/new-ai-scrabble-mod-only-allows-words-that-dont-exist/">“New AI Scrabble mod only allows words that don’t exist”</a>. The Next Web, December 2020.</p>
-      <p><a href="https://becauselanguage.com/17-words-of-the-week-of-the-year-2020/">“17: Words of the Week of the Year 2020”</a>. Because Language, December 2020.</p><!-- 38:05 -->
-      <p><a href="https://emshort.blog/2019/11/29/storylets-you-want-them/">“Storylets: You Want Them”</a>. Emily Short's Interactive Storytelling, November 2019.</p>
-      <p><a href="https://emshort.blog/2019/01/06/kreminski-on-storylets/">“Survey of Storylets-based Design”</a>. Emily Short's Interactive Storytelling, January 2019.</p>
-      <p><a href="https://www.rockpapershotgun.com/2017/01/18/apocalypse-fiction/">“IF Only: Apocalypse Eve”</a>. Rock Paper Shotgun, January 2017.</p>
+      <div class="dated-entry">
+        <div class="dated-date">2021</div>
+        <div class="dated-content"><a href="https://www.newscientist.com/article/mg24933162-600-why-you-should-trust-reindeer-to-pick-stocks-over-politicians/">“Why you should trust reindeer to pick stocks over politicians”</a> (<em>Feedback</em> column). New Scientist, January 2021.</div>
+      </div>
+      <div class="dated-entry">
+        <div class="dated-date"></div>
+        <div class="dated-content"><a href="https://elluba.medium.com/creative-ai-newsletter-10-art-design-and-music-updates-from-2020-6be7a2e26c49">“Creative AI newsletter #10 — Art, Design and Music updates from 2020”</a>. Creative AI Newsletter, January 2021.</div>
+      </div>
+      <div class="dated-entry">
+        <div class="dated-date">2020</div>
+        <div class="dated-content"><a href="https://thenextweb.com/neural/2020/12/14/new-ai-scrabble-mod-only-allows-words-that-dont-exist/">“New AI Scrabble mod only allows words that don’t exist”</a>. The Next Web, December 2020.</div>
+      </div>
+      <div class="dated-entry">
+        <div class="dated-date"></div>
+        <div class="dated-content"><a href="https://www.dicebreaker.com/games/scrabble/news/scrabble-variant-nonsense-words-blabrecs-ai">“Scrabble variant Blabrecs lets you play made-up words - but only if you fool an AI into thinking they’re real”</a>. Dicebreaker, December 2020.</div>
+      </div>
+      <div class="dated-entry">
+        <div class="dated-date"></div>
+        <div class="dated-content"><a href="https://becauselanguage.com/17-words-of-the-week-of-the-year-2020/">“17: Words of the Week of the Year 2020”</a>. Because Language, December 2020.</div><!-- 38:05 -->
+      </div>
+      <div class="dated-entry">
+        <div class="dated-date">2019</div>
+        <div class="dated-content"><a href="https://emshort.blog/2019/11/29/storylets-you-want-them/">“Storylets: You Want Them”</a>. Emily Short's Interactive Storytelling, November 2019.</div>
+      </div>
+      <div class="dated-entry">
+        <div class="dated-date"></div>
+        <div class="dated-content"><a href="https://emshort.blog/2019/01/06/kreminski-on-storylets/">“Survey of Storylets-based Design”</a>. Emily Short's Interactive Storytelling, January 2019.</div>
+      </div>
+      <div class="dated-entry">
+        <div class="dated-date">2017</div>
+        <div class="dated-content"><a href="https://www.rockpapershotgun.com/2017/01/18/apocalypse-fiction/">“IF Only: Apocalypse Eve”</a>. Rock Paper Shotgun, January 2017.
+      </div>
     </section>
   </main>
 </body>
