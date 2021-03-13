@@ -85,21 +85,13 @@ layout: null
     <section id="publications">
       <h2>Publications</h2>
       <h3>Conference Papers</h3>
-      {%- assign pubtype = "full" -%}
-      {%- assign pubprefix = "C" -%}
-      {%- include cvpubs.html -%}
+      {%- include cvpubs.html pubtype="full" pubprefix="C" -%}
       <h3>Workshop Papers</h3>
-      {%- assign pubtype = "workshop" -%}
-      {%- assign pubprefix = "W" -%}
-      {%- include cvpubs.html -%}
+      {%- include cvpubs.html pubtype="workshop" pubprefix="W" -%}
       <h3>Posters and Demos</h3>
-      {%- assign pubtype = "poster_or_demo" -%}
-      {%- assign pubprefix = "PD" -%}
-      {%- include cvpubs.html -%}
+      {%- include cvpubs.html pubtype="poster_or_demo" pubprefix="PD" -%}
       <h3>Doctoral Consortia</h3>
-      {%- assign pubtype = "doctoral_consortium" -%}
-      {%- assign pubprefix = "DC" -%}
-      {%- include cvpubs.html -%}
+      {%- include cvpubs.html pubtype="doctoral_consortium" pubprefix="DC" -%}
     </section>
     <section id="talks">
       <h2>Invited Talks and Panels</h2>

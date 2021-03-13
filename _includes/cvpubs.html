@@ -1,5 +1,5 @@
 {%- assign years_seen = "" | split: "" -%}
-{%- assign pubs = site.data.publications | where: "pubtype", pubtype -%}
+{%- assign pubs = site.data.publications | where: "pubtype", include.pubtype -%}
 {%- assign pubid = pubs | size -%}
 {%- for pub in pubs -%}
   {%- assign authors_html = "" | split: "" -%}
@@ -13,7 +13,7 @@
   <div class="dated-entry">
     <div class="dated-date">{%- unless years_seen contains pub.year %}{{pub.year}}{%- endunless -%}</div>
     <div class="dated-content">
-      <span class="pubid">[{{pubprefix}}{{pubid}}]</span>
+      <span class="pubid">[{{include.pubprefix}}{{pubid}}]</span>
       <span class="authors">{{authors_html | join: ", "}}.</span>
       {% if pub.url and pub.url != "" %}<a href="{{pub.url}}">“{{pub.title}}.”</a>{% else %}“{{pub.title}}.”{% endif %}
       {{pub.venue_long}} ({{pub.venue}}), {{pub.year}}. {% if pub.award and pub.award != "" %}<em>{{pub.award}}</em>{% endif %}
