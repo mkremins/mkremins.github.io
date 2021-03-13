@@ -17,7 +17,7 @@ layout: null
   :root { --left-column-width: 7rem; };
   html { font-size: 16px; }
   body { font-family: "Source Sans Pro", sans-serif; line-height: 1.5; }
-  main { margin: 0 auto; max-width: 94ch; padding: 2ch; }
+  main { margin: 2rem auto; max-width: 94ch; padding: 0 2ch; }
 
   /* page header */
   header { margin-bottom: 2rem; padding-left: var(--left-column-width); }
@@ -50,7 +50,7 @@ layout: null
   /* when printing, make the font smaller and the page full-width */
   @media print {
     html { font-size: 12px; }
-    main { max-width: 100%; }
+    main { margin-top: 0; max-width: 100%; }
   }
   </style>
 </head>
