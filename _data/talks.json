@@ -11,7 +11,7 @@
   "year": "2020",
   "venue_short": "INT",
   "venue": "INT",
-  "venue_long": "Intelligent Narrative Technologies",
+  "venue_long": "AIIDE Workshop on Intelligent Narrative Technologies",
   "note": "invited",
   "type": "panel"
 },
@@ -73,7 +73,7 @@
   "venue_short": "GDC",
   "venue": "GDC",
   "venue_long": "Game Developers Conference",
-  "venue_note": "Independent Games Summit microtalks: Tech Toolbox",
+  "subvenue": "Tech Toolbox microtalks",
   "note": "invited"
 },
 {
@@ -83,7 +83,7 @@
   "venue_short": "GDC",
   "venue": "GDC",
   "venue_long": "Game Developers Conference",
-  "venue_note": "AI Summit microtalks: Experimental AI for Games",
+  "subvenue": "Experimental AI for Games microtalks",
   "note": "invited"
 },
 {
