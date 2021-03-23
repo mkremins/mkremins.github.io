@@ -1,5 +1,17 @@
 [
 {
+  "title": "Academical: A Choice-Based Interactive Storytelling Game for Enhancing Moral Reasoning, Knowledge, and Attitudes in Responsible Conduct of Research",
+  "url": "",
+  "authors": ["Katelyn M. Grasse", "Edward F. Melcer", "Max Kreminski", "Nick Junius", "James Ryan", "Noah Wardrip-Fruin"],
+  "year": "2021",
+  "venue": "In <em>Games and Narrative: Theory and Practice</em>,",
+  "venue_long": "<em>Games and Narrative: Theory and Practice</em>",
+  "booktitle": "Games and Narrative: Theory and Practice",
+  "publisher": "Springer",
+  "pubtype": "chapter",
+  "inpress": true
+},
+{
   "title": "Social Superpowers in Social VR: Beyond Approximation of Face-to-face",
   "url": "",
   "authors": ["Joshua McVeigh-Schultz", "Anya Osborne", "Max Kreminski", "Sean Fernandes", "Sabrina Fielder", "Victor Li", "Tym Lang", "Katherine Isbister"],
