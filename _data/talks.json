@@ -1,5 +1,12 @@
 [
 {
+  "title": "Story Sifting",
+  "year": "2021",
+  "venue": "UKY CS 660",
+  "venue_long": "Guest lecture, CS 660: Topics in Artificial Intelligence: Interactive Narrative (Prof. Stephen Ware), University of Kentucky",
+  "type": "guest_lecture"
+},
+{
   "title": "Toward Narrative Instruments",
   "year": "2021",
   "venue": "ARDIN Social",
