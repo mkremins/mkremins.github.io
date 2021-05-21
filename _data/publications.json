@@ -1,5 +1,14 @@
 [
 {
+  "title": "A Genre-Specific Game Description Language for Game Boy RPGs",
+  "url": "",
+  "authors": ["Tamara Duplantis", "Isaac Karth", "Max Kreminski", "Adam M. Smith", "Michael Mateas"],
+  "year": "2021",
+  "venue": "CoG",
+  "venue_long": "IEEE Conference on Games",
+  "pubtype": "full"
+},
+{
   "title": "There Is No Escape: Theatricality in Hades",
   "url": "",
   "authors": ["Nick Junius", "Max Kreminski", "Michael Mateas"],
