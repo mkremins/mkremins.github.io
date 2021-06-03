@@ -1,5 +1,14 @@
 [
 {
+  "title": "Reflective Creators",
+  "url": "",
+  "authors": ["Max Kreminski", "Michael Mateas"],
+  "year": "2021",
+  "venue": "ICCC",
+  "venue_long": "International Conference on Computational Creativity",
+  "pubtype": "full"
+},
+{
   "title": "A Genre-Specific Game Description Language for Game Boy RPGs",
   "url": "",
   "authors": ["Tamara Duplantis", "Isaac Karth", "Max Kreminski", "Adam M. Smith", "Michael Mateas"],
