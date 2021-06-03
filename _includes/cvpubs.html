@@ -13,7 +13,7 @@
   <div class="dated-entry">
     <div class="dated-date">{%- unless years_seen contains pub.year %}{{pub.year}}{%- endunless -%}</div>
     <div class="dated-content">
-      <span class="pubid">[{{include.pubprefix}}{{pubid}}]</span>
+      <span id="{{include.pubprefix}}{{pubid}}" class="pubid">[{{include.pubprefix}}{{pubid}}]</span>
       <span class="authors">{{authors_html | join: ", "}}.</span>
       {% if pub.url and pub.url != "" %}<a href="{{pub.url}}">“{{pub.title}}.”</a>{% else %}“{{pub.title}}.”{% endif %}
       {% if pub.pubtype == "chapter" %}In <em>{{pub.booktitle}}</em>. {{pub.publisher}}, {{pub.year}}{% else %}{{pub.venue_long}} ({{pub.venue}}), {{pub.year}}{% endif %}{% if pub.inpress %} (in press){% endif %}.
