@@ -33,7 +33,7 @@
   "year": "2021",
   "venue": "FDG",
   "venue_long": "Foundations of Digital Games",
-  "pubtype": "poster_or_demo"
+  "pubtype": "pe_or_demo"
 },
 {
   "title": "Academical: A Choice-Based Interactive Storytelling Game for Enhancing Moral Reasoning, Knowledge, and Attitudes in Responsible Conduct of Research",
@@ -92,7 +92,7 @@
   "venue": "AIIDE",
   "venue_long": "Artificial Intelligence and Interactive Digital Entertainment",
   "venue_note": "playable experience paper",
-  "pubtype": "poster_or_demo"
+  "pubtype": "pe_or_demo"
 },
 {
   "title": "Tabletop Roleplaying Games as Procedural Content Generators",
@@ -215,7 +215,7 @@
   "venue": "ICIDS",
   "venue_long": "International Conference on Interactive Digital Storytelling",
   "venue_note": "poster paper",
-  "pubtype": "poster_or_demo"
+  "pubtype": "full"
 },
 {
   "title": "Throwing Bottles at God: Predictive Text as a Game Mechanic in an AI-Based Narrative Game",
@@ -225,7 +225,7 @@
   "venue": "ICIDS",
   "venue_long": "International Conference on Interactive Digital Storytelling",
   "venue_note": "demo paper",
-  "pubtype": "poster_or_demo"
+  "pubtype": "pe_or_demo"
 },
 {
   "title": "Gardening Games: An Alternative Philosophy of PCG in Games",
