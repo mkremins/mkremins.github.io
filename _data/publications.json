@@ -82,7 +82,7 @@
   "venue": "AIIDE",
   "venue_long": "Artificial Intelligence and Interactive Digital Entertainment",
   "pubtype": "full",
-  "award": "Acceptance rate: 25%."
+  "acceptrate": "25%"
 },
 {
   "title": "Playable Experiences at the 16th AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment",
@@ -148,7 +148,7 @@
   "venue": "ICIDS",
   "venue_long": "International Conference on Interactive Digital Storytelling",
   "pubtype": "full",
-  "award": "Acceptance rate: 30%."
+  "acceptrate": "30%"
 },
 {
   "title": "Evaluating AI-Based Games Through Retellings",
@@ -158,7 +158,7 @@
   "venue": "AIIDE",
   "venue_long": "Artificial Intelligence and Interactive Digital Entertainment",
   "pubtype": "full",
-  "award": "Acceptance rate: 25%."
+  "acceptrate": "25%"
 },
 {
   "title": "Creativity Support for Story Construction Play Experiences",
@@ -244,7 +244,7 @@
   "venue": "DIS",
   "venue_long": "Designing Interactive Systems",
   "pubtype": "full",
-  "award": "Acceptance rate: 22%."
+  "acceptrate": "22%"
 },
 {
   "title": "Are Game Design and User Research Guidelines Specific to Virtual Reality Effective in Creating a More Optimal Player Experience? Yes: VR PLAY",
