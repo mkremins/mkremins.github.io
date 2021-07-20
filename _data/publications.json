@@ -1,11 +1,33 @@
 [
 {
+  "title": "Winnow: A Domain-Specific Language for Incremental Story Sifting",
+  "url": "",
+  "authors": ["Max Kreminski", "Melanie Dickinson", "Michael Mateas"],
+  "year": "2021",
+  "venue": "AIIDE",
+  "venue_long": "Artificial Intelligence and Interactive Digital Entertainment",
+  "venue_note": "poster paper",
+  "pubtype": "full",
+  "acceptrate": "50% (for oral + poster presentation)"
+},
+{
+  "title": "A Demonstration of Blabrecs, an AI-Based Wordgame",
+  "url": "",
+  "authors": ["Max Kreminski", "Isaac Karth"],
+  "year": "2021",
+  "venue": "AIIDE",
+  "venue_long": "Artificial Intelligence and Interactive Digital Entertainment",
+  "venue_note": "playable experience paper",
+  "pubtype": "pe_or_demo"
+},
+{
   "title": "Reflective Creators",
   "url": "https://mkremins.github.io/publications/ReflectiveCreators_ICCC2021.pdf",
   "authors": ["Max Kreminski", "Michael Mateas"],
   "year": "2021",
   "venue": "ICCC",
   "venue_long": "International Conference on Computational Creativity",
+  "venue_note": "poster paper",
   "pubtype": "full"
 },
 {
