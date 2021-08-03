@@ -1,7 +1,7 @@
 [
 {
   "title": "Winnow: A Domain-Specific Language for Incremental Story Sifting",
-  "url": "",
+  "url": "https://mkremins.github.io/publications/Winnow_AIIDE2021.pdf",
   "authors": ["Max Kreminski", "Melanie Dickinson", "Michael Mateas"],
   "year": "2021",
   "venue": "AIIDE",
@@ -12,7 +12,7 @@
 },
 {
   "title": "A Demonstration of Blabrecs, an AI-Based Wordgame",
-  "url": "",
+  "url": "https://mkremins.github.io/publications/Blabrecs_AIIDE2021.pdf",
   "authors": ["Max Kreminski", "Isaac Karth"],
   "year": "2021",
   "venue": "AIIDE",
