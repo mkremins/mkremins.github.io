@@ -46,7 +46,8 @@
   "year": "2021",
   "venue": "FDG",
   "venue_long": "Foundations of Digital Games",
-  "pubtype": "full"
+  "pubtype": "full",
+  "award": "Best paper, Game Criticism and Analysis track."
 },
 {
   "title": "Generating Playable RPG ROMs for the Game Boy",
@@ -55,7 +56,8 @@
   "year": "2021",
   "venue": "FDG",
   "venue_long": "Foundations of Digital Games",
-  "pubtype": "pe_or_demo"
+  "pubtype": "pe_or_demo",
+  "award": "Best game or demo."
 },
 {
   "title": "Academical: A Choice-Based Interactive Storytelling Game for Enhancing Moral Reasoning, Knowledge, and Attitudes in Responsible Conduct of Research",
@@ -142,7 +144,7 @@
   "venue": "FDG",
   "venue_long": "Foundations of Digital Games",
   "pubtype": "full",
-  "award": "Exceptional paper award."
+  "award": "Exceptional paper."
 },
 {
   "title": "Why Are We Like This?: Exploring Writing Mechanics for an AI-Augmented Storytelling Game",
