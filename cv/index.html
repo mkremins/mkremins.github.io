@@ -25,8 +25,18 @@ layout: null
   header p { margin-bottom: 0; }
 
   /* normal body content */
-  h2 { text-transform: uppercase; }
-  h2, h3 { font-size: 1.1rem; margin-bottom: 0.25rem; padding-left: var(--left-column-width); }
+  h2, h3 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+  h2 { padding-left: var(--left-column-width); text-transform: uppercase; }
+  h3:before { /* left-column decorations for subsection headers */
+    background: linear-gradient(to right, rgba(255,255,255,0) 25%, #ccc 25%);
+    content: "";
+    display: inline-block;
+    height: 0.25rem;
+    margin-right: 2rem;
+    position: relative;
+    top: -0.25rem;
+    width: calc(var(--left-column-width) - 2rem);
+  }
   p { margin-bottom: 0.5rem; }
   a { color: inherit; /*#0000ee;*/ }
   section { margin-bottom: 2rem; }
