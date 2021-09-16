@@ -1,5 +1,14 @@
 [
 {
+  "title": "AgentCraft: An Agent-Based Minecraft Settlement Generator",
+  "url": "",
+  "authors": ["Ari Iramanesh", "Max Kreminski"],
+  "year": "2021",
+  "venue": "EXAG",
+  "venue_long": "AIIDE Workshop on Experimental AI for Games",
+  "pubtype": "workshop"
+},
+{
   "title": "Winnow: A Domain-Specific Language for Incremental Story Sifting",
   "url": "https://mkremins.github.io/publications/Winnow_AIIDE2021.pdf",
   "authors": ["Max Kreminski", "Melanie Dickinson", "Michael Mateas"],
