@@ -1,5 +1,14 @@
 [
 {
+  "title": "Opportunities for Approachable Game Development via Program Synthesis",
+  "url": "",
+  "authors": ["Max Kreminski", "Michael Mateas"],
+  "year": "2021",
+  "venue": "PLIE",
+  "venue_long": "AIIDE Workshop on Programming Languages and Interactive Entertainment",
+  "pubtype": "workshop"
+},
+{
   "title": "AgentCraft: An Agent-Based Minecraft Settlement Generator",
   "url": "",
   "authors": ["Ari Iramanesh", "Max Kreminski"],
