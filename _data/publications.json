@@ -1,7 +1,7 @@
 [
 {
   "title": "Opportunities for Approachable Game Development via Program Synthesis",
-  "url": "",
+  "url": "https://mkremins.github.io/publications/Synthesis_PLIE2021.pdf",
   "authors": ["Max Kreminski", "Michael Mateas"],
   "year": "2021",
   "venue": "PLIE",
@@ -10,7 +10,7 @@
 },
 {
   "title": "AgentCraft: An Agent-Based Minecraft Settlement Generator",
-  "url": "",
+  "url": "https://mkremins.github.io/publications/AgentCraft_EXAG2021.pdf",
   "authors": ["Ari Iramanesh", "Max Kreminski"],
   "year": "2021",
   "venue": "EXAG",
