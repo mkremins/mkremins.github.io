@@ -1,5 +1,32 @@
 [
 {
+  "title": "A Coauthorship-Centric History of Interactive Emergent Narrative",
+  "url": "",
+  "authors": ["Max Kreminski", "Michael Mateas"],
+  "year": "2021",
+  "venue": "ICIDS",
+  "venue_long": "International Conference on Interactive Digital Storytelling",
+  "pubtype": "full"
+},
+{
+  "title": "Toward Narrative Instruments",
+  "url": "",
+  "authors": ["Max Kreminski", "Michael Mateas"],
+  "year": "2021",
+  "venue": "ICIDS",
+  "venue_long": "International Conference on Interactive Digital Storytelling",
+  "pubtype": "full"
+},
+{
+  "title": "Emergent Narrative and Reparative Play",
+  "url": "",
+  "authors": ["Jason Grinblat", "Cat Manning", "Max Kreminski"],
+  "year": "2021",
+  "venue": "ICIDS",
+  "venue_long": "International Conference on Interactive Digital Storytelling",
+  "pubtype": "full"
+},
+{
   "title": "Opportunities for Approachable Game Development via Program Synthesis",
   "url": "https://mkremins.github.io/publications/Synthesis_PLIE2021.pdf",
   "authors": ["Max Kreminski", "Michael Mateas"],
