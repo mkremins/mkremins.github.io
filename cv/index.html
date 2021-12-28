@@ -8,37 +8,49 @@ layout: null
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <title>Max Kreminski – CV</title>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
   <style>
   /* reset base styles */
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   /* basic page structure */
-  :root { --left-column-width: 7rem; };
+  :root { --left-column-width: 4rem; --wide-left-column-width: 7rem; };
   html { font-size: 16px; }
-  body { font-family: "Source Sans Pro", sans-serif; line-height: 1.5; }
+  body { font-family: "Computer Modern Sans", sans-serif; line-height: 1.5; }
   main { margin: 2rem auto; max-width: 94ch; padding: 0 2ch; }
 
   /* page header */
-  header { margin-bottom: 2rem; padding-left: var(--left-column-width); }
+  header { margin-bottom: 2rem; text-align: center; }
   header h1 { font-size: 1.5rem; }
   header p { margin-bottom: 0; }
 
   /* normal body content */
-  h2, h3 { font-size: 1.1rem; margin-bottom: 0.25rem; margin-left: var(--left-column-width); }
-  h2 { text-transform: uppercase; }
-  h3 { border-bottom: 1px solid black; }
+  h2, h3 { font-size: 1.1rem; }
+  h2 { text-transform: uppercase; border-bottom: 1px solid #aaa; margin-bottom: 0.5rem; }
+  h3 { margin-bottom: 0.25rem; }
   p { margin-bottom: 0.5rem; }
   a { color: inherit; /*#0000ee;*/ }
   section { margin-bottom: 2rem; }
 
+  .author { white-space: nowrap; }
+  .author.self { font-weight: bold; }
+  .pub-acceptrate { color: #777; }
+  .pub-award { color: forestgreen; font-weight: bold; }
+
   /* dated entries */
   .dated-entry { display: flex; flex-flow: row wrap; position: relative; margin-bottom: 0.5rem; }
-  .dated-date { width: var(--left-column-width); text-align: right; padding-right: 2rem; }
+  .dated-date { width: var(--left-column-width); text-align: left; padding-right: 2rem; }
   .dated-content { width: calc(100% - var(--left-column-width)); }
+  .wide-left-column .dated-date { width: var(--wide-left-column-width); }
+  .wide-left-column .dated-content { width: calc(100% - var(--wide-left-column-width)); }
+  #publications .dated-date { width: 3.5rem; }
+  #publications .dated-content { width: calc(100% - 3.5rem); }
 
   .oneline-entries { margin-bottom: 0.5rem; }
   .oneline-entries .dated-entry { margin-bottom: 0; }
+
+  .references { display: flex; flex-flow: row wrap; margin-top: 1rem; }
+  .reference  { margin-bottom: 1rem; margin-right: 2%; width: 31%; }
 
   /* hide extra awards info for now, not sure what to include */
   #awards em { display: none; }
@@ -62,7 +74,7 @@ layout: null
       <p>mkremins@ucsc.edu</p>
       <p><a href="https://mkremins.github.io">mkremins.github.io</a></p>
     </header>
-    <section id="education">
+    <section id="education" class="wide-left-column">
       <h2>Education</h2>
       <div class="dated-entry">
         <div class="dated-date">2017-now</div>
@@ -83,12 +95,12 @@ layout: null
         Minor in Game User Research</div>
       </div>
     </section>
-        <section id="awards">
+    <section id="awards" class="wide-left-column">
       <h2>Honors, Awards, Grants and Fellowships</h2>
       <div class="oneline-entries">
         <div class="dated-entry">
           <div class="dated-date">2021</div>
-          <div class="dated-content">Best Short Paper Nominations [<a href="#C17">C17</a> and <a href="#C18">C18</a>], International Conference on Interactive Digital Storytelling (ICIDS)</div>
+          <div class="dated-content">Best Short Paper Honorable Mentions [<a href="#C17">C17</a>, <a href="#C18">C18</a>], International Conference on Interactive Digital Storytelling (ICIDS)</div>
         </div>
         <div class="dated-entry">
           <div class="dated-date">2021</div>
@@ -257,24 +269,24 @@ layout: null
       </div>-->
       <h3>Undergraduate Students</h3>
       <div class="dated-entry">
-        <div class="dated-date">Sp2021</div>
-        <div class="dated-content">Ari Iramanesh. Student-led independent study project: AgentCraft, an entry for the Generative Design in Minecraft (GDMC) AI Settlement Generation Competition. Resulted in a student-authored publication [<a href="#W8">W8</a>].<br>★ <em>Second place (of 20 entries) in the 2021 GDMC competition.</em></div>
+        <div class="dated-date">2021</div>
+        <div class="dated-content">Ari Iramanesh. Student-led independent study project: AgentCraft, an entry for the Generative Design in Minecraft (GDMC) AI Settlement Generation Competition. Resulted in a student-authored publication [<a href="#W8">W8</a>].<br><span class="pub-award">Second place (top 10%) in the 2021 GDMC competition.</span></div>
       </div>
       <div class="dated-entry">
-        <div class="dated-date">Su2020</div>
+        <div class="dated-date">2020</div>
         <div class="dated-content">Camellia Shea. Student-led independent study project: Paper Hearts, an approachable digital game creation tool inspired by queer games and flatgames.</div>
       </div>
       <div class="dated-entry">
-        <div class="dated-date">Sp2019</div>
+        <div class="dated-date">2019</div>
         <div class="dated-content">Anthony Medina; Katie Moses. Students assisted with data collection and coding for my AIIDE 2019 paper, “Evaluating AI-Based Games Through Retellings” [<a href="#C5">C5</a>].</div>
       </div>
       <h3>High School Students (via the UCSC Science Internship Program)</h3>
       <div class="dated-entry">
-        <div class="dated-date">Su2019</div>
+        <div class="dated-date">2019</div>
         <div class="dated-content">Megna Anand; Anish Kashyap; Daniel Man; Akhil Vemuri. Students contributed to the development of <em>Diarytown</em>, an AI-based game described as a case study in my ICIDS 2019 paper, “Felt: A Simple Story Sifter” [<a href="#C6">C6</a>].</div>
       </div>
     </section>
-    <section id="employment">
+    <section id="employment" class="wide-left-column">
       <h2>Research Positions</h2>
       <div class="dated-entry">
         <div class="dated-date">2017-now</div>
@@ -300,10 +312,10 @@ layout: null
       </div>
       <div class="dated-entry">
         <div class="dated-date"><!--Summer-->2016</div>
-        <div class="dated-content">Undergraduate Research Associate, USC Game Innovation Lab. Python scripting and data analysis to provide insights on player behavior in <em>Mission: Admission</em>, an educational game for high school students about the college admissions process.</div>
+        <div class="dated-content">Undergraduate Research Associate, USC Game Innovation Lab. Python scripting and data analysis to provide insights on player behavior in <em>Mission: Admission</em>, an educational game about college admissions for high school students.</div>
       </div>
     </section>
-    <section id="service">
+    <section id="service" class="wide-left-column">
       <h2>Service</h2>
       <h3>Conference Organization</h3>
       <div class="oneline-entries">

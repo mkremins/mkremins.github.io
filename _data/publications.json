@@ -6,7 +6,8 @@
   "year": "2021",
   "venue": "ICIDS",
   "venue_long": "International Conference on Interactive Digital Storytelling",
-  "pubtype": "full"
+  "pubtype": "full",
+  "acceptrate": "25.35%"
 },
 {
   "title": "Toward Narrative Instruments",
@@ -16,7 +17,7 @@
   "venue": "ICIDS",
   "venue_long": "International Conference on Interactive Digital Storytelling",
   "pubtype": "full",
-  "award": "Nominated for best short paper."
+  "award": "Best short paper honorable mention (top 17%)."
 },
 {
   "title": "Emergent Narrative and Reparative Play",
@@ -26,7 +27,7 @@
   "venue": "ICIDS",
   "venue_long": "International Conference on Interactive Digital Storytelling",
   "pubtype": "full",
-  "award": "Nominated for best short paper."
+  "award": "Best short paper honorable mention (top 17%)."
 },
 {
   "title": "Opportunities for Approachable Game Development via Program Synthesis",
@@ -55,7 +56,8 @@
   "venue_long": "Artificial Intelligence and Interactive Digital Entertainment",
   "venue_note": "poster paper",
   "pubtype": "full",
-  "acceptrate": "50% (for oral + poster presentation)"
+  "acceptrate": "50%",
+  "acceptnote": "combined rate for oral + poster presentations"
 },
 {
   "title": "A Demonstration of Blabrecs, an AI-Based Wordgame",
@@ -75,6 +77,7 @@
   "venue": "ICCC",
   "venue_long": "International Conference on Computational Creativity",
   "venue_note": "poster paper",
+  "acceptrate": "56%",
   "pubtype": "full"
 },
 {
@@ -84,7 +87,8 @@
   "year": "2021",
   "venue": "CoG",
   "venue_long": "IEEE Conference on Games",
-  "pubtype": "full"
+  "pubtype": "full",
+  "acceptrate": "49.1%"
 },
 {
   "title": "There Is No Escape: Theatricality in Hades",
@@ -94,7 +98,8 @@
   "venue": "FDG",
   "venue_long": "Foundations of Digital Games",
   "pubtype": "full",
-  "award": "Best paper, Game Criticism and Analysis track."
+  "award": "Best paper, Game Criticism and Analysis track (top 14%).",
+  "acceptrate": "38%"
 },
 {
   "title": "Generating Playable RPG ROMs for the Game Boy",
@@ -104,7 +109,7 @@
   "venue": "FDG",
   "venue_long": "Foundations of Digital Games",
   "pubtype": "pe_or_demo",
-  "award": "Best game or demo."
+  "award": "Best game or demo (top 20%)."
 },
 {
   "title": "Academical: A Choice-Based Interactive Storytelling Game for Enhancing Moral Reasoning, Knowledge, and Attitudes in Responsible Conduct of Research",
@@ -133,7 +138,8 @@
   "year": "2021",
   "venue": "CHI LBW",
   "venue_long": "CHI Late-Breaking Work on Human Factors in Computing Systems",
-  "pubtype": "full"
+  "pubtype": "full",
+  "acceptrate": "39.0%"
 },
 {
   "title": "Toward Example-Driven Program Synthesis of Story Sifting Patterns",
@@ -180,7 +186,9 @@
   "year": "2020",
   "venue": "FDG",
   "venue_long": "Foundations of Digital Games",
-  "pubtype": "full"
+  "pubtype": "full",
+  "acceptrate": "57%",
+  "acceptnote": "short + late-breaking papers",
 },
 {
   "title": "Getting Academical: A Choice-Based Interactive Storytelling Game for Teaching Responsible Conduct of Research",
@@ -190,7 +198,8 @@
   "venue": "FDG",
   "venue_long": "Foundations of Digital Games",
   "pubtype": "full",
-  "award": "Exceptional paper."
+  "acceptrate": "36%",
+  "award": "Exceptional paper (top 22%)."
 },
 {
   "title": "Why Are We Like This?: Exploring Writing Mechanics for an AI-Augmented Storytelling Game",
@@ -208,6 +217,7 @@
   "year": "2020",
   "venue": "CHI LBW",
   "venue_long": "CHI Late-Breaking Work on Human Factors in Computing Systems",
+  "acceptrate": "41.8%",
   "pubtype": "full"
 },
 {
@@ -275,7 +285,8 @@
   "venue": "FDG",
   "venue_long": "Foundations of Digital Games",
   "pubtype": "full",
-  "award": "Best paper honorable mention."
+  "acceptrate": "37.10%",
+  "award": "Best paper honorable mention (top 17%)."
 },
 {
   "title": "Sketching a Map of the Storylets Design Space",
@@ -323,6 +334,7 @@
   "year": "2018",
   "venue": "DUXU",
   "venue_long": "Design, User Experience, and Usability",
-  "pubtype": "full"
+  "pubtype": "full",
+  "acceptrate": "26.8%"
 }
 ]
