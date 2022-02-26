@@ -1,5 +1,14 @@
 [
 {
+  "title": "Conversation Balance: An VR Interaction to Improve the Remote Work Social Experience",
+  "url": "",
+  "authors": ["Jialang Victor Li", "Max Kreminski", "Sean M. Fernandes", "Anya Osborne", "Joshua McVeigh-Schultz", "Katherine Isbister"],
+  "year": "2022",
+  "venue": "CHI Interactivity",
+  "venue_long": "CHI Interactivity",
+  "pubtype": "pe_or_demo"
+},
+{
   "title": "Evaluating Mixed-Initiative Creative Interfaces via Expressive Range Coverage Analysis",
   "url": "https://mkremins.github.io/publications/ERaCA_HAI-GEN2022.pdf",
   "authors": ["Max Kreminski", "Isaac Karth", "Michael Mateas", "Noah Wardrip-Fruin"],
