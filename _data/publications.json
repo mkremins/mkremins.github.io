@@ -1,5 +1,14 @@
 [
 {
+  "title": "Reevaluating the Role of Relatedness in Single-Player Roleplaying Games",
+  "url": "",
+  "authors": ["Katelyn M. Grasse", "Max Kreminski", "Noah Wardrip-Fruin", "Michael Mateas", "Edward F. Melcer"],
+  "year": "2022",
+  "venue": "SDT-HCI",
+  "venue_long": "CHI Workshop on Self-Determination Theory in HCI: Shaping a Research Agenda",
+  "pubtype": "workshop"
+},
+{
   "title": "Conversation Balance: An VR Interaction to Improve the Remote Work Social Experience",
   "url": "",
   "authors": ["Jialang Victor Li", "Max Kreminski", "Sean M. Fernandes", "Anya Osborne", "Joshua McVeigh-Schultz", "Katherine Isbister"],
