@@ -120,6 +120,12 @@
   "venue_long": "Roguelike Celebration"
 },
 {
+  "title": "Approachable Authoring Tools for Simulation-Driven Interactive Storyworlds",
+  "year": "2019",
+  "venue": "UCSC CROSS",
+  "venue_long": "UCSC Center for Research in Open Source Software (CROSS)"
+},
+{
   "title": "Changes over the last 10 years in PCG research and practice",
   "members": ["Kate Compton", "Max Kreminski", "Adam Smith", "Anne Sullivan", "Julian Togelius"],
   "year": "2019",
