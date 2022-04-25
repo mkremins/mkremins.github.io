@@ -1,5 +1,17 @@
 [
 {
+  "title": "Authoring for Story Sifters",
+  "url": "",
+  "authors": ["Max Kreminski", "Noah Wardrip-Fruin", "Michael Mateas"],
+  "year": "2022",
+  "venue": "In <em>The Authoring Problem: Challenges in Supporting Authoring for Interactive Digital Narratives</em>",
+  "venue_long": "<em>The Authoring Problem: Challenges in Supporting Authoring for Interactive Digital Narratives</em>",
+  "booktitle": "The Authoring Problem: Challenges in Supporting Authoring for Interactive Digital Narratives",
+  "inpress": true,
+  "publisher": "Springer",
+  "pubtype": "chapter"
+},
+{
   "title": "Unmet Creativity Support Needs in Computationally Supported Creative Writing",
   "url": "https://mkremins.github.io/publications/WritingSupportNeeds_In2Writing2022.pdf",
   "authors": ["Max Kreminski", "Chris Martens"],
