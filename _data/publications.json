@@ -1,5 +1,14 @@
 [
 {
+  "title": "Unmet Creativity Support Needs in Computationally Supported Creative Writing",
+  "url": "https://mkremins.github.io/publications/WritingSupportNeeds_In2Writing2022.pdf",
+  "authors": ["Max Kreminski", "Chris Martens"],
+  "year": "2022",
+  "venue": "In2Writing",
+  "venue_long": "ACL Workshop on Intelligent and Interactive Writing Assistants",
+  "pubtype": "workshop"
+},
+{
   "title": "Reevaluating the Role of Relatedness in Single-Player Roleplaying Games",
   "url": "",
   "authors": ["Katelyn M. Grasse", "Max Kreminski", "Noah Wardrip-Fruin", "Michael Mateas", "Edward F. Melcer"],
