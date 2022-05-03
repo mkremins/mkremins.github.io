@@ -30,8 +30,8 @@
   "pubtype": "workshop"
 },
 {
-  "title": "Conversation Balance: An VR Interaction to Improve the Remote Work Social Experience",
-  "url": "",
+  "title": "Conversation Balance: A Shared VR Visualization to Support Turn-taking in Meetings",
+  "url": "https://mkremins.github.io/publications/ConversationBalance_CHI2022.pdf",
   "authors": ["Jialang Victor Li", "Max Kreminski", "Sean M. Fernandes", "Anya Osborne", "Joshua McVeigh-Schultz", "Katherine Isbister"],
   "year": "2022",
   "venue": "CHI Interactivity",
