@@ -1,5 +1,17 @@
 [
 {
+  "title": "Loose Ends: A Mixed-Initiative Creative Interface for Playful Storytelling",
+  "url": "",
+  "authors": ["Max Kreminski", "Melanie Dickinson", "Noah Wardrip-Fruin", "Michael Mateas"],
+  "year": "2022",
+  "venue": "AIIDE",
+  "venue_long": "Artificial Intelligence and Interactive Digital Entertainment",
+  "venue_note": "poster paper",
+  "pubtype": "full",
+  "acceptrate": "61%",
+  "acceptnote": "combined rate for oral + poster presentations"
+},
+{
   "title": "Authoring for Story Sifters",
   "url": "",
   "authors": ["Max Kreminski", "Noah Wardrip-Fruin", "Michael Mateas"],
