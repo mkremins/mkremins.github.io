@@ -1,0 +1,166 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>{{page.title}}</title>
+  <style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  @media only screen and (max-width: 480px) {
+    body { font-size: 16px; }
+    .card-text .card-links { font-size: 14px !important; }
+  }
+  h1, h2 {
+    margin-bottom: 1rem;
+  }
+  h1 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  a {
+    color: green;
+  }
+  a[href=""]{
+    color:red; /* highlight broken links */
+  }
+  ::selection {
+    background: green;
+    color: white;
+  }
+  header {
+    background: rgba(69,136,51,0.12);
+    background-size: 40px 40px;
+    background-position: 10px 10px;
+    background-image: linear-gradient(to right, #ded 1px, transparent 1px),
+                      linear-gradient(to bottom, #ded 1px, transparent 1px);
+  }
+  header .left, .container {
+    margin: 0 auto;
+    max-width: 85ch;
+    padding: 2ch;
+  }
+  /* header stuff */
+  header .left {
+    position: relative;
+    padding: 4ch 2ch;
+    margin-bottom: 2ch;
+  }
+  .header-affiliation {
+    margin: 0;
+  }
+  /* nav stuff */
+  nav ul {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+  }
+  nav li {
+    margin-right: 1ch;
+  }
+  /* footer stuff */
+  footer {
+    background: #111;
+    color: white;
+    margin-top: 2rem;
+  }
+  footer nav ul {
+    justify-content: flex-end;
+  }
+  footer a {
+    color: inherit;
+  }
+  footer nav a {
+    text-decoration: none;
+  }
+  footer nav a:hover {
+    text-decoration: underline;
+  }
+  /* cards stuff */
+  .card { display: flex; flex-flow: row wrap; align-items: center; margin-bottom: 1rem; }
+  .card:last-child { margin-bottom: 0; }
+  .card-image { margin-right: 2%; width: 28%; overflow: hidden; }
+  .card-image img { width: 100%; }
+  .card-text { width: 70%; }
+  .card-text .card-title { font-weight: bold; }
+  .card-text .card-links { font-size: 16px; }
+  @media only screen and (max-width: 560px) {
+    .card-image { width: 60% !important; border: 1px solid #ccc; padding: 1ch; margin-bottom: 0.25rem; }
+    .card-text { width: 100% !important; }
+  }
+  /* headshot */
+  .headshot {
+    position: absolute;
+    right: 2ch;
+    top: 65px;
+    width: 150px;
+    border-radius:50%;
+    height: 150px;
+    overflow: hidden;
+  }
+  .headshot img {
+    width: 100%;
+  }
+  @media only screen and (max-width: 640px) {
+    .headshot { display: none; }
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="left">
+      <h1><a href="/">Max Kreminski</a></h1>
+      <div class="headshot"><img src="/img/headshot.jpg" alt="Me in my workspace."></div>
+      <p class="header-affiliation">
+        Assistant Professor, Computer Science and Engineering<br>
+        Santa Clara University
+      </p>
+      <p class="header-pronoun">Pronouns: <a href="https://pronoun.is/they">they/them</a></p>
+      <nav>
+        <ul>
+          <li><a href="mailto:mkreminski@scu.edu">email</a></li>
+          <li><a href="/cv">cv</a></li>
+          <li><a href="https://scholar.google.com/citations?user=Ja4R1yEAAAAJ">scholar</a></li>
+          <li><a href="/blog">blog</a></li>
+          <li><a href="https://twitter.com/maxkreminski">twitter</a></li>
+          <li><a href="https://github.com/mkremins">github</i></a></li>
+          <li><a href="https://mkremins.itch.io">itch.io</i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+  {{ content }}
+  </main>
+  <footer>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="mailto:mkreminski@scu.edu">email</a></li>
+          <li><a href="/cv">cv</a></li>
+          <li><a href="https://scholar.google.com/citations?user=Ja4R1yEAAAAJ">scholar</a></li>
+          <li><a href="/blog">blog</a></li>
+          <li><a href="https://twitter.com/maxkreminski">twitter</a></li>
+          <li><a href="https://github.com/mkremins">github</i></a></li>
+          <li><a href="https://mkremins.itch.io">itch.io</i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

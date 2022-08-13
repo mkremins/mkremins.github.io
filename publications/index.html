@@ -1,0 +1,29 @@
+---
+title: Max Kreminski – Publications
+layout: main
+---
+<style>
+h3 { margin-top: 1rem; margin-bottom: 1rem; text-align: center; }
+.pubs { margin-left: 1.5rem; }
+.pub { margin-bottom: 0.5rem; }
+.author, .venue { white-space: nowrap; }
+</style>
+<section id="publications">
+  <div class="container">
+    <h2 class="section-title">Publications</h2>
+    <p>This page lists my publications concisely in simple reverse chronological order, so that it’s easy to see what I've published most recently. For a more detailed list that also breaks publications down by type, see the <a href="/cv#publications">publications section</a> of my full CV.</p>
+    {%- assign years_seen = "" | split: "" -%}
+    {%- for pub in site.data.publications -%}
+      {%- unless years_seen contains pub.year -%}
+        {%- unless years_seen.size == 0 -%}</ol>{%- endunless -%}
+        <h3 id="year-{{pub.year}}">{{ pub.year }}</h3>
+        <ol reversed class="pubs">
+      {%- endunless -%}
+      <li class="pub">
+        <strong>{% if pub.url and pub.url != "" %}<a href="{{pub.url}}">{{pub.title}}</a>{% else %}{{pub.title}}{% endif %}</strong>. <span class="author">{{pub.authors | join: "</span>, <span class='author'>"}}</span>.
+        {% if pub.pubtype == "chapter" %}In <em>{{pub.booktitle}}</em>{% elsif pub.pubtype == "journal" %}{{pub.venue}}{% else %}<span class="venue">{{pub.venue}} {{pub.year}}</span>{% endif %}. {% if pub.award and pub.award != "" %} <strong class="award">[{{pub.award | split: " (" | first}}.]</strong>{% endif %}
+      </li>
+      {%- assign years_seen = years_seen | push: pub.year -%}
+    {%- endfor -%}
+  </div>
+</section>
