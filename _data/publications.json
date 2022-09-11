@@ -24,6 +24,15 @@
   "pubtype": "chapter"
 },
 {
+  "title": "AI for AUs: Challenges of Creating Interactive Virtual Characters for Immersive Fanfiction Sandboxes",
+  "url": "https://mkremins.github.io/publications/AIForAUs_Metaverse2022.pdf",
+  "authors": ["Max Kreminski"],
+  "year": "2022",
+  "venue": "FDG Metaverse Workshop",
+  "venue_long": "FDG Workshop on Games and the Metaverse",
+  "pubtype": "workshop"
+},
+{
   "title": "Using Self-Determination Theory to Explore Enjoyment of Educational Interactive Narrative Games: A Case Study of Academical",
   "url": "https://mkremins.github.io/publications/RCR_FrVR2022.pdf",
   "authors": ["Katelyn M. Grasse", "Max Kreminski", "Noah Wardrip-Fruin", "Michael Mateas", "Edward F. Melcer"],
