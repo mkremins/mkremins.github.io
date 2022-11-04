@@ -14,7 +14,7 @@ layout: null
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   /* basic page structure */
-  :root { --left-column-width: 4rem; --wide-left-column-width: 7rem; };
+  :root { --left-column-width: 4rem; --wide-left-column-width: 6rem; };
   html { font-size: 16px; }
   body { font-family: "Computer Modern Sans", sans-serif; line-height: 1.5; }
   main { margin: 2rem auto; max-width: 94ch; padding: 0 2ch; }
@@ -39,12 +39,10 @@ layout: null
 
   /* dated entries */
   .dated-entry { display: flex; flex-flow: row wrap; position: relative; margin-bottom: 0.5rem; }
-  .dated-date { width: var(--left-column-width); text-align: left; padding-right: 2rem; }
+  .dated-date { width: var(--left-column-width); text-align: left; }
   .dated-content { width: calc(100% - var(--left-column-width)); }
   .wide-left-column .dated-date { width: var(--wide-left-column-width); }
   .wide-left-column .dated-content { width: calc(100% - var(--wide-left-column-width)); }
-  #publications .dated-date { width: 3.5rem; }
-  #publications .dated-content { width: calc(100% - 3.5rem); }
 
   .oneline-entries { margin-bottom: 0.5rem; }
   .oneline-entries .dated-entry { margin-bottom: 0; }
