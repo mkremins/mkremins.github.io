@@ -221,7 +221,7 @@ layout: null
         <div class="dated-date">{%- unless years_seen contains talk.year %}{{talk.year}}{%- endunless -%}</div>
         <div class="dated-content">
         {% if talk.type == "panel" %}Panelist, {% endif %}
-        {% if talk.url and talk.url != "" %}<a href="{{talk.url}}">“{{fulltitle}}”</a>{% else %}“{{fulltitle}}”{% endif %} {% if talk.subvenue and talk.subvenue != "" %}{{talk.subvenue}}, {% endif %}{{talk.venue_long}}{% if talk.venue_short %} ({{talk.venue_short}}){% endif %}, {{talk.year}}.
+        <em>{% if talk.url and talk.url != "" %}<a href="{{talk.url}}">{{fulltitle}}</a>{% else %}{{fulltitle}}{% endif %}</em> {% if talk.subvenue and talk.subvenue != "" %}{{talk.subvenue}}, {% endif %}{{talk.venue_long}}{% if talk.venue_short %} ({{talk.venue_short}}){% endif %}, {{talk.year}}.
         </div>
       </div>
       {%- assign years_seen = years_seen | push: talk.year -%}
