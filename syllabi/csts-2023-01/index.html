@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>Creativity Support Tools (Winter 2023)</title>
+  <style>
+  :root { --main-color: rgb(179,7,56); /*--alt-color: rgb(134,38,51);*/ }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Source Sans Pro", sans-serif; font-size: 18px; line-height: 1.5; }
+  @media only screen and (max-width: 480px) {
+    body { font-size: 16px; }
+  }
+  h2 { margin-bottom: 1rem; }
+  h1 a { color: inherit; text-decoration: none; }
+  p, ul { margin-top: 1rem; margin-bottom: 1rem; }
+  ul { padding-left: 1rem; }
+  li { margin-bottom: 0.5rem; }
+  p:last-child, ul:last-child { margin-bottom: 0; }
+  a { color: var(--main-color); }
+  a[href=""]{ color:red; /* highlight broken links */ }
+  #page-header { background: var(--main-color); color: white; }
+  .container { padding: 2ch; margin: 0 auto; max-width: 85ch; }
+  th { text-align: left; }
+  </style>
+</head>
+<body>
+  <header id="page-header">
+    <div class="container">
+      <h1><a href=".">Creativity Support Tools</a></h1>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <h2>Course Overview</h2>
+      <p>
+        <strong>Listed as:</strong> SCU COEN 296B<br>
+        <strong>Instructor:</strong> <a href="/">Max Kreminski</a><br>
+        <strong>Offered:</strong> Winter (Jan-Mar) 2023
+      </p>
+      <p>Design, development, and evaluation of software systems intended to support human creativity. Students will read, write responses to, and discuss research papers on creativity support tools (CSTs), human-AI interaction, and related topics; work in small groups to create a software tool that supports artists, writers, designers, musicians, or other creative practitioners; and write a final project report that could serve as the seed for a future peer-reviewed conference or journal publication. HCI-focused complement to COEN 291 Computational Creativity, which approaches creativity from an AI-focused perspective.</p>
+      <h2>Schedule</h2>
+      <p><em>This schedule is still actively under construction and subject to change.</em></p>
+      <h3>Week 1: What are CSTs?</h3>
+      <ul>
+        <li><a href="https://www.cs.umd.edu/hcil/CST/Papers/designprinciples.pdf">Design Principles for Tools to Support Creative Thinking</a> (Resnick et al. 2005). Key takeaways: a preliminary definition of CSTs, and the narrower genre of “composition tools”; low threshold, high ceiling, wide walls; evaluating creativity as an open problem.</li>
+        <li><a href="http://www.peterdalsgaard.com/documents/publications/Frich_Mapping_the_Landscape_of_Creativity_Support_Tools_in_HCI.pdf">Mapping the Landscape of Creativity Support Tools in HCI</a> (Frich et al. 2019). Key takeaways: different parts of the creative process that CSTs can target; bias toward studying novice users in CSTs research; evaluating creativity as a <em>still</em>-open problem.</li>
+      </ul>
+      <h3>Week 2: Understanding creativity</h3>
+      <ul>
+        <li><a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E74A8FA0906C3AA5A1813FFBD56860F9/S147717560000230Xa.pdf/div-class-title-creativity-in-a-nutshell-div.pdf">Creativity in a Nutshell</a> (Boden 2007). Key takeaways: P-creativity vs. H-creativity; novelty, surprise, and value.</li>
+        <li><a href="https://drive.google.com/file/d/1QdO7nFcvCF9TP1K1Oi_arFx_x3le2mzg/view?usp=sharing">Design as a Reflective Conversation with the Situation</a> (Schön 1984). Key takeaways: the design-as-conversation metaphor; “moves”, sometimes called “design moves”; close observation of human creative processes as a research method.</li>
+        <li><a href="http://johngero.com/publications/2011/10GeroFixationJnlCreatveBehavior.pdf">Fixation and Commitment While Designing and Its Measurement</a> (Gero 2011). Key takeaways: fixation and commitment; one potential strategy for visualizing and quantifying a creativity-related phenomenon.</li>
+      </ul>
+      <h3>Week 3: Design metaphors for CSTs</h3>
+      <ul>
+        <li>TBD</li>
+        <!--<li><a href="">Meanings of Tools, Support, and Uses for Creative Design Processes</a> (Nakakoji 2006). Key takeaways: “dumbbells”, “running shoes”, and “skis” as design metaphors for CSTs with three different kinds of high-level aims: improving the user, improving the output, and introducing a new kind of creative activity altogether.</li>
+        <li><a href=""></a></li>-->
+      </ul>
+      <h3>Week 4: Experience-focused CST design</h3>
+      <ul>
+        <li>TBD</li>
+        <!--<li><a href="https://computationalcreativity.net/iccc2015/proceedings/10_2Compton.pdf">Casual Creators</a> (Compton and Mateas 2015). Key takeaways: CSTs can be designed to prioritize the experience of the creative <em>process</em> over the end result.</li>
+        <li><a href="https://mkremins.github.io/publications/ReflectiveCreators_ICCC2021.pdf">Reflective Creators</a> (Kreminski and Mateas 2021). Key takeaways: CSTs can be designed to prioritize experiential goals other than ease and pleasure, e.g., reflection.</li>-->
+      </ul>
+      <h3>Week 5: Prototyping CSTs</h3>
+      <ul>
+        <li>TBD</li>
+        <!--<li><a href="">TBD on Wizard-of-Oz prototyping</a>? Key takeaways: Wizard-of-Oz (WOz) prototyping, i.e., having a human stand in for unimplemented parts of your software to enable rapid testing of new interaction paradigms.</li>
+        <li><a href="">TBD on paper prototyping</a>? Key takeaways: paper prototyping, i.e., simulating a software user interface via paper, pencil, other office supplies, and human operators in place of the computer.</li>
+        <li><a href="">TBD on rapid iterative playtesting</a>? Key takeaways: getting people to use your system as soon and as often as possible.</li>
+        <li><a href="https://adamsmith.as/papers/caricatures.pdf">Computational Caricatures: Probing the Game Design Process with AI</a> (Smith and Mateas 2011). Key takeaways: CSTs can be designed as “computational caricatures”, with explicit <em>claims</em> (to be recognized and tested), <em>oversimplifications</em> (to be overlooked), and <em>abstractions</em> (to be reused in later work).</li>-->
+      </ul>
+      <h3>Week 6: Evaluating CSTs</h3>
+      <ul>
+        <li>TBD</li>
+      </ul>
+      <h3>Week 7: Topic TBD</h3>
+      <ul>
+        <li>TBD</li>
+      </ul>
+      <h3>Week 8: Topic TBD</h3>
+      <ul>
+        <li>TBD</li>
+      </ul>
+      <h3>Week 9: Topic TBD</h3>
+      <ul>
+        <li>TBD</li>
+      </ul>
+      <h3>Week 10: Topic TBD</h3>
+      <ul>
+        <li>TBD</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
