@@ -6,23 +6,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <title>Creativity Support Tools (Winter 2023)</title>
   <style>
-  :root { --main-color: rgb(179,7,56); /*--alt-color: rgb(134,38,51);*/ }
+  /* basic page structure and defaults */
+  :root { --main-color: rgb(179,7,56); }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: "Source Sans Pro", sans-serif; font-size: 18px; line-height: 1.5; }
-  @media only screen and (max-width: 480px) {
-    body { font-size: 16px; }
-  }
-  h2 { margin-bottom: 1rem; }
+  @media only screen and (max-width: 480px) { body { font-size: 16px; } }
+  .container { padding: 2ch; margin: 0 auto; max-width: 85ch; }
+  ::selection { background: var(--main-color); color: white; }
+  /* page header */
+  #page-header { background: var(--main-color); color: white; }
   h1 a { color: inherit; text-decoration: none; }
+  /* main page content */
+  h2 { margin-bottom: 1rem; }
   p, ul { margin-top: 1rem; margin-bottom: 1rem; }
+  p:last-child, ul:last-child { margin-bottom: 0; }
   ul { padding-left: 1rem; }
   li { margin-bottom: 0.5rem; }
-  p:last-child, ul:last-child { margin-bottom: 0; }
   a { color: var(--main-color); }
-  a[href=""]{ color:red; /* highlight broken links */ }
-  #page-header { background: var(--main-color); color: white; }
-  .container { padding: 2ch; margin: 0 auto; max-width: 85ch; }
-  th { text-align: left; }
+  a[href=""] { color: red; /* highlight broken links */ }
   </style>
 </head>
 <body>
@@ -58,7 +59,7 @@
         <li><a href="http://www.kidresearch.jp/publications/IDRS-nakakoji-rev-wt-header.pdf">Meanings of Tools, Support, and Uses for Creative Design Processes</a> (Nakakoji 2006). Key takeaways: <em>running shoes</em>, <em>dumbbells</em>, and <em>skis</em> as design metaphors for CSTs with three different kinds of high-level aims: improving what users create, improving users themselves, and enabling entirely new kinds of creative activity.</li>
         <li><a href="https://mkremins.github.io/refs/ComputerOfAThousandFaces.pdf">Computer of a Thousand Faces: Anthropomorphizations of the Computer in Design (1965-1975)</a> (Vardouli 2012). Key takeaways: anthropomorphic roles as design metaphors for CSTs, including <em>clerk</em>, <em>partner</em>, <em>wizard</em>, <em>surrogate</em>, and <em>accountant</em>.</li>
         <li><a href="https://www.antoniosliapis.com/papers/can_computers_foster_human_users_creativity.pdf">Can Computers Foster Human Users’ Creativity? Theory and Praxis of Mixed-Initiative Co-Creativity</a> (Liapis et al. 2016). Key takeaways: <em>mixed-initiative</em> interaction patterns, in which the computer proactively intervenes in the creative process.</li>
-        <li>Optional bonus readings: two <a href="http://www.cs.tufts.edu/~jacob/250aui/creativity-hci.pdf">alternative</a> <a href="https://arxiv.org/pdf/1901.06417.pdf">taxonomies</a> of anthropomorphic roles that the computer might play in the design process. Do we ever want the computer to be a “nanny”, “coach”, or “manager”?</li>
+        <li>Optional bonus readings: two <a href="http://www.cs.tufts.edu/~jacob/250aui/creativity-hci.pdf">alternative</a> <a href="https://arxiv.org/pdf/1901.06417.pdf">taxonomies</a> of anthropomorphic roles that the computer might play. Do we ever want the computer to be a “nanny”, “coach”, or “manager”?</li>
       </ul>
       <h3>Week 4: Experience-focused CST design</h3>
       <ul>
