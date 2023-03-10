@@ -1,5 +1,14 @@
 [
 {
+  "title": "“Generator’s Haunted”: A Brief, Spooky Account of Hauntological Effects in the Player Experience of Procedural Generation",
+  "url": "",
+  "authors": ["Max Kreminski"],
+  "year": "2023",
+  "venue": "PCG",
+  "venue_long": "FDG Workshop on Procedural Content Generation",
+  "pubtype": "workshop"
+},
+{
   "title": "Select the Unexpected: A Statistical Heuristic for Story Sifting",
   "url": "https://mkremins.github.io/publications/StU_ICIDS2022.pdf",
   "authors": ["Max Kreminski", "Melanie Dickinson", "Noah Wardrip-Fruin", "Michael Mateas"],
