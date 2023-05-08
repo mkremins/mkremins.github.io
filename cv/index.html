@@ -503,81 +503,18 @@ layout: null
     </section>
     <section id="media">
       <h2>Selected Media Coverage</h2>
+      {%- assign years_seen = "" | split: "" -%}
+      {%- for article in site.data.press -%}
+      {%- unless article.hidden -%}
       <div class="dated-entry">
-        <div class="dated-date">2023</div>
-        <div class="dated-content"><a href="https://www.bloomberg.com/news/articles/2023-04-04/google-s-bard-writes-convincingly-about-known-conspiracy-theories">“Google’s Bard Writes Convincingly About Known Conspiracy Theories.”</a> Bloomberg, April 2023.</div>
+        <div class="dated-date">{%- unless years_seen contains article.year -%}{{article.year}}{%- endunless -%}</div>
+        <div class="dated-content"><a href="{{article.url}}">“{{article.title}}”</a><br>{{article.outlet}}, {{article.month}} {{article.year}}</div>
       </div>
-      <div class="dated-entry">
-        <div class="dated-date"></div>
-        <div class="dated-content"><a href="https://www.bloomberg.com/news/newsletters/2023-02-08/chatgpt-reignites-search-competition-microsoft-bing-vs-google-bard">“ChatGPT Reignites the Search Wars Between Google and Microsoft.”</a> Bloomberg, February 2023.</div>
-      </div>
-      <div class="dated-entry">
-        <div class="dated-date"></div>
-        <div class="dated-content"><a href="https://www.npr.org/2023/01/20/1147977527/lensa-ai-artificial-intelligence-photo-app-portraits-prisma">“A rocky past haunts the mysterious company behind the Lensa AI photo app.”</a> NPR, January 2023.</div>
-      </div>
-      <div class="dated-entry">
-        <div class="dated-date">2022</div>
-        <div class="dated-content"><a href="https://www.bloomberg.com/news/articles/2022-06-14/google-has-more-pressing-ai-problems-than-sentient-bots">“Google Debate Over ‘Sentient’ Bots Overshadows Deeper AI Issues.”</a> Bloomberg, June 2022.</div>
-      </div>
+      {%- assign years_seen = years_seen | push: article.year -%}
+      {%- endunless -%}
+      {%- endfor -%}
+      <!-- WSJ Blabrecs coverage? -->
       <!-- Scholastic VR interview? -->
-      <div class="dated-entry">
-        <div class="dated-date">2021</div>
-        <div class="dated-content"><a href="https://www.polygon.com/22858564/placement-games-unpacking-dorfromantik-xbox-game-pass-pc-series-x">“Placement games were 2021’s most calming trend.”</a> Polygon, December 2021.</div>
-      </div>
-      <div class="dated-entry">
-        <div class="dated-date"></div>
-        <div class="dated-content"><a href="https://www.theverge.com/2021/11/30/22807568/procedural-storytelling-video-games-dwarf-fortress-wildermyth-blaseball">“Procedural storytelling is exploding the possibilities of video game narratives.”</a> The Verge, November 2021.</div>
-      </div>
-      <div class="dated-entry">
-        <div class="dated-date"></div>
-        <div class="dated-content"><a href="https://slate.com/podcasts/spectacular-vernacular/2021/08/are-you-spectacular-vernaculars-next-spelling-bee-champion">“How the Grid Kid Became King of the Online Spelling Bee.”</a> Spectacular Vernacular (Slate podcast), August 2021.</div>
-      </div>
-      <!--
-      <div class="dated-entry">
-        <div class="dated-date">2021</div>
-        <div class="dated-content"><a href="https://www.thegamer.com/interview-the-fermi-paradox/">“Interview: The Fermi Paradox - A Harsh Look At Our Troubled Galaxy.”</a> TheGamer, June 2021.</div>
-      </div>
-      -->
-      <div class="dated-entry">
-        <div class="dated-date"></div>
-        <div class="dated-content"><a href="https://www.newscientist.com/article/mg24933162-600-why-you-should-trust-reindeer-to-pick-stocks-over-politicians/">“Why you should trust reindeer to pick stocks over politicians”</a> (<em>Feedback</em> column). New Scientist, January 2021.</div>
-      </div>
-      <!--
-      <div class="dated-entry">
-        <div class="dated-date"></div>
-        <div class="dated-content"><a href="https://elluba.medium.com/creative-ai-newsletter-10-art-design-and-music-updates-from-2020-6be7a2e26c49">“Creative AI newsletter #10 — Art, Design and Music updates from 2020.”</a> Creative AI Newsletter, January 2021.</div>
-      </div>
-      -->
-      <div class="dated-entry">
-        <div class="dated-date">2020</div>
-        <div class="dated-content"><a href="https://thenextweb.com/neural/2020/12/14/new-ai-scrabble-mod-only-allows-words-that-dont-exist/">“New AI Scrabble mod only allows words that don’t exist.”</a> The Next Web, December 2020.</div>
-      </div>
-      <div class="dated-entry">
-        <div class="dated-date"></div>
-        <div class="dated-content"><a href="https://www.dicebreaker.com/games/scrabble/news/scrabble-variant-nonsense-words-blabrecs-ai">“Scrabble variant Blabrecs lets you play made-up words - but only if you fool an AI into thinking they’re real.”</a> Dicebreaker, December 2020.</div>
-      </div>
-      <div class="dated-entry">
-        <div class="dated-date"></div>
-        <div class="dated-content"><a href="https://becauselanguage.com/17-words-of-the-week-of-the-year-2020/">“17: Words of the Week of the Year 2020.”</a> Because Language, December 2020.</div><!-- 38:05 -->
-      </div>
-      <div class="dated-entry">
-        <div class="dated-date">2019</div>
-        <div class="dated-content"><a href="https://emshort.blog/2019/11/29/storylets-you-want-them/">“Storylets: You Want Them.”</a> Emily Short’s Interactive Storytelling, November 2019.</div>
-      </div>
-      <div class="dated-entry">
-        <div class="dated-date"></div>
-        <div class="dated-content"><a href="https://emshort.blog/2019/01/06/kreminski-on-storylets/">“Survey of Storylets-based Design.”</a> Emily Short’s Interactive Storytelling, January 2019.</div>
-      </div>
-      <!--
-      <div class="dated-entry">
-        <div class="dated-date">2018</div>
-        <div class="dated-content"><a href="https://www.chronicle.com/article/have-academics-finally-found-the-perfect-meme/">“Have Academics Finally Found the Perfect Meme?”</a> Chronicle of Higher Education, April 2018.</div>
-      </div>
-      -->
-      <div class="dated-entry">
-        <div class="dated-date">2017</div>
-        <div class="dated-content"><a href="https://www.rockpapershotgun.com/2017/01/18/apocalypse-fiction/">“IF Only: Apocalypse Eve.”</a> Rock Paper Shotgun, January 2017.
-      </div>
     </section>
   </main>
 </body>
