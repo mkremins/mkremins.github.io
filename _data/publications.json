@@ -50,6 +50,15 @@
   "award": "Best artifact"
 },
 {
+  "title": "Narrative Instruments: AI-Based Playable Media for Storytelling",
+  "url": "https://escholarship.org/uc/item/4vj649w6",
+  "authors": ["Max Kreminski"],
+  "year": "2022",
+  "venue": "UCSC",
+  "venue_long": "University of California, Santa Cruz",
+  "pubtype": "thesis"
+},
+{
   "title": "Authoring for Story Sifters",
   "url": "https://mkremins.github.io/publications/AuthoringSifters_TAP.pdf",
   "authors": ["Max Kreminski", "Noah Wardrip-Fruin", "Michael Mateas"],
@@ -285,6 +294,15 @@
   "venue_long": "Artificial Intelligence and Interactive Digital Entertainment",
   "venue_note": "playable experience paper",
   "pubtype": "pe_or_demo"
+},
+{
+  "title": "Designing to Support Authorship Play in Emergent Narrative Games",
+  "url": "https://escholarship.org/uc/item/47n0221v",
+  "authors": ["Max Kreminski"],
+  "year": "2020",
+  "venue": "UCSC",
+  "venue_long": "University of California, Santa Cruz",
+  "pubtype": "thesis"
 },
 {
   "title": "Tabletop Roleplaying Games as Procedural Content Generators",
