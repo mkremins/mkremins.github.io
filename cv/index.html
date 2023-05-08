@@ -220,12 +220,12 @@ layout: null
       <h2>Invited Talks and Panels</h2>
       {%- assign years_seen = "" | split: "" -%}
       {% for talk in site.data.talks %}
-      {%- assign fulltitle = talk.title | append: "." | replace: "!.", "!" -%}
+      {%- assign fulltitle = talk.title -%}
       <div class="dated-entry">
         <div class="dated-date">{%- unless years_seen contains talk.year %}{{talk.year}}{%- endunless -%}</div>
         <div class="dated-content">
-        {% if talk.type == "panel" %}Panelist, {% endif %}
-        <em>{% if talk.url and talk.url != "" %}<a href="{{talk.url}}">{{fulltitle}}</a>{% else %}{{fulltitle}}{% endif %}</em> {% if talk.subvenue and talk.subvenue != "" %}{{talk.subvenue}}, {% endif %}{{talk.venue_long}}{% if talk.venue_short %} ({{talk.venue_short}}){% endif %}, {{talk.year}}.
+        {% if talk.type == "panel" %}Panelist, {% elsif talk.type == "guest_lecture" %}Guest lecturer, {% endif %}
+        <em>{% if talk.url and talk.url != "" %}<a href="{{talk.url}}">{{fulltitle}}</a>{% else %}{{fulltitle}}{% endif %}</em><br>{% if talk.subvenue and talk.subvenue != "" %}{{talk.subvenue}}, {% endif %}{{talk.venue_long}}{% if talk.venue_short %} ({{talk.venue_short}}){% endif %}
         </div>
       </div>
       {%- assign years_seen = years_seen | push: talk.year -%}
