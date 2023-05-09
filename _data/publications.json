@@ -1,5 +1,14 @@
 [
 {
+  "title": "Being Social in VR Meetings: A Landscape Analysis of Current Tools",
+  "url": "",
+  "authors": ["Anya Osborne", "Sabrina Fielder", "Joshua McVeigh-Schultz", "Timothy Lang", "Max Kreminski", "George Butler", "Jialang Victor Li", "Diana R. Sanchez", "Katherine Isbister"],
+  "year": "2023",
+  "venue": "DIS",
+  "venue_long": "Designing Interactive Systems",
+  "pubtype": "full"
+},
+{
   "title": "“Generator’s Haunted”: A Brief, Spooky Account of Hauntological Effects in the Player Experience of Procedural Generation",
   "url": "https://mkremins.github.io/publications/Hauntology_PCG2023.pdf",
   "authors": ["Max Kreminski"],
