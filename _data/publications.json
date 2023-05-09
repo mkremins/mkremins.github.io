@@ -6,6 +6,7 @@
   "year": "2023",
   "venue": "PCG",
   "venue_long": "FDG Workshop on Procedural Content Generation",
+  "parent_venue": "FDG",
   "pubtype": "workshop"
 },
 {
@@ -74,8 +75,9 @@
   "url": "https://mkremins.github.io/publications/AIForAUs_Metaverse2022.pdf",
   "authors": ["Max Kreminski"],
   "year": "2022",
-  "venue": "FDG Metaverse Workshop",
+  "venue": "Metaverse Workshop",
   "venue_long": "FDG Workshop on Games and the Metaverse",
+  "parent_venue": "FDG",
   "pubtype": "workshop"
 },
 {
@@ -94,6 +96,7 @@
   "year": "2022",
   "venue": "In2Writing",
   "venue_long": "ACL Workshop on Intelligent and Interactive Writing Assistants",
+  "parent_venue": "ACL",
   "pubtype": "workshop"
 },
 {
@@ -103,6 +106,7 @@
   "year": "2022",
   "venue": "SDT-HCI",
   "venue_long": "CHI Workshop on Self-Determination Theory in HCI: Shaping a Research Agenda",
+  "parent_venue": "CHI",
   "pubtype": "workshop"
 },
 {
@@ -121,7 +125,19 @@
   "year": "2022",
   "venue": "HAI-GEN",
   "venue_long": "IUI Workshop on Human-AI Co-Creation with Generative Models",
+  "parent_venue": "IUI",
   "pubtype": "workshop"
+},
+{
+  "title": "Academical: A Choice-Based Interactive Storytelling Game for Enhancing Moral Reasoning, Knowledge, and Attitudes in Responsible Conduct of Research",
+  "url": "https://mkremins.github.io/publications/RCR_GaNTaP.pdf",
+  "authors": ["Katelyn M. Grasse", "Edward F. Melcer", "Max Kreminski", "Nick Junius", "James Ryan", "Noah Wardrip-Fruin"],
+  "year": "2021",
+  "venue": "In <em>Games and Narrative: Theory and Practice</em>,",
+  "venue_long": "<em>Games and Narrative: Theory and Practice</em>",
+  "booktitle": "Games and Narrative: Theory and Practice",
+  "publisher": "Springer",
+  "pubtype": "chapter"
 },
 {
   "title": "A Coauthorship-Centric History of Interactive Emergent Narrative",
@@ -160,6 +176,7 @@
   "year": "2021",
   "venue": "PLIE",
   "venue_long": "AIIDE Workshop on Programming Languages and Interactive Entertainment",
+  "parent_venue": "AIIDE",
   "pubtype": "workshop"
 },
 {
@@ -169,6 +186,7 @@
   "year": "2021",
   "venue": "EXAG",
   "venue_long": "AIIDE Workshop on Experimental AI for Games",
+  "parent_venue": "AIIDE",
   "pubtype": "workshop"
 },
 {
@@ -237,23 +255,13 @@
   "award": "Best game or demo (top 16%)"
 },
 {
-  "title": "Academical: A Choice-Based Interactive Storytelling Game for Enhancing Moral Reasoning, Knowledge, and Attitudes in Responsible Conduct of Research",
-  "url": "https://mkremins.github.io/publications/RCR_GaNTaP.pdf",
-  "authors": ["Katelyn M. Grasse", "Edward F. Melcer", "Max Kreminski", "Nick Junius", "James Ryan", "Noah Wardrip-Fruin"],
-  "year": "2022",
-  "venue": "In <em>Games and Narrative: Theory and Practice</em>,",
-  "venue_long": "<em>Games and Narrative: Theory and Practice</em>",
-  "booktitle": "Games and Narrative: Theory and Practice",
-  "publisher": "Springer",
-  "pubtype": "chapter"
-},
-{
   "title": "Social Superpowers in Social VR: Beyond Approximation of Face-to-face",
   "url": "https://mkremins.github.io/publications/SocialSuperpowers_SocialVR2021.pdf",
   "authors": ["Joshua McVeigh-Schultz", "Anya Osborne", "Max Kreminski", "Sean Fernandes", "Sabrina Fielder", "Victor Li", "Tym Lang", "Katherine Isbister"],
   "year": "2021",
   "venue": "SocialVR",
   "venue_long": "CHI Social VR Workshop",
+  "parent_venue": "CHI",
   "pubtype": "workshop"
 },
 {
@@ -273,6 +281,7 @@
   "year": "2020",
   "venue": "INT",
   "venue_long": "AIIDE Workshop on Intelligent Narrative Technologies",
+  "parent_venue": "AIIDE",
   "pubtype": "workshop"
 },
 {
@@ -311,6 +320,7 @@
   "year": "2020",
   "venue": "PCG",
   "venue_long": "FDG Workshop on Procedural Content Generation",
+  "parent_venue": "FDG",
   "pubtype": "workshop"
 },
 {
@@ -391,6 +401,7 @@
   "year": "2019",
   "venue": "UX of AI",
   "venue_long": "FDG Workshop on the User Experience of Artificial Intelligence in Games",
+  "parent_venue": "FDG",
   "pubtype": "workshop"
 },
 {
@@ -400,6 +411,7 @@
   "year": "2019",
   "venue": "PCG",
   "venue_long": "FDG Workshop on Procedural Content Generation",
+  "parent_venue": "FDG",
   "pubtype": "workshop"
 },
 {
@@ -409,6 +421,7 @@
   "year": "2019",
   "venue": "PCG",
   "venue_long": "FDG Workshop on Procedural Content Generation",
+  "parent_venue": "FDG",
   "pubtype": "workshop"
 },
 {
@@ -449,6 +462,7 @@
   "year": "2018",
   "venue": "PCG",
   "venue_long": "FDG Workshop on Procedural Content Generation",
+  "parent_venue": "FDG",
   "pubtype": "workshop"
 },
 {
