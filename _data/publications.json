@@ -1,5 +1,16 @@
 [
 {
+  "title": "Toward Better Gossip Simulation in Emergent Narrative Systems",
+  "url": "",
+  "authors": ["Max Kreminski"],
+  "year": "2023",
+  "venue": "CoG",
+  "venue_long": "IEEE Conference on Games",
+  "pubtype": "full",
+  "acceptrate": "62.5%",
+  "acceptnote": "short papers"
+},
+{
   "title": "Being Social in VR Meetings: A Landscape Analysis of Current Tools",
   "url": "",
   "authors": ["Anya Osborne", "Sabrina Fielder", "Joshua McVeigh-Schultz", "Timothy Lang", "Max Kreminski", "George Butler", "Jialang Victor Li", "Diana R. Sanchez", "Katherine Isbister"],
