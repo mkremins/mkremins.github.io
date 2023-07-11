@@ -12,12 +12,13 @@
 },
 {
   "title": "Being Social in VR Meetings: A Landscape Analysis of Current Tools",
-  "url": "",
+  "url": "https://mkremins.github.io/publications/SocialVR_DIS2023.pdf",
   "authors": ["Anya Osborne", "Sabrina Fielder", "Joshua McVeigh-Schultz", "Timothy Lang", "Max Kreminski", "George Butler", "Jialang Victor Li", "Diana R. Sanchez", "Katherine Isbister"],
   "year": "2023",
   "venue": "DIS",
   "venue_long": "Designing Interactive Systems",
-  "pubtype": "full"
+  "pubtype": "full",
+  "acceptrate": "24.1%"
 },
 {
   "title": "“Generator’s Haunted”: A Brief, Spooky Account of Hauntological Effects in the Player Experience of Procedural Generation",
