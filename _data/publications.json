@@ -1,5 +1,16 @@
 [
 {
+  "title": "Praxish: A Rational Reconstruction of a Logic-Based DSL for Modeling Social Practices",
+  "url": "",
+  "authors": ["James Dameris", "Rosaura Hernandez Roman", "Max Kreminski"],
+  "year": "2023",
+  "venue": "AIIDE",
+  "venue_long": "Artificial Intelligence and Interactive Digital Entertainment",
+  "pubtype": "full",
+  "acceptrate": "60%",
+  "acceptnote": "interactives track"
+},
+{
   "title": "Toward Better Gossip Simulation in Emergent Narrative Systems",
   "url": "https://mkremins.github.io/publications/Gossamer_CoG2023.pdf",
   "authors": ["Max Kreminski"],
