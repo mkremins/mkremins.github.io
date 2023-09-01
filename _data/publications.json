@@ -1,5 +1,14 @@
 [
 {
+  "title": "Blabrecs: An AI-Based Game of Nonsense Word Creation",
+  "url": "",
+  "authors": ["Max Kreminski", "Isaac Karth"],
+  "year": "2023",
+  "venue": "NeurIPS Creative AI",
+  "venue_long": "NeurIPS Creative AI",
+  "pubtype": "pe_or_demo"
+},
+{
   "title": "Praxish: A Rational Reconstruction of a Logic-Based DSL for Modeling Social Practices",
   "url": "https://mkremins.github.io/publications/Praxish_AIIDE2023.pdf",
   "authors": ["James Dameris", "Rosaura Hernandez Roman", "Max Kreminski"],
