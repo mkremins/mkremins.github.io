@@ -9,40 +9,41 @@ layout: null
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <title>Max Kreminski – CV</title>
   <!--<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/font/Sans/cmun-sans.css">-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <style>
   /* reset base styles */
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   /* basic page structure */
-  :root { --left-column-width: 4rem; --wide-left-column-width: 6rem; };
+  :root { --left-column-width: 6rem; };
   html { font-size: 16px; }
-  body { font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; line-height: 1.5; }
+  body { font-family: "EB Garamond", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; line-height: 1.4; }
   main { margin: 2rem auto; max-width: 96ch; padding: 0 2ch; }
 
   /* page header */
-  header { margin-bottom: 2rem; text-align: center; }
-  header h1 { font-size: 1.5rem; }
+  header { margin-bottom: 1.5rem; margin-left: var(--left-column-width);  }
+  header h1 { font-size: 1.5rem; font-weight: normal; }
   header p { margin-bottom: 0; }
 
   /* normal body content */
-  h2, h3 { font-size: 1.1rem; }
-  h2 { text-transform: uppercase; border-bottom: 1px solid #aaa; margin-bottom: 0.5rem; }
-  h3 { margin-bottom: 0.25rem; }
+  h2, h3 { font-weight: normal; }
+  h2 { font-size: 1.25rem; margin-left: var(--left-column-width); margin-bottom: 0.5rem; }
+  h3 { font-size: 1.1rem; font-variant: small-caps; margin-left: var(--left-column-width); margin-bottom: 0.25rem; }
   p { margin-bottom: 0.5rem; }
-  a { color: inherit; /*#0000ee;*/ }
+  a { text-decoration: none; color: /*#5D3FD3;*/ rgb(43,102,144); }
   section { margin-bottom: 1.5rem; }
 
   .author { white-space: nowrap; }
-  .author.self { font-weight: bold; }
+  /*.author.self { font-weight: bold; }*/
   .pub-acceptrate { color: #777; }
-  .pub-award { color: forestgreen; font-weight: bold; }
+  .pub-award { font-weight: bold; }
 
   /* dated entries */
   .dated-entry { display: flex; flex-flow: row wrap; position: relative; margin-bottom: 0.5rem; }
-  .dated-date { width: var(--left-column-width); text-align: left; }
+  .dated-date { width: var(--left-column-width); text-align: right; padding-right: 1.5rem; }
   .dated-content { width: calc(100% - var(--left-column-width)); }
-  .wide-left-column .dated-date { width: var(--wide-left-column-width); }
-  .wide-left-column .dated-content { width: calc(100% - var(--wide-left-column-width)); }
 
   .oneline-entries { margin-bottom: 0.5rem; }
   .oneline-entries .dated-entry { margin-bottom: 0; }
@@ -61,7 +62,7 @@ layout: null
   /* when printing, make the font smaller and the page full-width */
   @media print {
     html { font-size: 12px; }
-    main { margin-top: 0; max-width: 100%; }
+    main { margin-top: 0; max-width: 100%; padding: 0; }
   }
   </style>
 </head>
@@ -69,10 +70,10 @@ layout: null
   <main>
     <header>
       <h1>Max Kreminski</h1>
-      <p>maxkreminski@gmail.com</p>
-      <p><a href="https://mkremins.github.io">mkremins.github.io</a></p>
+      <p>Assistant Professor, Santa Clara University; Research Scientist, Midjourney</p>
+      <p><em>Email</em> <a href="mailto:maxkreminski@gmail.com">maxkreminski@gmail.com</a> <em>Web</em> <a href="https://mkremins.github.io">mkremins.github.io</a></p>
     </header>
-    <section id="education" class="wide-left-column">
+    <section id="education">
       <h2>Education</h2>
       <div class="dated-entry">
         <div class="dated-date">2017-2022</div>
@@ -88,7 +89,7 @@ layout: null
         Minor in Game User Research</div>
       </div>
     </section>
-    <section id="employment" class="wide-left-column">
+    <section id="employment">
       <h2>Employment</h2>
       <div class="dated-entry">
         <div class="dated-date">Since 2023</div>
@@ -101,7 +102,7 @@ layout: null
       </div>
       <div class="dated-entry">
         <div class="dated-date">Since 2020</div>
-        <div class="dated-content"><strong>Independent consulting</strong><br>Clients include Zynga’s Applied AI team and Fable Studio</div>
+        <div class="dated-content"><strong>Independent consulting</strong><br>Clients include Zynga’s Applied AI group and Fable Studio</div>
       </div>
       <div class="dated-entry">
         <div class="dated-date">2017-2022</div>
@@ -153,7 +154,7 @@ layout: null
         </div>
         <div class="dated-entry">
           <div class="dated-date">2021</div>
-          <div class="dated-content">Second Place, Generative Design in Minecraft (GDMC) AI Settlement Generation Competition</div>
+          <div class="dated-content">Second Place, Generative Design in Minecraft Competition</div>
         </div>
         <div class="dated-entry">
           <div class="dated-date">2020</div>
@@ -192,7 +193,7 @@ layout: null
       <h3>Theses and Dissertations</h3>
       {%- include cvpubs.html pubtype="thesis" pubprefix="TD" -%}
     </section>
-    <section id="external-fundraising" class="wide-left-column">
+    <section id="external-fundraising">
       <h2>External Fundraising</h2>
       <!--<h3>Under Review</h3>
       <div class="dated-entry">
@@ -200,22 +201,22 @@ layout: null
         <div class="dated-content"><em>Emerging Technology Support for Sustainable Practices and Waste Management Learning.</em> NSF RETTL. $848,742. Co-PI (with PI Sharon Hsiao, co-PI David Jeong).</div>
       </div>-->
       <h3>In Progress</h3>
-      <p style="color:darkred"><strong>*</strong> Not named as awardee due to graduate student status at time of proposal submission.</p>
+      <p style="color:darkred; margin-left: var(--left-column-width)"><strong>*</strong> Not named as awardee due to graduate student status at time of proposal submission.</p>
       <div class="dated-entry">
         <div class="dated-date">2022-2025</div>
         <div class="dated-content"><em><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2202521">Innovating Online Ethics Training Using a Dynamic Narrative Learning Environment.</a></em> NSF RETTL. $849,964. Proposal coauthor (with PI Edward Melcer, co-PI Michael Mateas, co-PI Noah Wardrip-Fruin).<strong style="color:darkred">*</strong></div>
       </div>
       <div class="dated-entry">
-        <div class="dated-date">2020-2023</div>
-        <div class="dated-content"><em><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2007627">CHS: Small: Collaborative Research: Social Virtual Reality Technology to Improve Networked Meetings.</a></em> NSF CHS. $373,142. Proposal coauthor and supported PhD student (with PI Katherine Isbister).<strong style="color:darkred">*</strong></div>
+        <div class="dated-date">2020-2024</div>
+        <div class="dated-content"><em><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2007627">Social Virtual Reality Technology to Improve Networked Meetings.</a></em> NSF CHS. $373,142. Proposal coauthor and supported PhD student (with PI Katherine Isbister).<strong style="color:darkred">*</strong></div>
       </div>
       <h3>Completed</h3>
       <div class="dated-entry">
-        <div class="dated-date">Oct 2019</div>
+        <div class="dated-date">2019</div>
         <div class="dated-content"><em>AIIDE 2019 Travel Grant.</em> AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment (AIIDE). $1,900.</div>
       </div>
     </section>
-    <section id="internal-fundraising" class="wide-left-column">
+    <section id="internal-fundraising">
       <h2>Internal Fundraising</h2>
       <!--<h3>Under Review</h3>-->
       <h3>In Progress</h3>
@@ -229,16 +230,16 @@ layout: null
       </div>
       <h3>Completed</h3>
       <div class="dated-entry">
-        <div class="dated-date">Mar 2022</div>
+        <div class="dated-date">2022</div>
         <div class="dated-content"><em>Graduate Dean’s Research Travel Grant.</em> UCSC Division of Graduate Studies. $400.</div>
       </div>
       <div class="dated-entry">
-        <div class="dated-date">Su2021</div>
+        <div class="dated-date">2021</div>
         <div class="dated-content"><em>Investigating Instrumental Uses of Interactive Narrative Systems.</em> UCSC Computational Media Department. $8,973. PI.</div>
       </div>
       <div class="dated-entry">
         <div class="dated-date">2017-2018</div>
-        <div class="dated-content"><em>University of California Chancellor’s Fellowship.</em> University of California. $24,000 stipend plus one year of full tuition remission (F2017-Sp2018).</div>
+        <div class="dated-content"><em>University of California Chancellor’s Fellowship.</em> University of California. $24,000 stipend plus one year of full tuition remission.</div>
       </div>
     </section>
     <section id="talks">
@@ -372,16 +373,16 @@ layout: null
       </div>
       -->
     </section>
-    <section id="mentoring" class="wide-left-column">
+    <section id="mentoring">
       <h2>Mentoring and Advising</h2>
       <h3>Master’s Students</h3>
       <div class="dated-entry">
         <div class="dated-date">2023</div>
-        <div class="dated-content">Phoebe J. Wang. Research assistantship: neurosymbolic approaches to human-AI co-creativity in storytelling.</div>
+        <div class="dated-content">Phoebe J. Wang. Neurosymbolic approaches to human-AI co-creativity in storytelling.</div>
       </div>
       <div class="dated-entry">
         <div class="dated-date"></div>
-        <div class="dated-content">Jash Shah. Research assistantship: evaluating large pretrained generative AI models as support tools for creative ideation.</div>
+        <div class="dated-content">Jash Hemant Shah. Human-centered evaluation of large language models as support tools for creative ideation.</div>
       </div>
       <!--<div class="dated-entry">
         <div class="dated-date">2020-2021</div>
@@ -390,7 +391,7 @@ layout: null
       <h3>Undergraduate Students</h3>
       <div class="dated-entry">
         <div class="dated-date">2022-2023</div>
-        <div class="dated-content">James Dameris; Rosie Hernandez. Year-long senior design project: an open-source toolkit for interactive drama authoring inspired by the Versu framework.</div>
+        <div class="dated-content">James Dameris; Rosaura Hernandez Roman. Praxish, an open-source partial reconstruction of the lost interactive drama authoring framework Versu [<a href="#C25">C25</a>].</div>
       </div>
       <!--<div class="dated-entry">
         <div class="dated-date"></div>
@@ -398,23 +399,23 @@ layout: null
       </div>-->
       <div class="dated-entry">
         <div class="dated-date">2021</div>
-        <div class="dated-content">Ari Iramanesh. Student-led independent study project: AgentCraft, an entry for the Generative Design in Minecraft (GDMC) AI Settlement Generation Competition. Resulted in a student-authored publication [<a href="#W8">W8</a>].<br><span class="pub-award">Second place (top 10%) in the 2021 GDMC competition.</span></div>
+        <div class="dated-content">Ari Iramanesh. AgentCraft, an entry for the Generative Design in Minecraft (GDMC) AI Settlement Generation Competition [<a href="#W8">W8</a>]. <span class="pub-award">Second place (top 10%) in the 2021 GDMC competition.</span></div>
       </div>
       <div class="dated-entry">
         <div class="dated-date">2020</div>
-        <div class="dated-content">Camille Miller. Student-led independent study project: Paper Hearts, an approachable digital game creation tool inspired by queer games and flatgames.</div>
+        <div class="dated-content">Camille Miller. Paper Hearts, an approachable digital game creation tool inspired by queer games and flatgames.</div>
       </div>
       <div class="dated-entry">
         <div class="dated-date">2019</div>
-        <div class="dated-content">Anthony Medina; Katie Moses. Students assisted with data collection and coding for my AIIDE 2019 paper, “Evaluating AI-Based Games Through Retellings” [<a href="#C5">C5</a>].</div>
+        <div class="dated-content">Anthony Medina; Katie Moses. Data collection and coding for a qualitative study of human-AI co-creativity in emergent narrative games [<a href="#C5">C5</a>].</div>
       </div>
       <h3>High School Students (via the UCSC Science Internship Program)</h3>
       <div class="dated-entry">
         <div class="dated-date">2019</div>
-        <div class="dated-content">Megna Anand; Anish Kashyap; Daniel Man; Akhil Vemuri. Students contributed to the development of <em>Diarytown</em>, an AI-based game described as a case study in my ICIDS 2019 paper, “Felt: A Simple Story Sifter” [<a href="#C6">C6</a>].</div>
+        <div class="dated-content">Megna Anand; Anish Kashyap; Daniel Man; Akhil Vemuri. Contributions to the AI-based research game <em>Diarytown</em> [<a href="#C6">C6</a>].</div>
       </div>
     </section>
-    <section id="service" class="wide-left-column">
+    <section id="service">
       <h2>Service</h2>
       <h3>Conference Organization</h3>
       <div class="oneline-entries">
