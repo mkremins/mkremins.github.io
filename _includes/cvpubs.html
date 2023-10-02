@@ -18,7 +18,7 @@
       <span class="authors">{{authors_html | join: ", "}}</span>.<br>
       {% if pub.pubtype == "chapter" %}In <em>{{pub.booktitle}}</em>. {{pub.publisher}}, {{pub.year}}{% elsif pub.pubtype == "journal" %}{{pub.venue}}, {{pub.year}}{% else %}{{pub.venue}} {% if pub.parent_venue %}@ {{pub.parent_venue}}{% endif %} {{pub.year}}{% endif %}{% if pub.inpress %} (in press){% endif %}.
       {% if acceptrate != 0 and acceptrate <= 45 %} <span class="pub-acceptrate">{{acceptrate}}% acceptance rate{% if pub.acceptnote and pub.acceptnote != "" %} ({{pub.acceptnote}}){% endif %}.</span>{% endif %}
-      {% if pub.award and pub.award != "" %} <span class="pub-award">{{pub.award}}.</span>{% endif %}
+      {% if pub.award and pub.award != "" %} <span class="award">{{pub.award}}.</span>{% endif %}
     </div>
   </div>
   {%- assign pubid = pubid | minus: 1 -%}
