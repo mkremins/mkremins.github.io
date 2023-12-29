@@ -178,19 +178,19 @@ layout: null
     </section>
     <section id="publications">
       <h2>Publications</h2>
-      <h3>Book Chapters</h3>
+      <h3 id="publications-b">Book Chapters</h3>
       {%- include cvpubs.html pubtype="chapter" pubprefix="B" -%}
-      <h3>Journal Articles</h3>
+      <h3 id="publications-j">Journal Articles</h3>
       {%- include cvpubs.html pubtype="journal" pubprefix="J" -%}
-      <h3>Conference Papers</h3>
+      <h3 id="publications-c">Conference Papers</h3>
       {%- include cvpubs.html pubtype="full" pubprefix="C" -%}
-      <h3>Workshop Papers</h3>
+      <h3 id="publications-w">Workshop Papers</h3>
       {%- include cvpubs.html pubtype="workshop" pubprefix="W" -%}
-      <h3>Playable Experiences and Demos</h3>
+      <h3 id="publications-pd">Playable Experiences and Demos</h3>
       {%- include cvpubs.html pubtype="pe_or_demo" pubprefix="PD" -%}
-      <h3>Doctoral Consortia</h3>
+      <h3 id="publications-dc">Doctoral Consortia</h3>
       {%- include cvpubs.html pubtype="doctoral_consortium" pubprefix="DC" -%}
-      <h3>Theses and Dissertations</h3>
+      <h3 id="publications-td">Theses and Dissertations</h3>
       {%- include cvpubs.html pubtype="thesis" pubprefix="TD" -%}
     </section>
     <section id="grants">
@@ -245,22 +245,29 @@ layout: null
     </section>
     <section id="exhibitions">
       <h2>Art Exhibitions</h2>
-      <div class="dated-entry">
-        <div class="dated-date">2020</div>
-        <div class="dated-content">
-          <em>Why Are We Like This?</em> Melanie Dickinson, Max Kreminski, Michael Mateas, Noah Wardrip-Fruin. Digital game. “(un)continuity” (juried group exhibition). Electronic Literature Organization (ELO). Orlando, Florida. Jul. 16-19, 2020.
+      <div class="section-note" style="color: #777; margin-left: var(--left-column-width); margin-bottom: 0.5rem;">This section lists exhibitions without an accompanying academic publication. For exhibitions with an associated publication, see <a href="#publications-pd">“Playable Experiences and Demos”</a> above.</div>
+      <div class="oneline-entries">
+        <div class="dated-entry">
+          <div class="dated-date">2023</div>
+          <div class="dated-content"><a href="https://generativeadvent.itch.io/generative-advent-2023"><em>Generative Advent</em></a>, curated by Rianna Suen and Mike Cook. Online.</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-date">2020</div>
+          <div class="dated-content"><a href="https://projects.cah.ucf.edu/mediaartsexhibits/uncontinuity/"><em>(un)continuity</em></a>, Electronic Literature Organization (ELO) Conference. Orlando, Florida.</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-date">2018</div>
+          <div class="dated-content"><a href="https://qgcon.com/qgcon-2018/arcade/"><em>QGCon 2018 Arcade</em></a>, Queerness and Games Conference (QGCon). Montreal, Quebec.</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-date">2018</div>
+          <div class="dated-content"><a href="https://emreed.net/ManifestoSelections"><em>Now Play This – A Festival of Experimental Game Design</em></a>. London, England.</div>
+        </div>
+        <div class="dated-entry">
+          <div class="dated-date">2016</div>
+          <div class="dated-content"><em><a href="https://cinema.usc.edu/news/article.cfm?id=16597">Winteractive Festival</a></em>, USC School of Cinematic Arts. Los Angeles, California.</div>
         </div>
       </div>
-      <div class="dated-entry">
-        <div class="dated-date">2018</div>
-        <div class="dated-content">
-          <em>Epitaph.</em> Max Kreminski. Digital game. “QGCon 2018 Arcade” (juried group exhibition). Queerness and Games Conference (QGCon). Montreal, Quebec. Sep. 28-30, 2018.
-        </div>
-      </div>
-      <!--
-      <p><em>tiny manifesto.</em> Max Kreminski. Written manifesto. ”Manifesto Jam Selections” (invited group exhibition). Now Play This - A Festival of Experimental Game Design. London, England. Apr. 6-8, 2018.</p>
-      <p><em>Epitaph.</em> Max Kreminski. Digital game. ”The Winteractive Festival” (juried group exhibition). University of Southern California. Los Angeles, California. Dec. 7, 2016.</p>
-      -->
     </section>
     <section id="teaching">
       <h2>Teaching</h2>
