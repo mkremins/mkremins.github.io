@@ -6,7 +6,8 @@ layout: main
 h3 { margin-top: 1rem; margin-bottom: 1rem; text-align: center; }
 .pubs { margin-left: 1.5rem; }
 .pub { margin-bottom: 0.5rem; }
-.author, .venue { white-space: nowrap; }
+.title { font-weight: bold; text-wrap: pretty; }
+.author, .venue, .award { white-space: nowrap; }
 </style>
 <section id="publications">
   <div class="container">
@@ -20,7 +21,8 @@ h3 { margin-top: 1rem; margin-bottom: 1rem; text-align: center; }
         <ol reversed class="pubs">
       {%- endunless -%}
       <li class="pub">
-        <strong>{% if pub.url and pub.url != "" %}<a href="{{pub.url}}">{{pub.title}}</a>{% else %}{{pub.title}}{% endif %}</strong>. <span class="author">{{pub.authors | join: "</span>, <span class='author'>"}}</span>.
+        <div class="title">{% if pub.url and pub.url != "" %}<a href="{{pub.url}}">{{pub.title}}</a>{% else %}{{pub.title}}{% endif %}</div>
+        <span class="author">{{pub.authors | join: "</span>, <span class='author'>"}}</span>.
         {% if pub.pubtype == "chapter" %}In <em>{{pub.booktitle}}</em>{% elsif pub.pubtype == "journal" %}{{pub.venue}}{% else %}<span class="venue">{{pub.venue}}{% if pub.parent_venue %} @ {{pub.parent_venue}}{% endif %} {{pub.year}}</span>{% endif %}. {% if pub.award and pub.award != "" %} <strong class="award">[{{pub.award | split: " (" | first}}.]</strong>{% endif %}
       </li>
       {%- assign years_seen = years_seen | push: pub.year -%}
