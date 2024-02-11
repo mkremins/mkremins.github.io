@@ -1,5 +1,15 @@
 [
 {
+  "title": "Intent Elicitation in Mixed-Initiative Co-Creativity",
+  "url": "",
+  "authors": ["Max Kreminski", "John Joon Young Chung", "Melanie Dickinson"],
+  "year": "2024",
+  "venue": "HAI-GEN",
+  "venue_long": "IUI Workshop on Human-AI Co-Creation with Generative Models",
+  "parent_venue": "IUI",
+  "pubtype": "workshop"
+},
+{
   "title": "A Design Space for Intelligent and Interactive Writing Assistants",
   "url": "",
   "authors": ["Mina Lee", "Katy Ilonka Gero", "John Joon Young Chung", "<em>27 more authors</em>", "Max Kreminski", "<em>5 more authors</em>"],
