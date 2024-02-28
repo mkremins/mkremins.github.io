@@ -1,15 +1,5 @@
 [
 {
-  "title": "Intent Elicitation in Mixed-Initiative Co-Creativity",
-  "url": "",
-  "authors": ["Max Kreminski", "John Joon Young Chung", "Melanie Dickinson"],
-  "year": "2024",
-  "venue": "HAI-GEN",
-  "venue_long": "IUI Workshop on Human-AI Co-Creation with Generative Models",
-  "parent_venue": "IUI",
-  "pubtype": "workshop"
-},
-{
   "title": "A Design Space for Intelligent and Interactive Writing Assistants",
   "url": "",
   "authors": ["Mina Lee", "Katy Ilonka Gero", "John Joon Young Chung", "<em>27 more authors</em>", "Max Kreminski", "<em>5 more authors</em>"],
@@ -18,6 +8,24 @@
   "venue_long": "ACM CHI Conference on Human Factors in Computing Systems",
   "pubtype": "full",
   "acceptrate": "26.3%",
+},
+{
+  "title": "Intent Elicitation in Mixed-Initiative Co-Creativity",
+  "url": "",
+  "authors": ["Max Kreminski", "John Joon Young Chung"],
+  "year": "2024",
+  "venue": "HAI-GEN",
+  "venue_long": "IUI Workshop on Human-AI Co-Creation with Generative Models",
+  "parent_venue": "IUI",
+  "pubtype": "workshop"
+},
+{
+  "title": "Understanding Systems Suspense",
+  "url": "https://polarisgamedesign.com/2023/understanding-systems-suspense/",
+  "authors": ["Jason Grinblat", "Max Kreminski", "Graeme Lennon", "Cat Manning", "Alexei Pepers", "Lauren Scott"],
+  "year": "2024",
+  "venue": "Reports from the Polaris Game Design Retreat",
+  "pubtype": "other",
 },
 {
   "title": "Blabrecs: An AI-Based Game of Nonsense Word Creation",
@@ -118,9 +126,9 @@
   "url": "https://escholarship.org/uc/item/4vj649w6",
   "authors": ["Max Kreminski"],
   "year": "2022",
-  "venue": "UCSC",
+  "venue": "UCSC PhD thesis",
   "venue_long": "University of California, Santa Cruz",
-  "pubtype": "thesis"
+  "pubtype": "other"
 },
 {
   "title": "Authoring for Story Sifters",
@@ -373,9 +381,9 @@
   "url": "https://escholarship.org/uc/item/47n0221v",
   "authors": ["Max Kreminski"],
   "year": "2020",
-  "venue": "UCSC",
+  "venue": "UCSC MS thesis",
   "venue_long": "University of California, Santa Cruz",
-  "pubtype": "thesis"
+  "pubtype": "other"
 },
 {
   "title": "Tabletop Roleplaying Games as Procedural Content Generators",
@@ -453,10 +461,10 @@
   "url": "https://mkremins.github.io/publications/CreativitySupport_StoryConstruction.pdf",
   "authors": ["Max Kreminski"],
   "year": "2019",
-  "venue": "AIIDE",
+  "venue": "AIIDE DC",
   "venue_long": "Artificial Intelligence and Interactive Digital Entertainment",
   "venue_note": "doctoral consortium paper",
-  "pubtype": "doctoral_consortium"
+  "pubtype": "other"
 },
 {
   "title": "Generative Games as Storytelling Partners",
