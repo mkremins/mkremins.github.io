@@ -1,5 +1,14 @@
 [
 {
+  "title": "The Dearth of the Author in AI-Supported Writing",
+  "url": "",
+  "authors": ["Max Kreminski"],
+  "year": "2024",
+  "venue": "In2Writing",
+  "parent_venue": "CHI",
+  "pubtype": "workshop",
+},
+{
   "title": "Evaluating Creativity Support Tools via Homogenization Analysis",
   "url": "",
   "authors": ["Barrett R. Anderson", "Jash Hemant Shah", "Max Kreminski"],
