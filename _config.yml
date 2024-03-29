@@ -1,5 +1,8 @@
 url: http://mkremins.github.io
 
+exclude:
+  - /unused
+
 defaults:
   -
     scope:
