@@ -7,29 +7,50 @@ layout: main
 		<h2 class="section-title">About</h2>
 		<p>I’m a researcher in artificial intelligence, human-computer interaction, and creativity. I primarily design and develop AI-based <a href="/syllabi/csts-2023-01">creativity support tools</a> to assist human designers and artists, particularly in the domains of storytelling, poetry, and game design. As an interdisciplinary scholar with a background in <a href="https://www.kmjn.org/game-rankings/">technical games research</a>, I’ve also worked on a wide variety of topics related to interactive narrative and digital games.</p>
 		<p>Currently, I’m a Research Scientist at Midjourney, where I lead the storytelling tools research lab. I’m also an Assistant Professor of Computer Science and Engineering at Santa Clara University (on leave for the 2023-2024 school year). I hold a Ph.D. in Computational Media from the University of California, Santa Cruz, where I was a member of the <a href="https://eis.ucsc.edu/">Expressive Intelligence Studio</a>. In the past, I’ve also been a resident at <a href="https://stochasticlabs.org/">Stochastic Labs</a>; a consultant at various game industry and tech companies; and a researcher in several labs, most notably the <a href="https://mobilemedia.usc.edu/">Mobile & Environmental Media Lab</a>, at the University of Southern California.</p>
-		<p>Here’s a <a href="/publications">complete list of my papers</a> (current count: {{site.data.publications | size}}; awards and nominations: {{site.data.publications | where_exp: "pub", "pub.award" | size}}). You can also check out my <a href="/cv">full CV</a> for links to many of my talks and other scholarly output.</p>
+		<p>Here’s a <a href="/publications">complete list of my papers</a> (current count: {{site.data.publications | size}}; awards and nominations: {{site.data.publications | where_exp: "pub", "pub.award" | size}}). You can also check out my <a href="/cv">full CV</a> for links to many of my talks and other output.</p>
 	</div>
 </section>
-<section id="int-projects">
+<section id="projects">
 	<div class="container">
-		<h2 class="section-title">Intelligent narrative technologies</h2>
+		<h2 class="section-title">Selected projects and papers</h2>
+		<div class="card project-card">
+			<div class="card-image"><img src="/img/projects/Patchwork.png" alt="Screenshot of a short initial “setting prompt” being expanded to a set of images and a character concept in the Patchwork interface."></div>
+			<div class="card-text">
+				<span class="card-title">Patchwork</span> is a collaborative AI-supported worldbuilding canvas. Users work together to craft a coherent fictional setting and tell stories in that setting, with a multimodal AI system helping them gradually expand and refine their shared vision for the storyworld. We’re also using Patchwork as a testbed for a wide variety of novel control and steering techniques for generative AI.
+				<div class="card-links">
+					📝 Papers: <a href="https://mkremins.github.io/publications/Patchwork_HAI-GEN2024.pdf">HAI-GEN 2024</a><br>
+					✨ Collaborators: <a href="https://johnr0.github.io/">John Joon Young Chung</a>
+				</div>
+			</div>
+		</div>
+		<div class="card project-card">
+			<div class="card-image"><img src="/img/projects/Homogenization.png" alt="Visualization of three sets of artifacts produced by three different users of a single creativity support tool. The sets of artifacts are being overlapped to assess the tool’s homogenization effects."></div>
+			<div class="card-text">
+				<span class="card-title"><a href="https://arxiv.org/abs/2402.01536">Homogenization analysis</a></span> and <span class="card-title"><a href="https://mkremins.github.io/publications/ERaCA_HAI-GEN2022.pdf">expressive range coverage analysis</a></span> are evaluation methods for creativity support tools (CSTs). By analyzing artifacts created by CST users in relation to larger <em>design spaces</em>, we can capture striking visual portraits of interaction dynamics; diagnose homogenization effects of generative AI tools; and generally illuminate tool impacts on creative outcomes.
+				<div class="card-links">
+					📝 Papers: <a href="https://mkremins.github.io/publications/Homogenization_CHI2024.pdf">CHI 2024</a>, <a href="https://mkremins.github.io/publications/ERaCA_HAI-GEN2022.pdf">HAI-GEN 2022</a><br>
+					✨ Collaborators: <a href="https://barrettrees.com/">Barrett Anderson</a>, <a href="https://www.linkedin.com/in/itsjashshah/">Jash Shah</a>, <a href="https://isaackarth.com/">Isaac Karth</a>
+				</div>
+			</div>
+		</div>
 		<div class="card project-card">
 			<div class="card-image"><img src="/img/projects/LooseEnds.png" alt="Screenshot of several storytelling goals, each representing a different plot thread, in in the Loose Ends user interface."></div>
 			<div class="card-text">
 				<span class="card-title"><a href="https://github.com/ItsProbablyFine/LooseEnds">Loose Ends</a></span> is an AI-based <em>narrative instrument</em> that can be played to produce narrative, much like a musical instrument can be played to produce music. It aims to help players interleave multiple parallel plot threads into an effective high-level plot structure that satisfies player-specified storytelling goals.
 				<div class="card-links">
-					📝 Papers: <a href="https://mkremins.github.io/publications/LooseEnds_AIIDE2022.pdf">AIIDE 2022</a> (best artifact), <a href="https://mkremins.github.io/publications/LooseEnds_ICIDS2022.pdf">ICIDS 2022</a><br>
+					📝 Papers: <a href="https://mkremins.github.io/publications/LooseEnds_AIIDE2022.pdf">AIIDE 2022</a> (best artifact), <a href="https://mkremins.github.io/publications/WritingSupportNeeds_In2Writing2022.pdf">In2Writing 2022</a>, <a href="https://mkremins.github.io/publications/LooseEnds_ICIDS2022.pdf">ICIDS 2022</a><br>
 					✨ Collaborators: <a href="https://www.melaniedickinson.com/">Melanie Dickinson</a>
 				</div>
 			</div>
 		</div>
 		<div class="card project-card">
-			<div class="card-image"><img src="/img/projects/WAWLT.png" alt="System diagram of Why Are We Like This?, showing how the system suggests what should happen next in response to player actions."></div>
+			<div class="card-image"><img src="/img/projects/Blabrecs.jpeg" alt="Screenshot of the Blabrecs AI testing the nonsense word “torbible” and saying “looks good to me!”"></div>
 			<div class="card-text">
-				<span class="card-title"><a href="https://github.com/ItsProbablyFine/WAWLT"><em>Why Are We Like This?</em></a></span> is an AI-augmented collaborative storytelling game. Two players write a story in a pastiche of the cozy mystery genre, with support from a simulation-based AI system that suggests what might happen next based on both character and authorial goals.<!--  <a href="https://github.com/ItsProbablyFine/WAWLT">Code available here.</a>-->
+				<span class="card-title"><a href="https://mkremins.github.io/blabrecs"><em>Blabrecs</em></a></span> is a rules modification for the wordgame <em>Scrabble</em> that forbids players from using actual English dictionary words. Instead, players may only use nonsense words that <em>sound like</em> English to an AI trained on the dictionary.<!--<a href="https://github.com/mkremins/blabrecs">Code available here.</a>-->
 				<div class="card-links">
-					📝 Papers: <a href="https://mkremins.github.io/publications/WAWLT_FDG2020.pdf">FDG 2020</a>, <a href="https://mkremins.github.io/publications/WAWLT_ELO2020.pdf">ELO 2020</a>, <a href="https://mkremins.github.io/publications/CozyMysteryConstructionKit.pdf">PCG 2019</a>, <a href="https://www.aaai.org/ojs/index.php/AIIDE/article/view/7457">AIIDE 2020</a>, <a href="https://mkremins.github.io/publications/ReflectiveCreators_ICCC2021.pdf">ICCC 2021</a><br>
-					✨ Collaborators: <a href="https://www.melaniedickinson.com/">Melanie Dickinson</a>
+					📝 Papers: <a href="https://mkremins.github.io/publications/Blabrecs_NeurIPS2023.pdf">NeurIPS 2023</a>, <a href="https://mkremins.github.io/publications/Blabrecs_AIIDE2021.pdf">AIIDE 2021</a><br>
+					🗞️ Press: <a href="https://www.newscientist.com/article/mg24933162-600-why-you-should-trust-reindeer-to-pick-stocks-over-politicians/">New Scientist</a>, <a href="https://thenextweb.com/neural/2020/12/14/new-ai-scrabble-mod-only-allows-words-that-dont-exist/">The Next Web</a>, <a href="https://www.dicebreaker.com/games/scrabble/news/scrabble-variant-nonsense-words-blabrecs-ai">Dicebreaker</a><br>
+					✨ Contributors: <a href="https://isaackarth.com/">Isaac Karth</a>
 				</div>
 			</div>
 		</div>
@@ -45,30 +66,6 @@ layout: main
 			</div>
 		</div>
 		<div class="card project-card">
-			<div class="card-image"><img src="/img/projects/StoryAssembler.jpg" alt="System diagram of StoryAssembler, showing how execution co-routines between a forward state-space planner and hierarchical task network planner."></div>
-			<div class="card-text">
-				<span class="card-title"><a href="https://github.com/LudoNarrative/StoryAssembler">StoryAssembler</a></span> is an interactive narrative system that assembles choice-based stories on the fly from a library of author-provided story fragments, using planning to ensure that every story it produces meets a set of author-specified requirements.<!--  I joined this project partway through development and worked with fellow EIS PhD student <a href="https://twitter.com/logodaedalus">Jacob Garbe</a> to bring it up to readiness for public release.<a href="https://github.com/LudoNarrative/StoryAssembler">Code available here.</a>-->
-				<div class="card-links">
-					📝 Papers: <a href="https://mkremins.github.io/publications/StoryAssembler.pdf">FDG 2019</a> (best paper honorable mention), <a href="https://mkremins.github.io/publications/Storylets_SketchingAMap.pdf">ICIDS 2018</a><br>
-					✨ Collaborators: <a href="https://twitter.com/logodaedalus">Jacob Garbe</a>
-				</div>
-			</div>
-		</div>
-		<div class="card project-card">
-			<div class="card-image"><img src="/img/projects/Retellings.png" alt="Partial screenshot of codebook that notes dimensions of variation between Civilization VI and Stellaris retellings, from the AIIDE 2019 paper linked below."></div>
-			<div class="card-text">
-				<span class="card-title">Retellings studies</span> are a series of investigations into the stories that players tell about their experiences in games, especially simulation-driven emergent narrative games. This work helps us better understand how to provide computational support for human storytelling practices.
-				<div class="card-links">
-					📝 Papers: <a href="https://mkremins.github.io/publications/NarrativeInstruments_ICIDS2021.pdf">ICIDS 2021a</a> (best short paper nominee), <a href="https://mkremins.github.io/publications/ReparativePlay_ICIDS2021.pdf">ICIDS 2021b</a> (best short paper nominee), <a href="https://mkremins.github.io/publications/EvaluatingViaRetellings.pdf">AIIDE 2019</a>, <a href="https://mkremins.github.io/publications/GenerativeGames_StorytellingPartners.pdf">UX of AI 2019</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section id="gds-projects">
-	<div class="container">
-		<h2 class="section-title">Computational support for game design</h2>
-		<div class="card project-card">
 			<div class="card-image"><img src="/img/projects/Germinate.png" alt="Screenshot of the Germinate user interface, showing a design intent on the left and a generated game on the right."></div>
 			<div class="card-text">
 				<span class="card-title"><a href="https://github.com/ExpressiveIntelligence/Germinate">Germinate</a></span> is a mixed-initiative casual creator for rhetorical game design, built on the <a href="https://github.com/ExpressiveIntelligence/Gemini">Gemini</a> game generator. It generates games based on a user-provided <em>design intent</em>, then provides users with support in exploring the resulting design space and refining their intent based on the generated games.<!-- <a href="https://github.com/ExpressiveIntelligence/Germinate">Code available here.</a>-->
@@ -79,38 +76,32 @@ layout: main
 			</div>
 		</div>
 		<div class="card project-card">
-			<div class="card-image"><img src="/img/projects/GBS.png" alt="System diagram of a single generated Game Boy RPG."></div>
-			<div class="card-text">
-				<span class="card-title">GBS</span> is a genre-specific game description language for Game Boy RPGs, extracted from the <a href="https://www.gbstudio.dev/">GB Studio</a> game creation tool. We’re using it as a shared language between human designers and computational systems to build an ecosystem of game design support tools that better understand games as an expressive medium.<!-- <a href="https://github.com/ExpressiveIntelligence/Germinate">Code available here.</a>-->
-				<div class="card-links">
-					📝 Papers: <a href="https://mkremins.github.io/publications/GBS_CoG2021.pdf">CoG 2021</a>, <a href="https://mkremins.github.io/publications/GBS_FDG2021.pdf">FDG 2021</a> (best game or demo)<br>
-					✨ Collaborators: <a href="https://twitter.com/tambalaya">Tamara Duplantis</a>, <a href="https://isaackarth.com/">Isaac Karth</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section id="other-projects">
-	<div class="container">
-		<h2 class="section-title">Other selected projects</h2>
-		<div class="card project-card">
-			<div class="card-image"><img src="/img/projects/Blabrecs.jpeg" alt="Screenshot of the Blabrecs AI testing the nonsense word “torbible” and saying “looks good to me!”"></div>
-			<div class="card-text">
-				<span class="card-title"><a href="https://mkremins.github.io/blabrecs"><em>Blabrecs</em></a></span> is a rules modification for the wordgame <em>Scrabble</em> that forbids players from using actual English dictionary words. Instead, players may only use nonsense words that <em>sound like</em> English to an AI trained on the dictionary.<!--<a href="https://github.com/mkremins/blabrecs">Code available here.</a>-->
-				<div class="card-links">
-					📝 Papers: <a href="https://mkremins.github.io/publications/Blabrecs_NeurIPS2023.pdf">NeurIPS 2023</a>, <a href="https://mkremins.github.io/publications/Blabrecs_AIIDE2021.pdf">AIIDE 2021</a><br>
-					🗞️ Press: <a href="https://www.newscientist.com/article/mg24933162-600-why-you-should-trust-reindeer-to-pick-stocks-over-politicians/">New Scientist</a>, <a href="https://thenextweb.com/neural/2020/12/14/new-ai-scrabble-mod-only-allows-words-that-dont-exist/">The Next Web</a>, <a href="https://www.dicebreaker.com/games/scrabble/news/scrabble-variant-nonsense-words-blabrecs-ai">Dicebreaker</a><br>
-					✨ Contributors: <a href="https://isaackarth.com/">Isaac Karth</a>
-				</div>
-			</div>
-		</div>
-		<div class="card project-card">
 			<div class="card-image"><img src="/img/projects/Academical.png" alt="Screenshot of an Academical scene in which an aging hippie professor discusses an ethical dilemma with a grad student."></div>
 			<div class="card-text"><span class="card-title"><a href="https://altgameslab.soe.ucsc.edu/academical/"><em>Academical</em></a></span> is an interactive narrative game that uses roleplaying to train new researchers in responsible conduct of research. Our user studies have found that <em>Academical</em> is better than existing RCR training materials at engaging users, teaching some RCR topics, and promoting moral reasoning, without falling behind in other areas.
 			<div class="card-links">
 				📝 Papers: <a href="https://mkremins.github.io/publications/RCR_FDG2020.pdf">FDG 2020</a> (exceptional paper), <a href="https://mkremins.github.io/publications/RCR_CHI2021.pdf">CHI 2021</a>, <a href="https://mkremins.github.io/publications/RCR_CHI2020.pdf">CHI 2020</a>, <a href="https://mkremins.github.io/publications/RCR_GaNTaP.pdf">book chapter</a>, <a href="https://mkremins.github.io/publications/RCR_FrVR2022.pdf">Frontiers in VR</a><br>
-				✨ Collaborators: <a href="https://edwardmelcer.net">Edward Melcer</a>, <a href="https://www.linkedin.com/in/katy-millay-grasse">Katy Grasse</a>, <a href="https://njunius.github.io">Nic Junius</a>, many others
+				✨ Collaborators: <a href="https://edwardmelcer.net">Eddie Melcer</a>, <a href="https://www.linkedin.com/in/katy-millay-grasse">Katy Grasse</a>, <a href="https://njunius.github.io">Nic Junius</a>, many others
 			</div>
+			</div>
+		</div>
+		<div class="card project-card">
+			<div class="card-image"><img src="/img/projects/WAWLT.png" alt="System diagram of Why Are We Like This?, showing how the system suggests what should happen next in response to player actions."></div>
+			<div class="card-text">
+				<span class="card-title"><a href="https://github.com/ItsProbablyFine/WAWLT"><em>Why Are We Like This?</em></a></span> is an AI-augmented collaborative storytelling game. Two players write a story in a pastiche of the cozy mystery genre, with support from a simulation-based AI system that suggests what might happen next based on both character and authorial goals.<!--  <a href="https://github.com/ItsProbablyFine/WAWLT">Code available here.</a>-->
+				<div class="card-links">
+					📝 Papers: <a href="https://mkremins.github.io/publications/WAWLT_FDG2020.pdf">FDG 2020</a>, <a href="https://mkremins.github.io/publications/WAWLT_ELO2020.pdf">ELO 2020</a>, <a href="https://mkremins.github.io/publications/CozyMysteryConstructionKit.pdf">PCG 2019</a>, <a href="https://www.aaai.org/ojs/index.php/AIIDE/article/view/7457">AIIDE 2020</a>, <a href="https://mkremins.github.io/publications/ReflectiveCreators_ICCC2021.pdf">ICCC 2021</a><br>
+					✨ Collaborators: <a href="https://www.melaniedickinson.com/">Melanie Dickinson</a>
+				</div>
+			</div>
+		</div>
+		<div class="card project-card">
+			<div class="card-image"><img src="/img/projects/StoryAssembler.jpg" alt="System diagram of StoryAssembler, showing how execution co-routines between a forward state-space planner and hierarchical task network planner."></div>
+			<div class="card-text">
+				<span class="card-title"><a href="https://github.com/LudoNarrative/StoryAssembler">StoryAssembler</a></span> is an interactive narrative system that assembles choice-based stories on the fly from a library of author-provided story fragments, using planning to ensure that every story it produces meets a set of author-specified requirements.<!--  I joined this project partway through development and worked with fellow EIS PhD student <a href="https://twitter.com/logodaedalus">Jacob Garbe</a> to bring it up to readiness for public release.<a href="https://github.com/LudoNarrative/StoryAssembler">Code available here.</a>-->
+				<div class="card-links">
+					📝 Papers: <a href="https://mkremins.github.io/publications/StoryAssembler.pdf">FDG 2019</a> (best paper honorable mention), <a href="https://mkremins.github.io/publications/Storylets_SketchingAMap.pdf">ICIDS 2018</a><br>
+					✨ Collaborators: <a href="https://twitter.com/logodaedalus">Jacob Garbe</a>
+				</div>
 			</div>
 		</div>
 		<div class="card project-card">
@@ -123,12 +114,25 @@ layout: main
 				</div>
 			</div>
 		</div>
-		<!--
 		<div class="card project-card">
-			<div class="card-title"><a href="https://mkremins.itch.io/starfreighter">Starfreighter</a></div>
-			<p class="desc">A procedural narrative game set in a completely procedurally generated galaxy. Uses <a href="https://mkremins.github.io/publications/Storylets_SketchingAMap.pdf">parametrized storylets</a> to achieve a greater level of dynamism than is possible with typical branching narrative structures. <a href="https://github.com/mkremins/starfreighter">Code available here.</a></p>
+			<div class="card-image"><img src="/img/projects/GBS.png" alt="System diagram of a single generated Game Boy RPG."></div>
+			<div class="card-text">
+				<span class="card-title"><a href="https://isaackarth.com/games/rom_gen_test_5/">GBS</a></span> is a genre-specific game description language for Game Boy RPGs, extracted from the <a href="https://www.gbstudio.dev/">GB Studio</a> game creation tool. Using GBS as a target language for game generation enabled us to explore the generation of larger and more expressively sophisticated games than would otherwise be tractable; we believe that GBS and similar GSGDLs might serve as especially good foundations for future AI-based game design tools.
+				<div class="card-links">
+					📝 Papers: <a href="https://mkremins.github.io/publications/GBS_CoG2021.pdf">CoG 2021</a>, <a href="https://mkremins.github.io/publications/GBS_FDG2021.pdf">FDG 2021</a> (best game or demo)<br>
+					✨ Collaborators: <a href="https://twitter.com/tambalaya">Tamara Duplantis</a>, <a href="https://isaackarth.com/">Isaac Karth</a>
+				</div>
+			</div>
 		</div>
-		-->
+		<div class="card project-card">
+			<div class="card-image"><img src="/img/projects/Retellings.png" alt="Partial screenshot of codebook that notes dimensions of variation between Civilization VI and Stellaris retellings, from the AIIDE 2019 paper linked below."></div>
+			<div class="card-text">
+				<span class="card-title">Retellings studies</span> are a series of investigations into the stories that players tell about their experiences in games, especially simulation-driven emergent narrative games. This work helps us better understand how to provide computational support for human storytelling practices.
+				<div class="card-links">
+					📝 Papers: <a href="https://mkremins.github.io/publications/NarrativeInstruments_ICIDS2021.pdf">ICIDS 2021a</a> (best short paper nominee), <a href="https://mkremins.github.io/publications/ReparativePlay_ICIDS2021.pdf">ICIDS 2021b</a> (best short paper nominee), <a href="https://mkremins.github.io/publications/EvaluatingViaRetellings.pdf">AIIDE 2019</a>, <a href="https://mkremins.github.io/publications/GenerativeGames_StorytellingPartners.pdf">UX of AI 2019</a>
+				</div>
+			</div>
+		</div>
 		<div class="card project-card">
 			<div class="card-image"><img src="/img/projects/Epitaph.png" alt="Screenshot of Epitaph, showing a procedurally generated alien civilization called the Gep."></div>
 			<div class="card-text">
@@ -138,12 +142,27 @@ layout: main
 				</div>
 			</div>
 		</div>
+		<div class="card project-card">
+			<div class="card-image"><img src="/img/projects/WeirdSocial.png" alt="Screenshot of a weird social VR sandbox, focused on a tall blue user avatar. The avatar has googly eyes and spits blue orbs from its open mouth as the user speaks."></div>
+			<div class="card-text">
+				My <span class="card-title">social VR projects</span> involved a series of attempts to design better immersive environments for creative collaboration. This thread of my work is currently dormant, but it encompasses the very first papers of my research career and continued all the way through the end of my PhD work at UCSC.
+				<div class="card-links">
+					📝 Papers: <a href="https://mkremins.github.io/publications/ConversationBalance_CHI2022.pdf">CHI 2022</a>, <a href="https://mkremins.github.io/publications/SocialVR_DIS2023.pdf">DIS 2023</a>, <a href="https://mkremins.github.io/publications/SocialSuperpowers_SocialVR2021.pdf">SocialVR 2021</a>, <a href="https://mkremins.github.io/publications/ImmersiveDesignFiction.pdf">DIS 2018</a>, <a href="https://mkremins.github.io/publications/VRPLAY.pdf">HCII 2018</a><br>
+					✨ Collaborators: <a href="https://www.linkedin.com/in/joshua-mcveigh-schultz/">Josh McVeigh-Schultz</a>, <a href="https://katherineinterface.com/">Katherine Isbister</a>, many others
+				</div>
+			</div>
+		</div>
 		<!--
 		<div class="card project-card">
-			<div class="card-title"><a href="https://mkremins.github.io/riffle">Riffle</a></div>
-			<p class="desc">An authoring environment for simulationist interactive fiction, heavily influenced by Chris Martens’ <a href="http://www.cs.cmu.edu/~cmartens/thesis/">Ceptre</a> project. Still in the early stages of development, but the eventual goal is to create the equivalent of <a href="https://twinery.org">Twine</a> for stories based on <a href="https://mkremins.github.io/publications/Storylets_SketchingAMap.pdf">parametrized storylets</a> rather than static branching narrative structures. <a href="https://github.com/mkremins/riffle">Code available here.</a></p>
+			<div class="card-image"><img src="/img/projects/TODO.png" alt="TODO"></div>
+			<div class="card-text">
+				<span class="card-title"><a href="TODO">TODO</a></span> is a TODO.
+				<div class="card-links">
+					📝 Papers: <a href="TODO">TODO</a><br>
+					✨ Collaborators: <a href="TODO">TODO</a>
+				</div>
+			</div>
 		</div>
 		-->
-		<!--<p>Note: These are only a few of my projects! See my <a href="https://github.com/mkremins">GitHub</a> and <a href="https://mkremins.itch.io">itch.io</a> pages for more. Many recent projects were designed and developed in collaboration with my frequent co-conspirator <a href="http://www.melaniedickinson.com/">Melanie Dickinson</a>.</p>-->
 	</div>
 </section>
