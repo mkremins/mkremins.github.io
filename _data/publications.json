@@ -1,5 +1,15 @@
 [
 {
+  "title": "Homogenization Effects of Large Language Models on Human Creative Ideation",
+  "url": "",
+  "authors": ["Barrett R. Anderson", "Jash Hemant Shah", "Max Kreminski"],
+  "year": "2024",
+  "venue": "C&C",
+  "venue_long": "ACM Conference on Creativity & Cognition",
+  "pubtype": "full",
+  "acceptrate": "26.5%",
+},
+{
   "title": "Cheap and Easy Open-Ended Text Input for Interactive Emergent Narrative",
   "url": "",
   "authors": ["Max Kreminski"],
