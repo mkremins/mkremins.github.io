@@ -2,11 +2,12 @@
 {
   "title": "Blabrecs: Weirding Language with AI-Based Gameplay",
   "year": "2024",
-  "url": "",
+  "url": "https://gdcvault.com/play/1034675/Experimental-Game",
   "venue": "GDC",
   "venue_long": "Game Developers Conference (GDC)",
   "subvenue": "Experimental Game Workshop (EGW)",
-  "acceptrate": "11.32%"
+  "acceptrate": "11.32%",
+  "starttime": "1:51:00"
 },
 {
   "title": "Storytelling Research at Midjourney",
