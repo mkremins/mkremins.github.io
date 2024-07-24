@@ -1,5 +1,14 @@
 [
 {
+  "title": "Computational Poetry is Lost Poetry",
+  "url": "",
+  "authors": ["Max Kreminski"],
+  "year": "2024",
+  "venue": "HTTF",
+  "venue_long": "Halfway to the Future Symposium",
+  "pubtype": "full"
+},
+{
   "title": "Guiding and Diversifying LLM-Based Story Generation via Answer Set Programming",
   "url": "https://arxiv.org/abs/2406.00554",
   "authors": ["Phoebe J. Wang", "Max Kreminski"],
