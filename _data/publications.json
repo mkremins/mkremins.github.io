@@ -334,7 +334,8 @@
   "venue": "EXAG",
   "venue_long": "AIIDE Workshop on Experimental AI for Games",
   "parent_venue": "AIIDE",
-  "pubtype": "workshop"
+  "pubtype": "workshop",
+  "award": "Second place in GDMC 2021 (top 10%)"
 },
 {
   "title": "Winnow: A Domain-Specific Language for Incremental Story Sifting",
