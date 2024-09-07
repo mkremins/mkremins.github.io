@@ -11,7 +11,7 @@ layout: null
   <!--<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/font/Sans/cmun-sans.css">-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
   <style>
   /* reset base styles */
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -19,18 +19,17 @@ layout: null
   /* basic page structure */
   :root { --left-column-width: 6rem; }
   html { font-size: 16px; }
-  body { font-family: "EB Garamond", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; line-height: 1.4; }
+  body { font-family: "EB Garamond", serif; line-height: 1.4; }
   main { margin: 2rem auto; max-width: 96ch; padding: 0 2ch; }
+  h1, h2, h3 { font-family: "Source Sans 3", sans-serif; }
 
   /* page header */
   header { margin-bottom: 1.5rem; margin-left: var(--left-column-width);  }
-  header h1 { font-size: 1.5rem; font-weight: normal; }
-  header p { margin-bottom: 0; }
+  header h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
 
   /* normal body content */
-  h2, h3 { font-weight: normal; }
   h2 { font-size: 1.25rem; margin-left: var(--left-column-width); margin-bottom: 0.5rem; }
-  h3 { font-size: 1.1rem; font-variant: small-caps; margin-left: var(--left-column-width); margin-bottom: 0.25rem; }
+  h3 { font-size: 1.1rem; font-weight: 550; margin-left: var(--left-column-width); margin-bottom: 0.25rem; }
   p { margin-bottom: 0.5rem; }
   a { text-decoration: none; color: /*#5D3FD3;*/ rgb(43,102,144); }
   section { margin-bottom: 1.5rem; }
@@ -39,6 +38,11 @@ layout: null
   /*.author.self { font-weight: bold; }*/
   .pub-acceptrate { color: #777; }
   .award { font-weight: bold; }
+  .header-note { color: #777; }
+
+  /* add extra space around subsection headers in the publications list */
+  #publications h3 { margin-bottom: 0.5rem; margin-top: 1rem; }
+  #publications h2 + h3 { margin-top: 0; }
 
   /* dated entries */
   .dated-entry { display: flex; flex-flow: row wrap; position: relative; margin-bottom: 0.5rem; }
@@ -70,8 +74,7 @@ layout: null
   <main>
     <header>
       <h1>Max Kreminski</h1>
-      <p>Research Scientist and Director, Midjourney Storytelling Lab</p>
-      <p><em>Email</em> <a href="mailto:maxkreminski@gmail.com">maxkreminski@gmail.com</a> <em>Web</em> <a href="https://mkremins.github.io">mkremins.github.io</a></p>
+      <p><a href="mailto:maxkreminski@gmail.com">maxkreminski@gmail.com</a><br><a href="https://mkremins.github.io">mkremins.github.io</a></p>
     </header>
     <section id="education">
       <h2>Education</h2>
@@ -296,7 +299,7 @@ layout: null
           <div class="dated-content">COEN 174 Software Engineering</div>
         </div>
       </div>
-      <h3>University of California, Santa Cruz (as Instructor)</h3>
+      <h3>University of California, Santa Cruz <span class="header-note">(as Instructor)</span></h3>
       <div class="oneline-entries">
         <div class="dated-entry">
           <div class="dated-date">Su2021</div>
@@ -307,7 +310,7 @@ layout: null
           <div class="dated-content">CMPM 171 Game Design Studio II<!-- <em>(co-instructor with Tad Leckman)</em>--></div>
         </div>
       </div>
-      <h3>University of California, Santa Cruz (as Teaching Assistant)</h3>
+      <h3>University of California, Santa Cruz <span class="header-note">(as Teaching Assistant)</span></h3>
       <div class="oneline-entries">
         <div class="dated-entry">
           <div class="dated-date">Sp2022</div>
@@ -417,7 +420,7 @@ layout: null
         <div class="dated-date">2019</div>
         <div class="dated-content">Anthony Medina; Katie Moses. Data collection and coding for a qualitative study of human-AI co-creativity in emergent narrative games [<a href="#C5">C5</a>].</div>
       </div>
-      <h3>High School Students (via the UCSC Science Internship Program)</h3>
+      <h3>High School Students <span class="header-note">(via the UCSC Science Internship Program)</span></h3>
       <div class="dated-entry">
         <div class="dated-date">2019</div>
         <div class="dated-content">Megna Anand; Anish Kashyap; Daniel Man; Akhil Vemuri. Contributions to the AI-based research game <em>Diarytown</em> [<a href="#C6">C6</a>].</div>
@@ -425,7 +428,7 @@ layout: null
     </section>
     <section id="service">
       <h2>Service</h2>
-      <h3>Conference Organization</h3>
+      <h3>Conference and Workshop Organization</h3>
       <div class="oneline-entries">
         <div class="dated-entry">
           <div class="dated-date">2024</div>
