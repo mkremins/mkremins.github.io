@@ -6,7 +6,9 @@
   "year": "2024",
   "venue": "HTTF",
   "venue_long": "Halfway to the Future Symposium",
-  "pubtype": "full"
+  "pubtype": "full",
+  "acceptrate": "35.21%",
+  "acceptnote": "selected for thematic panel"
 },
 {
   "title": "Toyteller: Toy-Playing with Character Symbols for AI-Powered Visual Storytelling",
