@@ -1,5 +1,13 @@
 [
 {
+  "title": "Drama Llama: An LLM-Powered Storylets Framework for Authorable Responsiveness in Interactive&nbsp;Narrative",
+  "url": "https://arxiv.org/abs/2501.09099",
+  "authors": ["Yuqian Sun", "Phoebe J. Wang", "John Joon Young Chung", "Melissa Roemmele", "Taewook Kim", "Max Kreminski"],
+  "year": "2025",
+  "venue": "Preprint",
+  "pubtype": "other",
+},
+{
   "title": "Toyteller: AI-Powered Visual Storytelling Through Toy-Playing with Character Symbols",
   "url": "",
   "authors": ["John Joon Young Chung", "Melissa Roemmele", "Max Kreminski"],
