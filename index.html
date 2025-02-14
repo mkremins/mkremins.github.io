@@ -6,7 +6,7 @@ layout: main
 	<div class="container">
 		<h2 class="section-title">About</h2>
 		<p>I’m a researcher in artificial intelligence, human-computer interaction, and creativity. I primarily design and develop AI-based <a href="/syllabi/csts-2023-01">creativity support tools</a> to assist human designers and artists, particularly in the domains of storytelling, poetry, and game design. As an interdisciplinary scholar with a background in <a href="https://www.kmjn.org/game-rankings/">technical games research</a>, I’ve also worked on a wide variety of topics related to interactive narrative and digital games.</p>
-		<p>Currently, I’m a research scientist at Midjourney, where I lead the <a href="https://mj-storytelling.github.io">Storytelling Lab</a>. Before that, from 2022-2024, I was an assistant professor of computer science and engineering at Santa Clara University. I hold a Ph.D. in Computational Media from the University of California, Santa Cruz, where I was a member of the <a href="https://eis.ucsc.edu/">Expressive Intelligence Studio</a>. In the past, I’ve also been a resident at <a href="https://stochasticlabs.org/">Stochastic Labs</a>; a consultant at various game industry and tech companies; and a researcher in several labs, most notably the <a href="https://mobilemedia.usc.edu/">Mobile & Environmental Media Lab</a>, at the University of Southern California.</p>
+		<p>Currently, I’m a research scientist at Midjourney, where I lead the <a href="https://mj-storytelling.github.io">Storytelling Lab</a>. Before that, I was an assistant professor of computer science and engineering at Santa Clara University. I hold a Ph.D. in Computational Media from the University of California, Santa Cruz, where I was a member of the <a href="https://eis.ucsc.edu/">Expressive Intelligence Studio</a>. I’ve also been a resident at <a href="https://stochasticlabs.org/">Stochastic Labs</a>; a consultant at various game industry and tech companies; and a researcher in several labs, most notably the <a href="https://mobilemedia.usc.edu/">Mobile & Environmental Media Lab</a>, at the University of Southern California.</p>
 		<p>Here’s a <a href="/publications">complete list of my papers</a> (current count: {{site.data.publications | size}}; awards and nominations: {{site.data.publications | where_exp: "pub", "pub.award" | size}}). You can also check out my <a href="/cv">full CV</a> for links to many of my talks and other output.</p>
 	</div>
 </section>
@@ -14,35 +14,36 @@ layout: main
 	<div class="container">
 		<h2 class="section-title">Selected projects and papers</h2>
 		<div class="card project-card">
+			<div class="card-image"><img src="/img/projects/Toyteller.png" alt=""></div>
+			<div class="card-text">
+				<span class="card-title"><a href="https://arxiv.org/abs/2501.13284">Toyteller</a></span> is a novel AI-based interface for playful storytelling: users steer the generation of story text by physically acting out a scene with abstract shapes, as if playing with toys. We’ve found that unusual new interaction techniques – like shaping textual stories through motion – can serve as a complement to traditional linguistic specifications of expressive intent, scaffolding user development of more complex and multifaceted scenes.
+				<div class="card-links">
+					📝 Papers: <a href="https://arxiv.org/abs/2501.13284">CHI 2025</a>, <a href="https://mkremins.github.io/publications/Toyteller_UIST2024.pdf">UIST 2024</a><br>
+					🗣️ Talks: <a href="https://twitter.com/GopalKRaman/status/1832200443600236668">South Park Commons</a><br>
+					🤝 With: <a href="https://johnr0.github.io/">John Chung</a>, <a href="https://roemmele.github.io/">Melissa Roemmele</a>
+				</div>
+			</div>
+		</div>
+		<div class="card project-card">
 			<div class="card-image"><img src="/img/projects/Patchwork.png" alt="Screenshot of a short initial “setting prompt” being expanded to a set of images and a character concept in the Patchwork interface."></div>
 			<div class="card-text">
-				<span class="card-title"><a href="https://www.midjourney.com/updates/patchwork-research-preview">Patchwork</a></span> is a collaborative AI-supported worldbuilding canvas. Users work together to craft a coherent fictional setting and tell stories in that setting, with a multimodal AI system helping them gradually expand and refine their shared vision for the storyworld. We’re also using Patchwork to prototype a variety of novel control and steering techniques for generative AI, including several that have become spinoff projects (e.g., <a href="https://mkremins.github.io/publications/Patchview_UIST2024.pdf">Patchview</a> and <a href="https://mkremins.github.io/publications/Toyteller_UIST2024.pdf">Toyteller</a>).
+				<span class="card-title"><a href="https://www.midjourney.com/updates/patchwork-research-preview">Patchwork</a></span> is a collaborative AI-supported worldbuilding canvas. Users work together to craft a coherent fictional setting and tell stories in that setting, with a multimodal AI system helping them gradually expand and refine their shared vision for the storyworld. We’re also using Patchwork to prototype a variety of novel control and steering techniques for generative AI, including several that have become spinoff projects (e.g., <a href="https://mkremins.github.io/publications/Patchview_UIST2024.pdf">Patchview</a>).
 				<div class="card-links">
-					📝 Papers: <a href="https://mkremins.github.io/publications/Patchview_UIST2024.pdf">UIST 2024a</a>, <a href="https://mkremins.github.io/publications/Toyteller_UIST2024.pdf">UIST 2024b</a>, <a href="https://mkremins.github.io/publications/Patchwork_HAI-GEN2024.pdf">HAI-GEN 2024</a><br>
+					📝 Papers: <a href="https://mkremins.github.io/publications/Patchview_UIST2024.pdf">UIST 2024</a>, <a href="https://mkremins.github.io/publications/Patchwork_HAI-GEN2024.pdf">HAI-GEN @ IUI 2024</a><br>
 					🗣️ Talks: <a href="https://www.youtube.com/watch?v=D3UtgSl-yWU">Autodesk Research</a>, <a href="https://twitter.com/GopalKRaman/status/1832200443600236668">South Park Commons</a><br>
 					🗞️ Press: <a href="https://venturebeat.com/ai/midjourney-is-launching-a-multiplayer-collaborative-worldbuilding-tool/">VentureBeat</a>, <a href="https://the-decoder.com/midjourney-launches-patchwork-collaborative-canvas-tool-for-visual-storytelling/">The Decoder</a><br>
-					🤝 With: <a href="https://johnr0.github.io/">John Joon Young Chung</a>, <a href="https://roemmele.github.io/">Melissa Roemmele</a>, <a href="https://fakecheese.me/">Uchan Sun</a>
+					🤝 With: <a href="https://johnr0.github.io/">John Chung</a>, <a href="https://roemmele.github.io/">Melissa Roemmele</a>, <a href="https://fakecheese.me/">Uchan Sun</a>
 				</div>
 			</div>
 		</div>
 		<div class="card project-card">
 			<div class="card-image"><img src="/img/projects/Homogenization.png" alt="Visualization of three sets of artifacts produced by three different users of a single creativity support tool. The sets of artifacts are being overlapped to assess the tool’s homogenization effects."></div>
 			<div class="card-text">
-				<span class="card-title"><a href="https://mkremins.github.io/publications/Homogenization_C&C2024.pdf">Homogenization analysis</a></span> and <span class="card-title"><a href="https://mkremins.github.io/publications/ERaCA_HAI-GEN2022.pdf">expressive range coverage analysis</a></span> are evaluation methods for creativity support tools (CSTs). By analyzing artifacts created by CST users in relation to larger <em>design spaces</em>, we can capture striking visual portraits of interaction dynamics; diagnose homogenization effects of generative AI tools; and generally illuminate tool impacts on creative outcomes.
+				<span class="card-title"><a href="https://mkremins.github.io/publications/Homogenization_C&C2024.pdf">Homogenization analysis</a></span> is an approach to the evaluation of creativity support tools (CSTs). By quantifying semantic similarity within and between sets of artifacts created by users of different CSTs, we can diagnose <em>homogenization effects</em> that CSTs (particularly generative AI-based CSTs) exert on their users’ creative outputs and begin to characterize how these effects arise.
 				<div class="card-links">
-					📝 Papers: <a href="https://mkremins.github.io/publications/Homogenization_C&C2024.pdf">C&C 2024</a> (best paper), <a href="https://mkremins.github.io/publications/Homogenization_CHI2024.pdf">CHI 2024</a>, <a href="https://mkremins.github.io/publications/ERaCA_HAI-GEN2022.pdf">HAI-GEN 2022</a>, <a href="https://mkremins.github.io/publications/Dearth_In2Writing2024.pdf">In2Writing 2024</a><br>
+					📝 Papers: <a href="https://mkremins.github.io/publications/Homogenization_C&C2024.pdf">C&C 2024</a> (best paper), <a href="https://mkremins.github.io/publications/Homogenization_CHI2024.pdf">CHI 2024</a>, <a href="https://mkremins.github.io/publications/Dearth_In2Writing2024.pdf">In2Writing @ CHI 2024</a><br>
 					🗞️ Press: <a href="https://digitalfrontier.com/articles/AI-writing-LLM-dearth-author-text">Digital Frontier</a><br>
-					🤝 With: <a href="https://barrettrees.com/">Barrett Anderson</a>, <a href="https://www.linkedin.com/in/itsjashshah/">Jash Shah</a>, <a href="https://isaackarth.com/">Isaac Karth</a>
-				</div>
-			</div>
-		</div>
-		<div class="card project-card">
-			<div class="card-image"><img src="/img/projects/LooseEnds.png" alt="Screenshot of several storytelling goals, each representing a different plot thread, in in the Loose Ends user interface."></div>
-			<div class="card-text">
-				<span class="card-title"><a href="https://github.com/ItsProbablyFine/LooseEnds">Loose Ends</a></span> is an AI-based <em>narrative instrument</em> that can be played to produce narrative, much like a musical instrument can be played to produce music. It aims to help players interleave multiple parallel plot threads into an effective high-level plot structure that satisfies player-specified storytelling goals.
-				<div class="card-links">
-					📝 Papers: <a href="https://mkremins.github.io/publications/LooseEnds_AIIDE2022.pdf">AIIDE 2022</a> (best artifact), <a href="https://mkremins.github.io/publications/WritingSupportNeeds_In2Writing2022.pdf">In2Writing 2022</a>, <a href="https://mkremins.github.io/publications/LooseEnds_ICIDS2022.pdf">ICIDS 2022</a><br>
-					🤝 With: <a href="https://www.melaniedickinson.com/">Melanie Dickinson</a>
+					🤝 With: <a href="https://barrettrees.com/">Barrett Anderson</a>, <a href="https://www.linkedin.com/in/itsjashshah/">Jash Shah</a>
 				</div>
 			</div>
 		</div>
@@ -59,11 +60,42 @@ layout: main
 			</div>
 		</div>
 		<div class="card project-card">
+			<div class="card-image"><img src="/img/projects/FuzzyLinkography.png" alt="Exemplary fuzzy linkograph, exhibiting a “converging zigzag” shape in which multiple parallel threads of user ideation are gradually brought together into a single unifying artifact."></div>
+			<div class="card-text">
+				<span class="card-title"><a href="https://github.com/mkremins/fuzzy-linkography">Fuzzy linkography</a></span> is a jointly visual and quantitative approach to the analysis of <em>creative activity traces</em><!--, including traces captured automatically by creativity support tools-->. Fuzzy linkographs serve as interpretable graphical summaries of design sessions and can be generated at very large scales, allowing us to identify recurring temporal patterns of creative activity; characterize the creative “give and take” between humans and machines; cluster activity traces to discover recurring designer archetypes; and more.</span>
+				<div class="card-links">
+					📝 Papers: <a href="https://arxiv.org/abs/2502.04599">arXiv preprint</a><br>
+					🤝 With: <a href="https://scholar.google.com/citations?user=_lybVRkAAAAJ&hl=en">Amy Smith</a>, <a href="https://barrettrees.com/">Barrett Anderson</a>, <a href="https://jazztap.github.io/">Jasmine Otto</a>, <a href="https://isaackarth.com/">Isaac Karth</a>, <a href="https://fakecheese.me/">Uchan Sun</a>, <a href="https://johnr0.github.io/">John Chung</a>, <a href="https://roemmele.github.io/">Melissa Roemmele</a>
+				</div>
+			</div>
+		</div>
+		<div class="card project-card">
+			<div class="card-image"><img src="/img/projects/LooseEnds.png" alt="Screenshot of several storytelling goals, each representing a different plot thread, in in the Loose Ends user interface."></div>
+			<div class="card-text">
+				<span class="card-title"><a href="https://github.com/ItsProbablyFine/LooseEnds">Loose Ends</a></span> is an AI-based <em>narrative instrument</em> that can be played to produce narrative, much like a musical instrument can be played to produce music. It aims to help players interleave multiple parallel plot threads into an effective high-level plot structure that satisfies player-specified storytelling goals.
+				<div class="card-links">
+					📝 Papers: <a href="https://mkremins.github.io/publications/LooseEnds_AIIDE2022.pdf">AIIDE 2022</a> (best artifact), <a href="https://mkremins.github.io/publications/WritingSupportNeeds_In2Writing2022.pdf">In2Writing @ ACL 2022</a>, <a href="https://mkremins.github.io/publications/LooseEnds_ICIDS2022.pdf">ICIDS 2022</a><br>
+					🤝 With: <a href="https://www.melaniedickinson.com/">Melanie Dickinson</a>
+				</div>
+			</div>
+		</div>
+		<div class="card project-card">
+			<div class="card-image"><img src="/img/projects/ERaCA.png" alt="Corner plot showing user-created artifacts in relation to many different “slices” of a tool’s underlying expressive range at once."></div>
+			<div class="card-text">
+				<span class="card-title"><a href="https://mkremins.github.io/publications/ERaCA_HAI-GEN2022.pdf">Expressive range coverage analysis</a></span> is an evaluation method for creativity support tools (CSTs). By analyzing artifacts created by CST users in relation to the tool’s underlying <em>expressive range</em>, we can capture striking visual portraits of interaction dynamics; gauge similarities and differences between users’ exploration patterns in a shared design space of possible creations; and generally illuminate tool impacts on creative outcomes.
+				<div class="card-links">
+					📝 Papers: <a href="https://mkremins.github.io/publications/ERaCA_HAI-GEN2022.pdf">HAI-GEN @ IUI 2022</a><br>
+					🤝 With: <a href="https://isaackarth.com/">Isaac Karth</a>
+				</div>
+			</div>
+		</div>
+		<div class="card project-card">
 			<div class="card-image"><img src="/img/projects/Felt.png" alt="Partial example of a Felt sifting pattern that matches a sequence of events involving two impulsive betrayals." style="width:320%"></div>
 			<div class="card-text">
 				<span class="card-title">Story sifters</span> are computational recognizers of potentially compelling story structures. I’ve worked to frame story sifting as logic programming (<a href="https://mkremins.github.io/publications/Felt_SimpleStorySifter.pdf">Felt</a>); developed AI-based tools that make logical sifters easier to build (<a href="https://mkremins.github.io/publications/Synthesifter_INT2020.pdf">Synthesifter</a>); and enabled sifters to reason about possible future events (<a href="https://mkremins.github.io/publications/Winnow_AIIDE2021.pdf">Winnow</a>) and prioritize unexpected stories (<a href="https://mkremins.github.io/publications/StU_ICIDS2022.pdf">StU</a>).
 				<div class="card-links">
-					📝 Papers: <a href="https://mkremins.github.io/publications/Felt_SimpleStorySifter.pdf">ICIDS 2019</a>, <a href="https://mkremins.github.io/publications/Synthesifter_INT2020.pdf">INT 2020</a>, <a href="https://mkremins.github.io/publications/Winnow_AIIDE2021.pdf">AIIDE 2021</a>, <a href="https://mkremins.github.io/publications/StU_ICIDS2022.pdf">ICIDS 2022</a>, <a href="https://mkremins.github.io/publications/AuthoringSifters_TAP.pdf">book chapter</a><br>
+					📝 Papers: <a href="https://mkremins.github.io/publications/Felt_SimpleStorySifter.pdf">ICIDS 2019</a>, <a href="https://mkremins.github.io/publications/Synthesifter_INT2020.pdf">INT @ AIIDE 2020</a>, <a href="https://mkremins.github.io/publications/Winnow_AIIDE2021.pdf">AIIDE 2021</a>, <a href="https://mkremins.github.io/publications/StU_ICIDS2022.pdf">ICIDS 2022</a>, <a href="https://mkremins.github.io/publications/AuthoringSifters_TAP.pdf">chapter</a><br>
+					🗣️ Talks: <a href="https://www.youtube.com/watch?v=NsBFLDVwWiY">Concordia University</a><br>
 					🗞️ Press: <a href="https://www.theverge.com/2021/11/30/22807568/procedural-storytelling-video-games-dwarf-fortress-wildermyth-blaseball">The Verge</a><br>
 					🤝 With: <a href="https://www.melaniedickinson.com/">Melanie Dickinson</a>
 				</div>
@@ -83,7 +115,7 @@ layout: main
 			<div class="card-image"><img src="/img/projects/Academical.png" alt="Screenshot of an Academical scene in which an aging hippie professor discusses an ethical dilemma with a grad student."></div>
 			<div class="card-text"><span class="card-title"><a href="https://altgameslab.soe.ucsc.edu/academical/"><em>Academical</em></a></span> is an interactive narrative game that uses roleplaying to train new researchers in responsible conduct of research. Our user studies have found that <em>Academical</em> is better than existing RCR training materials at engaging users, teaching some RCR topics, and promoting moral reasoning, without falling behind in other areas.
 			<div class="card-links">
-				📝 Papers: <a href="https://mkremins.github.io/publications/RCR_FDG2020.pdf">FDG 2020</a> (exceptional paper), <a href="https://mkremins.github.io/publications/RCR_CHI2021.pdf">CHI 2021</a>, <a href="https://mkremins.github.io/publications/RCR_CHI2020.pdf">CHI 2020</a>, <a href="https://mkremins.github.io/publications/RCR_GaNTaP.pdf">book chapter</a>, <a href="https://mkremins.github.io/publications/RCR_FrVR2022.pdf">Frontiers in VR</a><br>
+				📝 Papers: <a href="https://mkremins.github.io/publications/RCR_FDG2020.pdf">FDG 2020</a> (exceptional paper), <a href="https://mkremins.github.io/publications/RCR_CHI2021.pdf">CHI 2021</a>, <a href="https://mkremins.github.io/publications/RCR_CHI2020.pdf">CHI 2020</a>, <a href="https://mkremins.github.io/publications/RCR_GaNTaP.pdf">chapter</a>, <a href="https://mkremins.github.io/publications/RCR_FrVR2022.pdf">Frontiers in VR</a><br>
 				🤝 With: <a href="https://edwardmelcer.net">Eddie Melcer</a>, <a href="https://www.linkedin.com/in/katy-millay-grasse">Katy Grasse</a>, <a href="https://njunius.github.io">Nic Junius</a>, many others
 			</div>
 			</div>
@@ -93,7 +125,7 @@ layout: main
 			<div class="card-text">
 				<span class="card-title"><a href="https://github.com/ItsProbablyFine/WAWLT"><em>Why Are We Like This?</em></a></span> is an AI-augmented collaborative storytelling game. Two players write a story in a pastiche of the cozy mystery genre, with support from a simulation-based AI system that suggests what might happen next based on both character and authorial goals.<!--  <a href="https://github.com/ItsProbablyFine/WAWLT">Code available here.</a>-->
 				<div class="card-links">
-					📝 Papers: <a href="https://mkremins.github.io/publications/WAWLT_FDG2020.pdf">FDG 2020</a>, <a href="https://mkremins.github.io/publications/WAWLT_ELO2020.pdf">ELO 2020</a>, <a href="https://mkremins.github.io/publications/CozyMysteryConstructionKit.pdf">PCG 2019</a>, <a href="https://www.aaai.org/ojs/index.php/AIIDE/article/view/7457">AIIDE 2020</a>, <a href="https://mkremins.github.io/publications/ReflectiveCreators_ICCC2021.pdf">ICCC 2021</a><br>
+					📝 Papers: <a href="https://mkremins.github.io/publications/WAWLT_FDG2020.pdf">FDG 2020</a>, <a href="https://mkremins.github.io/publications/WAWLT_ELO2020.pdf">ELO 2020</a>, <a href="https://mkremins.github.io/publications/CozyMysteryConstructionKit.pdf">PCG @ FDG 2019</a>, <a href="https://www.aaai.org/ojs/index.php/AIIDE/article/view/7457">AIIDE 2020</a>, <a href="https://mkremins.github.io/publications/ReflectiveCreators_ICCC2021.pdf">ICCC 2021</a><br>
 					🤝 With: <a href="https://www.melaniedickinson.com/">Melanie Dickinson</a>
 				</div>
 			</div>
@@ -113,7 +145,7 @@ layout: main
 			<div class="card-text">
 				<span class="card-title"><a href="https://mkremins.github.io/blackout/interactive">Redactionist</a></span> is an AI-based tool that helps you create poetry by erasing words from a source text. It builds on my earlier work in this direction: a <a href="https://mkremins.github.io/blackout">browser bookmarklet</a> that can turn any arbitrary webpage into blackout poetry. <!--<a href="https://github.com/mkremins/blackout">Code available here.</a>-->
 				<div class="card-links">
-					📝 Papers: <a href="https://mkremins.github.io/publications/ERaCA_HAI-GEN2022.pdf">HAI-GEN 2022</a>, <a href="https://mkremins.github.io/publications/ReflectiveCreators_ICCC2021.pdf">ICCC 2021</a>, <a href="https://mkremins.github.io/publications/GeneratorsThatRead.pdf">PCG 2019</a><br>
+					📝 Papers: <a href="https://mkremins.github.io/publications/LostPoetry_HTTF2024.pdf">HTTF 2024</a>, <a href="https://mkremins.github.io/publications/ERaCA_HAI-GEN2022.pdf">HAI-GEN @ IUI 2022</a>, <a href="https://mkremins.github.io/publications/ReflectiveCreators_ICCC2021.pdf">ICCC 2021</a>, <a href="https://mkremins.github.io/publications/GeneratorsThatRead.pdf">PCG @ FDG 2019</a><br>
 					🗣️ Talks: <a href="https://www.youtube.com/watch?v=klO7XBFUIj8">!!Con West 2019</a>, <a href="https://www.twitch.tv/videos/432818307?t=0h27m20s">Computational Poetry Workshop 2019</a>
 				</div>
 			</div>
@@ -133,7 +165,7 @@ layout: main
 			<div class="card-text">
 				<span class="card-title">Retellings studies</span> are a series of investigations into the stories that players tell about their experiences in games, especially simulation-driven emergent narrative games. This work helps us better understand how to provide computational support for human storytelling practices.
 				<div class="card-links">
-					📝 Papers: <a href="https://mkremins.github.io/publications/NarrativeInstruments_ICIDS2021.pdf">ICIDS 2021a</a> (best short paper nominee), <a href="https://mkremins.github.io/publications/ReparativePlay_ICIDS2021.pdf">ICIDS 2021b</a> (best short paper nominee), <a href="https://mkremins.github.io/publications/EvaluatingViaRetellings.pdf">AIIDE 2019</a>, <a href="https://mkremins.github.io/publications/GenerativeGames_StorytellingPartners.pdf">UX of AI 2019</a>
+					📝 Papers: <a href="https://mkremins.github.io/publications/NarrativeInstruments_ICIDS2021.pdf">ICIDS 2021a</a> (best short paper nominee), <a href="https://mkremins.github.io/publications/ReparativePlay_ICIDS2021.pdf">ICIDS 2021b</a> (best short paper nominee), <a href="https://mkremins.github.io/publications/EvaluatingViaRetellings.pdf">AIIDE 2019</a>, <a href="https://mkremins.github.io/publications/GenerativeGames_StorytellingPartners.pdf">UX of AI @ FDG 2019</a>
 				</div>
 			</div>
 		</div>
@@ -142,16 +174,16 @@ layout: main
 			<div class="card-text">
 				<span class="card-title"><a href="https://mkremins.itch.io/epitaph"><em>Epitaph</em></a></span> is a procedural narrative idlegame about existential risks and the death of civilizations. Bennett Foddy (the creator of <em>QWOP</em>) considers it <a href="https://twitter.com/bfod/status/1381096117639786496">“one of the great web games”</a>. It was the precursor to my academic work on <em>gardening games</em>, which use procedural content generation to support gameplay experiences of caretaking rather than extraction.<!--My first attempt to create a <a href="https://mkremins.github.io/publications/GardeningGames.pdf">gardening game</a>: a game that uses procedural content generation to position the player as the caretaker of a living world, which will keep growing and changing even in the player's absence.--> <!--<a href="https://github.com/mkremins/epitaph">Code available here.</a>-->
 				<div class="card-links">
-					📝 Papers: <a href="https://mkremins.github.io/publications/GardeningGames.pdf">PCG 2018</a>
+					📝 Papers: <a href="https://mkremins.github.io/publications/GardeningGames.pdf">PCG @ FDG 2018</a>
 				</div>
 			</div>
 		</div>
 		<div class="card project-card">
 			<div class="card-image"><img src="/img/projects/WeirdSocial.png" alt="Screenshot of a weird social VR sandbox, focused on a tall blue user avatar. The avatar has googly eyes and spits blue orbs from its open mouth as the user speaks."></div>
 			<div class="card-text">
-				<span class="card-title">Social VR environments</span> are immersive virtual social spaces. I’ve participated in several attempts to make social VR environments better for creative collaboration – particularly by endowing users with <em>social superpowers</em>, or communicative augmentations that couldn’t exist in meatspace.
+				<span class="card-title">Social VR environments</span> are immersive virtual social spaces. I’ve been involved in several attempts to make social VR environments better for creative collaboration – particularly by endowing users with <em>social superpowers</em>, or communicative augmentations that couldn’t exist in meatspace.
 				<div class="card-links">
-					📝 Papers: <a href="https://mkremins.github.io/publications/ConversationBalance_CHI2022.pdf">CHI 2022</a>, <a href="https://mkremins.github.io/publications/SocialVR_DIS2023.pdf">DIS 2023</a>, <a href="https://mkremins.github.io/publications/SocialSuperpowers_SocialVR2021.pdf">SocialVR 2021</a>, <a href="https://mkremins.github.io/publications/ImmersiveDesignFiction.pdf">DIS 2018</a>, <a href="https://mkremins.github.io/publications/VRPLAY.pdf">HCII 2018</a><br>
+					📝 Papers: <a href="https://mkremins.github.io/publications/ConversationBalance_CHI2022.pdf">CHI 2022</a>, <a href="https://mkremins.github.io/publications/SocialVR_DIS2023.pdf">DIS 2023</a>, <a href="https://mkremins.github.io/publications/SocialSuperpowers_SocialVR2021.pdf">SocialVR @ CHI 2021</a>, <a href="https://mkremins.github.io/publications/ImmersiveDesignFiction.pdf">DIS 2018</a>, <a href="https://mkremins.github.io/publications/VRPLAY.pdf">HCII 2018</a><br>
 					🤝 With: <a href="https://www.linkedin.com/in/joshua-mcveigh-schultz/">Josh McVeigh-Schultz</a>, <a href="https://katherineinterface.com/">Katherine Isbister</a>, many others
 				</div>
 			</div>
