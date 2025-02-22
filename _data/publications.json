@@ -16,6 +16,16 @@
   "pubtype": "other",
 },
 {
+  "title": "Scaling Analysis of Creative Activity Traces via Fuzzy Linkography",
+  "url": "",
+  "authors": ["Amy Smith", "Barrett R. Anderson", "Jasmine Tan Otto", "Isaac Karth", "Yuqian Sun", "John Joon Young Chung", "Melissa Roemmele", "Max Kreminski"],
+  "year": "2025",
+  "venue": "CHI LBW",
+  "venue_long": "CHI Late-Breaking Work on Human Factors in Computing Systems",
+  "pubtype": "full",
+  "acceptrate": "32.83%"
+},
+{
   "title": "Toyteller: AI-Powered Visual Storytelling Through Toy-Playing with Character Symbols",
   "url": "https://arxiv.org/abs/2501.13284",
   "authors": ["John Joon Young Chung", "Melissa Roemmele", "Max Kreminski"],
