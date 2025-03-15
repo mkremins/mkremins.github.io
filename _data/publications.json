@@ -1,5 +1,14 @@
 [
 {
+  "title": "Endless Forms Most Similar: The Dearth of the Author in AI-Supported Art",
+  "url": "",
+  "authors": ["Max Kreminski"],
+  "year": "2025",
+  "venue": "AI & Society",
+  "venue_long": "AI & Society",
+  "pubtype": "journal"
+},
+{
   "title": "Phraselette: A Poet's Procedural Palette",
   "url": "https://arxiv.org/abs/2503.06335",
   "authors": ["Alex Calderwood", "John Joon Young Chung", "Yuqian Sun", "Melissa Roemmele", "Max Kreminski"],
