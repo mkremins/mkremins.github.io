@@ -21,8 +21,10 @@
   "url": "https://arxiv.org/abs/2502.04599",
   "authors": ["Amy Smith", "Barrett R. Anderson", "Jasmine Tan Otto", "Isaac Karth", "Yuqian Sun", "John Joon Young Chung", "Melissa Roemmele", "Max Kreminski"],
   "year": "2025",
-  "venue": "Preprint",
-  "pubtype": "other",
+  "venue": "C&C",
+  "venue_long": "ACM Conference on Creativity & Cognition",
+  "pubtype": "full",
+  "acceptrate": "21.8%",
 },
 {
   "title": "Drama Llama: An LLM-Powered Storylets Framework for Authorable Responsiveness in Interactive&nbsp;Narrative",
