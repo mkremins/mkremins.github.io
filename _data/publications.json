@@ -21,8 +21,9 @@
   "url": "https://arxiv.org/abs/2503.06335",
   "authors": ["Alex Calderwood", "John Joon Young Chung", "Yuqian Sun", "Melissa Roemmele", "Max Kreminski"],
   "year": "2025",
-  "venue": "Preprint",
-  "pubtype": "other",
+  "venue": "DIS",
+  "venue_long": "Designing Interactive Systems",
+  "pubtype": "full",
 },
 {
   "title": "Fuzzy Linkography: Automatic Graphical Summarization of Creative Activity Traces",
