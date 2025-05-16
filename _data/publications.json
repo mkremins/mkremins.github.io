@@ -1,5 +1,15 @@
 [
 {
+  "title": "Can LLMs Generate Good Stories? Insights and Challenges from a Narrative Planning Perspective",
+  "url": "",
+  "authors": ["Yi Wang", "Max Kreminski"],
+  "year": "2025",
+  "venue": "CoG",
+  "venue_long": "IEEE Conference on Games",
+  "pubtype": "full",
+  "acceptrate": "36.46%",
+},
+{
   "title": "Modifying Large Language Model Post-Training for Diverse Creative Writing",
   "url": "https://arxiv.org/abs/2503.17126",
   "authors": ["John Joon Young Chung", "Vishakh Padmakumar", "Melissa Roemmele", "Yuqian Sun", "Max Kreminski"],
