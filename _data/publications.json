@@ -37,6 +37,15 @@
   "acceptrate": "24.24%",
 },
 {
+  "title": "Supporting Material Writing Practice with Phraselette, a Palette of Phrases",
+  "url": "",
+  "authors": ["Alex Calderwood", "Taewook Kim", "Yuqian Sun", "Melissa Roemmele", "John Joon Young Chung", "Max Kreminski"],
+  "year": "2025",
+  "venue": "DIS",
+  "venue_long": "Designing Interactive Systems",
+  "pubtype": "pe_or_demo",
+},
+{
   "title": "Fuzzy Linkography: Automatic Graphical Summarization of Creative Activity Traces",
   "url": "https://arxiv.org/abs/2502.04599",
   "authors": ["Amy Smith", "Barrett R. Anderson", "Jasmine Tan Otto", "Isaac Karth", "Yuqian Sun", "John Joon Young Chung", "Melissa Roemmele", "Max Kreminski"],
