@@ -5,14 +5,25 @@ layout: main
 <section class="about">
 	<div class="container">
 		<h2 class="section-title">About</h2>
-		<p>I’m a researcher in artificial intelligence, human-computer interaction, and creativity. I primarily design and develop AI-based <a href="/syllabi/csts-2023-01">creativity support tools</a> to assist human designers and artists, particularly in the domains of storytelling, poetry, and game design. As an interdisciplinary scholar with a background in <a href="https://www.kmjn.org/game-rankings/">technical games research</a>, I’ve also worked on a wide variety of topics related to interactive narrative and digital games.</p>
-		<p>Currently, I’m a research scientist at Midjourney, where I lead the <a href="https://mj-storytelling.github.io">Storytelling Lab</a>. Before that, I was an assistant professor of computer science and engineering at Santa Clara University. I hold a Ph.D. in Computational Media from the University of California, Santa Cruz, where I was a member of the <a href="https://eis.ucsc.edu/">Expressive Intelligence Studio</a>. I’ve also been a resident at <a href="https://stochasticlabs.org/">Stochastic Labs</a>; a consultant at various game industry and tech companies; and a researcher in several labs, most notably the <a href="https://mobilemedia.usc.edu/">Mobile & Environmental Media Lab</a>, at the University of Southern California.</p>
+		<p>I’m a human-computer interaction researcher trying to make computers better at supporting human creativity. My primary focus is the design, development, and evaluation of AI-based <a href="/syllabi/csts-2023-01">creativity support tools</a> to assist designers and artists; so far I’ve mostly worked on tools for storytelling, poetry, and game design, as well as new, domain-general ways to assess tool impacts on creative practice. My work has been covered by outlets including <a href="https://www.newyorker.com/culture/infinite-scroll/ai-is-homogenizing-our-thoughts">The New Yorker</a>, <a href="https://www.newscientist.com/article/mg24933162-600-why-you-should-trust-reindeer-to-pick-stocks-over-politicians/">New Scientist</a>, and <a href="https://www.theverge.com/2021/11/30/22807568/procedural-storytelling-video-games-dwarf-fortress-wildermyth-blaseball">The Verge</a>.</p>
+		<p>Currently, I’m a research scientist at Midjourney, where I lead the <a href="https://mj-storytelling.github.io">Storytelling Lab</a>. Before that, I was an assistant professor of computer science and engineering at Santa Clara University. I hold a Ph.D. in Computational Media from the University of California, Santa Cruz, where I was a member of the <a href="https://eis.ucsc.edu/">Expressive Intelligence Studio</a> and focused primarily on <a href="https://www.kmjn.org/game-rankings/">technical games research</a>. I’ve also been a resident at <a href="https://stochasticlabs.org/">Stochastic Labs</a>; a consultant at various game industry and tech companies; and a researcher in several labs, most notably the <a href="https://mobilemedia.usc.edu/">Mobile & Environmental Media Lab</a>, at the University of Southern California.</p>
 		<p>Here’s a <a href="/publications">complete list of my papers</a> (current count: {{site.data.publications | size}}; awards and nominations: {{site.data.publications | where_exp: "pub", "pub.award" | size}}). You can also check out my <a href="/cv">full CV</a> for links to many of my talks and other output.</p>
 	</div>
 </section>
 <section id="projects">
 	<div class="container">
 		<h2 class="section-title">Selected projects and papers</h2>
+		<div class="card project-card">
+			<div class="card-image"><img src="/img/projects/FuzzyLinkography.png" alt="Exemplary fuzzy linkograph, exhibiting a “converging zigzag” shape in which multiple parallel threads of user ideation are gradually brought together into a single unifying artifact."></div>
+			<div class="card-text">
+				<span class="card-title"><a href="https://github.com/mkremins/fuzzy-linkography">Fuzzy linkography</a></span> is a jointly visual and quantitative approach to the analysis of <em>creative activity traces</em><!--, including traces captured automatically by creativity support tools-->. Fuzzy linkographs serve as interpretable graphical summaries of design sessions and can be generated at very large scales, allowing us to identify recurring temporal patterns of creative activity; characterize the creative “give and take” between humans and machines; cluster activity traces to discover designer archetypes; and more.</span>
+				<div class="card-links">
+					📝 Papers: <a href="https://arxiv.org/abs/2502.04599">C&C 2025</a> (best paper honorable mention), <a href="https://mkremins.github.io/publications/FuzzyLinkography_CHI2025.pdf">CHI LBW 2025</a><br>
+					🗞️ Press: <a href="https://www.newyorker.com/culture/infinite-scroll/ai-is-homogenizing-our-thoughts">The New Yorker</a><br>
+					🤝 With: <a href="https://scholar.google.com/citations?user=_lybVRkAAAAJ&hl=en">Amy Smith</a>, <a href="https://barrettrees.com/">Barrett Anderson</a>, <a href="https://jazztap.github.io/">Jasmine Otto</a>, <a href="https://isaackarth.com/">Isaac Karth</a>, <a href="https://fakecheese.me/">Uchan Sun</a>, <a href="https://johnr0.github.io/">John Chung</a>, <a href="https://roemmele.github.io/">Melissa Roemmele</a>
+				</div>
+			</div>
+		</div>
 		<div class="card project-card">
 			<div class="card-image"><img src="/img/projects/Toyteller.png" alt=""></div>
 			<div class="card-text">
@@ -21,6 +32,17 @@ layout: main
 					📝 Papers: <a href="https://arxiv.org/abs/2501.13284">CHI 2025</a>, <a href="https://mkremins.github.io/publications/Toyteller_UIST2024.pdf">UIST 2024</a><br>
 					🗣️ Talks: <a href="https://twitter.com/GopalKRaman/status/1832200443600236668">South Park Commons</a><br>
 					🤝 With: <a href="https://johnr0.github.io/">John Chung</a>, <a href="https://roemmele.github.io/">Melissa Roemmele</a>
+				</div>
+			</div>
+		</div>
+		<div class="card project-card">
+			<div class="card-image"><img src="/img/projects/Homogenization.png" alt="Visualization of three sets of artifacts produced by three different users of a single creativity support tool. The sets of artifacts are being overlapped to assess the tool’s homogenization effects."></div>
+			<div class="card-text">
+				<span class="card-title"><a href="https://mkremins.github.io/publications/Homogenization_C&C2024.pdf">Homogenization analysis</a></span> is an approach to the evaluation of creativity support tools (CSTs). By quantifying semantic similarity within and between sets of artifacts created by users of different CSTs, we can diagnose <em>homogenization effects</em> that CSTs (particularly generative AI-based CSTs) exert on their users’ creative outputs and begin to characterize how these effects arise.
+				<div class="card-links">
+					📝 Papers: <a href="https://mkremins.github.io/publications/Homogenization_C&C2024.pdf">C&C 2024</a> (best paper), <a href="https://mkremins.github.io/publications/Dearth_AI&S2025.pdf">AI & Society</a>, <a href="https://mkremins.github.io/publications/Homogenization_CHI2024.pdf">CHI LBW 2024</a>, <a href="https://mkremins.github.io/publications/Dearth_In2Writing2024.pdf">In2Writing @ CHI 2024</a><br>
+					🗞️ Press: <a href="https://www.newyorker.com/culture/infinite-scroll/ai-is-homogenizing-our-thoughts">The New Yorker</a>, <a href="https://digitalfrontier.com/articles/AI-writing-LLM-dearth-author-text">Digital Frontier</a><br>
+					🤝 With: <a href="https://barrettrees.com/">Barrett Anderson</a>, <a href="https://www.linkedin.com/in/itsjashshah/">Jash Shah</a>
 				</div>
 			</div>
 		</div>
@@ -37,17 +59,6 @@ layout: main
 			</div>
 		</div>
 		<div class="card project-card">
-			<div class="card-image"><img src="/img/projects/Homogenization.png" alt="Visualization of three sets of artifacts produced by three different users of a single creativity support tool. The sets of artifacts are being overlapped to assess the tool’s homogenization effects."></div>
-			<div class="card-text">
-				<span class="card-title"><a href="https://mkremins.github.io/publications/Homogenization_C&C2024.pdf">Homogenization analysis</a></span> is an approach to the evaluation of creativity support tools (CSTs). By quantifying semantic similarity within and between sets of artifacts created by users of different CSTs, we can diagnose <em>homogenization effects</em> that CSTs (particularly generative AI-based CSTs) exert on their users’ creative outputs and begin to characterize how these effects arise.
-				<div class="card-links">
-					📝 Papers: <a href="https://mkremins.github.io/publications/Homogenization_C&C2024.pdf">C&C 2024</a> (best paper), <a href="https://mkremins.github.io/publications/Dearth_AI&S2025.pdf">AI & Society</a>, <a href="https://mkremins.github.io/publications/Homogenization_CHI2024.pdf">CHI LBW 2024</a>, <a href="https://mkremins.github.io/publications/Dearth_In2Writing2024.pdf">In2Writing @ CHI 2024</a><br>
-					🗞️ Press: <a href="https://digitalfrontier.com/articles/AI-writing-LLM-dearth-author-text">Digital Frontier</a><br>
-					🤝 With: <a href="https://barrettrees.com/">Barrett Anderson</a>, <a href="https://www.linkedin.com/in/itsjashshah/">Jash Shah</a>
-				</div>
-			</div>
-		</div>
-		<div class="card project-card">
 			<div class="card-image"><img src="/img/projects/Blabrecs.jpeg" alt="Screenshot of the Blabrecs AI testing the nonsense word “torbible” and saying “looks good to me!”"></div>
 			<div class="card-text">
 				<span class="card-title"><a href="https://mkremins.github.io/blabrecs"><em>Blabrecs</em></a></span> is a rules modification for the wordgame <em>Scrabble</em> that forbids players from using actual English dictionary words. Instead, players may only use nonsense words that <em>sound like</em> English to an AI trained on the dictionary.<!--<a href="https://github.com/mkremins/blabrecs">Code available here.</a>-->
@@ -56,16 +67,6 @@ layout: main
 					🗣️ Talks: <a href="https://www.youtube.com/watch?v=Cb7GewHopyM">!!Con 2024</a>, <a href="https://gdcvault.com/play/1034675/Experimental-Game">GDC 2024</a> (skip to 1:51:00)<br>
 					🗞️ Press: <a href="https://www.newscientist.com/article/mg24933162-600-why-you-should-trust-reindeer-to-pick-stocks-over-politicians/">New Scientist</a>, <a href="https://thenextweb.com/neural/2020/12/14/new-ai-scrabble-mod-only-allows-words-that-dont-exist/">The Next Web</a>, <a href="https://www.dicebreaker.com/games/scrabble/news/scrabble-variant-nonsense-words-blabrecs-ai">Dicebreaker</a><br>
 					🤝 With: <a href="https://isaackarth.com/">Isaac Karth</a>
-				</div>
-			</div>
-		</div>
-		<div class="card project-card">
-			<div class="card-image"><img src="/img/projects/FuzzyLinkography.png" alt="Exemplary fuzzy linkograph, exhibiting a “converging zigzag” shape in which multiple parallel threads of user ideation are gradually brought together into a single unifying artifact."></div>
-			<div class="card-text">
-				<span class="card-title"><a href="https://github.com/mkremins/fuzzy-linkography">Fuzzy linkography</a></span> is a jointly visual and quantitative approach to the analysis of <em>creative activity traces</em><!--, including traces captured automatically by creativity support tools-->. Fuzzy linkographs serve as interpretable graphical summaries of design sessions and can be generated at very large scales, allowing us to identify recurring temporal patterns of creative activity; characterize the creative “give and take” between humans and machines; cluster activity traces to discover recurring designer archetypes; and more.</span>
-				<div class="card-links">
-					📝 Papers: <a href="https://arxiv.org/abs/2502.04599">C&C 2025</a>, <a href="https://mkremins.github.io/publications/FuzzyLinkography_CHI2025.pdf">CHI LBW 2025</a><br>
-					🤝 With: <a href="https://scholar.google.com/citations?user=_lybVRkAAAAJ&hl=en">Amy Smith</a>, <a href="https://barrettrees.com/">Barrett Anderson</a>, <a href="https://jazztap.github.io/">Jasmine Otto</a>, <a href="https://isaackarth.com/">Isaac Karth</a>, <a href="https://fakecheese.me/">Uchan Sun</a>, <a href="https://johnr0.github.io/">John Chung</a>, <a href="https://roemmele.github.io/">Melissa Roemmele</a>
 				</div>
 			</div>
 		</div>
