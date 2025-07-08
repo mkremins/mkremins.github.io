@@ -1,5 +1,23 @@
 [
 {
+  "title": "Scaffolding Recursive Divergence and Convergence in Story Ideation",
+  "url": "https://arxiv.org/abs/2507.03307",
+  "authors": ["Taewook Kim", "Matthew Kay", "Yuqian Sun", "Melissa Roemmele", "Max Kreminski",  "John Joon Young Chung"],
+  "year": "2025",
+  "venue": "Preprint",
+  "pubtype": "other",
+},
+{
+  "title": "Modifying Large Language Model Post-Training for Diverse Creative Writing",
+  "url": "https://arxiv.org/abs/2503.17126",
+  "authors": ["John Joon Young Chung", "Vishakh Padmakumar", "Melissa Roemmele", "Yuqian Sun", "Max Kreminski"],
+  "year": "2025",
+  "venue": "COLM",
+  "venue_long": "Conference on Language Modeling",
+  "pubtype": "full",
+  "acceptrate": "32%",
+},
+{
   "title": "Can LLMs Generate Good Stories? Insights and Challenges from a Narrative Planning Perspective",
   "url": "https://arxiv.org/abs/2506.10161",
   "authors": ["Yi Wang", "Max Kreminski"],
@@ -8,23 +26,6 @@
   "venue_long": "IEEE Conference on Games",
   "pubtype": "full",
   "acceptrate": "36.46%",
-},
-{
-  "title": "Modifying Large Language Model Post-Training for Diverse Creative Writing",
-  "url": "https://arxiv.org/abs/2503.17126",
-  "authors": ["John Joon Young Chung", "Vishakh Padmakumar", "Melissa Roemmele", "Yuqian Sun", "Max Kreminski"],
-  "year": "2025",
-  "venue": "Preprint",
-  "pubtype": "other",
-},
-{
-  "title": "Endless Forms Most Similar: The Dearth of the Author in AI-Supported Art",
-  "url": "https://mkremins.github.io/publications/Dearth_AI&S2025.pdf",
-  "authors": ["Max Kreminski"],
-  "year": "2025",
-  "venue": "AI & Society",
-  "venue_long": "AI & Society",
-  "pubtype": "journal"
 },
 {
   "title": "Phraselette: A Poet's Procedural Palette",
@@ -57,14 +58,6 @@
   "award": "Best Paper Honorable Mention (top 4%)"
 },
 {
-  "title": "Drama Llama: An LLM-Powered Storylets Framework for Authorable Responsiveness in Interactive&nbsp;Narrative",
-  "url": "https://arxiv.org/abs/2501.09099",
-  "authors": ["Yuqian Sun", "Phoebe J. Wang", "John Joon Young Chung", "Melissa Roemmele", "Taewook Kim", "Max Kreminski"],
-  "year": "2025",
-  "venue": "Preprint",
-  "pubtype": "other",
-},
-{
   "title": "Scaling Analysis of Creative Activity Traces via Fuzzy Linkography",
   "url": "https://mkremins.github.io/publications/FuzzyLinkography_CHI2025.pdf",
   "authors": ["Amy Smith", "Barrett R. Anderson", "Jasmine Tan Otto", "Isaac Karth", "Yuqian Sun", "John Joon Young Chung", "Melissa Roemmele", "Max Kreminski"],
@@ -83,6 +76,23 @@
   "venue_long": "ACM CHI Conference on Human Factors in Computing Systems",
   "pubtype": "full",
   "acceptrate": "25.1%"
+},
+{
+  "title": "Endless Forms Most Similar: The Dearth of the Author in AI-Supported Art",
+  "url": "https://mkremins.github.io/publications/Dearth_AI&S2025.pdf",
+  "authors": ["Max Kreminski"],
+  "year": "2025",
+  "venue": "AI & Society",
+  "venue_long": "AI & Society",
+  "pubtype": "journal"
+},
+{
+  "title": "Drama Llama: An LLM-Powered Storylets Framework for Authorable Responsiveness in Interactive&nbsp;Narrative",
+  "url": "https://arxiv.org/abs/2501.09099",
+  "authors": ["Yuqian Sun", "Phoebe J. Wang", "John Joon Young Chung", "Melissa Roemmele", "Taewook Kim", "Max Kreminski"],
+  "year": "2025",
+  "venue": "Preprint",
+  "pubtype": "other",
 },
 {
   "title": "Computational Poetry is Lost Poetry",
