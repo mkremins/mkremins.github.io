@@ -29,7 +29,7 @@
 },
 {
   "title": "Phraselette: A Poet's Procedural Palette",
-  "url": "https://arxiv.org/abs/2503.06335",
+  "url": "https://dl.acm.org/doi/10.1145/3715336.3735832",
   "authors": ["Alex Calderwood", "John Joon Young Chung", "Yuqian Sun", "Melissa Roemmele", "Max Kreminski"],
   "year": "2025",
   "venue": "DIS",
@@ -39,7 +39,7 @@
 },
 {
   "title": "Supporting Material Writing Practice with Phraselette, a Palette of Phrases",
-  "url": "",
+  "url": "https://dl.acm.org/doi/10.1145/3715668.3735608",
   "authors": ["Alex Calderwood", "Taewook Kim", "Yuqian Sun", "Melissa Roemmele", "John Joon Young Chung", "Max Kreminski"],
   "year": "2025",
   "venue": "DIS",
