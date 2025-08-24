@@ -1,5 +1,15 @@
 [
 {
+  "title": "LLMs Behind the Scenes: Enabling Narrative Scene Illustration",
+  "url": "",
+  "authors": ["Melissa Roemmele", "John Joon Young Chung", "Taewook Kim", "Yuqian Sun", "Alex Calderwood", "Max Kreminski"],
+  "year": "2025",
+  "venue": "EMNLP",
+  "venue_long": "Empirical Methods in Natural Language Processing",
+  "pubtype": "full",
+  "acceptrate": "22.16%",
+},
+{
   "title": "Scaffolding Recursive Divergence and Convergence in Story Ideation",
   "url": "https://arxiv.org/abs/2507.03307",
   "authors": ["Taewook Kim", "Matthew Kay", "Yuqian Sun", "Melissa Roemmele", "Max Kreminski",  "John Joon Young Chung"],
@@ -16,6 +26,15 @@
   "venue_long": "Conference on Language Modeling",
   "pubtype": "full",
   "acceptrate": "32%",
+},
+{
+  "title": "Dramamancer: Interactive Narratives with LLM-Powered Storylets",
+  "url": "",
+  "authors": ["Tiffany Wang", "Yuqian Sun", "Yi Wang", "Melissa Roemmele", "John Joon Young Chung", "Max Kreminski"],
+  "year": "2025",
+  "venue": "UIST",
+  "venue_long": "ACM Symposium on User Interface Software and Technology",
+  "pubtype": "pe_or_demo",
 },
 {
   "title": "Can LLMs Generate Good Stories? Insights and Challenges from a Narrative Planning Perspective",
