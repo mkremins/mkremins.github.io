@@ -38,7 +38,7 @@
 },
 {
   "title": "Dramamancer: Interactive Narratives with LLM-Powered Storylets",
-  "url": "",
+  "url": "https://dl.acm.org/doi/10.1145/3746058.3758995",
   "authors": ["Tiffany Wang", "Yuqian Sun", "Yi Wang", "Melissa Roemmele", "John Joon Young Chung", "Max Kreminski"],
   "year": "2025",
   "venue": "UIST",
