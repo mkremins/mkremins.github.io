@@ -1,5 +1,14 @@
 [
 {
+  "title": "Design Techniques for LLM-Powered Interactive Storytelling: A Case Study of the Dramamancer System",
+  "url": "",
+  "authors": ["Tiffany Wang", "Yuqian Sun", "Yi Wang", "Melissa Roemmele", "John Joon Young Chung", "Max Kreminski"],
+  "year": "2025",
+  "venue": "Wordplay",
+  "parent_venue": "EMNLP",
+  "pubtype": "workshop",
+},
+{
   "title": "LLMs Behind the Scenes: Enabling Narrative Scene Illustration",
   "url": "",
   "authors": ["Melissa Roemmele", "John Joon Young Chung", "Taewook Kim", "Yuqian Sun", "Alex Calderwood", "Max Kreminski"],
