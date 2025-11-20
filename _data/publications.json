@@ -1,5 +1,13 @@
 [
 {
+  "title": "LiteraryTaste: A Preference Dataset for Creative Writing Personalization",
+  "url": "https://arxiv.org/abs/2511.09310",
+  "authors": ["John Joon Young Chung", "Vishakh Padmakumar", "Melissa Roemmele", "Yi Wang", "Yuqian Sun", "Tiffany Wang", "Shm Garanganao Almeda", "Brett A. Halperin", "Yuwen Lu", "Max Kreminski"],
+  "year": "2025",
+  "venue": "Preprint",
+  "pubtype": "other",
+},
+{
   "title": "Design Techniques for LLM-Powered Interactive Storytelling: A Case Study of the Dramamancer System",
   "url": "",
   "authors": ["Tiffany Wang", "Yuqian Sun", "Yi Wang", "Melissa Roemmele", "John Joon Young Chung", "Max Kreminski"],
