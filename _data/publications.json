@@ -1,5 +1,13 @@
 [
 {
+  "title": "Artographer: A Curatorial Interface for Art Space Exploration",
+  "url": "https://arxiv.org/abs/2512.02288",
+  "authors": ["Shm Garanganao Almeda", "John Joon Young Chung", "Bjoern Hartmann", "Sophia Liu", "Brett Halperin", "Yuwen Lu", "Max Kreminski"],
+  "year": "2025",
+  "venue": "Preprint",
+  "pubtype": "other",
+},
+{
   "title": "LiteraryTaste: A Preference Dataset for Creative Writing Personalization",
   "url": "https://arxiv.org/abs/2511.09310",
   "authors": ["John Joon Young Chung", "Vishakh Padmakumar", "Melissa Roemmele", "Yi Wang", "Yuqian Sun", "Tiffany Wang", "Shm Garanganao Almeda", "Brett A. Halperin", "Yuwen Lu", "Max Kreminski"],
