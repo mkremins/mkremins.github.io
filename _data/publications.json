@@ -1,5 +1,24 @@
 [
 {
+  "title": "Tracing Creativity: A Design Space For Creative Activity Traces in HCI",
+  "url": "",
+  "authors": ["Noor Hammad", "David Chuan-En Lin", "Amy Smith", "Max Kreminski", "Erik Harpstead", "Jessica Hammer"],
+  "year": "2026",
+  "venue": "CHI",
+  "venue_long": "ACM CHI Conference on Human Factors in Computing Systems",
+  "pubtype": "full",
+  "acceptrate": "25.3%",
+},
+{
+  "title": "Herding CATs: Making Sense of Creative Activity Traces",
+  "url": "",
+  "authors": ["Max Kreminski", "Amy Smith", "John Joon Young Chung", "Kihoon Son", "Qian Yang", "Sang Won Lee", "Noor Hammad", "Eric Rawn", "Shm Garanganao Almeda", "J.D. Zamfirescu-Pereira"],
+  "year": "2026",
+  "venue": "CHI workshop",
+  "venue_long": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
+  "pubtype": "other",
+},
+{
   "title": "Artographer: A Curatorial Interface for Art Space Exploration",
   "url": "https://arxiv.org/abs/2512.02288",
   "authors": ["Shm Garanganao Almeda", "John Joon Young Chung", "Bjoern Hartmann", "Sophia Liu", "Brett Halperin", "Yuwen Lu", "Max Kreminski"],
