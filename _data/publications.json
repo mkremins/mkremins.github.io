@@ -1,5 +1,14 @@
 [
 {
+  "title": "The First Reflection in Creative Experience (RiCE) Workshop",
+  "url": "",
+  "authors": ["Corey Ford", "Olga Sutskova", "Samuel Rhys Cox", "Sarah Sterman", "Max Kreminski", "<em>10 more authors</em>"],
+  "year": "2026",
+  "venue": "C&C workshop",
+  "venue_long": "Extended Abstracts of the ACM Conference on Creativity & Cognition",
+  "pubtype": "other",
+},
+{
   "title": "Tracing Creativity: A Design Space For Creative Activity Traces in HCI",
   "url": "",
   "authors": ["Noor Hammad", "David Chuan-En Lin", "Amy Smith", "Max Kreminski", "Erik Harpstead", "Jessica Hammer"],
