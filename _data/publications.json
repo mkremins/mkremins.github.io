@@ -28,6 +28,15 @@
   "pubtype": "other",
 },
 {
+  "title": "An Authoring Framework for LLM-Based Drama Managers",
+  "url": "",
+  "authors": ["Tiffany Wang", "Yuqian Sun", "Yi Wang", "Melissa Roemmele", "Shm Garanganao Almeda", "John Joon Young Chung", "Max Kreminski"],
+  "year": "2026",
+  "venue": "I3D",
+  "venue_long": "ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games",
+  "pubtype": "pe_or_demo",
+},
+{
   "title": "Tracing Creativity: A Design Space For Creative Activity Traces in HCI",
   "url": "",
   "authors": ["Noor Hammad", "David Chuan-En Lin", "Amy Smith", "Max Kreminski", "Erik Harpstead", "Jessica Hammer"],
