@@ -38,7 +38,7 @@
 },
 {
   "title": "Tracing Creativity: A Design Space For Creative Activity Traces in HCI",
-  "url": "",
+  "url": "https://dl.acm.org/doi/10.1145/3772318.3791263",
   "authors": ["Noor Hammad", "David Chuan-En Lin", "Amy Smith", "Max Kreminski", "Erik Harpstead", "Jessica Hammer"],
   "year": "2026",
   "venue": "CHI",
@@ -48,7 +48,7 @@
 },
 {
   "title": "Herding CATs: Making Sense of Creative Activity Traces",
-  "url": "",
+  "url": "https://dl.acm.org/doi/10.1145/3772363.3778743",
   "authors": ["Max Kreminski", "Amy Smith", "John Joon Young Chung", "Kihoon Son", "Qian Yang", "Sang Won Lee", "Noor Hammad", "Eric Rawn", "Shm Garanganao Almeda", "J.D. Zamfirescu-Pereira"],
   "year": "2026",
   "venue": "CHI workshop",
