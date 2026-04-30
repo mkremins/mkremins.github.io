@@ -37,6 +37,22 @@
   "pubtype": "pe_or_demo",
 },
 {
+  "title": "The World Needs Expressive Range Analysis!",
+  "url": "https://drops.dagstuhl.de/entities/document/10.4230/DagRep.15.7.124",
+  "authors": ["Max Kreminski", "In-Chang Baek", "Rafael Bidarra", "Alexander Dockhorn", "Emily Short", "Gillian Smith", "Nicolaas Vas", "Sabine Wieluch"],
+  "year": "2026",
+  "venue": "Report from Dagstuhl Seminar 25292",
+  "pubtype": "other",
+},
+{
+  "title": "Intent: What the Heck Is It, and How Do We Measure It?",
+  "url": "https://drops.dagstuhl.de/entities/document/10.4230/DagRep.15.7.124",
+  "authors": ["Emily Halina", "Rafael Bidarra", "Max Kreminski"],
+  "year": "2026",
+  "venue": "Report from Dagstuhl Seminar 25292",
+  "pubtype": "other",
+},
+{
   "title": "Tracing Creativity: A Design Space For Creative Activity Traces in HCI",
   "url": "https://dl.acm.org/doi/10.1145/3772318.3791263",
   "authors": ["Noor Hammad", "David Chuan-En Lin", "Amy Smith", "Max Kreminski", "Erik Harpstead", "Jessica Hammer"],
