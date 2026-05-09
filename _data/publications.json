@@ -10,6 +10,22 @@
   "acceptrate": "20%",
 },
 {
+  "title": "InfiniteCATs: Semantic Crafting as a Substrate for Creative Activity Tracing",
+  "url": "",
+  "authors": ["Nicholas Jennings", "Shm Garanganao Almeda", "Bjoern Hartmann", "Max Kreminski"],
+  "year": "2026",
+  "venue": "C&C",
+  "pubtype": "pe_or_demo",
+},
+{
+  "title": "Trinketry: Tracing and Recombining Visual Elements in Generative Design Exploration",
+  "url": "",
+  "authors": ["Wen-Fan Wang", "Yi-Ting Chiu", "You-Yi Hsieh", "Bing-Yu Chen", "Max Kreminski"],
+  "year": "2026",
+  "venue": "C&C",
+  "pubtype": "pe_or_demo",
+},
+{
   "title": "Bonsai: Designing for Cultivation in AI Interactive Digital Narratives",
   "url": "",
   "authors": ["Tiffany Wang", "Max Kreminski"],
