@@ -10,6 +10,15 @@
   "acceptrate": "20%",
 },
 {
+  "title": "Bonsai: Designing for Cultivation in AI Interactive Digital Narratives",
+  "url": "",
+  "authors": ["Tiffany Wang", "Max Kreminski"],
+  "year": "2026",
+  "venue": "C&C",
+  "venue_long": "ACM Conference on Creativity & Cognition",
+  "pubtype": "pe_or_demo",
+},
+{
   "title": "InfiniteCATs: Semantic Crafting as a Substrate for Creative Activity Tracing",
   "url": "",
   "authors": ["Nicholas Jennings", "Shm Garanganao Almeda", "Bjoern Hartmann", "Max Kreminski"],
@@ -26,15 +35,6 @@
   "pubtype": "pe_or_demo",
 },
 {
-  "title": "Bonsai: Designing for Cultivation in AI Interactive Digital Narratives",
-  "url": "",
-  "authors": ["Tiffany Wang", "Max Kreminski"],
-  "year": "2026",
-  "venue": "C&C",
-  "venue_long": "ACM Conference on Creativity & Cognition",
-  "pubtype": "pe_or_demo",
-},
-{
   "title": "The First Reflection in Creative Experience (RiCE) Workshop",
   "url": "",
   "authors": ["Corey Ford", "Olga Sutskova", "Samuel Rhys Cox", "Sarah Sterman", "Max Kreminski", "<em>10 more authors</em>"],
@@ -42,6 +42,15 @@
   "venue": "C&C workshop",
   "venue_long": "Extended Abstracts of the ACM Conference on Creativity & Cognition",
   "pubtype": "other",
+},
+{
+  "title": "Bonsai: Cultivating Author Intent in LLM-Based Interactive Digital Narratives",
+  "url": "",
+  "authors": ["Tiffany Wang", "Max Kreminski"],
+  "year": "2026",
+  "venue": "Human-AI Co-Creativity",
+  "parent_venue": "ICML",
+  "pubtype": "workshop",
 },
 {
   "title": "An Authoring Framework for LLM-Based Drama Managers",
