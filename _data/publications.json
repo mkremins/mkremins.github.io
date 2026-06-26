@@ -1,5 +1,13 @@
 [
 {
+  "title": "Creative Reading: Scaffolding Reading for Transformation",
+  "url": "https://arxiv.org/abs/2606.04308",
+  "authors": ["Sophia Liu", "Sarah Abowitz", "Yijun Liu", "Sarah Sterman", "Shm Garanganao Almeda", "Max Kreminski"],
+  "year": "2026",
+  "venue": "ACM HT Blue Sky Ideas",
+  "pubtype": "full",
+},
+{
   "title": "Artographer: A Curatorial Interface for Art Space Exploration",
   "url": "https://arxiv.org/abs/2512.02288",
   "authors": ["Shm Garanganao Almeda", "John Joon Young Chung", "Sophia Liu", "Brett Halperin", "Yuwen Lu", "Bjoern Hartmann", "Max Kreminski"],
@@ -52,14 +60,6 @@
   "venue": "Human-AI Co-Creativity",
   "parent_venue": "ICML",
   "pubtype": "workshop",
-},
-{
-  "title": "Creative Reading: Scaffolding Reading for Transformation",
-  "url": "https://arxiv.org/abs/2606.04308",
-  "authors": ["Sophia Liu", "Sarah Abowitz", "Yijun Liu", "Sarah Sterman", "Shm Garanganao Almeda", "Max Kreminski"],
-  "year": "2026",
-  "venue": "Preprint",
-  "pubtype": "other",
 },
 {
   "title": "An Authoring Framework for LLM-Based Drama Managers",
