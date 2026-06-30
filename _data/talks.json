@@ -282,6 +282,14 @@
   "venue_long": "Otter Jam, California State University, Monterey Bay",
 },
 {
+  "title": "Introduction to WaveFunctionCollapse",
+  "year": "2023",
+  "url": "",
+  "venue": "CoG Tutorials",
+  "venue_long": "Tutorials, IEEE Conference on Games (CoG)",
+  "note": "with Isaac Karth"
+},
+{
   "title": "Reflective Creators",
   "year": "2023",
   "url": "",
