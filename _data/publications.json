@@ -26,6 +26,15 @@
   "acceptrate": "46.1%",
 },
 {
+  "title": "Scientific Visualization as a Collaborative Data Infrastructure",
+  "url": "",
+  "authors": ["Jasmine Tan Otto", "Alexandra Diehl", "Max Kreminski", "Scott Davidoff"],
+  "year": "2026",
+  "venue": "Infrastructure Workshop",
+  "parent_venue": "CSCW",
+  "pubtype": "workshop"
+},
+{
   "title": "Creative Reading: Scaffolding Reading for Transformation",
   "url": "https://arxiv.org/abs/2606.04308",
   "authors": ["Sophia Liu", "Sarah Abowitz", "Yijun Liu", "Sarah Sterman", "Shm Garanganao Almeda", "Max Kreminski"],
