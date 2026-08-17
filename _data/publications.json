@@ -9,6 +9,23 @@
   "acceptrate": "20.1%",
 },
 {
+  "title": "Feeling UISTful: An Interactive Portrait of Scholarly Authorship, Readership, and the In-Between",
+  "url": "https://arxiv.org/abs/2607.09155",
+  "authors": ["Sophia Liu", "Shm Garanganao Almeda", "Max Kreminski", "Bjoern Hartmann"],
+  "year": "2026",
+  "venue": "UIST",
+  "pubtype": "pe_or_demo",
+},
+{
+  "title": "Trinketry: Materializing Design Elements as Trace Anchors in AI-Assisted Visual Exploration",
+  "url": "",
+  "authors": ["Wen-Fan Wang", "Yi-Ting Chiu", "You-Yi Hsieh", "Bing-Yu Chen", "Max Kreminski"],
+  "year": "2026",
+  "venue": "UIST",
+  "pubtype": "pe_or_demo",
+  "acceptrate": "46.1%",
+},
+{
   "title": "Creative Reading: Scaffolding Reading for Transformation",
   "url": "https://arxiv.org/abs/2606.04308",
   "authors": ["Sophia Liu", "Sarah Abowitz", "Yijun Liu", "Sarah Sterman", "Shm Garanganao Almeda", "Max Kreminski"],
