@@ -1,0 +1,82 @@
+---
+title: Max Kreminski – Creativity Support Lab
+layout: main
+---
+<style>
+.people {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+.person {
+  display: grid;
+  grid-template-columns: 8ch 1fr;
+  align-items: center;
+}
+.person-wrapper { text-decoration: none; color: inherit; }
+.person .pic img {
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 1/1; 
+  width: 100%;
+  border-radius: 100%;
+}
+.person .role { margin: 0; }
+.person .name {
+  margin: 0;
+  line-height: 1.3;
+  /* replicate link styles manually (bleh) */
+  color: green;
+  text-decoration: underline;
+}
+.person .info { padding-left: 1.5ch; }
+@media only screen and (max-width: 719px) {
+  .people { grid-template-columns: repeat(2, 1fr); }
+}
+@media only screen and (max-width: 439px) {
+  .people { grid-template-columns: repeat(1, 1fr); }
+}
+</style>
+<section id="lab-overview">
+  <div class="container">
+    <h2 class="section-title">Creativity Support Lab</h2>
+    <p>The <strong>Creativity Support Lab</strong> designs, develops, and evaluates <em>creativity support tools</em>: computational systems that draw out, sustain, and expand human creative practice. Our work takes a broad and <a href="https://dl.acm.org/doi/full/10.1145/3706598.3713734">ecosystemic</a> view of creativity: <a href="https://dl.acm.org/doi/full/10.1145/3746059.3747702">artists</a>, <a href="https://dl.acm.org/doi/full/10.1145/3715336.3735832">writers</a>, <a href="https://dl.acm.org/doi/full/10.1145/3706598.3714148">designers</a>, <a href="https://dl.acm.org/doi/10.1145/3698061.3726915">scientists</a>, <a href="https://dl.acm.org/doi/10.1145/3803784.3807532">curators</a>, <a href="https://arxiv.org/abs/2606.04308">readers</a>, <a href="https://mkremins.github.io/publications/NarrativeInstruments_ICIDS2021.pdf">players</a>, and <a href="https://computationalcreativity.net/iccc2015/proceedings/10_2Compton.pdf">everyday people</a> all engage in creative processes, and these processes are shaped by a wide variety of infrastructures, tools and networks, both inside and outside the visible “creative moment”. Wherever possible, we seek generalizable knowledge about creative practice and how to support it – while also striving to ground our technical work in personal, sustained engagement with particular creative communities and domains.</p>
+    <p>We’re based at the Cornell Tech campus in NYC. Our recent work has been published at a range of highly selective HCI and AI conferences, including <a href="https://dl.acm.org/conference/chi">CHI</a>, <a href="https://dl.acm.org/conference/uist">UIST</a>, <a href="https://dl.acm.org/conference/dis">DIS</a>, <a href="https://dl.acm.org/conference/c-n-c">C&C</a>, <a href="https://colmweb.org/">COLM</a>, and <a href="https://emnlp.org/">EMNLP</a>.</p>
+  </div>
+</section>
+<section id="lab-members">
+  <div class="container">
+    <h2>Lab members</h2>
+    <div class="people">
+      {%- for person in site.data.people -%}
+      {%- assign url = person.url | default: "#" -%}
+      <a href="{{url}}" class="person-wrapper">
+        <div class="person">
+          <div class="pic">
+            <img src="{{person.img | default: '/img/projects/Dramamancer.png'}}" alt="Photo of {{person.name}}">
+          </div>
+          <div class="info">
+            <h4 class="name">{{person.name}}</h4>
+            <p class="role">{{person.role}}</p>
+          </div>
+        </div>
+      </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+<section id="research-themes">
+  <div class="container">
+    <h2>Research themes</h2>
+    <p><strong>Creative activity tracing</strong> involves the capture, representation, analysis, and sharing of <em>traces</em> that emerge from the creative process. Trace representations can be used to assess <a href="https://dl.acm.org/doi/10.1145/3698061.3726915">how tools shape creative practice</a>; presented back to creative practitioners to <a href="https://dl.acm.org/doi/full/10.1145/3803784.3816878">facilitate reflection</a>; transformed into a substrate for <a href="https://arxiv.org/abs/2607.09155">rationale capture</a>; shared amongst practitioners to support social learning; and reasoned about by <a href="https://dl.acm.org/doi/10.1145/3772318.3791263">trace-aware co-creative tools</a> to improve human-AI interaction dynamics. <a href="https://dl.acm.org/doi/10.1145/3803784.3816855">Trace comparisons</a> can aid understanding of <a href="https://dl.acm.org/doi/10.1145/3803784.3807532">different strategies</a> for <a href="https://ceur-ws.org/Vol-3124/paper4.pdf">design space exploration</a> and even reveal structural similarities between diverse creative domains. Recently, we organized the <a href="https://herding-cats-ws.github.io">Herding CATs workshop</a> at CHI 2026, which brought together a large number of researchers to sketch out a roadmap for future creative activity tracing research.</p>
+    <p><strong>New media authoring tools</strong> allow users to craft interactive narrative and play experiences, in particular radically <em>open-ended</em> or <em>malleable</em> experiences in which the full range of player behavior can be difficult for authors to anticipate. Past work on <a href="https://dl.acm.org/doi/10.1145/3746058.3758995">Dramamancer</a>, <a href="https://dl.acm.org/doi/10.1145/3803784.3816860">Bonsai</a>, and <a href="https://arxiv.org/abs/2601.15295">Elsewise</a> has introduced new ways to extend human authorial control over LLM-based interactive storytelling; generative game design tools like <a href="https://ojs.aaai.org/index.php/AIIDE/article/view/7417">Germinate</a> and <a href="https://mkremins.github.io/publications/GBS_CoG2021.pdf">GBS</a> have enabled the rapid and intentful exploration of interactive media design spaces; and computational narrative technologies like <a href="https://dl.acm.org/doi/10.1145/3337722.3337732">StoryAssembler</a>, <a href="https://mkremins.github.io/publications/Felt_SimpleStorySifter.pdf">Felt</a>, <a href="https://ojs.aaai.org/index.php/AIIDE/article/view/18903">Winnow</a>, and <a href="https://mkremins.github.io/publications/StU_ICIDS2022.pdf">StU</a> have probed the new forms of narrative authorship that can arise around the definition of flexible, playable interactive simulations.</p>
+    <p><strong>Expressive interaction techniques</strong> make it easier to get ideas into the computer more naturally, across a wider range of modalities. Our work has found that <a href="https://dl.acm.org/doi/10.1145/3706598.3713435">evocative gestural inputs</a> can complement prose-writing in the drafting of fiction; that <a href="https://dl.acm.org/doi/10.1145/3654777.3676352">malleable interactive visualizations</a> can help worldbuilders comprehend, refine, and grow expansive fictional settings; and that making <a href="https://dl.acm.org/doi/full/10.1145/3715336.3735832">LLM output distributions</a> and <a href="https://dl.acm.org/doi/10.1145/3686169.3686179">textual constraints</a> directly manipulable can help poets discover simultaneously surprising and compelling bits of language. We’ve also experimented with <a href="https://mkremins.github.io/publications/Patchwork_HAI-GEN2024.pdf">multi-user multimodal canvases</a> as spaces for collaborative AI-supported creation, recombinatory <a href="https://arxiv.org/abs/2507.03307">“mutant shopping”</a> approaches to iterative text revision, and embodied <a href="https://dl.acm.org/doi/abs/10.1145/3196709.3196793">“weird social”</a> interactions in virtual reality creativity support environments.</p>
+    <p><strong>Generating creative material</strong> for later human evaluation, curation, revision, and expansion can support new creative workflows – but it can also <a href="https://dl.acm.org/doi/10.1145/3635636.3656204">homogenize creative output</a>, dilute human <a href="https://mkremins.github.io/publications/Dearth_AI&S2025.pdf">expressive intent</a>, and generally reshape creative interaction dynamics. To generate <em>better</em> creative material, we’ve worked to finetune text generation models for <a href="https://arxiv.org/abs/2503.17126">improved diversity</a> and <a href="https://arxiv.org/abs/2511.09310">stylistic personalization</a>; to steer story generation processes toward <a href="https://arxiv.org/abs/2406.00554">wider-ranging expressions</a> of the same story premise; and to construct generative pipelines that can <a href="https://arxiv.org/abs/2509.22940">effectively distribute intent</a> across multiple different facets of generated output. We’ve also sought to <a href="https://arxiv.org/abs/2403.14117">characterize interaction patterns</a> that might lead to <a href="https://aclanthology.org/2022.in2writing-1.11/">stronger assertion</a> of human control over creative processes that involve generated material.</p>
+  </div>
+</section>
+<section id="joining-the-lab">
+  <div class="container">
+    <h2>Joining the lab</h2>
+    <p>Potential <strong>PhD students</strong> can apply to Cornell Tech via the <a href="https://infosci.cornell.edu/phd-information-science">Information Science</a> PhD program, listing Max Kreminski as a prospective advisor. Current <strong>Cornell Tech master’s students</strong> can also get involved; drop by Max’s office hours for more information. We don’t currently have the bandwidth to take on new undergraduate or pre-college research assistants.</p>
+  </div>
+</section>

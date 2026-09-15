@@ -1,0 +1,36 @@
+[
+{
+	"name": "Max Kreminski",
+	"url": "/",
+	"img": "/img/headshots/2022-08-26_square.jpeg",
+	"role": "Lab director",
+},
+{
+	"name": "Wen-Fan Wang",
+	"url": "https://vannwang.com",
+	"img": "/img/people/wenfanwang.png",
+	"role": "PhD student",
+	"range": "since 2026"
+},
+{
+	"name": "Eric Nai-Li Chen",
+	"url": "https://ericnlchen.com",
+	"img": "/img/people/ericchen.jpeg",
+	"role": "PhD student",
+	"range": "since 2026"
+},
+{
+	"name": "Charlotte Lyu",
+	"url": "",
+	"img": "/img/people/charlottelyu.jpg",
+	"role": "MS student",
+	"range": "Fall 2026"
+},
+{
+	"name": "Kelly Zheng",
+	"url": "https://www.kellyzheng.net",
+	"img": "/img/people/kellyzheng.png",
+	"role": "MS student",
+	"range": "Fall 2026"
+},
+]
