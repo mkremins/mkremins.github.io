@@ -1,5 +1,13 @@
 [
 {
+  "title": "Keynote Panel",
+  "year": "2026",
+  "url": "",
+  "venue": "In2Writing @ UIST",
+  "venue_long": "UIST Workshop on Intelligent and Interactive Writing Assistants (In2Writing)",
+  "type": "panel",
+},
+{
   "title": "Six Fingers on the Author’s Hand",
   "url": "",
   "year": "2026",
