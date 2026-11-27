@@ -1,0 +1,18 @@
+---
+title: Max Kreminski – News
+layout: main
+---
+<style>
+#news ul { padding-left: 1.5rem; }
+#news li { margin-bottom: 0.5rem; }
+</style>
+<section id="news">
+	<div class="container">
+		<h2 class="section-title">Past news items</h2>
+		<ul>
+		{%- for item in site.data.news -%}
+			<li><strong>{{item.date}}:</strong> {{item.text}}</li>
+		{%- endfor -%}
+		</ul>
+	</div>
+</section>
